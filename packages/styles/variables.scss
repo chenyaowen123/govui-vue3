@@ -1,14 +1,50 @@
-// $colors: () !default; 定义了一个名为$colors的空变量，并用!default标记为可覆盖的默认值。
-$colors: () !default;
+@use 'sass:math';
+@use 'sass:map';
 
-// map.deep-merge 是一个Sass函数，用于合并两个映射（map）。这里它用于将新的色值合并到$colors变量中。
+// 基本色
+$colors: () !default;
 $colors: map.deep-merge(
   (
-    'primary': #409eff,
-    'success': #67c23a,
-    'warning': #e6a23c,
-    'danger': #f56c6c,
+    'primary': #E74C3C,
+    'success': #27AE60,
+    'warning': #F39C12,
+    'danger': #8E44AD,
     'info': #909399,
   ),
   $colors
 );
+
+// 基本色-划分 100% 75% 50% 25%；
+$color-levels: 100, 75, 50, 25;
+@each $color-name, $color-value in $colors {
+  @each $level in $color-levels {
+    $color-percentage: math.percentage(math.div($level, 100));
+    $color-tint: mix(white, $color-value, $color-percentage);
+    $colors: map.set($colors, '#{$color-name}-#{$level}', $color-tint) !global;
+  }
+}
+
+// 文本色-从 #303133 开始 100% 80% 60% 40% 20%；
+$text-color-base: #303133;
+@each $level in $color-levels {
+  $color-percentage: math.percentage(math.div($level, 100));
+  $text-color-tint: mix(white, $text-color-base, $color-percentage);
+  $colors: map.set($colors, 'text-#{$level}', $text-color-tint) !global;
+}
+
+// 边框色-从 #CDD0D6 开始 100% 80% 60% 40% 20%；
+$border-color-base: #CDD0D6;
+@each $level in $color-levels {
+  $color-percentage: math.percentage(math.div($level, 100));
+  $border-color-tint: mix(white, $border-color-base, $color-percentage);
+  $colors: map.set($colors, 'border-#{$level}', $border-color-tint) !global;
+}
+
+// 填充色-从 #E6E8EB 开始 100% 80% 60% 40% 20%；
+$fill-color-base: #E6E8EB;
+@each $level in $color-levels {
+  $color-percentage: math.percentage(math.div($level, 100));
+  $fill-color-tint: mix(white, $fill-color-base, $color-percentage);
+  $colors: map.set($colors, 'fill-#{$level}', $fill-color-tint) !global;
+}
+

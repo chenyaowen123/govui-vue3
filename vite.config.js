@@ -5,7 +5,14 @@ export default defineConfig({
 	plugins: [vue()], // 使用 Vite 的 Vue 插件
 	resolve: {
 		alias: {
-			"@": "/packages", // 项目中通过 @ 符号引用 src 目录
+			"@": "./packages", // 项目中通过 @ 符号引用 src 目录
+		},
+	},
+	css: {
+		preprocessorOptions: {
+			scss: {
+				additionalData: `@import './packages/styles/theme.scss';`,
+			},
 		},
 	},
 	build: {

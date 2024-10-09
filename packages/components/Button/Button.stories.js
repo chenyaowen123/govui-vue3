@@ -1,5 +1,4 @@
 import { fn } from "@storybook/test";
-
 import MyButton from "./Button.vue";
 
 // 更多stories配置: https://storybook.js.org/docs/writing-stories

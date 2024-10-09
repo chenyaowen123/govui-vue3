@@ -1,6 +1,4 @@
-@use '~@/styles/theme' as *;
-
+@use 'sass:map';
 .button {
-  background-color: map-get($colors, 'primary');
-  color: $text-color;
+  background-color: map.get($colors, 'primary');
 }

@@ -1,4 +1,4 @@
-import Button from "@/components/Button/Button.vue";
+import Button from "./components/Button/Button.vue";
 
 // 导出所有组件
 const components = {
