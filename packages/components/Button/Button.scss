@@ -1,4 +1,5 @@
 @use 'sass:map';
+
 .button {
-  background-color: map.get($colors, 'primary');
+  background-color: var(--primary);
 }
