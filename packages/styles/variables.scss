@@ -1,0 +1,14 @@
+// $colors: () !default; 定义了一个名为$colors的空变量，并用!default标记为可覆盖的默认值。
+$colors: () !default;
+
+// map.deep-merge 是一个Sass函数，用于合并两个映射（map）。这里它用于将新的色值合并到$colors变量中。
+$colors: map.deep-merge(
+  (
+    'primary': #409eff,
+    'success': #67c23a,
+    'warning': #e6a23c,
+    'danger': #f56c6c,
+    'info': #909399,
+  ),
+  $colors
+);

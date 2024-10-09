@@ -1,0 +1,6 @@
+@use '~@/styles/theme' as *;
+
+.button {
+  background-color: map-get($colors, 'primary');
+  color: $text-color;
+}
