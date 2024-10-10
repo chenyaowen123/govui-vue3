@@ -1,7 +1,7 @@
 :root {
-	--vp-c-indigo-1: #e74c3c;
-	--vp-c-indigo-2: #ff6d5c;
-	--vp-c-indigo-3: #e7857a;
+	--vp-c-indigo-1: #e73a26;
+	--vp-c-indigo-2: #e74c3c;
+	--vp-c-indigo-3: #e8695b;
 	/* 首页标题和图片渐变颜色 */
 	--vp-home-hero-name-background: -webkit-linear-gradient(
 		120deg,

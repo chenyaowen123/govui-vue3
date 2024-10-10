@@ -2,48 +2,26 @@
 outline: deep
 ---
 
+<script setup>
+import colorCard from './colorCard.vue';
+import GovButton from '../components/Button/Button.vue';
+const primaryList = [
+
+];
+
+</script>
+
 # 色彩控制
 
-This page demonstrates usage of some of the runtime APIs provided by VitePress.
+GovUI 采用了统一的色彩控制，为了避免视觉传达差异，使用一套特定的调色板来规定颜色，为你所搭建的产品提供一致的外观视觉感受。
 
-The main `useData()` API can be used to access site, theme, and page data for the current page. It works in both `.md` and `.vue` files:
 
-```md
-<script setup>
-import { useData } from 'vitepress'
+## 主色
+GovUI 默认的主题色是政府机构指定的红色。
 
-const { theme, page, frontmatter } = useData()
-</script>
+<GovButton label="1"/>
+<colorCard
+	name="主题色"
+	color="red"
+/>
 
-## Results
-
-### Theme Data
-<pre>{{ theme }}</pre>
-
-### Page Data
-<pre>{{ page }}</pre>
-
-### Page Frontmatter
-<pre>{{ frontmatter }}</pre>
-```
-
-<script setup>
-import { useData } from 'vitepress'
-
-const { site, theme, page, frontmatter } = useData()
-</script>
-
-## Results
-
-### Theme Data
-<pre>{{ theme }}</pre>
-
-### Page Data
-<pre>{{ page }}</pre>
-
-### Page Frontmatter
-<pre>{{ frontmatter }}</pre>
-
-## More
-
-Check out the documentation for the [full list of runtime APIs](https://vitepress.dev/reference/runtime-api#usedata).

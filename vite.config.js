@@ -8,13 +8,6 @@ export default defineConfig({
 			"@": "./packages", // 项目中通过 @ 符号引用 src 目录
 		},
 	},
-	css: {
-		preprocessorOptions: {
-			scss: {
-				additionalData: `@import './packages/styles/theme.scss';`,
-			},
-		},
-	},
 	build: {
 		// 构建配置
 		lib: {

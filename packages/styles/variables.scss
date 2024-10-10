@@ -1,72 +1,24 @@
 @use "sass:math";
-@use "sass:map";
 
-// 基本色
-$colors: () !default;
-$colors: map.deep-merge(
-	(
-		"primary": #e74c3c,
-		"success": #27ae60,
-		"warning": #f39c12,
-		"danger": #8e44ad,
-		"info": #909399
-	),
-	$colors
-);
+// 定义基本色板
+$colors: (
+	"primary": #e74c3c,
+	"success": #27ae60,
+	"warning": #f39c12,
+	"danger": #8e44ad,
+	"info": #909399,
+	"text-color": #303133,
+	"border-color": #cdd0d6,
+	"fill-color": #e6e8eb
+) !default;
 
-// 基本色-划分 100% 75% 50% 25%；
-// color:var(--primary);
-// color:var(--primary-25);
-$color-levels: 100, 75, 50, 25;
-@each $color-name, $color-value in $colors {
-	:root {
-		--#{$color-name}: #{$color-value};
-	}
-	@each $level in $color-levels {
-		$color-percentage: math.percentage(math.div($level, 100));
-		$color-tint: mix(white, $color-value, $color-percentage);
-		:root {
-			--#{$color-name}-#{$level}: #{$color-tint};
+:root {
+	@each $color-name, $color-value in $colors {
+		--gov-#{$color-name}: #{$color-value};
+		@for $i from 1 through 3 {
+			$percentage: math.div($i * 25, 100); // 计算百分比（25%, 50%, 75%）
+			$color-tint: mix(white, $color-value, $percentage); // 混合颜色
+			--gov-#{$color-name}-#{$i}: #{$color-tint};
 		}
-		$colors: map.set($colors, "#{$color-name}-#{$level}", $color-tint) !global;
 	}
-}
-
-// 文本色-从 #303133 开始 100% 75% 50% 25%；
-// color:var(--text-color-base);
-// color:var(--text-color-25);
-$text-color-base: #303133;
-@each $level in $color-levels {
-	$color-percentage: math.percentage(math.div($level, 100));
-	$text-color-tint: mix(white, $text-color-base, $color-percentage);
-	:root {
-		--text-color-#{$level}: #{$text-color-tint};
-	}
-	$colors: map.set($colors, "text-color-#{$level}", $text-color-tint) !global;
-}
-
-// 边框色-从 #CDD0D6 开始 100% 75% 50% 25%；
-// color:var(--border-color-base);
-// color:var(--border-color-25);
-$border-color-base: #cdd0d6;
-@each $level in $color-levels {
-	$color-percentage: math.percentage(math.div($level, 100));
-	$border-color-tint: mix(white, $border-color-base, $color-percentage);
-	:root {
-		--border-color-#{$level}: #{$border-color-tint};
-	}
-	$colors: map.set($colors, "border-color-#{$level}", $border-color-tint) !global;
-}
-
-// 填充色-从 #E6E8EB 开始 100% 75% 50% 25%；
-// color:var(--fill-color-base);
-// color:var(--fill-color-25);
-$fill-color-base: #e6e8eb;
-@each $level in $color-levels {
-	$color-percentage: math.percentage(math.div($level, 100));
-	$fill-color-tint: mix(white, $fill-color-base, $color-percentage);
-	:root {
-		--fill-color-#{$level}: #{$fill-color-tint};
-	}
-	$colors: map.set($colors, "fill-color-#{$level}", $fill-color-tint) !global;
 }
