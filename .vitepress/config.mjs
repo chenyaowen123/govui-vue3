@@ -29,9 +29,10 @@ export default defineConfig({
 				{
 					text: "开发指南",
 					items: [
-						{ text: "安装", link: "/guide/design" },
-						{ text: "快速上手", link: "/guide/color" },
+						{ text: "安装", link: "/guide/installation" },
+						{ text: "快速上手", link: "/guide/quickstart" },
 						{ text: "自定义主题", link: "/guide/color" },
+						{ text: "Typography 字体", link: "/guide/typography" },
 					],
 				},
 				{
@@ -40,9 +41,14 @@ export default defineConfig({
 						{
 							text: "基础组件",
 							items: [
-								{ text: "安装", link: "/guide/design" },
-								{ text: "快速上手", link: "/guide/color" },
-								{ text: "自定义主题", link: "/guide/color" },
+								{
+									text: "Grid 栅格化",
+									link: "/components/Row/Row",
+								},
+								{
+									text: "Container 布局容器",
+									link: "/guide/Container/Container",
+								},
 							],
 						},
 						{

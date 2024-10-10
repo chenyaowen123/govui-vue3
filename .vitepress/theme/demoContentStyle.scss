@@ -1,0 +1,22 @@
+
+// Grid栅格化
+.demo-gov-row {
+	.gov-row {
+		margin: 5px 0;
+		.gov-col {
+			&::before {
+				display: block;
+				content: "";
+				width: 100%;
+				height: 36px;
+				background: #cdd0d6;
+				border-radius: 4px;
+			}
+			&:nth-child(2n) {
+				&::before {
+					background: #e6e8eb;
+				}
+			}
+		}
+	}
+}

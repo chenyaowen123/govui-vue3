@@ -2,8 +2,10 @@
 import { h } from "vue";
 import DefaultTheme from "vitepress/theme";
 import MyLayout from "./component/MyLayout.vue";
+import demoContainer from "./component/demoContainer.vue";
 import "./style.css";
 import "./custom.css";
+import "./demoContentStyle.scss";
 
 import GovUI from "../../packages/index";
 
@@ -18,5 +20,6 @@ export default {
 	// enhanceApp({ app, router, siteData }) {},
 	enhanceApp({ app }) {
 		app.use(GovUI);
+		app.component("DemoContainer", demoContainer);
 	},
 };
