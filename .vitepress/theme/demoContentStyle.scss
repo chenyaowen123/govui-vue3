@@ -1,8 +1,9 @@
-
 // Grid栅格化
 .demo-gov-row {
 	.gov-row {
-		margin: 5px 0;
+		& + .gov-row {
+			margin-top: 15px;
+		}
 		.gov-col {
 			&::before {
 				display: block;
