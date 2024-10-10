@@ -7,7 +7,6 @@ const componentSidebar = [
 			{ text: "快速上手", link: "/guide/quickstart" },
 			{ text: "自定义主题", link: "/guide/color" },
 			{ text: "Typography 字体", link: "/guide/typography" },
-			{ text: "颜色 color", link: "/guide/color" },
 		],
 	},
 	{
@@ -30,15 +29,6 @@ const componentSidebar = [
 					},
 				],
 			},
-			{
-				text: "Form",
-				items: [
-					{ text: "安装", link: "/guide/design" },
-					{ text: "快速上手", link: "/guide/color" },
-					{ text: "自定义主题", link: "/guide/color" },
-				],
-			},
-			{ text: "自定义主题", link: "/guide/color" },
 		],
 	},
 ];
