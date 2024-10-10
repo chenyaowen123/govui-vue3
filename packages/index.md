@@ -8,6 +8,9 @@ hero:
   tagline: "优雅的搭建私有化定制系统，只需几分钟"
   actions:
     - theme: brand
+      text: 什么是GovUI？
+      link: /guide/index
+    - theme: alt
       text: 指南
       link: /guide/index
     - theme: alt

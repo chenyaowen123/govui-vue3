@@ -6,6 +6,7 @@ export default defineConfig({
 	title: "GovUI",
 	description: "政府系统专用UI",
 	themeConfig: {
+		logo: "/logo.png",
 		// https://vitepress.dev/reference/default-theme-config
 		nav: [
 			{ text: "Home", link: "/" },
