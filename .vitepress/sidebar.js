@@ -18,11 +18,15 @@ const componentSidebar = [
 				items: [
 					{
 						text: "Grid 栅格化",
-						link: "/components/Grid/Grid",
+						link: "/components/Grid/",
 					},
 					{
 						text: "Container 布局容器",
-						link: "/components/Container/Container",
+						link: "/components/Container/",
+					},
+					{
+						text: "Button 按钮",
+						link: "/components/Button/",
 					},
 				],
 			},
