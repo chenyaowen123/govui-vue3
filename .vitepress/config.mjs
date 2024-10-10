@@ -25,6 +25,38 @@ export default defineConfig({
 					],
 				},
 			],
+			"/components/": [
+				{
+					text: "开发指南",
+					items: [
+						{ text: "安装", link: "/guide/design" },
+						{ text: "快速上手", link: "/guide/color" },
+						{ text: "自定义主题", link: "/guide/color" },
+					],
+				},
+				{
+					text: "组件",
+					items: [
+						{
+							text: "基础组件",
+							items: [
+								{ text: "安装", link: "/guide/design" },
+								{ text: "快速上手", link: "/guide/color" },
+								{ text: "自定义主题", link: "/guide/color" },
+							],
+						},
+						{
+							text: "Form",
+							items: [
+								{ text: "安装", link: "/guide/design" },
+								{ text: "快速上手", link: "/guide/color" },
+								{ text: "自定义主题", link: "/guide/color" },
+							],
+						},
+						{ text: "自定义主题", link: "/guide/color" },
+					],
+				},
+			],
 		},
 
 		socialLinks: [

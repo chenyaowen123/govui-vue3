@@ -5,6 +5,8 @@ import MyLayout from "./component/MyLayout.vue";
 import "./style.css";
 import "./custom.css";
 
+import GovUI from "../../packages/index";
+
 /** @type {import('vitepress').Theme} */
 export default {
 	extends: DefaultTheme,
@@ -13,7 +15,8 @@ export default {
 			// https://vitepress.dev/guide/extending-default-theme#layout-slots
 		});
 	},
-	enhanceApp({ app, router, siteData }) {
-		// ...
+	// enhanceApp({ app, router, siteData }) {},
+	enhanceApp({ app }) {
+		app.use(GovUI);
 	},
 };

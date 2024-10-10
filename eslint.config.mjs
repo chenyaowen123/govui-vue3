@@ -12,6 +12,7 @@ export default [
 	{
 		rules: {
 			indent: ["error", "tab", { SwitchCase: 1 }],
+			"vue/multi-word-component-names": "off",
 		},
 	},
 ];

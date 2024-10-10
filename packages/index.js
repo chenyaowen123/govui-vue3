@@ -1,8 +1,12 @@
 import Button from "./components/Button/Button.vue";
+import Row from "./components/Row/Row.vue";
+import Col from "./components/Row/Col.vue";
 
 // 导出所有组件
 const components = {
 	Button,
+	Row,
+	Col,
 };
 
 // 提供一个全局安装方法
