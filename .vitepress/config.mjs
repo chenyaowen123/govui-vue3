@@ -1,4 +1,5 @@
 import { defineConfig } from "vitepress";
+import sidebar from "./sidebar";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -10,61 +11,10 @@ export default defineConfig({
 		// https://vitepress.dev/reference/default-theme-config
 		nav: [
 			{ text: "首页", link: "/" },
-			{ text: "指南", link: "/guide" },
-			{ text: "组件", link: "/components" },
+			{ text: "指南", link: "/guide/" },
+			{ text: "组件", link: "/components/Grid" },
 		],
-
-		sidebar: {
-			"/guide/": [
-				{
-					text: "指南",
-					link: "/guide/",
-					items: [
-						{ text: "设计原则", link: "/guide/design" },
-						{ text: "颜色 color", link: "/guide/color" },
-					],
-				},
-			],
-			"/components/": [
-				{
-					text: "开发指南",
-					items: [
-						{ text: "安装", link: "/guide/installation" },
-						{ text: "快速上手", link: "/guide/quickstart" },
-						{ text: "自定义主题", link: "/guide/color" },
-						{ text: "Typography 字体", link: "/guide/typography" },
-					],
-				},
-				{
-					text: "组件",
-					items: [
-						{
-							text: "基础组件",
-							items: [
-								{
-									text: "Grid 栅格化",
-									link: "/components/Grid/Grid",
-								},
-								{
-									text: "Container 布局容器",
-									link: "/guide/Container/Container",
-								},
-							],
-						},
-						{
-							text: "Form",
-							items: [
-								{ text: "安装", link: "/guide/design" },
-								{ text: "快速上手", link: "/guide/color" },
-								{ text: "自定义主题", link: "/guide/color" },
-							],
-						},
-						{ text: "自定义主题", link: "/guide/color" },
-					],
-				},
-			],
-		},
-
+		sidebar,
 		socialLinks: [
 			{ icon: "github", link: "https://github.com/vuejs/vitepress" },
 		],
