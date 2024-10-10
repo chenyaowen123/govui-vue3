@@ -1,6 +1,6 @@
 import Button from "./components/Button/Button.vue";
-import Row from "./components/Row/Row.vue";
-import Col from "./components/Row/Col.vue";
+import Row from "./components/Grid/Row.vue";
+import Col from "./components/Grid/Col.vue";
 
 // 导出所有组件
 const components = {

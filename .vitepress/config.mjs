@@ -43,7 +43,7 @@ export default defineConfig({
 							items: [
 								{
 									text: "Grid 栅格化",
-									link: "/components/Row/Row",
+									link: "/components/Grid/Grid",
 								},
 								{
 									text: "Container 布局容器",
