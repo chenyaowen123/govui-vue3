@@ -9,19 +9,23 @@ export default defineConfig({
 		logo: "/logo.png",
 		// https://vitepress.dev/reference/default-theme-config
 		nav: [
-			{ text: "Home", link: "/" },
-			{ text: "Examples", link: "/markdown-examples" },
+			{ text: "首页", link: "/" },
+			{ text: "指南", link: "/guide" },
+			{ text: "组件", link: "/components" },
 		],
 
-		sidebar: [
-			{
-				text: "Examples",
-				items: [
-					{ text: "Markdown Examples", link: "/markdown-examples" },
-					{ text: "Runtime API Examples", link: "/api-examples" },
-				],
-			},
-		],
+		sidebar: {
+			"/guide/": [
+				{
+					text: "指南",
+					link: "/guide/",
+					items: [
+						{ text: "设计原则", link: "/guide/design" },
+						{ text: "颜色 color", link: "/guide/color" },
+					],
+				},
+			],
+		},
 
 		socialLinks: [
 			{ icon: "github", link: "https://github.com/vuejs/vitepress" },
