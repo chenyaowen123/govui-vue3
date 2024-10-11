@@ -1,41 +1,34 @@
 <template>
-	<section :class="[ns.b(), ns.is('vertical', isVertical)]">
+	<section class="gov-container" :class="classes">
 		<slot />
 	</section>
 </template>
+
 <script setup>
 import { computed, useSlots } from "vue";
-import { useNamespace } from "@element-plus/hooks";
 
 defineOptions({
 	name: "GovContainer",
 });
-const props = defineProps({
-	/**
-	 * @description layout direction for child elements
-	 */
-	direction: {
-		type: String,
-	},
-});
+
 const slots = useSlots();
 
-const ns = useNamespace("container");
+// 检查vNode是否为GovHeader或GovFooter
+function isGovComponent(vNode) {
+	return ["GovHeader", "GovFooter"].includes(vNode.type.name);
+}
 
+// 使用辅助函数检查是否存在GovHeader或GovFooter组件
 const isVertical = computed(() => {
-	if (props.direction === "vertical") {
-		return true;
-	} else if (props.direction === "horizontal") {
-		return false;
-	}
-	if (slots && slots.default) {
-		const vNodes = slots.default();
-		return vNodes.some((vNode) => {
-			const tag = vNode.type.name;
-			return tag === "ElHeader" || tag === "ElFooter";
-		});
-	} else {
-		return false;
-	}
+	const defaultSlotContent = slots.default?.() || [];
+	return defaultSlotContent.some(isGovComponent);
+});
+
+const classes = computed(() => {
+	return [`gov-container--${isVertical.value ? "vertical" : "horizontal"}`];
 });
 </script>
+
+<style lang="scss" scoped>
+@import "./container.scss";
+</style>

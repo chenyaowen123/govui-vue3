@@ -16,12 +16,12 @@ font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Micros
 
 
 <div class="demo-typography-imgs">
-	<img src="./fontImg/1.png"/>
-	<img src="./fontImg/2.png"/>
-	<img src="./fontImg/3.png"/>
-	<img src="./fontImg/4.png"/>
-	<img src="./fontImg/5.png"/>
-	<img src="./fontImg/6.png"/>
+	<img src="./assets/1.png"/>
+	<img src="./assets/2.png"/>
+	<img src="./assets/3.png"/>
+	<img src="./assets/4.png"/>
+	<img src="./assets/5.png"/>
+	<img src="./assets/6.png"/>
 </div>
 
 ## 字号
@@ -71,7 +71,7 @@ font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Micros
 
 ## 行高
 <script setup>
-import fontLineHeight from './fontLineHeight.vue';
+import fontLineHeight from './assets/fontLineHeight.vue';
 </script>
 
 <fontLineHeight />

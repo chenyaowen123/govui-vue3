@@ -3,7 +3,7 @@ outline: deep
 ---
 
 <script setup>
-import colorCard from './colorCard.vue';
+import colorCard from './assets/colorCard.vue';
 const colorPalette = {
 	primary: {
 		value: "#e74c3c",
