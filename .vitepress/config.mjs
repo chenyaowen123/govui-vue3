@@ -3,7 +3,7 @@ import sidebar from "./sidebar";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-	srcDir: "packages",
+	srcDir: "docs",
 	title: "GovUI",
 	description: "政府系统专用UI",
 	themeConfig: {
@@ -12,7 +12,7 @@ export default defineConfig({
 		nav: [
 			{ text: "首页", link: "/" },
 			{ text: "指南", link: "/guide/" },
-			{ text: "组件", link: "/components/Grid/" },
+			{ text: "组件", link: "/component/button/" },
 		],
 		sidebar,
 		socialLinks: [
