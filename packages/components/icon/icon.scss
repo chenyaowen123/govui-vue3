@@ -1,0 +1,1164 @@
+@font-face {
+  font-family: 'gov-icons';
+  src: url('./fonts/gov-icons.woff') format('woff'), /* chrome, firefox */
+       url('./fonts/gov-icons.ttf') format('truetype'); /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  font-weight: normal;
+  font-display: auto;
+  font-style: normal;
+}
+
+[class^="gov-icon-"], [class*=" gov-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'gov-icons' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: baseline;
+  display: inline-block;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.gov-icon-ice-cream-round:before {
+  content: "\e6a0";
+}
+
+.gov-icon-ice-cream-square:before {
+  content: "\e6a3";
+}
+
+.gov-icon-lollipop:before {
+  content: "\e6a4";
+}
+
+.gov-icon-potato-strips:before {
+  content: "\e6a5";
+}
+
+.gov-icon-milk-tea:before {
+  content: "\e6a6";
+}
+
+.gov-icon-ice-drink:before {
+  content: "\e6a7";
+}
+
+.gov-icon-ice-tea:before {
+  content: "\e6a9";
+}
+
+.gov-icon-coffee:before {
+  content: "\e6aa";
+}
+
+.gov-icon-orange:before {
+  content: "\e6ab";
+}
+
+.gov-icon-pear:before {
+  content: "\e6ac";
+}
+
+.gov-icon-apple:before {
+  content: "\e6ad";
+}
+
+.gov-icon-cherry:before {
+  content: "\e6ae";
+}
+
+.gov-icon-watermelon:before {
+  content: "\e6af";
+}
+
+.gov-icon-grape:before {
+  content: "\e6b0";
+}
+
+.gov-icon-refrigerator:before {
+  content: "\e6b1";
+}
+
+.gov-icon-goblet-square-full:before {
+  content: "\e6b2";
+}
+
+.gov-icon-goblet-square:before {
+  content: "\e6b3";
+}
+
+.gov-icon-goblet-full:before {
+  content: "\e6b4";
+}
+
+.gov-icon-goblet:before {
+  content: "\e6b5";
+}
+
+.gov-icon-cold-drink:before {
+  content: "\e6b6";
+}
+
+.gov-icon-coffee-cup:before {
+  content: "\e6b8";
+}
+
+.gov-icon-water-cup:before {
+  content: "\e6b9";
+}
+
+.gov-icon-hot-water:before {
+  content: "\e6ba";
+}
+
+.gov-icon-ice-cream:before {
+  content: "\e6bb";
+}
+
+.gov-icon-dessert:before {
+  content: "\e6bc";
+}
+
+.gov-icon-sugar:before {
+  content: "\e6bd";
+}
+
+.gov-icon-tableware:before {
+  content: "\e6be";
+}
+
+.gov-icon-burger:before {
+  content: "\e6bf";
+}
+
+.gov-icon-knife-fork:before {
+  content: "\e6c1";
+}
+
+.gov-icon-fork-spoon:before {
+  content: "\e6c2";
+}
+
+.gov-icon-chicken:before {
+  content: "\e6c3";
+}
+
+.gov-icon-food:before {
+  content: "\e6c4";
+}
+
+.gov-icon-dish-1:before {
+  content: "\e6c5";
+}
+
+.gov-icon-dish:before {
+  content: "\e6c6";
+}
+
+.gov-icon-moon-night:before {
+  content: "\e6ee";
+}
+
+.gov-icon-moon:before {
+  content: "\e6f0";
+}
+
+.gov-icon-cloudy-and-sunny:before {
+  content: "\e6f1";
+}
+
+.gov-icon-partly-cloudy:before {
+  content: "\e6f2";
+}
+
+.gov-icon-cloudy:before {
+  content: "\e6f3";
+}
+
+.gov-icon-sunny:before {
+  content: "\e6f6";
+}
+
+.gov-icon-sunset:before {
+  content: "\e6f7";
+}
+
+.gov-icon-sunrise-1:before {
+  content: "\e6f8";
+}
+
+.gov-icon-sunrise:before {
+  content: "\e6f9";
+}
+
+.gov-icon-heavy-rain:before {
+  content: "\e6fa";
+}
+
+.gov-icon-lightning:before {
+  content: "\e6fb";
+}
+
+.gov-icon-light-rain:before {
+  content: "\e6fc";
+}
+
+.gov-icon-wind-power:before {
+  content: "\e6fd";
+}
+
+.gov-icon-baseball:before {
+  content: "\e712";
+}
+
+.gov-icon-soccer:before {
+  content: "\e713";
+}
+
+.gov-icon-football:before {
+  content: "\e715";
+}
+
+.gov-icon-basketball:before {
+  content: "\e716";
+}
+
+.gov-icon-ship:before {
+  content: "\e73f";
+}
+
+.gov-icon-truck:before {
+  content: "\e740";
+}
+
+.gov-icon-bicycle:before {
+  content: "\e741";
+}
+
+.gov-icon-mobile-phone:before {
+  content: "\e6d3";
+}
+
+.gov-icon-service:before {
+  content: "\e6d4";
+}
+
+.gov-icon-key:before {
+  content: "\e6e2";
+}
+
+.gov-icon-unlock:before {
+  content: "\e6e4";
+}
+
+.gov-icon-lock:before {
+  content: "\e6e5";
+}
+
+.gov-icon-watch:before {
+  content: "\e6fe";
+}
+
+.gov-icon-watch-1:before {
+  content: "\e6ff";
+}
+
+.gov-icon-timer:before {
+  content: "\e702";
+}
+
+.gov-icon-alarm-clock:before {
+  content: "\e703";
+}
+
+.gov-icon-map-location:before {
+  content: "\e704";
+}
+
+.gov-icon-delete-location:before {
+  content: "\e705";
+}
+
+.gov-icon-add-location:before {
+  content: "\e706";
+}
+
+.gov-icon-location-information:before {
+  content: "\e707";
+}
+
+.gov-icon-location-outline:before {
+  content: "\e708";
+}
+
+.gov-icon-location:before {
+  content: "\e79e";
+}
+
+.gov-icon-place:before {
+  content: "\e709";
+}
+
+.gov-icon-discover:before {
+  content: "\e70a";
+}
+
+.gov-icon-first-aid-kit:before {
+  content: "\e70b";
+}
+
+.gov-icon-trophy-1:before {
+  content: "\e70c";
+}
+
+.gov-icon-trophy:before {
+  content: "\e70d";
+}
+
+.gov-icon-medal:before {
+  content: "\e70e";
+}
+
+.gov-icon-medal-1:before {
+  content: "\e70f";
+}
+
+.gov-icon-stopwatch:before {
+  content: "\e710";
+}
+
+.gov-icon-mic:before {
+  content: "\e711";
+}
+
+.gov-icon-copy-document:before {
+  content: "\e718";
+}
+
+.gov-icon-full-screen:before {
+  content: "\e719";
+}
+
+.gov-icon-switch-button:before {
+  content: "\e71b";
+}
+
+.gov-icon-aim:before {
+  content: "\e71c";
+}
+
+.gov-icon-crop:before {
+  content: "\e71d";
+}
+
+.gov-icon-odometer:before {
+  content: "\e71e";
+}
+
+.gov-icon-time:before {
+  content: "\e71f";
+}
+
+.gov-icon-bangzhu:before {
+  content: "\e724";
+}
+
+.gov-icon-close-notification:before {
+  content: "\e726";
+}
+
+.gov-icon-microphone:before {
+  content: "\e727";
+}
+
+.gov-icon-turn-off-microphone:before {
+  content: "\e728";
+}
+
+.gov-icon-position:before {
+  content: "\e729";
+}
+
+.gov-icon-postcard:before {
+  content: "\e72a";
+}
+
+.gov-icon-message:before {
+  content: "\e72b";
+}
+
+.gov-icon-chat-line-square:before {
+  content: "\e72d";
+}
+
+.gov-icon-chat-dot-square:before {
+  content: "\e72e";
+}
+
+.gov-icon-chat-dot-round:before {
+  content: "\e72f";
+}
+
+.gov-icon-chat-square:before {
+  content: "\e730";
+}
+
+.gov-icon-chat-line-round:before {
+  content: "\e731";
+}
+
+.gov-icon-chat-round:before {
+  content: "\e732";
+}
+
+.gov-icon-set-up:before {
+  content: "\e733";
+}
+
+.gov-icon-turn-off:before {
+  content: "\e734";
+}
+
+.gov-icon-open:before {
+  content: "\e735";
+}
+
+.gov-icon-connection:before {
+  content: "\e736";
+}
+
+.gov-icon-link:before {
+  content: "\e737";
+}
+
+.gov-icon-cpu:before {
+  content: "\e738";
+}
+
+.gov-icon-thumb:before {
+  content: "\e739";
+}
+
+.gov-icon-female:before {
+  content: "\e73a";
+}
+
+.gov-icon-male:before {
+  content: "\e73b";
+}
+
+.gov-icon-guide:before {
+  content: "\e73c";
+}
+
+.gov-icon-news:before {
+  content: "\e73e";
+}
+
+.gov-icon-price-tag:before {
+  content: "\e744";
+}
+
+.gov-icon-discount:before {
+  content: "\e745";
+}
+
+.gov-icon-wallet:before {
+  content: "\e747";
+}
+
+.gov-icon-coin:before {
+  content: "\e748";
+}
+
+.gov-icon-money:before {
+  content: "\e749";
+}
+
+.gov-icon-bank-card:before {
+  content: "\e74a";
+}
+
+.gov-icon-box:before {
+  content: "\e74b";
+}
+
+.gov-icon-present:before {
+  content: "\e74c";
+}
+
+.gov-icon-sell:before {
+  content: "\e6d5";
+}
+
+.gov-icon-sold-out:before {
+  content: "\e6d6";
+}
+
+.gov-icon-shopping-bag-2:before {
+  content: "\e74d";
+}
+
+.gov-icon-shopping-bag-1:before {
+  content: "\e74e";
+}
+
+.gov-icon-shopping-cart-2:before {
+  content: "\e74f";
+}
+
+.gov-icon-shopping-cart-1:before {
+  content: "\e750";
+}
+
+.gov-icon-shopping-cart-full:before {
+  content: "\e751";
+}
+
+.gov-icon-smoking:before {
+  content: "\e752";
+}
+
+.gov-icon-no-smoking:before {
+  content: "\e753";
+}
+
+.gov-icon-house:before {
+  content: "\e754";
+}
+
+.gov-icon-table-lamp:before {
+  content: "\e755";
+}
+
+.gov-icon-school:before {
+  content: "\e756";
+}
+
+.gov-icon-office-building:before {
+  content: "\e757";
+}
+
+.gov-icon-toilet-paper:before {
+  content: "\e758";
+}
+
+.gov-icon-notebook-2:before {
+  content: "\e759";
+}
+
+.gov-icon-notebook-1:before {
+  content: "\e75a";
+}
+
+.gov-icon-files:before {
+  content: "\e75b";
+}
+
+.gov-icon-collection:before {
+  content: "\e75c";
+}
+
+.gov-icon-receiving:before {
+  content: "\e75d";
+}
+
+.gov-icon-suitcase-1:before {
+  content: "\e760";
+}
+
+.gov-icon-suitcase:before {
+  content: "\e761";
+}
+
+.gov-icon-film:before {
+  content: "\e763";
+}
+
+.gov-icon-collection-tag:before {
+  content: "\e765";
+}
+
+.gov-icon-data-analysis:before {
+  content: "\e766";
+}
+
+.gov-icon-pie-chart:before {
+  content: "\e767";
+}
+
+.gov-icon-data-board:before {
+  content: "\e768";
+}
+
+.gov-icon-data-line:before {
+  content: "\e76d";
+}
+
+.gov-icon-reading:before {
+  content: "\e769";
+}
+
+.gov-icon-magic-stick:before {
+  content: "\e76a";
+}
+
+.gov-icon-coordinate:before {
+  content: "\e76b";
+}
+
+.gov-icon-mouse:before {
+  content: "\e76c";
+}
+
+.gov-icon-brush:before {
+  content: "\e76e";
+}
+
+.gov-icon-headset:before {
+  content: "\e76f";
+}
+
+.gov-icon-umbrella:before {
+  content: "\e770";
+}
+
+.gov-icon-scissors:before {
+  content: "\e771";
+}
+
+.gov-icon-mobile:before {
+  content: "\e773";
+}
+
+.gov-icon-attract:before {
+  content: "\e774";
+}
+
+.gov-icon-monitor:before {
+  content: "\e775";
+}
+
+.gov-icon-search:before {
+  content: "\e778";
+}
+
+.gov-icon-takeaway-box:before {
+  content: "\e77a";
+}
+
+.gov-icon-paperclip:before {
+  content: "\e77d";
+}
+
+.gov-icon-printer:before {
+  content: "\e77e";
+}
+
+.gov-icon-document-add:before {
+  content: "\e782";
+}
+
+.gov-icon-document:before {
+  content: "\e785";
+}
+
+.gov-icon-document-checked:before {
+  content: "\e786";
+}
+
+.gov-icon-document-copy:before {
+  content: "\e787";
+}
+
+.gov-icon-document-delete:before {
+  content: "\e788";
+}
+
+.gov-icon-document-remove:before {
+  content: "\e789";
+}
+
+.gov-icon-tickets:before {
+  content: "\e78b";
+}
+
+.gov-icon-folder-checked:before {
+  content: "\e77f";
+}
+
+.gov-icon-folder-delete:before {
+  content: "\e780";
+}
+
+.gov-icon-folder-remove:before {
+  content: "\e781";
+}
+
+.gov-icon-folder-add:before {
+  content: "\e783";
+}
+
+.gov-icon-folder-opened:before {
+  content: "\e784";
+}
+
+.gov-icon-folder:before {
+  content: "\e78a";
+}
+
+.gov-icon-edit-outline:before {
+  content: "\e764";
+}
+
+.gov-icon-edit:before {
+  content: "\e78c";
+}
+
+.gov-icon-date:before {
+  content: "\e78e";
+}
+
+.gov-icon-c-scale-to-original:before {
+  content: "\e7c6";
+}
+
+.gov-icon-view:before {
+  content: "\e6ce";
+}
+
+.gov-icon-loading:before {
+  content: "\e6cf";
+}
+
+.gov-icon-rank:before {
+  content: "\e6d1";
+}
+
+.gov-icon-sort-down:before {
+  content: "\e7c4";
+}
+
+.gov-icon-sort-up:before {
+  content: "\e7c5";
+}
+
+.gov-icon-sort:before {
+  content: "\e6d2";
+}
+
+.gov-icon-finished:before {
+  content: "\e6cd";
+}
+
+.gov-icon-refresh-left:before {
+  content: "\e6c7";
+}
+
+.gov-icon-refresh-right:before {
+  content: "\e6c8";
+}
+
+.gov-icon-refresh:before {
+  content: "\e6d0";
+}
+
+.gov-icon-video-play:before {
+  content: "\e7c0";
+}
+
+.gov-icon-video-pause:before {
+  content: "\e7c1";
+}
+
+.gov-icon-d-arrow-right:before {
+  content: "\e6dc";
+}
+
+.gov-icon-d-arrow-left:before {
+  content: "\e6dd";
+}
+
+.gov-icon-arrow-up:before {
+  content: "\e6e1";
+}
+
+.gov-icon-arrow-down:before {
+  content: "\e6df";
+}
+
+.gov-icon-arrow-right:before {
+  content: "\e6e0";
+}
+
+.gov-icon-arrow-left:before {
+  content: "\e6de";
+}
+
+.gov-icon-top-right:before {
+  content: "\e6e7";
+}
+
+.gov-icon-top-left:before {
+  content: "\e6e8";
+}
+
+.gov-icon-top:before {
+  content: "\e6e6";
+}
+
+.gov-icon-bottom:before {
+  content: "\e6eb";
+}
+
+.gov-icon-right:before {
+  content: "\e6e9";
+}
+
+.gov-icon-back:before {
+  content: "\e6ea";
+}
+
+.gov-icon-bottom-right:before {
+  content: "\e6ec";
+}
+
+.gov-icon-bottom-left:before {
+  content: "\e6ed";
+}
+
+.gov-icon-caret-top:before {
+  content: "\e78f";
+}
+
+.gov-icon-caret-bottom:before {
+  content: "\e790";
+}
+
+.gov-icon-caret-right:before {
+  content: "\e791";
+}
+
+.gov-icon-caret-left:before {
+  content: "\e792";
+}
+
+.gov-icon-d-caret:before {
+  content: "\e79a";
+}
+
+.gov-icon-share:before {
+  content: "\e793";
+}
+
+.gov-icon-menu:before {
+  content: "\e798";
+}
+
+.gov-icon-s-grid:before {
+  content: "\e7a6";
+}
+
+.gov-icon-s-check:before {
+  content: "\e7a7";
+}
+
+.gov-icon-s-data:before {
+  content: "\e7a8";
+}
+
+.gov-icon-s-opportunity:before {
+  content: "\e7aa";
+}
+
+.gov-icon-s-custom:before {
+  content: "\e7ab";
+}
+
+.gov-icon-s-claim:before {
+  content: "\e7ad";
+}
+
+.gov-icon-s-finance:before {
+  content: "\e7ae";
+}
+
+.gov-icon-s-comment:before {
+  content: "\e7af";
+}
+
+.gov-icon-s-flag:before {
+  content: "\e7b0";
+}
+
+.gov-icon-s-marketing:before {
+  content: "\e7b1";
+}
+
+.gov-icon-s-shop:before {
+  content: "\e7b4";
+}
+
+.gov-icon-s-open:before {
+  content: "\e7b5";
+}
+
+.gov-icon-s-management:before {
+  content: "\e7b6";
+}
+
+.gov-icon-s-ticket:before {
+  content: "\e7b7";
+}
+
+.gov-icon-s-release:before {
+  content: "\e7b8";
+}
+
+.gov-icon-s-home:before {
+  content: "\e7b9";
+}
+
+.gov-icon-s-promotion:before {
+  content: "\e7ba";
+}
+
+.gov-icon-s-operation:before {
+  content: "\e7bb";
+}
+
+.gov-icon-s-unfold:before {
+  content: "\e7bc";
+}
+
+.gov-icon-s-fold:before {
+  content: "\e7a9";
+}
+
+.gov-icon-s-platform:before {
+  content: "\e7bd";
+}
+
+.gov-icon-s-order:before {
+  content: "\e7be";
+}
+
+.gov-icon-s-cooperation:before {
+  content: "\e7bf";
+}
+
+.gov-icon-bell:before {
+  content: "\e725";
+}
+
+.gov-icon-message-solid:before {
+  content: "\e799";
+}
+
+.gov-icon-video-camera:before {
+  content: "\e772";
+}
+
+.gov-icon-video-camera-solid:before {
+  content: "\e796";
+}
+
+.gov-icon-camera:before {
+  content: "\e779";
+}
+
+.gov-icon-camera-solid:before {
+  content: "\e79b";
+}
+
+.gov-icon-download:before {
+  content: "\e77c";
+}
+
+.gov-icon-upload2:before {
+  content: "\e77b";
+}
+
+.gov-icon-upload:before {
+  content: "\e7c3";
+}
+
+.gov-icon-picture-outline-round:before {
+  content: "\e75f";
+}
+
+.gov-icon-picture-outline:before {
+  content: "\e75e";
+}
+
+.gov-icon-picture:before {
+  content: "\e79f";
+}
+
+.gov-icon-close:before {
+  content: "\e6db";
+}
+
+.gov-icon-check:before {
+  content: "\e6da";
+}
+
+.gov-icon-plus:before {
+  content: "\e6d9";
+}
+
+.gov-icon-minus:before {
+  content: "\e6d8";
+}
+
+.gov-icon-help:before {
+  content: "\e73d";
+}
+
+.gov-icon-s-help:before {
+  content: "\e7b3";
+}
+
+.gov-icon-circle-close:before {
+  content: "\e78d";
+}
+
+.gov-icon-circle-check:before {
+  content: "\e720";
+}
+
+.gov-icon-circle-plus-outline:before {
+  content: "\e723";
+}
+
+.gov-icon-remove-outline:before {
+  content: "\e722";
+}
+
+.gov-icon-zoom-out:before {
+  content: "\e776";
+}
+
+.gov-icon-zoom-in:before {
+  content: "\e777";
+}
+
+.gov-icon-error:before {
+  content: "\e79d";
+}
+
+.gov-icon-success:before {
+  content: "\e79c";
+}
+
+.gov-icon-circle-plus:before {
+  content: "\e7a0";
+}
+
+.gov-icon-remove:before {
+  content: "\e7a2";
+}
+
+.gov-icon-info:before {
+  content: "\e7a1";
+}
+
+.gov-icon-question:before {
+  content: "\e7a4";
+}
+
+.gov-icon-warning-outline:before {
+  content: "\e6c9";
+}
+
+.gov-icon-warning:before {
+  content: "\e7a3";
+}
+
+.gov-icon-goods:before {
+  content: "\e7c2";
+}
+
+.gov-icon-s-goods:before {
+  content: "\e7b2";
+}
+
+.gov-icon-star-off:before {
+  content: "\e717";
+}
+
+.gov-icon-star-on:before {
+  content: "\e797";
+}
+
+.gov-icon-more-outline:before {
+  content: "\e6cc";
+}
+
+.gov-icon-more:before {
+  content: "\e794";
+}
+
+.gov-icon-phone-outline:before {
+  content: "\e6cb";
+}
+
+.gov-icon-phone:before {
+  content: "\e795";
+}
+
+.gov-icon-user:before {
+  content: "\e6e3";
+}
+
+.gov-icon-user-solid:before {
+  content: "\e7a5";
+}
+
+.gov-icon-setting:before {
+  content: "\e6ca";
+}
+
+.gov-icon-s-tools:before {
+  content: "\e7ac";
+}
+
+.gov-icon-delete:before {
+  content: "\e6d7";
+}
+
+.gov-icon-delete-solid:before {
+  content: "\e7c9";
+}
+
+.gov-icon-eleme:before {
+  content: "\e7c7";
+}
+
+.gov-icon-platform-eleme:before {
+  content: "\e7ca";
+}
+
+.gov-icon-loading {
+  animation: rotating 2s linear infinite;
+}
+
+.gov-icon--right {
+  margin-left: 5px;
+}
+.gov-icon--left {
+  margin-right: 5px;
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}

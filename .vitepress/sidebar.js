@@ -24,6 +24,10 @@ const componentSidebar = [
 						link: "/component/container",
 					},
 					{
+						text: "Icon 图标",
+						link: "/component/icon",
+					},
+					{
 						text: "Button 按钮",
 						link: "/component/button",
 					},

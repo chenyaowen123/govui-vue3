@@ -9,6 +9,8 @@ import footer from "./components/container/footer.vue";
 import header from "./components/container/header.vue";
 import main from "./components/container/main.vue";
 
+import icon from "./components/icon/icon.vue";
+
 // 导出所有组件
 const components = {
 	button,
@@ -21,6 +23,8 @@ const components = {
 	footer,
 	header,
 	main,
+
+	icon,
 };
 
 // 提供一个全局安装方法
