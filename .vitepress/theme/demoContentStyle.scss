@@ -39,5 +39,28 @@
 
 // container 布局
 .demo-gov-container{
-	min-height: 320px;
+	.gov-aside,
+	.gov-footer,
+	.gov-header,
+	.gov-main{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.gov-aside{
+		background: rgb(231, 76, 60, 0.75);
+		color:#fff;
+	}
+	.gov-header{
+		background: rgb(231, 76, 60, 1);
+		color:#fff;
+	}
+	.gov-footer{
+		background: rgb(231, 76, 60, 0.5);
+		color:#fff;
+	}
+	.gov-main{
+		background: rgb(231, 76, 60, 0.1);
+		height:100px;
+	}
 }
