@@ -7,6 +7,10 @@
 <script setup>
 import { computed, provide } from "vue";
 
+defineOptions({
+	name: "GovRow",
+});
+
 const props = defineProps({
 	gutter: {
 		type: Number,

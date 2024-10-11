@@ -5,7 +5,11 @@
 </template>
 
 <script setup>
-import { defineProps, computed, inject } from "vue";
+import { computed, inject } from "vue";
+
+defineOptions({
+	name: "GovCol",
+});
 
 const props = defineProps({
 	span: {
