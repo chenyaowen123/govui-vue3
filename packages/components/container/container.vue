@@ -30,5 +30,18 @@ const classes = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-@import "./container.scss";
+.gov-container {
+	display: flex;
+	flex-direction: row;
+	flex: 1;
+	flex-basis: auto;
+	box-sizing: border-box;
+	min-width: 0;
+	&--vertical {
+		flex-direction: column;
+	}
+	&--horizontal {
+		flex-direction: row;
+	}
+}
 </style>

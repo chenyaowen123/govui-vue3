@@ -6,7 +6,6 @@
 
 <script setup>
 import { computed } from "vue";
-import { ensureCssUnit } from "../../utils/index";
 
 defineOptions({
 	name: "GovAside",
@@ -15,13 +14,23 @@ defineOptions({
 const props = defineProps({
 	width: {
 		type: [String, Number],
-		default: "250px",
+		default: null,
 	},
 });
 
 const style = computed(() => {
+	const val = props.width;
 	return {
-		width: ensureCssUnit(props.width),
+		width: typeof val === "number" ? `${val}px` : val || null,
 	};
 });
 </script>
+
+<style lang="scss" scoped>
+.gov-aside {
+	overflow: auto;
+	box-sizing: border-box;
+	flex-shrink: 0;
+	width: 200px;
+}
+</style>

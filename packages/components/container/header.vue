@@ -5,7 +5,6 @@
 </template>
 <script setup>
 import { computed } from "vue";
-import { ensureCssUnit } from "../../utils/index";
 
 defineOptions({
 	name: "GovHeader",
@@ -14,13 +13,23 @@ defineOptions({
 const props = defineProps({
 	height: {
 		type: String,
-		default: "60px",
+		default: null,
 	},
 });
 
 const style = computed(() => {
+	const val = props.height;
 	return {
-		height: ensureCssUnit(props.height),
+		height: typeof val === "number" ? `${val}px` : val || null,
 	};
 });
 </script>
+
+<style lang="scss" scoped>
+.gov-header {
+	padding: 0 20px;
+	box-sizing: border-box;
+	flex-shrink: 0;
+	height: 60px;
+}
+</style>
