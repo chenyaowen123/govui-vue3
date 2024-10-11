@@ -3,35 +3,49 @@ outline: deep
 ---
 
 # Container 布局容器
-用于布局的容器组件，方便快速搭建平台基本结构。
+用于布局的容器组件，基于flex布局，方便快速搭建平台基本结构。
+
+以下四种布局组件提供名称为 ```default``` 的默认插槽，用于自定义内容。
 
 <table style="width:100%; display:table;">
   <thead>
     <tr>
       <th width="130">组件</th>
-      <th>说明</th>
+	  <th width="100">Attributes</th>
+	  <th width="100">默认值</th>
+      <th>组件说明</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>gov-container</td>
-      <td>布局容器组件，用于包裹其他布局组件，提供整体布局的外部容器。直接子元素必须是其它四个组件中的一个或多个</td>
+	  <td>-</td>
+	  <td>-</td>
+      <td>布局容器组件，直接子元素必须是其它四个组件中的一个或多个</td>
     </tr>
     <tr>
       <td>gov-header</td>
-      <td>布局头部组件，通常用于页面顶部的导航或标题区域。</td>
+	  <td>height</td>
+	  <td>60px</td>
+      <td>布局头部组件。</td>
     </tr>
     <tr>
       <td>gov-aside</td>
-      <td>布局侧边组件，用于页面的侧边栏，通常包含导航菜单或其他辅助信息。</td>
+	  <td>width</td>
+	  <td>200px</td>
+      <td>布局侧边组件。</td>
     </tr>
     <tr>
       <td>gov-main</td>
-      <td>布局主要内容区域组件，用于放置页面的主要内容。</td>
+	  <td>-</td>
+	  <td>-</td>
+      <td>布局主要内容区域组件。</td>
     </tr>
     <tr>
       <td>gov-footer</td>
-      <td>布局底部组件，通常用于页面底部的信息展示，如版权声明等。</td>
+	  <td>height</td>
+	  <td>60px</td>
+      <td>布局底部组件。</td>
     </tr>
   </tbody>
 </table>
