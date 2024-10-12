@@ -1,3 +1,14 @@
 // 主题主文件，导出变量，这样其他文件可以引用它们。@forward 是Sass的一个指令，它允许你导入另一个文件的变量和混合（mixins）。
 @forward 'variables';
 
+
+
+:root{
+	// container
+	--gov-aside-width:200px;
+	--gov-footer-height:60px;
+	--gov-header-height:60px;
+
+	// button
+}
+

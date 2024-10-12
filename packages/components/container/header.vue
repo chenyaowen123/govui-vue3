@@ -26,10 +26,11 @@ const style = computed(() => {
 </script>
 
 <style lang="scss" scoped>
+@use "../../styles/theme" as *;
 .gov-header {
 	padding: 0 20px;
 	box-sizing: border-box;
 	flex-shrink: 0;
-	height: 60px;
+	height: var(--gov-header-height);
 }
 </style>
