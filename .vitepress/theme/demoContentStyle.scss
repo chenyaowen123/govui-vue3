@@ -1,14 +1,14 @@
 // typography 字体
-.demo-typography-imgs{
-	img{
+.demo-typography-imgs {
+	img {
 		float: left;
 		width: 210px;
 		height: 165px;
 		margin: 9px;
 	}
-	&::after{
+	&::after {
 		display: block;
-		content: '';
+		content: "";
 		clear: both;
 	}
 }
@@ -38,37 +38,66 @@
 }
 
 // container 布局
-.demo-gov-container{
+.demo-gov-container {
 	.gov-aside,
 	.gov-footer,
 	.gov-header,
-	.gov-main{
+	.gov-main {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 	}
-	.gov-aside{
+	.gov-aside {
 		background: rgb(231, 76, 60, 0.75);
-		color:#fff;
+		color: #fff;
 	}
-	.gov-header{
+	.gov-header {
 		background: rgb(231, 76, 60, 1);
-		color:#fff;
+		color: #fff;
 	}
-	.gov-footer{
+	.gov-footer {
 		background: rgb(231, 76, 60, 0.5);
-		color:#fff;
+		color: #fff;
 	}
-	.gov-main{
+	.gov-main {
 		background: rgb(231, 76, 60, 0.1);
-		height:100px;
+		height: 100px;
 	}
 }
 
 // icon
-.demo-gov-icon{
-	font-size: 24px;
-	.gov-icon{
+.demo-gov-icon {
+	font-size: 28px;
+	.gov-icon {
 		margin: 20px;
+	}
+}
+
+.demo-gov-icons {
+	.list {
+		display: flex;
+		flex-wrap: wrap;
+		gap:0;
+		padding-left: 1px;
+		.box {
+			width: 25%;
+			height: 145px;
+			border: 1px solid var(--vp-c-divider);
+			margin: -1px 0 0 -1px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			gap: 5px;
+			transition: background 0.3s ease,  color 0.3s ease;
+			font-size: 14px;
+			.gov-icon {
+				font-size: 28px;
+			}
+			&:hover{
+				color: var(--vp-c-brand-1);
+				background: var(--vp-c-caution-soft);
+			}
+		}
 	}
 }

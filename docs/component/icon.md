@@ -25,3 +25,15 @@ outline: deep
 
 ## 图标集合
 
+<script setup>
+import iconList from "./icon.js";
+</script>
+
+<demo-container class="demo-gov-icons">
+	<div class="list">
+		<div class="box" v-for="icon in iconList" :key="icon">
+			<gov-icon :name="icon"/>
+			<div>{{icon}}</div>
+		</div>
+	</div>
+</demo-container>
