@@ -1,0 +1,64 @@
+@use "../../styles/theme.scss" as *;
+
+.gov-link {
+	display: inline-flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	vertical-align: middle;
+	position: relative;
+	text-decoration: none !important;
+	outline: none;
+	cursor: pointer;
+	padding: 0;
+	font-size: 14px;
+	font-weight: normal;
+
+	// 带图标
+	& [class*="gov-icon-"] {
+		& + span {
+			margin-left: 5px;
+		}
+	}
+
+	&.is-disabled {
+		cursor: not-allowed;
+	}
+
+	&.is-underline {
+		&:hover .gov-link-line {
+			position: absolute;
+			left: 0;
+			right: 0;
+			height: 0;
+			bottom: 0;
+			border-bottom: 1px solid var(--gov-border-color);
+		}
+	}
+
+	// 默认
+	&.gov-link--default {
+		color: var(--gov-text-color);
+		&:hover, &.is-disabled {
+			color: var(--gov-text-color-5);
+			border-color: var(--gov-text-color-5);
+		}
+		.gov-link-line {
+			border-color: var(--gov-text-color-5);
+		}
+	}
+
+	// 不同主题
+	@each $type, $color in $theme-colors {
+		&.gov-link--#{$type} {
+			color: var(--gov-#{$type});
+			&:hover, &.is-disabled {
+				color: var(--gov-#{$type}-5);
+				border-color: var(--gov-#{$type}-5);
+			}
+			.gov-link-line {
+				border-color: var(--gov-#{$type}-5);
+			}
+		}
+	}
+}

@@ -31,6 +31,10 @@ const componentSidebar = [
 						text: "Button 按钮",
 						link: "/component/button",
 					},
+					{
+						text: "Link 文本链接",
+						link: "/component/link",
+					},
 				],
 			},
 		],

@@ -17,8 +17,8 @@
 			},
 		]"
 	>
-		<GovIcon name="loading" v-if="loading"></GovIcon>
-		<GovIcon :name="icon" v-if="icon && !loading"></GovIcon>
+		<GovIcon name="loading" v-if="loading" />
+		<GovIcon :name="icon" v-if="icon && !loading" />
 		<span v-if="hasDefaultSlotContent"><slot></slot></span>
 	</button>
 </template>

@@ -10,6 +10,7 @@ import main from "./components/container/main.vue";
 import icon from "./components/icon/icon.vue";
 import buttonGroup from "./components/button/button-group.vue";
 import button from "./components/button/button.vue";
+import link from "./components/link/link.vue";
 
 // 导出所有组件
 const components = {
@@ -25,6 +26,7 @@ const components = {
 	icon,
 	buttonGroup,
 	button,
+	link,
 };
 
 // 提供一个全局安装方法

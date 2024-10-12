@@ -1,16 +1,23 @@
 @use "sass:math";
 
-// 定义基本色板
-$colors: (
+// 定义主题色板
+$theme-colors: (
 	"primary": #e74c3c,
 	"success": #27ae60,
 	"warning": #f39c12,
 	"danger": #8e44ad,
-	"info": #909399,
+	"info": #909399
+) !default;
+
+// 定义其它颜色
+$special-colors: (
 	"text-color": #303133,
 	"border-color": #cdd0d6,
 	"fill-color": #e6e8eb
 ) !default;
+
+// 合并两个映射
+$colors: map-merge($theme-colors, $special-colors) !default;
 
 :root {
 	@each $color-name, $color-value in $colors {
