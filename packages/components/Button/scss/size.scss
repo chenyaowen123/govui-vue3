@@ -3,7 +3,11 @@
 	font-size: var(--gov-button-#{$size}-font-size);
 	border-radius: 4px;
 	&.is-round {
-		padding: var(--gov-button-size-#{$size}-padding);
+		padding: var(--gov-button-#{$size}-padding);
 		border-radius: 20px;
+	}
+	&.is-circle{
+		border-radius: 50%;
+    	padding: var(--gov-button-#{$size}-padding-v);
 	}
 }

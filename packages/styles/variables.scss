@@ -14,11 +14,10 @@ $colors: (
 
 :root {
 	@each $color-name, $color-value in $colors {
-		--gov-#{$color-name}: #{$color-value};
 		--gov-#{$color-name}-dark: #{mix(#000, $color-value, 25%)};
-		@for $i from 1 through 3 {
-			$percentage: math.div($i * 25, 100); // 计算百分比（25%, 50%, 75%）
-			$color-tint: mix(white, $color-value, $percentage * 100%); // 混合颜色
+		--gov-#{$color-name}: #{$color-value};
+		@for $i from 1 through 9 {
+			$color-tint: mix(white, $color-value, $i * 10%); // 10% - 90%
 			--gov-#{$color-name}-#{$i}: #{$color-tint};
 		}
 	}

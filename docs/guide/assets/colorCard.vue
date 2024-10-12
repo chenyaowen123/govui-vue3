@@ -8,11 +8,14 @@
 			<div class="color-title">{{ name }}</div>
 			<div class="color-value">{{ color }}</div>
 		</div>
-		<div class="color-list" v-if="list.length">
+		<div class="color-list">
 			<div
-				v-for="(value, index) in list"
-				:key="index"
-				:style="{ backgroundColor: value }"
+				v-for="val in 4"
+				:key="val"
+				:style="{
+					backgroundColor: color,
+					opacity: 1 - 0.2 * val,
+				}"
 			/>
 		</div>
 	</div>
@@ -76,10 +79,10 @@ export default {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		background: #fff;
 		div {
 			flex: 1;
 			height: 100%;
-			list-style: none;
 		}
 	}
 }

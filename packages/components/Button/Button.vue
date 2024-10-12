@@ -7,7 +7,7 @@
 		:type="nativeType"
 		:class="[
 			type ? 'gov-button--' + type : '',
-			buttonSize ? 'gov-button--' + buttonSize : '',
+			buttonSize ? 'gov-button--size-' + buttonSize : '',
 			{
 				'is-disabled': buttonDisabled,
 				'is-loading': loading,
@@ -17,14 +17,15 @@
 			},
 		]"
 	>
-		<i class="gov-icon-loading" v-if="loading"></i>
-		<i :class="icon" v-if="icon && !loading"></i>
-		<span><slot></slot></span>
+		<GovIcon name="loading" v-if="loading"></GovIcon>
+		<GovIcon :name="icon" v-if="icon && !loading"></GovIcon>
+		<span v-if="hasDefaultSlotContent"><slot></slot></span>
 	</button>
 </template>
 
 <script setup>
-import { computed, inject } from "vue";
+import { computed, inject, useSlots } from "vue";
+import GovIcon from "../icon/icon.vue";
 
 defineOptions({
 	name: "GovButton",
@@ -34,7 +35,7 @@ defineOptions({
 const props = defineProps({
 	type: {
 		type: String,
-		default: "primary",
+		default: "default",
 	},
 	size: String,
 	icon: {
@@ -56,6 +57,12 @@ const props = defineProps({
 // 依赖注入
 const govForm = inject("govForm", "");
 const govFormItem = inject("govFormItem", "");
+
+// 是否有默认插入内容
+const slots = useSlots();
+const hasDefaultSlotContent = computed(() => {
+	return slots.default && slots.default().length > 0;
+});
 
 // 计算按钮大小
 const buttonSize = computed(() => {

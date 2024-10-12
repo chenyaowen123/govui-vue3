@@ -23,24 +23,27 @@
 		margin-left: 10px;
 	}
 
-	& [class*="el-icon-"] {
+	& [class*="gov-icon-"] {
 		& + span {
 			margin-left: 5px;
 		}
 	}
 
-	// 大小
-	&--large {
+	// 形状
+	&--size-large {
 		@include button-size(large);
 	}
-	&--default {
+	&--size-default {
 		@include button-size(default);
 	}
-	&--small {
+	&--size-small {
 		@include button-size(small);
 	}
 
-	// 类似
+	// 类型，default单独定义
+	&--default {
+		@include button-default(primary);
+	}
 	&--primary {
 		@include button-type(primary);
 	}
@@ -56,4 +59,7 @@
 	&--danger {
 		@include button-type(danger);
 	}
+
+	// 文本类型
+
 }
