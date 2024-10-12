@@ -61,5 +61,34 @@
 	}
 
 	// 文本类型
+	&--text{
+		border-color: transparent;
+		color: var(--gov-primary);
+		background: transparent;
+		padding-left: 0;
+		padding-right: 0;
+
+		&:hover,
+		&:focus {
+			color: var(--gov-primary);
+			border-color: transparent;
+			background-color: transparent;
+		}
+		&:active {
+			color: var(--gov-primary-3);
+			border-color: transparent;
+			background-color: transparent;
+		}
+
+		&.is-disabled,
+		&.is-disabled:hover,
+		&.is-disabled:focus {
+			border-color: transparent;
+		}
+		&.is-disabled{
+			cursor: not-allowed;
+			color: var(--gov-text-color-6);
+		}
+	}
 
 }
