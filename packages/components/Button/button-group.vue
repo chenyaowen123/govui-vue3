@@ -10,7 +10,5 @@ defineOptions({
 </script>
 
 <style lang="scss">
-@use "../../styles/theme" as *;
-.gov-button {
-}
+@import "./scss/buttonGroup.scss";
 </style>

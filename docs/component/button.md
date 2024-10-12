@@ -154,3 +154,132 @@ outline: deep
 <gov-button type="text">文字按钮</gov-button>
 <gov-button type="text" disabled>文字按钮</gov-button>
 ```
+
+## 按钮组
+
+<demo-container class="demo-gov-row">
+	<gov-button-group>
+		<gov-button type="primary">按钮组</gov-button>
+		<gov-button type="primary">按钮组</gov-button>
+		<gov-button type="success">按钮组</gov-button>
+	</gov-button-group>
+	<br/>
+	<br/>
+	<gov-button-group>
+		<gov-button type="primary" round>按钮组</gov-button>
+		<gov-button type="primary" round>按钮组</gov-button>
+		<gov-button type="warning" round>按钮组</gov-button>
+	</gov-button-group>
+	<br/>
+	<br/>
+	<gov-button-group>
+		<gov-button type="primary" icon="user-solid" circle/>
+		<gov-button type="primary" icon="edit" circle>按钮组</gov-button>
+		<gov-button type="primary" icon="s-tools" circle/>
+	</gov-button-group>
+</demo-container>
+
+```md
+<gov-button-group>
+	<gov-button type="primary">按钮组</gov-button>
+	<gov-button type="primary">按钮组</gov-button>
+	<gov-button type="success">按钮组</gov-button>
+</gov-button-group>
+<gov-button-group>
+	<gov-button type="primary" round>按钮组</gov-button>
+	<gov-button type="primary" round>按钮组</gov-button>
+	<gov-button type="success" round>按钮组</gov-button>
+</gov-button-group>
+<gov-button-group>
+	<gov-button type="primary" icon="user-solid" circle/>
+	<gov-button type="primary" icon="edit" circle>按钮组</gov-button>
+	<gov-button type="primary" icon="s-tools" circle/>
+</gov-button-group>
+```
+
+
+## Attributes
+
+<table>
+  <thead>
+    <tr>
+      <th width="110">属性</th>
+      <th width="120">说明</th>
+      <th width="90">类型</th>
+      <th>可选值</th>
+      <th width="80">默认值</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>size</td>
+      <td>尺寸</td>
+      <td>string</td>
+      <td>large / default / small</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>类型</td>
+      <td>string</td>
+      <td>primary / success / warning / danger / info / text</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>plain</td>
+      <td>是否朴素按钮</td>
+      <td>boolean</td>
+      <td>—</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>round</td>
+      <td>是否圆角按钮</td>
+      <td>boolean</td>
+      <td>—</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>circle</td>
+      <td>是否圆形按钮</td>
+      <td>boolean</td>
+      <td>—</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>loading</td>
+      <td>是否加载中状态</td>
+      <td>boolean</td>
+      <td>—</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>disabled</td>
+      <td>是否禁用状态</td>
+      <td>boolean</td>
+      <td>—</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>icon</td>
+      <td>图标名</td>
+      <td>string</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>autofocus</td>
+      <td>是否默认聚焦</td>
+      <td>boolean</td>
+      <td>—</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>native-type</td>
+      <td>原生 type 属性</td>
+      <td>string</td>
+      <td>button / submit / reset</td>
+      <td>—</td>
+    </tr>
+  </tbody>
+</table>

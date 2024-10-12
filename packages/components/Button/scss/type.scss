@@ -32,8 +32,8 @@
 
 	&:hover,
 	&:focus {
-		background: var(--gov-#{$type}-1);
-		border: 1px solid var(--gov-#{$type}-1);
+		background: var(--gov-#{$type}-2);
+		border: 1px solid var(--gov-#{$type}-2);
 	}
 
 	&:active {

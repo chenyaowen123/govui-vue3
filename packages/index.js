@@ -8,6 +8,7 @@ import header from "./components/container/header.vue";
 import main from "./components/container/main.vue";
 
 import icon from "./components/icon/icon.vue";
+import buttonGroup from "./components/button/button-group.vue";
 import button from "./components/button/button.vue";
 
 // 导出所有组件
@@ -22,6 +23,7 @@ const components = {
 	main,
 
 	icon,
+	buttonGroup,
 	button,
 };
 

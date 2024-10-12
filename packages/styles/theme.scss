@@ -3,6 +3,9 @@
 @import "./utils.scss";
 
 :root {
+	// 常用圆角
+	--gov-border-radius-base: 5px;
+
 	// container
 	--gov-aside-width: 200px;
 	--gov-footer-height: 60px;
@@ -22,4 +25,6 @@
 	--gov-button-default-font-size: 14px;
 	--gov-button-small-font-size: 12px;
 
+
+	//
 }
