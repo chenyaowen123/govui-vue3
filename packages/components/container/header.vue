@@ -25,8 +25,8 @@ const style = computed(() => {
 });
 </script>
 
-<style lang="scss" scoped>
-@use "../../styles/theme" as *;
+<style lang="scss">
+@use "../../styles/theme.scss" as *;
 .gov-header {
 	padding: 0 20px;
 	box-sizing: border-box;

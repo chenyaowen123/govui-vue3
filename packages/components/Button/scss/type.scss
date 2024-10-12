@@ -1,0 +1,44 @@
+@mixin button-type($type) {
+	color: #fff;
+	background: var(--gov-#{$type});
+	border: 1px solid var(--gov-#{$type});
+
+	&:hover,
+	&:focus {
+		background: var(--gov-#{$type}-1);
+		border: 1px solid var(--gov-#{$type}-1);
+	}
+
+	&:active {
+		background: var(--gov-#{$type}-dark);
+		border: 1px solid var(--gov-#{$type}-dark);
+		outline: none;
+	}
+
+	&.is-disabled {
+		&,
+		&:hover,
+		&:focus,
+		&:active {
+			color: #fff;
+			background: var(--gov-#{$type}-2);
+			border: 1px solid var(--gov-#{$type}-2);
+		}
+	}
+
+	&.is-plain {
+		color: var(--gov-#{$type});
+		background: var(--gov-#{$type}-3);
+		border: 1px solid var(--gov-#{$type});
+
+		&:hover,
+		&:focus {
+			color: #fff;
+			background: var(--gov-#{$type});
+		}
+
+		&:active {
+			background: var(--gov-#{$type}-dark);
+		}
+	}
+}

@@ -1,5 +1,3 @@
-import button from "./components/button/button.vue";
-
 import row from "./components/grid/row.vue";
 import col from "./components/grid/col.vue";
 
@@ -10,11 +8,10 @@ import header from "./components/container/header.vue";
 import main from "./components/container/main.vue";
 
 import icon from "./components/icon/icon.vue";
+import button from "./components/button/button.vue";
 
 // 导出所有组件
 const components = {
-	button,
-
 	row,
 	col,
 
@@ -25,6 +22,7 @@ const components = {
 	main,
 
 	icon,
+	button,
 };
 
 // 提供一个全局安装方法

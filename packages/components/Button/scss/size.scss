@@ -1,0 +1,9 @@
+@mixin button-size($size) {
+	padding: var(--gov-button-#{$size}-padding);
+	font-size: var(--gov-button-#{$size}-font-size);
+	border-radius: 4px;
+	&.is-round {
+		padding: var(--gov-button-size-#{$size}-padding);
+		border-radius: 20px;
+	}
+}

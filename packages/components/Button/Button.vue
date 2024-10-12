@@ -1,59 +1,78 @@
 <template>
 	<button
-		type="button"
-		class="button"
-		:class="classes"
-		@click="onClick"
-		:style="style"
+		class="gov-button"
+		@click="handleClick"
+		:disabled="buttonDisabled || loading"
+		:autofocus="autofocus"
+		:type="nativeType"
+		:class="[
+			type ? 'gov-button--' + type : '',
+			buttonSize ? 'gov-button--' + buttonSize : '',
+			{
+				'is-disabled': buttonDisabled,
+				'is-loading': loading,
+				'is-plain': plain,
+				'is-round': round,
+				'is-circle': circle,
+			},
+		]"
 	>
-		{{ label }}
+		<i class="gov-icon-loading" v-if="loading"></i>
+		<i :class="icon" v-if="icon && !loading"></i>
+		<span><slot></slot></span>
 	</button>
 </template>
 
-<script>
-import { reactive, computed } from "vue";
-export default {
-	name: "my-button",
-	props: {
-		label: {
-			type: String,
-			required: true,
-		},
-		primary: {
-			type: Boolean,
-			default: false,
-		},
-		size: {
-			type: String,
-			validator: function (value) {
-				return ["small", "medium", "large"].indexOf(value) !== -1;
-			},
-		},
-		backgroundColor: {
-			type: String,
-		},
+<script setup>
+import { computed, inject } from "vue";
+
+defineOptions({
+	name: "GovButton",
+});
+
+// 定义组件的属性
+const props = defineProps({
+	type: {
+		type: String,
+		default: "primary",
 	},
-	emits: ["click"],
-	setup(props, { emit }) {
-		props = reactive(props);
-		return {
-			classes: computed(() => ({
-				"storybook-button": true,
-				"storybook-button--primary": props.primary,
-				"storybook-button--secondary": !props.primary,
-				[`storybook-button--${props.size || "medium"}`]: true,
-			})),
-			style: computed(() => ({
-				backgroundColor: props.backgroundColor,
-			})),
-			onClick() {
-				emit("click");
-			},
-		};
+	size: String,
+	icon: {
+		type: String,
+		default: "",
 	},
+	nativeType: {
+		type: String,
+		default: "button",
+	},
+	loading: Boolean,
+	disabled: Boolean,
+	plain: Boolean,
+	autofocus: Boolean,
+	round: Boolean,
+	circle: Boolean,
+});
+
+// 依赖注入
+const govForm = inject("govForm", "");
+const govFormItem = inject("govFormItem", "");
+
+// 计算按钮大小
+const buttonSize = computed(() => {
+	return props.size || (govFormItem || {}).govFormItemSize || "default";
+});
+
+// 计算按钮是否禁用
+const buttonDisabled = computed(() => {
+	return props.disabled != null ? props.disabled : (govForm || {}).disabled;
+});
+
+const emit = defineEmits(["click"]);
+const handleClick = (evt) => {
+	emit("click", evt);
 };
 </script>
 
 <style lang="scss">
-@import "./button";
+@import "./scss/button.scss";
 </style>

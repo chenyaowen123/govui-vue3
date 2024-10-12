@@ -1,0 +1,59 @@
+@use "../../../styles/theme.scss" as *;
+@import "./size.scss";
+@import "./type.scss";
+
+.gov-button {
+	display: inline-block;
+	line-height: 1;
+	white-space: nowrap;
+	cursor: pointer;
+	background: #fff;
+	border: 1px solid var(--gov-border-color-3);
+	color: var(--gov-text-color);
+	text-align: center;
+	box-sizing: border-box;
+	outline: none;
+	margin: 0;
+	transition: 0.1s;
+	font-weight: normal;
+	@include utils-user-select(none);
+
+	// 结构组合
+	& + & {
+		margin-left: 10px;
+	}
+
+	& [class*="el-icon-"] {
+		& + span {
+			margin-left: 5px;
+		}
+	}
+
+	// 大小
+	&--large {
+		@include button-size(large);
+	}
+	&--default {
+		@include button-size(default);
+	}
+	&--small {
+		@include button-size(small);
+	}
+
+	// 类似
+	&--primary {
+		@include button-type(primary);
+	}
+	&--success {
+		@include button-type(success);
+	}
+	&--info {
+		@include button-type(info);
+	}
+	&--warning {
+		@include button-type(warning);
+	}
+	&--danger {
+		@include button-type(danger);
+	}
+}

@@ -26,8 +26,8 @@ const style = computed(() => {
 });
 </script>
 
-<style lang="scss" scoped>
-@use "../../styles/theme" as *;
+<style lang="scss">
+@use "../../styles/theme.scss" as *;
 .gov-aside {
 	overflow: auto;
 	box-sizing: border-box;

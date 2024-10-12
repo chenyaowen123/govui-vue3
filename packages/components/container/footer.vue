@@ -25,7 +25,7 @@ const style = computed(() => {
 });
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @use "../../styles/theme" as *;
 .gov-footer {
 	padding: 0 20px;
