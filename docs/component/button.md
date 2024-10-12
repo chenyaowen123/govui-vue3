@@ -41,6 +41,7 @@ outline: deep
 		<gov-button type="primary" icon="edit">主要按钮</gov-button>
 		<gov-button icon="search" plain circle/>
 		<gov-button type="primary" icon="delete" circle/>
+		<gov-button type="text">文字按钮</gov-button>
 	</div>
 </demo-container>
 
@@ -74,11 +75,26 @@ outline: deep
 	<gov-button type="primary" icon="edit">主要按钮</gov-button>
 	<gov-button icon="search" plain circle/>
 	<gov-button type="primary" icon="delete" circle/>
+	<gov-button type="text">文字按钮</gov-button>
 </div>
 ```
 
-## 禁用状态
+## 不同尺寸
+<demo-container class="demo-gov-row">
+	<gov-button size="large">大按钮</gov-button>
+	<gov-button size="default">默认按钮</gov-button>
+	<gov-button size="small">小按钮</gov-button>
+</demo-container>
 
+
+```md
+<gov-button size="large">大按钮</gov-button>
+<gov-button size="default">默认按钮</gov-button>
+<gov-button size="small">小按钮</gov-button>
+```
+
+
+## 禁用状态
 
 <demo-container class="demo-gov-row">
 	<div>
@@ -115,9 +131,26 @@ outline: deep
 </div>
 ```
 
+## 加载中
+
+操作完毕以后，可以在按钮上显示加载状态。
+
+<demo-container class="demo-gov-row">
+	<gov-button type="primary" loading>加载中</gov-button>
+</demo-container>
+
+```md
+<gov-button type="primary" loading>加载中</gov-button>
+```
+
 ## 文字按钮
 
 <demo-container class="demo-gov-row">
 	<gov-button type="text">文字按钮</gov-button>
 	<gov-button type="text" disabled>文字按钮</gov-button>
 </demo-container>
+
+```md
+<gov-button type="text">文字按钮</gov-button>
+<gov-button type="text" disabled>文字按钮</gov-button>
+```
