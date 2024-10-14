@@ -4,7 +4,13 @@ import pluginVue from "eslint-plugin-vue";
 import prettierConfig from "@vue/eslint-config-prettier";
 
 export default [
-	{ files: ["**/*.{js,mjs,cjs,vue}"] },
+	{
+		files: ["**/*.{js,mjs,cjs,vue}"],
+		env: {
+			browser: true,
+			node: true, // 添加 node 环境
+		},
+	},
 	{ languageOptions: { globals: globals.browser } },
 	pluginJs.configs.recommended,
 	...pluginVue.configs["flat/essential"],

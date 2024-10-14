@@ -1,5 +1,6 @@
 import { defineConfig } from "vitepress";
 import sidebar from "./sidebar";
+import path from "path";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -18,5 +19,20 @@ export default defineConfig({
 		socialLinks: [
 			{ icon: "github", link: "https://github.com/vuejs/vitepress" },
 		],
+	},
+	// vitepress默认有配置，所以这里的别名应该和主项目的 vite.config.mjs 保持一直
+	vite: {
+		resolve: {
+			alias: {
+				"@": path.resolve(__dirname, "../packages"),
+			},
+		},
+		css: {
+            preprocessorOptions: {
+                scss: {
+                    api: 'modern-compiler', // or 'modern'
+                },
+            },
+        },
 	},
 });

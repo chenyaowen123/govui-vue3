@@ -1,7 +1,7 @@
 {
   "name": "com",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "packages/index.js",
   "license": "MIT",
   "dependencies": {
     "vite": "^5.4.8",

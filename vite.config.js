@@ -1,11 +1,12 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
+import { resolve } from "path";
 
 export default defineConfig({
 	plugins: [vue()], // 使用 Vite 的 Vue 插件
 	resolve: {
 		alias: {
-			"@": "./packages", // 项目中通过 @ 符号引用 src 目录
+			"@": resolve(__dirname, "packages"),
 		},
 	},
 	build: {

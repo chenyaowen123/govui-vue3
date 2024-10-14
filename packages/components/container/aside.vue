@@ -27,7 +27,7 @@ const style = computed(() => {
 </script>
 
 <style lang="scss">
-@use "../../styles/theme.scss" as *;
+@use "@/styles/theme.scss" as *;
 .gov-aside {
 	overflow: auto;
 	box-sizing: border-box;
