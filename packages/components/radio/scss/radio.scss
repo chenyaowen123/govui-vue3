@@ -1,0 +1,39 @@
+@use "@/styles/theme.scss" as *;
+@import "./size.scss";
+
+.gov-radio {
+  color: var(--gov-text-color);
+  font-weight: normal;
+  line-height: 1;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  white-space: nowrap;
+  outline: none;
+  margin-right: 30px;
+  @include utils-user-select(none);
+
+  // 边框
+  &.is-bordered{
+	border:1px solid var(--gov-border-color);
+
+	&.is-checked {
+		border-color: var(--gov-primary);
+	}
+	&--size-large {
+		@include radio-size(large);
+	}
+	&--size-default {
+		@include radio-size(default);
+	}
+	&--size-small {
+		@include radio-size(small);
+	}
+  }
+
+  &.is-disabled {
+	cursor: not-allowed;
+	border-color: var(--gov-border-color-5);
+	color: var(--gov-text-color-5);
+  }
+}

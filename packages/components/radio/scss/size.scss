@@ -1,0 +1,5 @@
+@mixin radio-size($size) {
+	padding: var(--gov-radio-#{$size}-padding);
+	font-size: var(--gov-#{$size}-font-size);
+	border-radius: var(--gov-border-radius-base);
+}

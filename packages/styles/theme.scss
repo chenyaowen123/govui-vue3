@@ -6,6 +6,11 @@
 	// 常用圆角
 	--gov-border-radius-base: 5px;
 
+	// 不同尺寸字体大小
+	--gov-large-font-size:14px;
+	--gov-default-font-size:14px;
+	--gov-smal-font-size:14px;
+
 	// container
 	--gov-aside-width: 200px;
 	--gov-footer-height: 60px;
@@ -21,10 +26,11 @@
 	--gov-button-small-padding-v: 9px;
 	--gov-button-small-padding-h: 15px;
 	--gov-button-small-padding: var(--gov-button-small-padding-v) var(--gov-button-small-padding-h);
-	--gov-button-large-font-size: 14px;
-	--gov-button-default-font-size: 14px;
-	--gov-button-small-font-size: 12px;
+
+	// radio
+	--gov-radio-large-padding: 12px;
+	--gov-radio-default-padding: 10px;
+	--gov-radio-small-padding: 8px;
 
 
-	//
 }

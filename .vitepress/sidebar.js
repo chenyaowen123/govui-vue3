@@ -37,6 +37,67 @@ const componentSidebar = [
 					},
 				],
 			},
+			{
+				text: "表单",
+				items: [
+					{
+						text: "Radio 单选框",
+						link: "/component/radio",
+					},
+					{
+						text: "Checkbox 多选框",
+						link: "/component/container",
+					},
+					{
+						text: "Input 输入框",
+						link: "/component/icon",
+					},
+					{
+						text: "InputNumber 计数器",
+						link: "/component/button",
+					},
+					{
+						text: "Select 选择器",
+						link: "/component/link",
+					},
+					{
+						text: "Cascader 级联选择器",
+						link: "/component/link",
+					},
+					{
+						text: "Switch 开关",
+						link: "/component/link",
+					},
+					{
+						text: "Slider 滑块",
+						link: "/component/link",
+					},
+					{
+						text: "TimePicker 时间选择器",
+						link: "/component/link",
+					},
+					{
+						text: "DatePicker 日期选择器",
+						link: "/component/link",
+					},
+					{
+						text: "DateTimePicker 时间选择器",
+						link: "/component/link",
+					},
+					{
+						text: "Upload 上传",
+						link: "/component/link",
+					},
+					{
+						text: "Rate 评分",
+						link: "/component/link",
+					},
+					{
+						text: "Form 表单",
+						link: "/component/form",
+					},
+				],
+			},
 		],
 	},
 ];

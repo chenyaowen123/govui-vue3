@@ -8,9 +8,14 @@ import header from "./components/container/header.vue";
 import main from "./components/container/main.vue";
 
 import icon from "./components/icon/icon.vue";
-import buttonGroup from "./components/button/buttonGroup.vue";
+import buttonGroup from "./components/button/button-group.vue";
 import button from "./components/button/button.vue";
 import link from "./components/link/link.vue";
+
+import form from "./components/form/form.vue";
+import formItem from "./components/form/form-item.vue";
+import radio from "./components/radio/radio.vue";
+import radioGroup from "./components/radio/radio-group.vue";
 
 // 导出所有组件
 const components = {
@@ -27,6 +32,11 @@ const components = {
 	buttonGroup,
 	button,
 	link,
+
+	form,
+	formItem,
+	radio,
+	radioGroup,
 };
 
 // 提供一个全局安装方法
