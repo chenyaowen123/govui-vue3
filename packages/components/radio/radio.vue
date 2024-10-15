@@ -2,28 +2,28 @@
 	<label
 		class="gov-radio"
 		:class="[
-			border && radioSize ? 'gov-radio--' + radioSize : '',
+			isBordered && radioSize ? 'gov-radio--' + radioSize : '',
 			{ 'is-disabled': isDisabled },
 			{ 'is-focus': focus },
-			{ 'is-bordered': border },
-			{ 'is-checked': model === label },
+			{ 'is-bordered': isBordered },
+			{ 'is-checked': model === value },
 		]"
 		role="radio"
-		:aria-checked="model === label"
+		:aria-checked="model === value"
 		:aria-disabled="isDisabled"
 	>
 		<span
 			class="gov-radio__input"
 			:class="{
 				'is-disabled': isDisabled,
-				'is-checked': model === label,
+				'is-checked': model === value,
 			}"
 		>
 			<span class="gov-radio__inner"></span>
 			<input
 				ref="radio"
 				class="gov-radio__original"
-				:value="label"
+				:value="value"
 				type="radio"
 				v-model="model"
 				@focus="focus = true"
@@ -47,8 +47,8 @@ defineOptions({
 	name: "GovRadio",
 });
 const props = defineProps({
-	value: {},
-	label: [String, Number],
+	modelValue: [String, Number, Boolean],
+	value: [String, Number,	Boolean],
 	disabled: Boolean,
 	name: String,
 	border: Boolean,
@@ -65,17 +65,16 @@ const govRadioGroup = inject("govRadioGroup", null);
 
 const model = computed({
 	get() {
-		return govRadioGroup?.value || props.value;
+		return govRadioGroup?.modelValue || props.modelValue;
 	},
 	set(val) {
 		if (govRadioGroup) {
 			govRadioGroup.updateValue(val);
 		} else {
 			emit("input", val);
+			emit("update:modelValue", val);
 		}
-		nextTick(() => {
-			radio.value.checked = model.value === props.label;
-		});
+		radio.value.checked = model.value === props.value;
 	},
 });
 
@@ -93,6 +92,13 @@ const isDisabled = computed(() => {
 		props?.disabled ||
 		govRadioGroup?.disabled ||
 		govFormItem?.disabled
+	);
+});
+
+const isBordered = computed(() => {
+	return (
+		props?.border ||
+		govRadioGroup?.border
 	);
 });
 

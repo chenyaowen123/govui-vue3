@@ -1,5 +1,15 @@
 @mixin radio-size($size) {
-	padding: var(--gov-radio-#{$size}-padding);
+	padding: var(--gov-radio-#{$size}-padding) 2em var(--gov-radio-#{$size}-padding) 1em;
 	font-size: var(--gov-#{$size}-font-size);
 	border-radius: var(--gov-border-radius-base);
+
+	.gov-radio__input {
+		height: var(--gov-#{$size}-font-size);
+		width: var(--gov-#{$size}-font-size);
+		overflow: hidden;
+		.gov-radio__inner{
+			height: var(--gov-#{$size}-font-size);
+			width: var(--gov-#{$size}-font-size);
+		}
+	}
 }

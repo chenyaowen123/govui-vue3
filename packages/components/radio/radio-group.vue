@@ -12,6 +12,7 @@ const props = defineProps({
 	value: {},
 	size: String,
 	disabled: Boolean,
+	border: Boolean,
 });
 
 const updateValue = (value) => {
@@ -21,6 +22,8 @@ const updateValue = (value) => {
 provide("govRadioGroup", {
 	size: props.size,
 	value: props.value,
+	disabled: props.disabled,
+	border: props.border,
 	updateValue,
 });
 </script>
