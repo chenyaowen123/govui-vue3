@@ -42,26 +42,27 @@
 </template>
 
 <script setup>
-import { ref, computed, inject, nextTick } from "vue";
+import { ref, computed, inject, nextTick, watch } from "vue";
 defineOptions({
 	name: "GovRadio",
 });
 const props = defineProps({
 	modelValue: [String, Number, Boolean],
-	value: [String, Number,	Boolean],
+	value: [String, Number, Boolean],
 	disabled: Boolean,
 	name: String,
 	border: Boolean,
 	size: String,
 });
 
-const emit = defineEmits(["input", "change"]);
+const emit = defineEmits(["input", "change", "update:modelValue"]);
 
 const focus = ref(false);
 const radio = ref(null);
 
 const govFormItem = inject("govFormItem", null);
 const govRadioGroup = inject("govRadioGroup", null);
+
 
 const model = computed({
 	get() {
@@ -79,38 +80,24 @@ const model = computed({
 });
 
 const radioSize = computed(() => {
-	return (
-		props?.size ||
-		govRadioGroup?.size ||
-		govFormItem?.size ||
-		"default"
-	);
+	return props?.size || govRadioGroup?.size || govFormItem?.size || "default";
 });
 
 const isDisabled = computed(() => {
-	return (
-		props?.disabled ||
-		govRadioGroup?.disabled ||
-		govFormItem?.disabled
-	);
+	return props?.disabled || govRadioGroup?.disabled || govFormItem?.disabled;
 });
 
 const isBordered = computed(() => {
-	return (
-		props?.border ||
-		govRadioGroup?.border
-	);
+	return props?.border || govRadioGroup?.border;
 });
 
 // change事件
 function handleChange() {
 	nextTick(() => {
 		emit("change", model.value);
-		govRadioGroup && govRadioGroup.updateValue(model.value);
 	});
 }
 </script>
-
 
 <style lang="scss">
 @import "./scss/radio.scss";

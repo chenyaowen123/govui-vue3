@@ -47,9 +47,9 @@ const radio = ref('1');
 
 ```md
 <template>
-	<gov-radio v-model="radio" value="1">禁用状态</gov-radio>
-	<gov-radio v-model="radio" value="2">禁用状态</gov-radio>
-	<gov-radio v-model="radio" value="3">禁用状态</gov-radio>
+	<gov-radio disabled v-model="radio" value="1">禁用状态</gov-radio>
+	<gov-radio disabled v-model="radio" value="2">禁用状态</gov-radio>
+	<gov-radio disabled v-model="radio" value="3">禁用状态</gov-radio>
 </template>
 
 <script setup>

@@ -3,29 +3,33 @@
 </template>
 
 <script setup>
-import { provide } from "vue";
+import { provide, reactive, toRefs } from "vue";
 defineOptions({
 	name: "GovRadioGroup",
 });
 
 const props = defineProps({
-	value: {},
+	modelValue: [String, Number, Boolean],
 	size: String,
 	disabled: Boolean,
 	border: Boolean,
 });
 
-const updateValue = (value) => {
-	// 触发更改
+const emit = defineEmits(["input", "change", "update:modelValue"]);
+
+const updateValue = (val) => {
+	emit("input", val);
+	emit("change", val);
+	emit("update:modelValue", val);
 };
 
-provide("govRadioGroup", {
-	size: props.size,
-	value: props.value,
-	disabled: props.disabled,
-	border: props.border,
-	updateValue,
-});
+provide(
+	"govRadioGroup",
+	reactive({
+		...toRefs(props),
+		updateValue,
+	}),
+);
 </script>
 
 <style lang="scss"></style>
