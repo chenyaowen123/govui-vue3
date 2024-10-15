@@ -1,5 +1,6 @@
 ---
 outline: deep
+aside: false
 ---
 
 # Link 文字链接

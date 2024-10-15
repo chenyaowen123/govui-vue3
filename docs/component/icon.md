@@ -1,5 +1,6 @@
 ---
 outline: deep
+aside: false
 ---
 
 # Icon 字体图标

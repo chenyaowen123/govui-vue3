@@ -1,8 +1,9 @@
 ---
 outline: deep
+aside: false
 ---
 
-# Form 表单
+# Radio 单选
 
 在一组备选项中进行备选项
 
@@ -163,3 +164,209 @@ import { ref } from 'vue'
 const radio = ref('1');
 </script>
 ```
+
+
+
+## Radio Attributes
+
+<table style="width:100%; display:table;">
+  <thead>
+    <tr>
+      <th>属性</th>
+      <th>说明</th>
+      <th>类型</th>
+      <th>可选值</th>
+      <th>默认值</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>model-value / v-model</td>
+      <td>绑定值</td>
+      <td>string / number / boolean</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+	<tr>
+      <td>value</td>
+      <td>单选框的值</td>
+      <td>string / number / boolean</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>label</td>
+      <td>内容文本</td>
+      <td>string / number</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>disabled</td>
+      <td>是否禁用</td>
+      <td>boolean</td>
+      <td>—</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>border</td>
+      <td>是否显示边框</td>
+      <td>boolean</td>
+      <td>—</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>size</td>
+      <td>Radio 的尺寸，仅在 border 为真时有效</td>
+      <td>string</td>
+      <td>large / default / small</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>原生 name 属性</td>
+      <td>string</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+  </tbody>
+</table>
+
+## Radio Events
+
+<table style="width:100%; display:table;">
+  <thead>
+    <tr>
+      <th>事件名</th>
+      <th>说明</th>
+      <th>类型</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>change</td>
+      <td>绑定值变化时触发的事件</td>
+      <td>Function</td>
+    </tr>
+  </tbody>
+</table>
+
+## Radio Slots
+
+<table style="width:100%; display:table;">
+  <thead>
+    <tr>
+      <th>插槽名</th>
+      <th>说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>default</td>
+      <td>自定义默认内容</td>
+    </tr>
+  </tbody>
+</table>
+
+
+## Radio-group Attributes
+
+
+<table style="width:100%; display:table;">
+  <thead>
+    <tr>
+      <th>属性</th>
+      <th>说明</th>
+      <th>类型</th>
+      <th>可选值</th>
+      <th>默认值</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>model-value / v-model</td>
+      <td>绑定值</td>
+      <td>string / number / boolean</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>disabled</td>
+      <td>是否禁用</td>
+      <td>boolean</td>
+      <td>—</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>border</td>
+      <td>是否显示边框</td>
+      <td>boolean</td>
+      <td>—</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>size</td>
+      <td>Radio 的尺寸，仅在 border 为真时有效</td>
+      <td>string</td>
+      <td>large / default / small</td>
+      <td>—</td>
+    </tr>
+  </tbody>
+</table>
+
+## Radio-group Events
+
+<table style="width:100%; display:table;">
+  <thead>
+    <tr>
+      <th>事件名</th>
+      <th>说明</th>
+      <th>类型</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>change</td>
+      <td>绑定值变化时触发的事件</td>
+      <td>Function</td>
+    </tr>
+  </tbody>
+</table>
+
+
+## Radio-button Attributes
+
+<table style="width:100%; display:table;">
+  <thead>
+    <tr>
+      <th>属性</th>
+      <th>说明</th>
+      <th>类型</th>
+      <th>可选值</th>
+      <th>默认值</th>
+    </tr>
+  </thead>
+  <tbody>
+	<tr>
+      <td>value</td>
+      <td>单选按钮的值</td>
+      <td>string / number / boolean</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>disabled</td>
+      <td>是否禁用</td>
+      <td>boolean</td>
+      <td>—</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>原生 name 属性</td>
+      <td>string</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+  </tbody>
+</table>

@@ -26,7 +26,6 @@
 				v-model="model"
 				@focus="focus = true"
 				@blur="focus = false"
-				@change="handleChange"
 				:name="name"
 				:disabled="isDisabled"
 				tabindex="-1"
@@ -54,7 +53,7 @@ const props = defineProps({
 	size: String,
 });
 
-const emit = defineEmits(["input", "change", "update:modelValue"]);
+const emit = defineEmits(["change", "update:modelValue"]);
 
 const focus = ref(false);
 const radio = ref(null);
@@ -71,7 +70,7 @@ const model = computed({
 		if (govRadioGroup) {
 			govRadioGroup.updateValue(val);
 		} else {
-			emit("input", val);
+			emit("change", val);
 			emit("update:modelValue", val);
 		}
 		radio.value.checked = model.value === props.value;
@@ -89,13 +88,6 @@ const isDisabled = computed(() => {
 const isBordered = computed(() => {
 	return props?.border || govRadioGroup?.border;
 });
-
-// change事件
-function handleChange() {
-	nextTick(() => {
-		emit("change", model.value);
-	});
-}
 </script>
 
 <style lang="scss">
