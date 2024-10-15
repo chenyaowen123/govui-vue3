@@ -32,4 +32,11 @@ provide(
 );
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.gov-radio-group {
+	display: inline-block;
+	line-height: 1;
+	vertical-align: middle;
+	font-size: 0;
+}
+</style>

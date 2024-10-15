@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import { provide, inject, computed } from "vue";
+import { reactive, provide, inject, computed } from "vue";
 defineOptions({
 	name: "govFormItem",
 });
@@ -33,12 +33,15 @@ const disabled = computed(() => {
 	return props?.disabled || govForm?.disabled;
 });
 
-provide("govFormItem", {
-	size,
-	disabled,
-	validate,
-	clearValidate,
-});
+provide(
+	"govFormItem",
+	reactive({
+		size,
+		disabled,
+		validate,
+		clearValidate,
+	}),
+);
 </script>
 
 <style lang="scss"></style>

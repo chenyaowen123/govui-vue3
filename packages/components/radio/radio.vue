@@ -49,6 +49,7 @@ defineOptions({
 const props = defineProps({
 	modelValue: [String, Number, Boolean],
 	value: [String, Number, Boolean],
+	label: [String, Number],
 	disabled: Boolean,
 	name: String,
 	border: Boolean,

@@ -15,6 +15,10 @@
 	box-sizing: border-box;
 	@include utils-user-select(none);
 
+	&:last-child {
+		margin-right: 0;
+	}
+
 	// 边框
 	&.is-bordered {
 		border: 1px solid var(--gov-border-color);
@@ -42,18 +46,18 @@
 		position: relative;
 		vertical-align: middle;
 
-		.gov-radio__inner{
+		.gov-radio__inner {
 			height: var(--gov-default-font-size);
 			width: var(--gov-default-font-size);
 			position: relative;
-			left:0;
-			top:0;
+			left: 0;
+			top: 0;
 			border: 1px solid var(--gov-border-color);
 			border-radius: 100%;
 			background-color: #fff;
 			display: inline-block;
 			box-sizing: border-box;
-			&::after{
+			&::after {
 				content: "";
 				width: 4px;
 				height: 4px;
@@ -63,7 +67,7 @@
 				left: 50%;
 				top: 50%;
 				transform: translate(-50%, -50%) scale(0);
-				transition: transform .15s ease-in;
+				transition: transform 0.15s ease-in;
 			}
 		}
 		.gov-radio__original {
@@ -77,20 +81,19 @@
 			bottom: 0;
 			margin: 0;
 		}
-		&.is-checked{
-			.gov-radio__inner{
+		&.is-checked {
+			.gov-radio__inner {
 				background-color: var(--gov-primary);
 				border-color: var(--gov-primary);
-				&::after{
+				&::after {
 					transform: translate(-50%, -50%) scale(1);
 					background: #fff;
 				}
 			}
 		}
 
-		&.is-disabled{
+		&.is-disabled {
 			cursor: not-allowed;
-
 		}
 	}
 
@@ -98,11 +101,11 @@
 		cursor: not-allowed;
 		border-color: var(--gov-border-color-5);
 		color: var(--gov-text-color-5);
-		.gov-radio__input{
-			.gov-radio__inner{
+		.gov-radio__input {
+			.gov-radio__inner {
 				background-color: var(--gov-fill-color);
 				border-color: var(--gov-border-color);
-				&::after{
+				&::after {
 					background-color: var(--gov-fill-color-dark);
 				}
 			}
@@ -110,9 +113,8 @@
 	}
 
 	// 右侧文字
-	.gov-radio__label{
+	.gov-radio__label {
 		padding-left: 10px;
 		vertical-align: middle;
 	}
-
 }
