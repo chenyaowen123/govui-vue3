@@ -110,3 +110,56 @@ const radio = ref('1');
 ```
 
 
+
+
+
+## 按钮样式
+
+按钮样式的单选组合。
+
+<demo-container class="demo-gov-form">
+	<gov-radio-group v-model="radio" size="large">
+		<gov-radio-button value="1">备选项</gov-radio-button>
+		<gov-radio-button value="2">备选项</gov-radio-button>
+		<gov-radio-button value="3">备选项</gov-radio-button>
+	</gov-radio-group>
+	<br/>
+	<br/>
+	<gov-radio-group v-model="radio">
+		<gov-radio-button value="1">备选项</gov-radio-button>
+		<gov-radio-button value="2" disabled>备选项</gov-radio-button>
+		<gov-radio-button value="3">备选项</gov-radio-button>
+	</gov-radio-group>
+	<br/>
+	<br/>
+	<gov-radio-group v-model="radio" size="small" disabled>
+		<gov-radio-button value="1">备选项</gov-radio-button>
+		<gov-radio-button value="2">备选项</gov-radio-button>
+		<gov-radio-button value="3">备选项</gov-radio-button>
+	</gov-radio-group>
+</demo-container>
+
+```md
+<template>
+	<gov-radio-group v-model="radio" size="large">
+		<gov-radio-button value="1">备选项</gov-radio-button>
+		<gov-radio-button value="2">备选项</gov-radio-button>
+		<gov-radio-button value="3">备选项</gov-radio-button>
+	</gov-radio-group>
+	<gov-radio-group v-model="radio">
+		<gov-radio-button value="1">备选项</gov-radio-button>
+		<gov-radio-button value="2" disabled>备选项</gov-radio-button>
+		<gov-radio-button value="3">备选项</gov-radio-button>
+	</gov-radio-group>
+	<gov-radio-group v-model="radio" size="small" disabled>
+		<gov-radio-button value="1">备选项</gov-radio-button>
+		<gov-radio-button value="2">备选项</gov-radio-button>
+		<gov-radio-button value="3">备选项</gov-radio-button>
+	</gov-radio-group>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+const radio = ref('1');
+</script>
+```

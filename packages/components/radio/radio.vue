@@ -9,8 +9,6 @@
 			{ 'is-checked': model === value },
 		]"
 		role="radio"
-		:aria-checked="model === value"
-		:aria-disabled="isDisabled"
 	>
 		<span
 			class="gov-radio__input"
