@@ -1,5 +1,7 @@
 <template>
-	<div class="gov-checkbox-group"><slot></slot></div>
+	<div class="gov-checkbox-group" :class="{ 'is-disabled': disabled }">
+		<slot></slot>
+	</div>
 </template>
 
 <script setup>
@@ -12,6 +14,8 @@ defineOptions({
 const props = defineProps({
 	modelValue: Array,
 	size: String,
+	button: Boolean,
+	disabled: Boolean,
 });
 
 const emit = defineEmits(["change", "update:modelValue"]);
@@ -30,4 +34,8 @@ provide(
 );
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.gov-checkbox-group.is-disabled {
+	cursor: not-allowed;
+}
+</style>

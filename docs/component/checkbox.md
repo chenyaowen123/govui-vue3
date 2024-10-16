@@ -9,16 +9,17 @@ aside: false
 
 <script setup>
 import { ref } from 'vue';
-const checkboxGroup1 = ref([1,2]);
-const checkboxGroup2 = ref([1,2]);
+const checkboxGroup1 = ref([1, 2]);
+const checkboxGroup2 = ref([1, 2]);
+const checkboxGroup3 = ref([1, 2]);
+
 const checked1 = ref(true);
-
-const checked2 = ref(true);
+const checked2 = ref(false);
 const checked3 = ref(false);
-
 const checked4 = ref(false);
-const checked5 = ref(false);
+const checked5 = ref(true);
 const checked6 = ref(false);
+const checked7 = ref('选中啦');
 </script>
 
 
@@ -39,46 +40,79 @@ const checked6 = ref(false);
 
 <script setup>
 import { ref } from 'vue';
-const checkboxGroup1 = ref([1,2]);
+const checkboxGroup1 = ref([1, 2]);
 const checked1 = ref(true);
 </script>
 ```
 
 
-## 边框尺寸
+## 边框模式
 
-设置 ```size``` 之前，必须设置 ```border``` 为 ```true```。
+设置 ```border``` 后可设置 ```size```。
 
 <demo-container class="demo-gov-form">
-	<gov-checkbox v-model="checked4" border size="large">选项4</gov-checkbox>
-	<gov-checkbox v-model="checked5" border>选项5</gov-checkbox>
-	<gov-checkbox v-model="checked6" border size="small">选项6</gov-checkbox>
+	<gov-checkbox v-model="checked2" border size="large">选项4</gov-checkbox>
+	<gov-checkbox v-model="checked3" border>选项5</gov-checkbox>
+	<gov-checkbox v-model="checked4" border size="small">选项6</gov-checkbox>
 </demo-container>
 
 ```md
-<gov-checkbox v-model="checked4" border size="large">选项4</gov-checkbox>
-<gov-checkbox v-model="checked5" border>选项5</gov-checkbox>
-<gov-checkbox v-model="checked6" border size="small">选项6</gov-checkbox>
+<gov-checkbox v-model="checked2" border size="large">选项4</gov-checkbox>
+<gov-checkbox v-model="checked3" border>选项5</gov-checkbox>
+<gov-checkbox v-model="checked4" border size="small">选项6</gov-checkbox>
+
+
+<script setup>
+import { ref } from 'vue';
+const checked2 = ref(false);
+const checked3 = ref(false);
+const checked4 = ref(false);
+</script>
 ```
 
 
 ## 禁用状态
 <demo-container class="demo-gov-form">
-	<gov-checkbox v-model="checked2" disabled>选项2</gov-checkbox>
-	<gov-checkbox v-model="checked3" disabled>选项3</gov-checkbox>
+	<gov-checkbox v-model="checked5" disabled>选项2</gov-checkbox>
+	<gov-checkbox v-model="checked6" disabled>选项3</gov-checkbox>
 	<br/>
 	<br/>
-	<gov-checkbox v-model="checked2" disabled border>选项2</gov-checkbox>
-	<gov-checkbox v-model="checked3" disabled border>选项3</gov-checkbox>
+	<gov-checkbox v-model="checked5" disabled border>选项2</gov-checkbox>
+	<gov-checkbox v-model="checked6" disabled border>选项3</gov-checkbox>
 </demo-container>
 
 ```md
-<gov-checkbox v-model="checked2" disabled>选项2</gov-checkbox>
-<gov-checkbox v-model="checked3" disabled>选项3</gov-checkbox>
+<gov-checkbox v-model="checked5" disabled>选项2</gov-checkbox>
+<gov-checkbox v-model="checked6" disabled>选项3</gov-checkbox>
+<br/>
+<gov-checkbox v-model="checked5" disabled border>选项2</gov-checkbox>
+<gov-checkbox v-model="checked6" disabled border>选项3</gov-checkbox>
+
+<script setup>
+import { ref } from 'vue';
+const checked5 = ref(true);
+const checked6 = ref(false);
+</script>
 ```
 
 
 
+## 设置 TrueValue 和 FalseValue
+
+<demo-container class="demo-gov-form">
+	<gov-checkbox v-model="checked7" true-value="选中啦" false-value="没选中">点我切换：{{ checked7 }}</gov-checkbox>
+</demo-container>
+
+```md
+<gov-checkbox v-model="checked7" true-value="选中啦" false-value="没选中">
+	点我切换：{{ checked7 }}
+</gov-checkbox>
+
+<script setup>
+import { ref } from 'vue';
+const checked7 = ref('选中啦');
+</script>
+```
 
 
 ## 多选框组
@@ -102,6 +136,61 @@ const checked1 = ref(true);
 
 <script setup>
 import { ref } from 'vue';
-const checkboxGroup2 = ref([1,2]);
+const checkboxGroup2 = ref([1, 2]);
+</script>
+```
+
+## 多选框组 Button
+
+使用按钮样式。
+
+<demo-container class="demo-gov-form">
+	<gov-checkbox-group v-model="checkboxGroup3" button size="large">
+		<gov-checkbox :value="1" label="选项1"/>
+		<gov-checkbox :value="2" label="选项2"/>
+		<gov-checkbox :value="3" label="选项3"/>
+		<gov-checkbox :value="4" label="选项4"/>
+	</gov-checkbox-group>
+	<br/>
+	<gov-checkbox-group v-model="checkboxGroup3" button>
+		<gov-checkbox :value="1" label="选项1"/>
+		<gov-checkbox :value="2" label="选项2"/>
+		<gov-checkbox :value="3" label="选项3"/>
+		<gov-checkbox :value="4" label="选项4"/>
+	</gov-checkbox-group>
+	<br/>
+	<gov-checkbox-group v-model="checkboxGroup3" button size="small" disabled>
+		<gov-checkbox :value="1" label="选项1"/>
+		<gov-checkbox :value="2" label="选项2"/>
+		<gov-checkbox :value="3" label="选项3"/>
+		<gov-checkbox :value="4" label="选项4"/>
+	</gov-checkbox-group>
+</demo-container>
+
+```md
+<gov-checkbox-group v-model="checkboxGroup3" button size="large">
+	<gov-checkbox :value="1" label="选项1"/>
+	<gov-checkbox :value="2" label="选项2"/>
+	<gov-checkbox :value="3" label="选项3"/>
+	<gov-checkbox :value="4" label="选项4"/>
+</gov-checkbox-group>
+<br/>
+<gov-checkbox-group v-model="checkboxGroup3" button>
+	<gov-checkbox :value="1" label="选项1"/>
+	<gov-checkbox :value="2" label="选项2"/>
+	<gov-checkbox :value="3" label="选项3"/>
+	<gov-checkbox :value="4" label="选项4"/>
+</gov-checkbox-group>
+<br/>
+<gov-checkbox-group v-model="checkboxGroup3" button size="small" disabled>
+	<gov-checkbox :value="1" label="选项1"/>
+	<gov-checkbox :value="2" label="选项2"/>
+	<gov-checkbox :value="3" label="选项3"/>
+	<gov-checkbox :value="4" label="选项4"/>
+</gov-checkbox-group>
+
+<script setup>
+import { ref } from 'vue';
+const checkboxGroup3 = ref([1, 2]);
 </script>
 ```

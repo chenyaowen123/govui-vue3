@@ -1,11 +1,16 @@
 <template>
 	<label
 		class="gov-checkbox"
-		:class="[border ? `gov-checkbox--${checkboxSize}` : '']"
+		:class="[
+			border || isButton ? `gov-checkbox--${checkboxSize}` : '',
+			{ 'is-button': isButton },
+			{ 'is-disabled': isDisabled },
+		]"
 	>
 		<input
 			class="gov-checkbox__original"
 			type="checkbox"
+			:disabled="isDisabled"
 			v-bind="$attrs"
 			v-model="innerValue"
 		/>
@@ -30,6 +35,7 @@ const props = defineProps({
 	size: String,
 	label: String,
 	border: Boolean,
+	disabled: Boolean,
 });
 
 const emit = defineEmits(["change", "update:modelValue"]);
@@ -55,6 +61,16 @@ const checkboxSize = computed(() => {
 	return (
 		props?.size || govCheckboxGroup?.size || govFormItem?.size || "default"
 	);
+});
+
+const isDisabled = computed(() => {
+	return (
+		props?.disabled || govCheckboxGroup?.disabled || govFormItem?.disabled
+	);
+});
+
+const isButton = computed(() => {
+	return govCheckboxGroup?.button;
 });
 </script>
 
