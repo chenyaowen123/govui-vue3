@@ -39,7 +39,7 @@
 </template>
 
 <script setup>
-import { ref, computed, inject, nextTick, watch } from "vue";
+import { ref, computed, inject } from "vue";
 defineOptions({
 	name: "GovRadio",
 });
@@ -60,7 +60,6 @@ const radio = ref(null);
 
 const govFormItem = inject("govFormItem", null);
 const govRadioGroup = inject("govRadioGroup", null);
-
 
 const model = computed({
 	get() {

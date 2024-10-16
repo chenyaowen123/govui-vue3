@@ -1,0 +1,58 @@
+@use "@/styles/theme.scss" as *;
+
+.gov-checkbox {
+	margin-right: var(--gov-checkbox-radio-gutter);
+	font-size: var(--gov-default-font-size);
+	cursor: pointer;
+	display: inline-flex;
+	justify-content: left;
+	align-items: center;
+
+	&:last-child {
+		margin-right: 0;
+	}
+	&__label {
+		color: var(--gov-text-color);
+		vertical-align: middle;
+	}
+	&__original {
+		vertical-align: middle;
+		&:disabled {
+			cursor: not-allowed;
+			& + .gov-checkbox__label {
+				color: var(--gov-text-color-5);
+				cursor: not-allowed;
+			}
+		}
+		&:checked {
+			accent-color: var(--gov-primary);
+			& + .gov-checkbox__label {
+				color: var(--gov-primary);
+			}
+			&:disabled + .gov-checkbox__label {
+				color: var(--gov-text-color-5);
+			}
+		}
+	}
+
+	&--large,
+	&--default,
+	&--small {
+		padding: 0 15px 0 8px;
+		border: 1px solid var(--gov-border-color);
+		border-radius: var(--gov-border-radius-base);
+	}
+
+	&--large {
+		font-size: var(--gov-large-font-size);
+		height: var(--gov-checkbox-radio-large-height);
+	}
+	&--default {
+		font-size: var(--gov-default-font-size);
+		height: var(--gov-checkbox-radio-default-height);
+	}
+	&--small {
+		font-size: var(--gov-small-font-size);
+		height: var(--gov-checkbox-radio-small-height);
+	}
+}

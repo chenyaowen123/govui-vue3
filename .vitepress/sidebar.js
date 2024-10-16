@@ -46,11 +46,11 @@ const componentSidebar = [
 					},
 					{
 						text: "Checkbox 多选框",
-						link: "/component/container",
+						link: "/component/checkbox",
 					},
 					{
 						text: "Input 输入框",
-						link: "/component/icon",
+						link: "/component/input",
 					},
 					{
 						text: "InputNumber 计数器",

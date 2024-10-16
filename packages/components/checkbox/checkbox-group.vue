@@ -1,18 +1,17 @@
 <template>
-	<div class="gov-radio-group"><slot /></div>
+	<div class="gov-checkbox-group"><slot></slot></div>
 </template>
 
 <script setup>
 import { provide, reactive, toRefs } from "vue";
+
 defineOptions({
-	name: "GovRadioGroup",
+	name: "GovCheckboxGroup",
 });
 
 const props = defineProps({
-	modelValue: [String, Number, Boolean],
+	modelValue: Array,
 	size: String,
-	disabled: Boolean,
-	border: Boolean,
 });
 
 const emit = defineEmits(["change", "update:modelValue"]);
@@ -23,7 +22,7 @@ const updateValue = (val) => {
 };
 
 provide(
-	"govRadioGroup",
+	"govCheckboxGroup",
 	reactive({
 		...toRefs(props),
 		updateValue,
@@ -31,11 +30,4 @@ provide(
 );
 </script>
 
-<style lang="scss">
-.gov-radio-group {
-	display: inline-block;
-	line-height: 1;
-	vertical-align: middle;
-	font-size: 0;
-}
-</style>
+<style lang="scss"></style>

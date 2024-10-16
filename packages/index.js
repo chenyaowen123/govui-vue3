@@ -17,6 +17,8 @@ import formItem from "./components/form/form-item.vue";
 import radio from "./components/radio/radio.vue";
 import radioButton from "./components/radio/radio-button.vue";
 import radioGroup from "./components/radio/radio-group.vue";
+import checkbox from "./components/checkbox/checkbox.vue";
+import checkboxGroup from "./components/checkbox/checkbox-group.vue";
 
 // 导出所有组件
 const components = {
@@ -39,6 +41,8 @@ const components = {
 	radio,
 	radioButton,
 	radioGroup,
+	checkbox,
+	checkboxGroup,
 };
 
 // 提供一个全局安装方法
