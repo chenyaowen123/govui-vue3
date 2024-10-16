@@ -1,18 +1,22 @@
 <template>
-	<div class="gov-radio-group"><slot /></div>
+	<div class="gov-radio-group" :class="{ 'is-disabled': disabled }">
+		<slot></slot>
+	</div>
 </template>
 
 <script setup>
 import { provide, reactive, toRefs } from "vue";
+
 defineOptions({
 	name: "GovRadioGroup",
 });
 
 const props = defineProps({
-	modelValue: [String, Number, Boolean],
-	size: String,
-	disabled: Boolean,
+	modelValue: Array,
 	border: Boolean,
+	size: String,
+	button: Boolean,
+	disabled: Boolean,
 });
 
 const emit = defineEmits(["change", "update:modelValue"]);
@@ -32,10 +36,7 @@ provide(
 </script>
 
 <style lang="scss">
-.gov-radio-group {
-	display: inline-block;
-	line-height: 1;
-	vertical-align: middle;
-	font-size: 0;
+.gov-radio-group.is-disabled {
+	cursor: not-allowed;
 }
 </style>

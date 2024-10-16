@@ -2,35 +2,18 @@
 	<label
 		class="gov-radio"
 		:class="[
-			isBordered && radioSize ? 'gov-radio--' + radioSize : '',
+			isBorder || isButton ? `gov-radio--${radioSize}` : '',
+			{ 'is-button': isButton },
 			{ 'is-disabled': isDisabled },
-			{ 'is-focus': focus },
-			{ 'is-bordered': isBordered },
-			{ 'is-checked': model === value },
 		]"
-		role="radio"
 	>
-		<span
-			class="gov-radio__input"
-			:class="{
-				'is-disabled': isDisabled,
-				'is-checked': model === value,
-			}"
-		>
-			<span class="gov-radio__inner"></span>
-			<input
-				ref="radio"
-				class="gov-radio__original"
-				:value="value"
-				type="radio"
-				v-model="model"
-				@focus="focus = true"
-				@blur="focus = false"
-				:name="name"
-				:disabled="isDisabled"
-				tabindex="-1"
-			/>
-		</span>
+		<input
+			class="gov-radio__original"
+			type="radio"
+			:disabled="isDisabled"
+			v-bind="$attrs"
+			v-model="innerValue"
+		/>
 		<span class="gov-radio__label">
 			<slot></slot>
 			<template v-if="!$slots.default">{{ label }}</template>
@@ -39,29 +22,28 @@
 </template>
 
 <script setup>
-import { ref, computed, inject } from "vue";
+import { inject, computed } from "vue";
+
 defineOptions({
 	name: "GovRadio",
 });
+
 const props = defineProps({
-	modelValue: [String, Number, Boolean],
-	value: [String, Number, Boolean],
-	label: [String, Number],
-	disabled: Boolean,
-	name: String,
-	border: Boolean,
+	modelValue: {
+		default: undefined,
+	},
 	size: String,
+	label: String,
+	border: Boolean,
+	disabled: Boolean,
 });
 
 const emit = defineEmits(["change", "update:modelValue"]);
 
-const focus = ref(false);
-const radio = ref(null);
-
 const govFormItem = inject("govFormItem", null);
 const govRadioGroup = inject("govRadioGroup", null);
 
-const model = computed({
+const innerValue = computed({
 	get() {
 		return govRadioGroup?.modelValue || props.modelValue;
 	},
@@ -72,7 +54,6 @@ const model = computed({
 			emit("change", val);
 			emit("update:modelValue", val);
 		}
-		radio.value.checked = model.value === props.value;
 	},
 });
 
@@ -80,12 +61,16 @@ const radioSize = computed(() => {
 	return props?.size || govRadioGroup?.size || govFormItem?.size || "default";
 });
 
+const isBorder = computed(() => {
+	return props?.border || govRadioGroup?.border;
+});
+
 const isDisabled = computed(() => {
 	return props?.disabled || govRadioGroup?.disabled || govFormItem?.disabled;
 });
 
-const isBordered = computed(() => {
-	return props?.border || govRadioGroup?.border;
+const isButton = computed(() => {
+	return govRadioGroup?.button;
 });
 </script>
 

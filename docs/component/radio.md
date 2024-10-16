@@ -9,7 +9,10 @@ aside: false
 
 <script setup>
 import { ref } from 'vue'
-const radio = ref('1');
+const radio1 = ref('1');
+const radio2 = ref('1');
+const radio3 = ref('1');
+const radio4 = ref('1');
 </script>
 
 
@@ -18,21 +21,21 @@ const radio = ref('1');
 你可以使用 ```label``` 或者 ```<slot/>``` 两种方式定义其中内容。
 
 <demo-container class="demo-gov-form">
-	<gov-radio v-model="radio" value="1" label="选项1"/>
-	<gov-radio v-model="radio" value="2" label="选项2"/>
-	<gov-radio v-model="radio" value="3">选项3</gov-radio>
+	<gov-radio v-model="radio1" value="1" label="备选项"/>
+	<gov-radio v-model="radio1" value="2" label="备选项"/>
+	<gov-radio v-model="radio1" value="3">备选项</gov-radio>
 </demo-container>
 
 ```md
 <template>
-	<gov-radio v-model="radio" value="1" label="选项1"/>
-	<gov-radio v-model="radio" value="2" label="选项2"/>
-	<gov-radio v-model="radio" value="3">选项3</gov-radio>
+	<gov-radio v-model="radio1" value="1" label="备选项"/>
+	<gov-radio v-model="radio1" value="2" label="备选项"/>
+	<gov-radio v-model="radio1" value="3">备选项</gov-radio>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-const radio = ref('1');
+const radio1 = ref('1');
 </script>
 ```
 
@@ -41,72 +44,42 @@ const radio = ref('1');
 备选项框不可用的状态。
 
 <demo-container class="demo-gov-form">
-	<gov-radio disabled v-model="radio" value="1">备选项</gov-radio>
-	<gov-radio disabled v-model="radio" value="2">备选项</gov-radio>
-	<gov-radio disabled v-model="radio" value="3">备选项</gov-radio>
+	<gov-radio disabled v-model="radio2" value="1">备选项</gov-radio>
+	<gov-radio disabled v-model="radio2" value="2">备选项</gov-radio>
 </demo-container>
 
 ```md
 <template>
-	<gov-radio disabled v-model="radio" value="1">禁用状态</gov-radio>
-	<gov-radio disabled v-model="radio" value="2">禁用状态</gov-radio>
-	<gov-radio disabled v-model="radio" value="3">禁用状态</gov-radio>
+	<gov-radio disabled v-model="radio2" value="1">禁用状态</gov-radio>
+	<gov-radio disabled v-model="radio2" value="2">禁用状态</gov-radio>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-const radio = ref('1');
+const radio2 = ref('1');
 </script>
 ```
 
-## 边框与大小
+## 边框模式
 
-默认没有尺寸设计，只有设置边框后才能看到设置不同尺寸。
+设置 ```border``` 后可设置 ```size``` 显示不同尺寸。
 
 <demo-container class="demo-gov-form">
-	<gov-radio-group border v-model="radio" size="large">
-		<gov-radio value="1">备选项</gov-radio>
-		<gov-radio value="2">备选项</gov-radio>
-		<gov-radio value="3">备选项</gov-radio>
-	</gov-radio-group>
-	<br/>
-	<br/>
-	<gov-radio-group border v-model="radio">
-		<gov-radio value="1">备选项</gov-radio>
-		<gov-radio value="2">备选项</gov-radio>
-		<gov-radio value="3">备选项</gov-radio>
-	</gov-radio-group>
-	<br/>
-	<br/>
-	<gov-radio-group border v-model="radio" size="small">
-		<gov-radio value="1">备选项</gov-radio>
-		<gov-radio value="2">备选项</gov-radio>
-		<gov-radio value="3">备选项</gov-radio>
-	</gov-radio-group>
+	<gov-radio v-model="radio3" border size="large">备选项</gov-radio>
+	<gov-radio v-model="radio3" border>备选项</gov-radio>
+	<gov-radio v-model="radio3" border size="small">备选项</gov-radio>
 </demo-container>
 
 ```md
 <template>
-	<gov-radio-group border v-model="radio" size="large">
-		<gov-radio value="1">备选项</gov-radio>
-		<gov-radio value="2">备选项</gov-radio>
-		<gov-radio value="3">备选项</gov-radio>
-	</gov-radio-group>
-	<gov-radio-group border v-model="radio">
-		<gov-radio value="1">备选项</gov-radio>
-		<gov-radio value="2">备选项</gov-radio>
-		<gov-radio value="3">备选项</gov-radio>
-	</gov-radio-group>
-	<gov-radio-group border v-model="radio" size="small">
-		<gov-radio value="1">备选项</gov-radio>
-		<gov-radio value="2">备选项</gov-radio>
-		<gov-radio value="3">备选项</gov-radio>
-	</gov-radio-group>
+	<gov-radio v-model="radio3" border size="large">备选项</gov-radio>
+	<gov-radio v-model="radio3" border>备选项</gov-radio>
+	<gov-radio v-model="radio3" border size="small">备选项</gov-radio>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-const radio = ref('1');
+const radio3 = ref('1');
 </script>
 ```
 
@@ -119,43 +92,41 @@ const radio = ref('1');
 按钮样式的单选组合。
 
 <demo-container class="demo-gov-form">
-	<gov-radio-group v-model="radio" size="large">
-		<gov-radio-button value="1">备选项</gov-radio-button>
-		<gov-radio-button value="2">备选项</gov-radio-button>
-		<gov-radio-button value="3">备选项</gov-radio-button>
+	<gov-radio-group button v-model="radio4" size="large">
+		<gov-radio value="1">备选项</gov-radio>
+		<gov-radio value="2">备选项</gov-radio>
+		<gov-radio value="3">备选项</gov-radio>
 	</gov-radio-group>
 	<br/>
-	<br/>
-	<gov-radio-group v-model="radio">
-		<gov-radio-button value="1">备选项</gov-radio-button>
-		<gov-radio-button value="2" disabled>备选项</gov-radio-button>
-		<gov-radio-button value="3">备选项</gov-radio-button>
+	<gov-radio-group button v-model="radio4">
+		<gov-radio value="1">备选项</gov-radio>
+		<gov-radio value="2" disabled>备选项</gov-radio>
+		<gov-radio value="3">备选项</gov-radio>
 	</gov-radio-group>
 	<br/>
-	<br/>
-	<gov-radio-group v-model="radio" size="small" disabled>
-		<gov-radio-button value="1">备选项</gov-radio-button>
-		<gov-radio-button value="2">备选项</gov-radio-button>
-		<gov-radio-button value="3">备选项</gov-radio-button>
+	<gov-radio-group button v-model="radio4" size="small" disabled>
+		<gov-radio value="1">备选项</gov-radio>
+		<gov-radio value="2">备选项</gov-radio>
+		<gov-radio value="3">备选项</gov-radio>
 	</gov-radio-group>
 </demo-container>
 
 ```md
 <template>
-	<gov-radio-group v-model="radio" size="large">
-		<gov-radio-button value="1">备选项</gov-radio-button>
-		<gov-radio-button value="2">备选项</gov-radio-button>
-		<gov-radio-button value="3">备选项</gov-radio-button>
+	<gov-radio-group button v-model="radio4" size="large">
+		<gov-radio value="1">备选项</gov-radio>
+		<gov-radio value="2">备选项</gov-radio>
+		<gov-radio value="3">备选项</gov-radio>
 	</gov-radio-group>
-	<gov-radio-group v-model="radio">
-		<gov-radio-button value="1">备选项</gov-radio-button>
-		<gov-radio-button value="2" disabled>备选项</gov-radio-button>
-		<gov-radio-button value="3">备选项</gov-radio-button>
+	<gov-radio-group button v-model="radio4">
+		<gov-radio value="1">备选项</gov-radio>
+		<gov-radio value="2" disabled>备选项</gov-radio>
+		<gov-radio value="3">备选项</gov-radio>
 	</gov-radio-group>
-	<gov-radio-group v-model="radio" size="small" disabled>
-		<gov-radio-button value="1">备选项</gov-radio-button>
-		<gov-radio-button value="2">备选项</gov-radio-button>
-		<gov-radio-button value="3">备选项</gov-radio-button>
+	<gov-radio-group button v-model="radio4" size="small" disabled>
+		<gov-radio value="1">备选项</gov-radio>
+		<gov-radio value="2">备选项</gov-radio>
+		<gov-radio value="3">备选项</gov-radio>
 	</gov-radio-group>
 </template>
 
@@ -334,7 +305,7 @@ const radio = ref('1');
 </table>
 
 
-## Radio-button Attributes
+## Radio Attributes
 
 <table style="width:100%; display:table;">
   <thead>

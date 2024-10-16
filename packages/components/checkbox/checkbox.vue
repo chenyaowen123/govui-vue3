@@ -2,7 +2,7 @@
 	<label
 		class="gov-checkbox"
 		:class="[
-			border || isButton ? `gov-checkbox--${checkboxSize}` : '',
+			isBorder || isButton ? `gov-checkbox--${checkboxSize}` : '',
 			{ 'is-button': isButton },
 			{ 'is-disabled': isDisabled },
 		]"
@@ -61,6 +61,10 @@ const checkboxSize = computed(() => {
 	return (
 		props?.size || govCheckboxGroup?.size || govFormItem?.size || "default"
 	);
+});
+
+const isBorder = computed(() => {
+	return props?.border || govCheckboxGroup?.border;
 });
 
 const isDisabled = computed(() => {

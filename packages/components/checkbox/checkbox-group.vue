@@ -13,6 +13,7 @@ defineOptions({
 
 const props = defineProps({
 	modelValue: Array,
+	border: Boolean,
 	size: String,
 	button: Boolean,
 	disabled: Boolean,

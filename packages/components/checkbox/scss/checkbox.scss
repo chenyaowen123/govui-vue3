@@ -25,6 +25,7 @@
 
 	&__original {
 		vertical-align: middle;
+		margin:0 5px 0 0;
 		&:disabled {
 			& + .gov-checkbox__label {
 				color: var(--gov-text-color-5);

@@ -15,7 +15,6 @@ import link from "./components/link/link.vue";
 import form from "./components/form/form.vue";
 import formItem from "./components/form/form-item.vue";
 import radio from "./components/radio/radio.vue";
-import radioButton from "./components/radio/radio-button.vue";
 import radioGroup from "./components/radio/radio-group.vue";
 import checkbox from "./components/checkbox/checkbox.vue";
 import checkboxGroup from "./components/checkbox/checkbox-group.vue";
@@ -39,7 +38,6 @@ const components = {
 	form,
 	formItem,
 	radio,
-	radioButton,
 	radioGroup,
 	checkbox,
 	checkboxGroup,

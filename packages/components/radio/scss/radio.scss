@@ -1,120 +1,118 @@
 @use "@/styles/theme.scss" as *;
-@import "./size.scss";
 
 .gov-radio {
-	color: var(--gov-text-color);
-	font-weight: normal;
+	margin-right: var(--gov-checkbox-radio-gutter);
 	font-size: var(--gov-default-font-size);
-	line-height: 1;
-	position: relative;
 	cursor: pointer;
-	display: inline-block;
-	white-space: nowrap;
-	outline: none;
-	margin-right: 30px;
-	box-sizing: border-box;
+	display: inline-flex;
+	justify-content: left;
+	align-items: center;
+	position: relative;
 	@include utils-user-select(none);
 
 	&:last-child {
 		margin-right: 0;
 	}
 
-	// 边框
-	&.is-bordered {
-		border: 1px solid var(--gov-border-color);
-		&.is-checked {
-			border-color: var(--gov-primary);
-		}
+	&.is-disabled{
+		cursor: not-allowed;
 	}
 
-	&--large.is-bordered {
-		@include radio-size(large);
-	}
-	&--default.is-bordered {
-		@include radio-size(default);
-	}
-	&--small.is-bordered {
-		@include radio-size(small);
-	}
-
-	// 圈
-	.gov-radio__input {
-		white-space: nowrap;
-		outline: none;
-		display: inline-block;
-		line-height: 1;
-		position: relative;
+	&__label {
+		color: var(--gov-text-color);
 		vertical-align: middle;
+	}
 
-		.gov-radio__inner {
-			height: var(--gov-default-font-size);
-			width: var(--gov-default-font-size);
-			position: relative;
-			left: 0;
-			top: 0;
-			border: 1px solid var(--gov-border-color);
-			border-radius: 100%;
-			background-color: #fff;
-			display: inline-block;
-			box-sizing: border-box;
-			&::after {
-				content: "";
-				width: 4px;
-				height: 4px;
-				border-radius: 100%;
-				background-color: transparent;
-				position: absolute;
-				left: 50%;
-				top: 50%;
-				transform: translate(-50%, -50%) scale(0);
-				transition: transform 0.15s ease-in;
+	&__original {
+		vertical-align: middle;
+		margin:0 5px 0 0;
+		&:disabled {
+			& + .gov-radio__label {
+				color: var(--gov-text-color-5);
 			}
 		}
+		&:checked {
+			accent-color: var(--gov-primary);
+			& + .gov-radio__label {
+				color: var(--gov-primary);
+			}
+			&:disabled + .gov-radio__label {
+				color: var(--gov-text-color-5);
+			}
+		}
+	}
+
+	// 尺寸
+	&--large,
+	&--default,
+	&--small {
+		padding: 0 15px 0 8px;
+		border: 1px solid var(--gov-border-color);
+		border-radius: var(--gov-border-radius-base);
+		&:has(.gov-radio__original:checked) {
+			border-color: var(--gov-primary);
+		}
+		&:has(.gov-radio__original:disabled) {
+			border-color: var(--gov-border-color);
+		}
+	}
+
+	&--large {
+		font-size: var(--gov-large-font-size);
+		height: var(--gov-checkbox-radio-large-height);
+	}
+	&--default {
+		font-size: var(--gov-default-font-size);
+		height: var(--gov-checkbox-radio-default-height);
+	}
+	&--small {
+		font-size: var(--gov-small-font-size);
+		height: var(--gov-checkbox-radio-small-height);
+	}
+
+	// Button 模式
+	&.is-button {
+		border-radius: 0;
+		margin: 0;
+		padding: 0 15px;
+		border: 1px solid var(--gov-border-color);
+		margin-left: -1px;
+		// 圆角
+		&:first-child {
+			border-radius: var(--gov-border-radius-base) 0 0 var(--gov-border-radius-base);
+		}
+
+		&:last-child {
+			border-radius: 0 var(--gov-border-radius-base) var(--gov-border-radius-base) 0;
+		}
+
+		// 隐藏复选框
 		.gov-radio__original {
 			opacity: 0;
 			outline: none;
 			position: absolute;
 			z-index: -1;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			margin: 0;
 		}
-		&.is-checked {
-			.gov-radio__inner {
-				background-color: var(--gov-primary);
-				border-color: var(--gov-primary);
-				&::after {
-					transform: translate(-50%, -50%) scale(1);
-					background: #fff;
-				}
+
+		// 选中状态
+		&:has(.gov-radio__original:checked) {
+			background-color: var(--gov-primary);
+			border-left-color: var(--gov-primary-5);
+			& + .is-button {
+				border-left-color: var(--gov-primary-5);
+			}
+			.gov-radio__label {
+				color: #fff;
 			}
 		}
 
-		&.is-disabled {
-			cursor: not-allowed;
-		}
-	}
-
-	&.is-disabled {
-		cursor: not-allowed;
-		border-color: var(--gov-border-color-5);
-		color: var(--gov-text-color-5);
-		.gov-radio__input {
-			.gov-radio__inner {
-				background-color: var(--gov-fill-color);
-				border-color: var(--gov-border-color);
-				&::after {
-					background-color: var(--gov-fill-color-dark);
-				}
+		&:has(.gov-radio__original:disabled:checked) {
+			background-color: var(--gov-primary-5);
+			border-color: var(--gov-primary-5);
+			border-left-color: var(--gov-border-color-7);
+			& + .is-button {
+				border-left-color: var(--gov-primary-7);
 			}
 		}
-	}
-
-	// 右侧文字
-	.gov-radio__label {
-		padding-left: 10px;
-		vertical-align: middle;
 	}
 }
