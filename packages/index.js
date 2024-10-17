@@ -19,6 +19,8 @@ import radioGroup from "./components/radio/radio-group.vue";
 import checkbox from "./components/checkbox/checkbox.vue";
 import checkboxGroup from "./components/checkbox/checkbox-group.vue";
 
+import popper from "./components/popper/popper.vue";
+
 // 导出所有组件
 const components = {
 	row,
@@ -41,6 +43,8 @@ const components = {
 	radioGroup,
 	checkbox,
 	checkboxGroup,
+
+	popper,
 };
 
 // 提供一个全局安装方法

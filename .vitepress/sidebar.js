@@ -98,6 +98,15 @@ const componentSidebar = [
 					},
 				],
 			},
+			{
+				text: "弹出",
+				items: [
+					{
+						text: "Popper 弹窗",
+						link: "/component/popper",
+					},
+				],
+			},
 		],
 	},
 ];
