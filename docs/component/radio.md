@@ -65,16 +65,16 @@ const radio2 = ref('1');
 设置 ```border``` 后可设置 ```size``` 显示不同尺寸。
 
 <demo-container class="demo-gov-form">
-	<gov-radio v-model="radio3" border size="large">备选项</gov-radio>
-	<gov-radio v-model="radio3" border>备选项</gov-radio>
-	<gov-radio v-model="radio3" border size="small">备选项</gov-radio>
+	<gov-radio v-model="radio3" value="1" border size="large">备选项</gov-radio>
+	<gov-radio v-model="radio3" value="2" border>备选项</gov-radio>
+	<gov-radio v-model="radio3" value="3" border size="small">备选项</gov-radio>
 </demo-container>
 
 ```md
 <template>
-	<gov-radio v-model="radio3" border size="large">备选项</gov-radio>
-	<gov-radio v-model="radio3" border>备选项</gov-radio>
-	<gov-radio v-model="radio3" border size="small">备选项</gov-radio>
+	<gov-radio v-model="radio3" value="1" border size="large">备选项</gov-radio>
+	<gov-radio v-model="radio3" value="2" border>备选项</gov-radio>
+	<gov-radio v-model="radio3" value="3" border size="small">备选项</gov-radio>
 </template>
 
 <script setup>

@@ -29,9 +29,7 @@ defineOptions({
 });
 
 const props = defineProps({
-	modelValue: {
-		default: undefined,
-	},
+	modelValue: [String, Number],
 	size: String,
 	label: String,
 	border: Boolean,

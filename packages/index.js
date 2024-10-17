@@ -20,6 +20,7 @@ import checkbox from "./components/checkbox/checkbox.vue";
 import checkboxGroup from "./components/checkbox/checkbox-group.vue";
 
 import popper from "./components/popper/popper.vue";
+import popconfirm from "./components/popconfirm/popconfirm.vue";
 
 // 导出所有组件
 const components = {
@@ -45,6 +46,7 @@ const components = {
 	checkboxGroup,
 
 	popper,
+	popconfirm,
 };
 
 // 提供一个全局安装方法

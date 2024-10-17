@@ -93,6 +93,14 @@ const componentSidebar = [
 						link: "/component/link",
 					},
 					{
+						text: "Editor 富文本",
+						link: "/component/link",
+					},
+					{
+						text: "Markdown Editor 富文本",
+						link: "/component/link",
+					},
+					{
 						text: "Form 表单",
 						link: "/component/form",
 					},
@@ -104,6 +112,10 @@ const componentSidebar = [
 					{
 						text: "Popper 弹窗",
 						link: "/component/popper",
+					},
+					{
+						text: "Popconfirm 气泡确认框",
+						link: "/component/Popconfirm",
 					},
 				],
 			},
