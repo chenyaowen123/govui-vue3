@@ -115,7 +115,12 @@ const componentSidebar = [
 					},
 					{
 						text: "Popconfirm 气泡确认框",
-						link: "/component/Popconfirm",
+						link: "/component/popconfirm",
+					},
+					//
+					{
+						text: "Dialog 对话框",
+						link: "/component/dialog",
 					},
 				],
 			},

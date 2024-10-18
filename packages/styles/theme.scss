@@ -3,7 +3,7 @@
 @import "./utils.scss";
 
 :root {
-	// 常用圆角
+	// 常用圆角、隐影
 	--gov-border-radius-base: 5px;
 
 	// 不同尺寸字体大小
@@ -33,7 +33,7 @@
 	--gov-checkbox-radio-default-height:36px;
 	--gov-checkbox-radio-small-height:32px;
 
-	// popper
+	// popper插件
 	--popper-theme-background-color: #ffffff;
 	--popper-theme-background-color-hover: #ffffff;
 	--popper-theme-text-color: inherit;
@@ -43,4 +43,7 @@
 	--popper-theme-border-radius: 6px;
 	--popper-theme-padding: 16px;
 	--popper-theme-box-shadow: 0 6px 30px -6px rgba(0, 0, 0, 0.25);
+
+	// dialog
+	--gov-dialog-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
