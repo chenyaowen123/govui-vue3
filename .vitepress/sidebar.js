@@ -122,6 +122,10 @@ const componentSidebar = [
 						text: "Dialog 对话框",
 						link: "/component/dialog",
 					},
+					{
+						text: "MessageBox 消息弹框",
+						link: "/component/messagebox",
+					},
 				],
 			},
 		],

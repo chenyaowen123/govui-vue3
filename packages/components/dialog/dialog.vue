@@ -44,7 +44,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, watch } from "vue";
+import { ref, computed, onMounted, onUnmounted, watch } from "vue";
 import GovIcon from "../icon/icon.vue";
 
 defineOptions({
@@ -90,6 +90,11 @@ onMounted(() => {
 	rendered.value = true;
 	document.body.appendChild(dialogWrapper.value);
 });
+onUnmounted(() => {
+	if (dialogWrapper.value && document.body.contains(dialogWrapper.value)) {
+		document.body.removeChild(dialogWrapper.value);
+	}
+});
 
 // 计算弹窗宽高，全屏时候不加入样式，根据css来控制
 const dialogStyle = computed(() => {
@@ -120,10 +125,11 @@ const afterLeave = () => {
 };
 watch(
 	() => props.modelValue,
-	() => {
-		if (props.modelValue.value) {
+	(val) => {
+		if (val === true) {
 			emit("open");
-		} else {
+		}
+		if (val === false) {
 			emit("close");
 		}
 	},

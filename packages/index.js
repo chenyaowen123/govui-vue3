@@ -23,6 +23,7 @@ import popper from "./components/popper/popper.vue";
 import popconfirm from "./components/popconfirm/popconfirm.vue";
 
 import dialog from "./components/dialog/dialog.vue";
+import GovMessageBox from "./components/messagebox/message-box.js";
 
 // 导出所有组件
 const components = {
@@ -60,7 +61,13 @@ const install = (Vue) => {
 	});
 };
 
+// 引入安装
+if (typeof window !== "undefined" && window.Vue) {
+	install(window.Vue);
+}
+
 export default {
 	install,
-	...components,
 };
+
+export { GovMessageBox };
