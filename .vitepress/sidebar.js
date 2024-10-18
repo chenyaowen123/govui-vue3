@@ -35,6 +35,12 @@ const componentSidebar = [
 						text: "Link 文本链接",
 						link: "/component/link",
 					},
+					{
+						text: "Alert 警告",
+						link: "/component/alert",
+					},
+					// Alert组件
+					// blockquote
 				],
 			},
 			{
@@ -117,7 +123,7 @@ const componentSidebar = [
 						text: "Popconfirm 气泡确认框",
 						link: "/component/popconfirm",
 					},
-					//
+					// 基于 vue-popper 写一个 Tooltip 文字提示
 					{
 						text: "Dialog 对话框",
 						link: "/component/dialog",
@@ -126,6 +132,10 @@ const componentSidebar = [
 						text: "MessageBox 消息弹框",
 						link: "/component/messagebox",
 					},
+					// Message 消息提示，基于（Alert 警告）组件的
+					// Notification 通知
+					// 抽屉
+					// 引导
 				],
 			},
 		],

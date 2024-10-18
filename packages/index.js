@@ -1,16 +1,17 @@
-import row from "./components/grid/row.vue";
-import col from "./components/grid/col.vue";
-
 import aside from "./components/container/aside.vue";
 import container from "./components/container/container.vue";
 import footer from "./components/container/footer.vue";
 import header from "./components/container/header.vue";
 import main from "./components/container/main.vue";
 
+import row from "./components/grid/row.vue";
+import col from "./components/grid/col.vue";
+
 import icon from "./components/icon/icon.vue";
-import buttonGroup from "./components/button/button-group.vue";
 import button from "./components/button/button.vue";
+import buttonGroup from "./components/button/button-group.vue";
 import link from "./components/link/link.vue";
+import alert from "./components/alert/alert.vue";
 
 import form from "./components/form/form.vue";
 import formItem from "./components/form/form-item.vue";
@@ -27,19 +28,20 @@ import GovMessageBox from "./components/messagebox/message-box.js";
 
 // 导出所有组件
 const components = {
-	row,
-	col,
-
 	aside,
 	container,
 	footer,
 	header,
 	main,
 
+	row,
+	col,
+
 	icon,
-	buttonGroup,
 	button,
+	buttonGroup,
 	link,
+	alert,
 
 	form,
 	formItem,

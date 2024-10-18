@@ -110,3 +110,13 @@
 		margin-right: 5px;
 	}
 }
+
+// alert
+.demo-gov-alert{
+	.gov-alert{
+		margin-top: 20px;
+		&:first-child{
+			margin-top: 0;
+		}
+	}
+}

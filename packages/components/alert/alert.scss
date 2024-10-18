@@ -1,0 +1,82 @@
+@use "@/styles/theme.scss" as *;
+
+.gov-alert {
+	width: 100%;
+	padding: var(--gov-alert-padding);
+	margin: 0;
+	box-sizing: border-box;
+	border-radius: var(--gov-border-radius-base);
+	position: relative;
+	background-color: #fff;
+	overflow: hidden;
+	opacity: 1;
+	display: flex;
+	align-items: center;
+	transition: opacity 0.2s;
+	line-height: 1.5;
+
+	&.is-center {
+		justify-content: center;
+	}
+
+	// 循环不同的样式
+	$types: "success", "info", "warning", "danger";
+	@each $type in $types {
+		&--#{$type} {
+			background-color: var(--gov-#{$type});
+			color: #fff;
+			.gov-alert__description {
+				color: #fff;
+			}
+			&.is-plain {
+				background-color: var(--gov-#{$type}-9);
+				color: var(--gov-#{$type});
+				.gov-alert__description {
+					color: var(--gov-#{$type});
+				}
+			}
+		}
+	}
+
+	&__content {
+		display: table-cell;
+		padding: 0 8px;
+	}
+
+	&__icon {
+		font-size: 16px;
+		width: 16px;
+		&.is-big {
+			font-size: 28px;
+			width: 28px;
+		}
+	}
+
+	&__title {
+		font-size: 14px;
+		line-height: 18px;
+		&.is-bold {
+			font-weight: bold;
+		}
+	}
+
+	&__description {
+		font-size: 12px;
+		margin: 5px 0 0 0;
+	}
+
+	&__closebtn {
+		font-size: 14px;
+		opacity: 1;
+		position: absolute;
+		top: 9px;
+		right: 15px;
+		cursor: pointer;
+	}
+}
+
+// 动画
+.gov-alert-fade-enter,
+.gov-alert-fade-leave-active {
+	opacity: 0;
+}
