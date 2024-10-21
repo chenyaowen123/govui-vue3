@@ -26,6 +26,8 @@ import popconfirm from "./components/popconfirm/popconfirm.vue";
 import dialog from "./components/dialog/dialog.vue";
 import GovMessageBox from "./components/messagebox/message-box.js";
 
+import table from "./components/table/table.vue";
+
 // 导出所有组件
 const components = {
 	aside,
@@ -54,6 +56,7 @@ const components = {
 	popconfirm,
 
 	dialog,
+	table,
 };
 
 // 提供一个全局安装方法

@@ -1,0 +1,95 @@
+@use "@/styles/theme.scss" as *;
+
+.gov-table-wrap {
+	width: 100%;
+}
+
+.gov-table {
+	display: table;
+	width: 100%;
+	border-collapse: collapse;
+	margin: 0;
+	overflow: auto;
+
+	&-tr {
+		background-color: transparent;
+		transition: background-color 0.5s;
+		border-top: 1px solid var(--gov-border-color-3);
+		&:hover {
+			background-color: var(--gov-fill-color-5);
+		}
+	}
+	&-tr:nth-child(2n) {
+		background-color: transparent;
+		&:hover {
+			background-color: var(--gov-fill-color-5);
+		}
+	}
+	&-th,
+	&-td {
+		border: 1px solid #ddd;
+		padding: 10px 8px;
+		text-align: left;
+		background-color: transparent;
+		border: 1px solid var(--gov-border-color-3);
+		&.align-center {
+			text-align: center;
+		}
+		&.align-left {
+			text-align: left;
+		}
+		&.align-right {
+			text-align: right;
+		}
+	}
+	&-th {
+		text-align: left;
+		font-size: 14px;
+		font-weight: 600;
+		background-color: var(--gov-fill-color-3);
+		color: var(--gov-text-color);
+	}
+	&-td {
+		font-size: 14px;
+		color: var(--gov-text-color-2);
+	}
+
+	// 排序
+	&-arrow-up,
+	&-arrow-down {
+		display: inline-block;
+		width: 0;
+		height: 0;
+		border-left: 5px solid transparent;
+		border-right: 5px solid transparent;
+	}
+
+	&-arrow-up {
+		border-bottom: 5px solid #000;
+	}
+
+	&-arrow-down {
+		border-top: 5px solid #000;
+	}
+
+	&-th {
+		&.gov-table-arrow-up,
+		&.gov-table-arrow-down {
+			margin-left: 5px;
+		}
+	}
+
+	// 斑马线
+	&.is-striped {
+		tbody tr:nth-child(2n) {
+			background-color: #f9f9f9;
+		}
+	}
+
+	// 表头固定
+	&.is-fixed {
+		thead {
+			position: "sticky";
+		}
+	}
+}
