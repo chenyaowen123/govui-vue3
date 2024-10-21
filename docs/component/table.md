@@ -13,8 +13,13 @@ import tableBase from "./examples/table/table-base.vue"
 
 ## 基础用法
 
-<tableBase />
+你可以在 ```columns`` 里快速设置每一个列的配置。
 
++ 设置 sort 时标题会显示排序按钮，可以在 为 none、desc、asc来显示不同排序效果。
++ 利用 format 给每一列的数据设置展示时格式，它和 slot 是一致的，更方便配置。
+
+
+<tableBase />
 
 ::: code-group
 ```md [template]
@@ -53,7 +58,7 @@ export default [
 		title: "性别",
 		width: 80,
 		dataIndex: "sex",
-		align: "center",
+		align: "center", // 对齐方式
 		format: (sex) => (sex === 1 ? "男" : "女"), // 利用format修改展示数据
 	},
 	{

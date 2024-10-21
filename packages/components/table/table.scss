@@ -55,6 +55,12 @@
 	}
 
 	// 排序
+	&-arrow{
+		display: inline-flex;
+		flex-direction: column;
+		align-items: center; // 使箭头在中间对齐
+		vertical-align: middle;
+	}
 	&-arrow-up,
 	&-arrow-down {
 		display: inline-block;
@@ -62,14 +68,22 @@
 		height: 0;
 		border-left: 5px solid transparent;
 		border-right: 5px solid transparent;
+		cursor: pointer;
 	}
 
 	&-arrow-up {
-		border-bottom: 5px solid #000;
+		border-bottom: 5px solid var(--gov-text-color);
+		&.active{
+			border-bottom: 5px solid var(--gov-primary);
+		}
 	}
 
 	&-arrow-down {
-		border-top: 5px solid #000;
+		margin-top: 4px;
+		border-top: 5px solid var(--gov-text-color);
+		&.active{
+			border-top: 5px solid var(--gov-primary);
+		}
 	}
 
 	&-th {

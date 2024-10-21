@@ -26,14 +26,14 @@
 						:class="[column.align ? `align-${column.align}` : '']"
 					>
 						{{ column.title }}
-						<span v-if="column.sort">
+						<span v-if="column.sort" class="gov-table-arrow">
 							<span
-								v-if="column.sort === 'asc'"
 								class="gov-table-arrow-up"
+								:class="{ active: column.sort === 'asc' }"
 							/>
 							<span
-								v-if="column.sort === 'desc'"
 								class="gov-table-arrow-down"
+								:class="{ active: column.sort === 'desc' }"
 							/>
 						</span>
 					</th>
