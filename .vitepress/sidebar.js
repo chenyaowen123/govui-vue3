@@ -39,7 +39,6 @@ const componentSidebar = [
 						text: "Alert 警告",
 						link: "/component/alert",
 					},
-					// Alert组件
 					// blockquote
 				],
 			},
@@ -136,6 +135,15 @@ const componentSidebar = [
 					// Notification 通知
 					// 抽屉
 					// 引导
+				],
+			},
+			{
+				text: "数据",
+				items: [
+					{
+						text: "Table 表格",
+						link: "/component/table",
+					},
 				],
 			},
 		],

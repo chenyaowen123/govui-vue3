@@ -11,6 +11,7 @@
 			class="gov-checkbox__original"
 			type="checkbox"
 			:disabled="isDisabled"
+			:class="{ 'is-indeterminate': indeterminate }"
 			v-bind="$attrs"
 			v-model="innerValue"
 		/>
@@ -36,6 +37,7 @@ const props = defineProps({
 	label: String,
 	border: Boolean,
 	disabled: Boolean,
+	indeterminate: Boolean,
 });
 
 const emit = defineEmits(["change", "update:modelValue"]);

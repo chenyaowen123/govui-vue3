@@ -8,7 +8,7 @@ aside: false
 一组备选项中进行多选
 
 <script setup>
-import { ref } from 'vue';
+import { ref,  computed } from 'vue';
 const checkboxGroup1 = ref([1, 2]);
 const checkboxGroup2 = ref([1, 2]);
 const checkboxGroup3 = ref([1, 2]);
@@ -21,6 +21,19 @@ const checked4 = ref(false);
 const checked5 = ref(true);
 const checked6 = ref(false);
 const checked7 = ref('选中啦');
+
+const indeterminate =  computed(()=>{
+	return ![0,3].includes(checkboxGroup3.value.length);
+});
+
+const checkedAll = computed({
+	get() {
+		return checkboxGroup3.value.length === 3;
+	},
+	set(val) {
+		checkboxGroup3.value  = val ? [1,2,3] : [];
+	},
+});
 </script>
 
 
@@ -49,7 +62,6 @@ const checkboxGroup1 = ref([1, 2]);
 const checked1 = ref(true);
 </script>
 ```
-
 
 ## 边框模式
 
@@ -93,21 +105,25 @@ const checkboxGroup2 = ref([1, 2]);
 
 ## 禁用状态
 <demo-container class="demo-gov-form">
-	<gov-checkbox v-model="checked5" disabled>选项2</gov-checkbox>
-	<gov-checkbox v-model="checked6" disabled>选项3</gov-checkbox>
+	<gov-checkbox v-model="checked5" disabled>选项1</gov-checkbox>
+	<gov-checkbox v-model="checked6" disabled>选项2</gov-checkbox>
+	<gov-checkbox indeterminate disabled>选项3</gov-checkbox>
 	<br/>
 	<br/>
-	<gov-checkbox v-model="checked5" disabled border>选项2</gov-checkbox>
-	<gov-checkbox v-model="checked6" disabled border>选项3</gov-checkbox>
+	<gov-checkbox v-model="checked5" disabled border>选项1</gov-checkbox>
+	<gov-checkbox v-model="checked6" disabled border>选项2</gov-checkbox>
+	<gov-checkbox indeterminate disabled border>选项3</gov-checkbox>
 </demo-container>
 
 ```md
 <template>
-	<gov-checkbox v-model="checked5" disabled>选项2</gov-checkbox>
-	<gov-checkbox v-model="checked6" disabled>选项3</gov-checkbox>
+	<gov-checkbox v-model="checked5" disabled>选项1</gov-checkbox>
+	<gov-checkbox v-model="checked6" disabled>选项2</gov-checkbox>
+	<gov-checkbox indeterminate disabled/>选项3</gov-checkbox>
 	<br/>
-	<gov-checkbox v-model="checked5" disabled border>选项2</gov-checkbox>
-	<gov-checkbox v-model="checked6" disabled border>选项3</gov-checkbox>
+	<gov-checkbox v-model="checked5" disabled border>选项1</gov-checkbox>
+	<gov-checkbox v-model="checked6" disabled border>选项2</gov-checkbox>
+	<gov-checkbox indeterminate disabled border/>选项3</gov-checkbox>
 </template>
 
 <script setup>
@@ -143,7 +159,11 @@ const checked7 = ref('选中啦');
 
 适用于多个勾选框绑定到同一个数组的情景，通过是否勾选来表示这一组选项中选中的项。
 
+你可以设置 ```indeterminate``` 半选中状态，这通常使用在全选场景，当设置 ```indeterminate``` 时，它仅仅是一个展示。
+
 <demo-container class="demo-gov-form">
+	<gov-checkbox label="全选" :indeterminate="indeterminate" v-model="checkedAll"/>
+	<br/>
 	<gov-checkbox-group v-model="checkboxGroup3">
 		<gov-checkbox :value="1" label="选项1"/>
 		<gov-checkbox :value="2" label="选项2"/>
@@ -153,6 +173,7 @@ const checked7 = ref('选中啦');
 
 ```md
 <template>
+	<gov-checkbox label="全选" :indeterminate="indeterminate" v-model="checkedAll"/>
 	<gov-checkbox-group v-model="checkboxGroup3">
 		<gov-checkbox :value="1" label="选项1"/>
 		<gov-checkbox :value="2" label="选项2"/>
@@ -161,8 +182,21 @@ const checked7 = ref('选中啦');
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 const checkboxGroup3 = ref([1, 2]);
+
+const indeterminate =  computed(()=>{
+	return ![0,3].includes(checkboxGroup3.value.length);
+});
+
+const checkedAll = computed({
+	get() {
+		return checkboxGroup3.value.length === 3;
+	},
+	set(val) {
+		checkboxGroup3.value  = val ? [1,2,3] : [];
+	},
+});
 </script>
 ```
 

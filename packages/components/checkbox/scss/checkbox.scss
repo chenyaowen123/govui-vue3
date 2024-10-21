@@ -25,18 +25,69 @@
 
 	&__original {
 		vertical-align: middle;
+		width: 14px;
+        height: 14px;
 		margin:0 5px 0 0;
-		&:disabled {
-			& + .gov-checkbox__label {
-				color: var(--gov-text-color-5);
-			}
+        position: relative;
+		appearance: none;
+		border: 1px solid var(--gov-border-color);
+		border-radius: 3px;
+		font-weight: bold;
+		text-align: center;
+
+
+		&:before{
+			content: "";
+			box-sizing: border-box;
+			position: absolute;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			top:50%;
+			width: 8px;
+			height: 8px;
+			line-height:9px;
+			overflow: hidden;
 		}
-		&:checked {
+
+		&.is-indeterminate{
 			accent-color: var(--gov-primary);
+			border: 1px solid var(--gov-primary);
+			background: var(--gov-primary);
 			& + .gov-checkbox__label {
 				color: var(--gov-primary);
 			}
-			&:disabled + .gov-checkbox__label {
+			&:before, &:checked:before{
+				content: "一";
+				color: #fff;
+			}
+		}
+
+		&:checked {
+			accent-color: var(--gov-primary);
+			border: 1px solid var(--gov-primary);
+			background: var(--gov-primary);
+			& + .gov-checkbox__label {
+				color: var(--gov-primary);
+			}
+			&:before {
+				content: "\2713";
+				color: #fff;
+			}
+		}
+
+		&:disabled {
+			cursor: not-allowed;
+			border: 1px solid var(--gov-border-color-1);
+			background: var(--gov-fill-color-5);
+			& + .gov-checkbox__label {
+				color: var(--gov-text-color-5);
+			}
+			&:checked{
+				& + .gov-checkbox__label {
+					color: var(--gov-text-color-5);
+				}
+			}
+			&:before {
 				color: var(--gov-text-color-5);
 			}
 		}
