@@ -8,6 +8,7 @@ import tableBase from "./examples/table/table-base.vue"
 import tableLineStyle from "./examples/table/table-line-style.vue"
 import tableIndexed from "./examples/table/table-indexed.vue"
 import tableSelection from "./examples/table/table-selection.vue"
+import tableFixed from "./examples/table/table-fixed.vue"
 </script>
 
 # Table 表格
@@ -240,3 +241,5 @@ const fun = (row, index) => {
 ## 固定表头和列
 
 当你设置了 ```height``` 时，会固定表头。
+
+<tableFixed />
