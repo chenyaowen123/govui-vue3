@@ -3,7 +3,7 @@
 		class="gov-table-wrap"
 		:class="[
 			{
-				'is-striped': striped,
+				'is-striped': stripe,
 				'is-fixed': !!height,
 			},
 		]"
@@ -29,11 +29,23 @@
 						<span v-if="column.sort" class="gov-table-arrow">
 							<span
 								class="gov-table-arrow-up"
-								:class="{ active: column.sort === 'asc' }"
+								:class="{
+									active:
+										sortState &&
+										sortState.sort === 'asc' &&
+										sortState.column === column.dataIndex,
+								}"
+								@click="handleSort(column.dataIndex, 'asc')"
 							/>
 							<span
 								class="gov-table-arrow-down"
-								:class="{ active: column.sort === 'desc' }"
+								:class="{
+									active:
+										sortState &&
+										sortState.sort === 'desc' &&
+										sortState.column === column.dataIndex,
+								}"
+								@click="handleSort(column.dataIndex, 'desc')"
 							/>
 						</span>
 					</th>
@@ -79,7 +91,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, watchEffect } from "vue";
 import GovCheckbox from "../checkbox/checkbox.vue";
 
 defineOptions({
@@ -108,7 +120,10 @@ const props = defineProps({
 	 * - fixed: 固定列的状态，可以是'none'（不固定）、'left'（固定在左侧）或'right'（固定在右侧），采用position: sticky;
 	 * - align: 对齐方式
 	 */
-	columns: Array,
+	columns: {
+		type: Array,
+		required: true,
+	},
 });
 
 // 被选中的
@@ -146,16 +161,19 @@ const selectSome = computed(() => {
 		selectedItems.value.includes(element),
 	);
 });
+
 // 是否选中了当前所有
 const selectAll = computed(() => {
 	return currentRowKes.value.every((element) =>
 		selectedItems.value.includes(element),
 	);
 });
+
 // 计算indeterminate，至少一个，但是不是所有时为true
 const indeterminate = computed(() => {
 	return selectSome.value && !selectAll.value;
 });
+
 // 全选按钮状态
 // 当点击全选，把当前所有的key加入到 selectedItems，然后去重
 // 取消全选，把当前所有的key从 selectedItems 里剔除
@@ -186,6 +204,33 @@ const indexStr = (row, index) => {
 		return index + 1;
 	}
 };
+
+// 事件
+const emit = defineEmits(["sort"]);
+
+// 排序状态：初始化后获取最后一个配置了 sort 排序的 column。
+const sortState = ref(null);
+watchEffect(() => {
+	const last = props.columns.reduceRight((last, column) => {
+		return ["none", "asc", "desc"].includes(column.sort) ? column : last;
+	}, null);
+	if (last) {
+		sortState.value = { column: last.dataIndex, sort: last.sort };
+	}
+});
+
+// 点击排序，执行切换或者替换。
+const handleSort = (column, sort) => {
+	if (column === sortState.value?.column && sort === sortState.value?.sort) {
+		sortState.value = null;
+		emit("sort", null);
+	} else {
+		sortState.value = { column, sort };
+		emit("sort", { column, sort });
+	}
+};
+
+//
 </script>
 
 <style lang="scss" scoped>

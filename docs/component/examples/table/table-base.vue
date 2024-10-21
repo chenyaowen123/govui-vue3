@@ -1,11 +1,13 @@
 <template>
 	<demo-container>
-		<gov-table :columns="columns" :data="data" />
+		<gov-table :columns="columns" :data="data" @sort="handleSort" />
 	</demo-container>
 </template>
 
 <script setup>
 import { ref } from "vue";
+import row from "./row";
+
 defineOptions({
 	name: "tableBase",
 });
@@ -40,36 +42,23 @@ const columns = ref([
 		dataIndex: "address",
 	},
 ]);
-const data = ref([
-	{
-		name: "张三",
-		age: 30,
-		job: "UP主",
-		sex: 1,
-		address: "河北省、石家庄市",
-	},
-	{
-		name: "李四",
-		age: 36,
-		job: "海外贸易",
-		sex: 2,
-		address: "广东省、珠海市",
-	},
-	{
-		name: "王二",
-		age: 29,
-		job: "设计师",
-		sex: 2,
-		address: "北京市海淀区、石景山",
-	},
-	{
-		name: "麻子",
-		age: 32,
-		job: "放牧",
-		sex: 1,
-		address: "内蒙古、锡林格勒",
-	},
-]);
+const data = ref(row);
+
+const handleSort = (state) => {
+	if (state) {
+		let { column, sort } = state;
+		data.value = data.value.slice().sort((a, b) => {
+			if (sort === "desc") {
+				return b[column] - a[column]; // 降序排序
+			} else {
+				return a[column] - b[column]; // 升序排序
+			}
+		});
+	} else {
+		// 无排序时恢复原有数据顺序
+		data.value = JSON.parse(JSON.stringify(row));
+	}
+};
 </script>
 
 <style lang="scss"></style>

@@ -13,17 +13,17 @@ import tableBase from "./examples/table/table-base.vue"
 
 ## 基础用法
 
-你可以在 ```columns`` 里快速设置每一个列的配置。
+你可以在 ```columns``` 里快速设置每一个列的配置。
 
-+ 设置 sort 时标题会显示排序按钮，可以在 为 none、desc、asc来显示不同排序效果。
-+ 利用 format 给每一列的数据设置展示时格式，它和 slot 是一致的，更方便配置。
-
++ 排序：设置 ```sort``` 时标题会显示排序按钮，有 ```none/desc/asc``` 三种不同预设状态。利用 ```@sort``` 事件响应排序操作。
++ 格式化：利用 ```format``` 处理每列数据的展示时格式，它不会影响原有数据，本质和 ```<slot/>``` 是一致的，但  ```<slot/>```  优先级更高。
++ 对齐：数据默认居左，可设置 ```align``` 控制每列数据对齐方式。
 
 <tableBase />
 
 ::: code-group
 ```md [template]
-<gov-table :columns="tableColumns" :data="tableData" />
+<gov-table :columns="tableColumns" :data="tableData" @sort="handleSort"/>
 
 <script setup>
 import { ref } from 'vue'
@@ -32,6 +32,22 @@ import data from "./data.js"
 
 const tableColumns = ref(columns);
 const tableData = ref(data);
+
+// 排序
+const handleSort = (state) => {
+	if (state) {
+		let { column, sort } = state; // { column:'age', sort:'desc/asc' }
+		data.value = data.value.slice().sort((a, b) => {
+			if (sort === "desc") {
+				return b[column] - a[column]; // 降序排序
+			} else {
+				return a[column] - b[column]; // 升序排序
+			}
+		});
+	} else {
+		data.value = JSON.parse(JSON.stringify(row)); // 无排序时，应该恢复原有数据顺序
+	}
+};
 </script>
 ```
 
@@ -46,7 +62,7 @@ export default [
 		title: "年龄",
 		width: 80,
 		dataIndex: "age",
-		sort: "none", // 排序状态
+		sort: "none", // 排序状态，none/asc/desc
 		format: (age) => age + "岁", // 利用format增加单位
 	},
 	{
@@ -101,6 +117,9 @@ export default [
 ];
 ```
 :::
+
+
+## 排序
 
 
 
