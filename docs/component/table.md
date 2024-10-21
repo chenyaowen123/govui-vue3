@@ -5,6 +5,7 @@ aside: false
 
 <script setup>
 import tableBase from "./examples/table/table-base.vue"
+import tableLineStyle from "./examples/table/table-line-style.vue"
 </script>
 
 # Table 表格
@@ -22,7 +23,7 @@ import tableBase from "./examples/table/table-base.vue"
 <tableBase />
 
 ::: code-group
-```md [template]
+```md [index.vue]
 <gov-table :columns="tableColumns" :data="tableData" @sort="handleSort"/>
 
 <script setup>
@@ -119,31 +120,54 @@ export default [
 :::
 
 
-## 排序
 
 
 
-斑马线
 
-行Class计算方式
+## 行样式
 
-表头
+当你想改变行样式，你也可以这么做：
 
-固定表头position: sticky;   只需要设置了 height  自动固定表头。
++ 设置条纹：对 ```<gov-table />``` 设置 ```stripe```。
++ 自定义className：对 ```<gov-table />``` 设置 ```rowClassName```。
 
-固定列position: sticky;，在每个列中，
-
-多选框列。
-
-显示索引列。
+<tableLineStyle />
 
 
-::: code-group
-```md [table.vue]
-fdas
+```md [index.vue]
+<gov-table stripe :columns="tableColumns" :data="tableData" :rowClassName="fun"/>
+
+<script setup>
+import { ref } from 'vue'
+import columns from "./columns.js"
+import data from "./data.js"
+
+const tableColumns = ref(columns);
+const tableData = ref(data);
+
+// 计算每行的className
+const fun = (row, index) => {
+	return `examples-table-row__${index}`;
+};
+</script>
+
+<style lang="scss">
+/* 设置第三行样式 */
+.examples-table-row__2 {
+	font-weight: bold;
+	color:red;
+}
+</style>
+
 ```
 
-```js [columns.js]
-//fas
-```
-:::
+
+
+
+## 多选
+
+## 索引
+
+## 固定表头和列
+
+当你设置了 ```height``` 时，会固定表头。

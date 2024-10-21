@@ -10,6 +10,8 @@
 	border-collapse: collapse;
 	margin: 0;
 	overflow: auto;
+	color: var(--gov-text-color-2);
+	font-size: 14px;
 
 	&-tr {
 		background-color: transparent;
@@ -44,15 +46,11 @@
 	}
 	&-th {
 		text-align: left;
-		font-size: 14px;
 		font-weight: 600;
 		background-color: var(--gov-fill-color-3);
 		color: var(--gov-text-color);
 	}
-	&-td {
-		font-size: 14px;
-		color: var(--gov-text-color-2);
-	}
+
 
 	// 排序
 	&-arrow{

@@ -1,14 +1,15 @@
 <template>
-	<div
-		class="gov-table-wrap"
-		:class="[
-			{
-				'is-striped': stripe,
-				'is-fixed': !!height,
-			},
-		]"
-	>
-		<table :style="tableStyle" class="gov-table">
+	<div class="gov-table-wrap">
+		<table
+			:style="tableStyle"
+			class="gov-table"
+			:class="[
+				{
+					'is-striped': stripe,
+					'is-fixed': !!height,
+				},
+			]"
+		>
 			<thead>
 				<tr class="gov-table-tr">
 					<th v-if="selection" class="gov-table-th">
