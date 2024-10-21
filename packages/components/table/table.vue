@@ -32,6 +32,11 @@
 						v-for="column in columns"
 						:key="column.dataIndex"
 						:width="column.width"
+						:style="
+							column.width
+								? { minWidth: parseInt(column.width) + 'px' }
+								: {}
+						"
 						:class="[column.align ? `align-${column.align}` : '']"
 					>
 						{{ column.title }}
