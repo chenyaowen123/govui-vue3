@@ -12,7 +12,10 @@
 		>
 			<thead>
 				<tr class="gov-table-tr">
-					<th v-if="selection" class="gov-table-th">
+					<th
+						v-if="selection"
+						class="gov-table-th gov-table-th-selection"
+					>
 						<GovCheckbox
 							:indeterminate="indeterminate"
 							v-model="checkedAll"
@@ -64,10 +67,13 @@
 					:key="row._rowkey"
 					:class="rowClassName ? rowClassName(row, index) : ''"
 				>
-					<td v-if="selection" class="gov-table-td">
+					<td
+						v-if="selection"
+						class="gov-table-td gov-table-th-selection"
+					>
 						<GovCheckbox
 							v-model="selectedItems"
-							:value="row[row._rowkey]"
+							:value="row._rowkey"
 						/>
 					</td>
 					<td
@@ -100,7 +106,7 @@
 </template>
 
 <script setup>
-import { ref, computed, watchEffect } from "vue";
+import { ref, computed, watchEffect, watch } from "vue";
 import GovCheckbox from "../checkbox/checkbox.vue";
 import GovIcon from "../icon/icon.vue";
 
@@ -136,6 +142,9 @@ const props = defineProps({
 	},
 });
 
+// 事件
+const emit = defineEmits(["sortChange", "selectionChange"]);
+
 // 被选中的
 const selectedItems = ref([]);
 
@@ -143,6 +152,15 @@ const selectedItems = ref([]);
 const tableStyle = computed(() => {
 	return props.height ? { height: props.height } : {};
 });
+
+// 计算索引列的值，如果是函数，返回函数，否则认为是根据数组索引+1
+const indexStr = (row, index) => {
+	if (typeof props.indexed === "function") {
+		return props.indexed(row, index);
+	} else {
+		return index + 1;
+	}
+};
 
 // 统一加入key后的数据
 const newData = computed(() => {
@@ -206,17 +224,10 @@ const checkedAll = computed({
 	},
 });
 
-// 计算索引列的值，如果是函数，返回函数，否则认为是根据数组索引+1
-const indexStr = (row, index) => {
-	if (typeof props.indexed === "function") {
-		return props.indexed(row, index);
-	} else {
-		return index + 1;
-	}
-};
-
-// 事件
-const emit = defineEmits(["sort"]);
+// 复选框事件
+watch(selectedItems, (val) => {
+	emit("selectionChange", val);
+});
 
 // 排序状态：初始化后获取最后一个配置了 sort 排序的 column。
 const sortState = ref(null);
@@ -233,10 +244,10 @@ watchEffect(() => {
 const handleSort = (column, sort) => {
 	if (column === sortState.value?.column && sort === sortState.value?.sort) {
 		sortState.value = null;
-		emit("sort", null);
+		emit("sortChange", null);
 	} else {
 		sortState.value = { column, sort };
-		emit("sort", { column, sort });
+		emit("sortChange", { column, sort });
 	}
 };
 

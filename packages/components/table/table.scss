@@ -49,7 +49,7 @@
 		font-weight: 600;
 		background-color: var(--gov-fill-color-3);
 		color: var(--gov-text-color);
-		&-indexed{
+		&-indexed,&-selection{
 			width: 0;
 			white-space: nowrap;
 			padding:0 15px;

@@ -1,6 +1,13 @@
 <template>
 	<demo-container>
-		<gov-table :columns="columns" :data="data" @sortChange="handleSort" />
+		<gov-table
+			:columns="columns"
+			:data="data"
+			selection
+			rowKey="id"
+			@selectionChange="handleSelection"
+		/>
+		<p style="padding-left: 10px">选中id: {{ slecteIds }}</p>
 	</demo-container>
 </template>
 
@@ -44,20 +51,9 @@ const columns = ref([
 ]);
 const data = ref(row);
 
-const handleSort = (state) => {
-	if (state) {
-		let { column, sort } = state;
-		data.value = data.value.slice().sort((a, b) => {
-			if (sort === "desc") {
-				return b[column] - a[column]; // 降序排序
-			} else {
-				return a[column] - b[column]; // 升序排序
-			}
-		});
-	} else {
-		// 无排序时恢复原有数据顺序
-		data.value = JSON.parse(JSON.stringify(row));
-	}
+const slecteIds = ref([]);
+const handleSelection = (slected) => {
+	slecteIds.value = slected;
 };
 </script>
 

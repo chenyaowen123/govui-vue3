@@ -7,6 +7,7 @@ aside: false
 import tableBase from "./examples/table/table-base.vue"
 import tableLineStyle from "./examples/table/table-line-style.vue"
 import tableIndexed from "./examples/table/table-indexed.vue"
+import tableSelection from "./examples/table/table-selection.vue"
 </script>
 
 # Table 表格
@@ -17,7 +18,7 @@ import tableIndexed from "./examples/table/table-indexed.vue"
 
 你可以在 ```columns``` 里快速设置每一个列的配置。
 
-+ 排序：设置 ```sort``` 时标题会显示排序按钮，有 ```none/desc/asc``` 三种不同预设状态。利用 ```@sort``` 事件响应排序操作。
++ 排序：设置 ```sort``` 时标题会显示排序按钮，有 ```none/desc/asc``` 三种不同预设状态。利用 ```@sortChange``` 事件响应排序操作。
 + 格式化：利用 ```format``` 处理每列数据的展示时格式，它不会影响原有数据，本质和 ```<slot/>``` 是一致的，但  ```<slot/>```  优先级更高。
 + 对齐：数据默认居左，可设置 ```align``` 控制每列数据对齐方式。
 
@@ -25,7 +26,7 @@ import tableIndexed from "./examples/table/table-indexed.vue"
 
 ::: code-group
 ```md [index.vue]
-<gov-table :columns="tableColumns" :data="tableData" @sort="handleSort"/>
+<gov-table :columns="tableColumns" :data="tableData" @sortChange="handleSort"/>
 
 <script setup>
 import { ref } from 'vue'
@@ -89,6 +90,7 @@ export default [
 ```js [data.js]
 export default [
 	{
+		id: 1,
 		name: "张三",
 		age: 30,
 		job: "UP主",
@@ -96,6 +98,7 @@ export default [
 		address: "河北省、石家庄市",
 	},
 	{
+		id: 2,
 		name: "李四",
 		age: 36,
 		job: "海外贸易",
@@ -103,6 +106,7 @@ export default [
 		address: "广东省、珠海市",
 	},
 	{
+		id: 3,
 		name: "王二",
 		age: 29,
 		job: "设计师",
@@ -110,6 +114,7 @@ export default [
 		address: "北京市海淀区、石景山",
 	},
 	{
+		id: 4,
 		name: "麻子",
 		age: 32,
 		job: "放牧",
@@ -125,7 +130,77 @@ export default [
 
 
 
-## 行样式
+
+
+
+
+## 复选框
+
+注意：设置 ```selection``` 前提必须指定  ```rowKey``` 来指定唯一标识。```rowKey``` 接收一个 ```String``` 或者一个 ```Function```。
+
+选中行的 ```rowKey``` 会在 ```@selectionChange``` 事件里以数组的形式返回。
+
+<tableSelection />
+
+
+
+```md
+<gov-table
+	:columns="columns"
+	:data="data"
+	selection
+	rowKey="id"
+	@selectionChange="handleSelection"
+/>
+<p>选中id: {{ slecteIds }}</p>
+
+<script setup>
+import { ref } from 'vue'
+import columns from "./columns.js"
+import data from "./data.js"
+
+const tableColumns = ref(columns);
+const tableData = ref(data);
+
+const slecteIds = ref([]);
+const handleSelection = (slected) => {
+	slecteIds.value = slected;
+};
+</script>
+```
+
+
+
+
+
+
+
+
+## 设置索引
+
++ 默认：当设置 ```indexed``` 为 ```true``` 时，显示数据在数组中的顺序。
++ 自定义：当设置 ```indexed``` 为 ```Function``` 时，提供```（row, index）``` 两个参数用于自定义索引。
+
+<tableIndexed />
+
+```md
+<gov-table :columns="columns" :data="data" indexed />
+
+<script setup>
+import { ref } from 'vue'
+import columns from "./columns.js"
+import data from "./data.js"
+
+const tableColumns = ref(columns);
+const tableData = ref(data);
+
+// 自定义索引为数据的 id
+// const customIndex = (row, index) => row.id;
+</script>
+```
+
+
+## 设置行样式
 
 当你想改变行样式，你也可以这么做：
 
@@ -160,30 +235,6 @@ const fun = (row, index) => {
 }
 </style>
 
-```
-
-
-
-
-## 多选
-
-
-
-## 索引
-
-<tableIndexed />
-
-```md
-<gov-table :columns="columns" :data="data" indexed />
-
-<script setup>
-import { ref } from 'vue'
-import columns from "./columns.js"
-import data from "./data.js"
-
-const tableColumns = ref(columns);
-const tableData = ref(data);
-</script>
 ```
 
 ## 固定表头和列
