@@ -6,6 +6,7 @@ aside: false
 <script setup>
 import tableBase from "./examples/table/table-base.vue"
 import tableLineStyle from "./examples/table/table-line-style.vue"
+import tableIndexed from "./examples/table/table-indexed.vue"
 </script>
 
 # Table 表格
@@ -134,7 +135,7 @@ export default [
 <tableLineStyle />
 
 
-```md [index.vue]
+```md
 <gov-table stripe :columns="tableColumns" :data="tableData" :rowClassName="fun"/>
 
 <script setup>
@@ -166,7 +167,24 @@ const fun = (row, index) => {
 
 ## 多选
 
+
+
 ## 索引
+
+<tableIndexed />
+
+```md
+<gov-table :columns="columns" :data="data" indexed />
+
+<script setup>
+import { ref } from 'vue'
+import columns from "./columns.js"
+import data from "./data.js"
+
+const tableColumns = ref(columns);
+const tableData = ref(data);
+</script>
+```
 
 ## 固定表头和列
 

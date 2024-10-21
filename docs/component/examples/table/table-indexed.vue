@@ -1,11 +1,6 @@
 <template>
 	<demo-container>
-		<gov-table
-			:columns="columns"
-			:data="data"
-			stripe
-			:rowClassName="rowClassNameFun"
-		/>
+		<gov-table :columns="columns" :data="data" indexed />
 	</demo-container>
 </template>
 
@@ -14,7 +9,7 @@ import { ref } from "vue";
 import row from "./row";
 
 defineOptions({
-	name: "tableLineStyle",
+	name: "tableIndexed",
 });
 
 const columns = ref([
@@ -27,6 +22,7 @@ const columns = ref([
 		title: "年龄",
 		width: 80,
 		dataIndex: "age",
+		sort: "none",
 		format: (age) => age + "岁",
 	},
 	{
@@ -47,15 +43,6 @@ const columns = ref([
 	},
 ]);
 const data = ref(row);
-const rowClassNameFun = (row, index) => {
-	return `examples-table-row__${index}`;
-};
 </script>
 
-<style lang="scss">
-// 设置第三行加粗
-.examples-table-row__2 {
-	font-weight: bold;
-	color: red;
-}
-</style>
+<style lang="scss"></style>

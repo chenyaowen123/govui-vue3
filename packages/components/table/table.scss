@@ -49,6 +49,12 @@
 		font-weight: 600;
 		background-color: var(--gov-fill-color-3);
 		color: var(--gov-text-color);
+		&-indexed{
+			width: 0;
+			white-space: nowrap;
+			padding:0 15px;
+			text-align: center;
+		}
 	}
 
 

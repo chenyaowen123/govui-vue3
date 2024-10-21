@@ -18,7 +18,12 @@
 							v-model="checkedAll"
 						/>
 					</th>
-					<th v-if="indexed" class="gov-table-th"></th>
+					<th
+						v-if="indexed"
+						class="gov-table-th gov-table-th-indexed"
+					>
+						<GovIcon name="location" />
+					</th>
 					<th
 						class="gov-table-th"
 						v-for="column in columns"
@@ -65,7 +70,10 @@
 							:value="row[row._rowkey]"
 						/>
 					</td>
-					<td v-if="indexed" class="gov-table-td">
+					<td
+						v-if="indexed"
+						class="gov-table-td gov-table-th-indexed"
+					>
 						{{ indexStr(row, index) }}
 					</td>
 					<td
@@ -94,6 +102,7 @@
 <script setup>
 import { ref, computed, watchEffect } from "vue";
 import GovCheckbox from "../checkbox/checkbox.vue";
+import GovIcon from "../icon/icon.vue";
 
 defineOptions({
 	name: "GovTable",
