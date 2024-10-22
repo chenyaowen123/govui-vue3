@@ -144,6 +144,10 @@ const componentSidebar = [
 						text: "Table 表格",
 						link: "/component/table",
 					},
+					{
+						text: "Swiper 轮播",
+						link: "/component/swiper",
+					},
 				],
 			},
 		],

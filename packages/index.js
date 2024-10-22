@@ -24,9 +24,12 @@ import popper from "./components/popper/popper.vue";
 import popconfirm from "./components/popconfirm/popconfirm.vue";
 
 import dialog from "./components/dialog/dialog.vue";
-import GovMessageBox from "./components/messagebox/message-box.js";
+import GovMessageBox from "./components/messagebox/message-box.js"; //
 
 import table from "./components/table/table.vue";
+
+import swiper from "./components/swiper/swiper.vue";
+import { GovSwiperSlide } from "./components/swiper/swiperSlide.js"; //
 
 // 导出所有组件
 const components = {
@@ -56,7 +59,10 @@ const components = {
 	popconfirm,
 
 	dialog,
+
 	table,
+
+	swiper,
 };
 
 // 提供一个全局安装方法
@@ -64,6 +70,7 @@ const install = (Vue) => {
 	Object.keys(components).forEach((name) => {
 		Vue.component(components[name].name, components[name]);
 	});
+	Vue.component("GovSwiperSlide", GovSwiperSlide);
 };
 
 // 引入安装
