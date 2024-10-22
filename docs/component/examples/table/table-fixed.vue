@@ -22,7 +22,7 @@ const length = 15;
 
 const column = Array.from({ length }, (_, index) => ({
 	title: `列${index + 1}`,
-	width: 200,
+	width: 140,
 	dataIndex: `field${index + 1}`,
 }));
 

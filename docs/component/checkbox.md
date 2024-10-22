@@ -1,6 +1,5 @@
 ---
 outline: deep
-aside: false
 ---
 
 # Checkbox 多选框

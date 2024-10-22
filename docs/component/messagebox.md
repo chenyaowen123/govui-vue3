@@ -1,6 +1,5 @@
 ---
 outline: deep
-aside: false
 ---
 
 # MessageBox 弹窗

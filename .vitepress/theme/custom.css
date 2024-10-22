@@ -14,3 +14,7 @@
 		#a077ff
 	);
 }
+
+.VPDoc.has-aside .content-container{
+	max-width: none !important;
+}

@@ -1,6 +1,5 @@
 ---
 outline: deep
-aside: false
 ---
 
 # Alert 警告

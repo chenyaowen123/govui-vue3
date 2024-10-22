@@ -47,6 +47,7 @@
 			height: 8px;
 			line-height:9px;
 			overflow: hidden;
+			cursor: pointer;
 		}
 
 		&.is-indeterminate{
@@ -89,6 +90,7 @@
 			}
 			&:before {
 				color: var(--gov-text-color-5);
+				cursor: not-allowed;
 			}
 		}
 	}

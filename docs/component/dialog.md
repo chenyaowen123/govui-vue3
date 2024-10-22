@@ -1,6 +1,5 @@
 ---
 outline: deep
-aside: false
 ---
 
 # Dialog 对话框
