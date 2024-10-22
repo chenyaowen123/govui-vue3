@@ -240,6 +240,63 @@ const fun = (row, index) => {
 
 ## 固定表头和列
 
-当你设置了 ```height``` 时，会固定表头。
+该功能根据css的 ```position: sticky;``` 实现，所以在 ***ie11*** 浏览器下降级处理。
+
++ 设置 ```height``` 时，会自动固定表头。
++ 设置 ```column.fixed``` 为 ```left/right```时，会对该列固定在左侧或者右侧。
 
 <tableFixed />
+
+
+
+::: code-group
+```md [index.vue]
+<gov-table
+	:columns="tableColumns"
+	:data="tableData"
+	height="300px"
+	indexed
+	selection
+	rowKey="id"
+/>
+
+<script setup>
+import { ref } from 'vue'
+import columns from "./columns.js"
+import data from "./data.js"
+
+const tableColumns = ref(columns);
+const tableData = ref(data);
+</script>
+```
+
+```js [columns.js]
+const length = 15;
+
+let column = Array.from({ length }, (_, index) => ({
+	title: `列${index + 1}`,
+	width: 200,
+	dataIndex: `field${index + 1}`,
+}));
+
+column[0].fixed = "left"; // 设置第一列 fixed:right
+column[length - 1].fixed = "right"; // 设置最后一列 fixed:right
+
+export default column;
+```
+
+```js [data.js]
+const length = 15;
+
+const data = Array.from({ length }, (_, index) => {
+	return {
+		id: index + 1,
+		...Array.from({ length }, (_, subIndex) => ({
+			[`field${subIndex + 1}`]: `值${index + 1}-${subIndex + 1}`,
+		})).reduce((acc, cur) => ({ ...acc, ...cur }), {}), // 将数组转换为对象
+	};
+});
+
+export default data;
+```
+:::

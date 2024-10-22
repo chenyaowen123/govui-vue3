@@ -9,12 +9,13 @@
 					'is-fixed': !!height,
 				},
 			]"
+			ref="tableEl"
 		>
 			<thead>
 				<tr class="gov-table-tr">
 					<th
 						v-if="selection"
-						class="gov-table-th gov-table-th-selection"
+						class="gov-table-th gov-table-th-selection gov-table-column--fixed-left"
 					>
 						<GovCheckbox
 							:indeterminate="indeterminate"
@@ -23,7 +24,7 @@
 					</th>
 					<th
 						v-if="indexed"
-						class="gov-table-th gov-table-th-indexed"
+						class="gov-table-th gov-table-th-indexed gov-table-column--fixed-left"
 					>
 						<GovIcon name="location" />
 					</th>
@@ -37,7 +38,12 @@
 								? { minWidth: parseInt(column.width) + 'px' }
 								: {}
 						"
-						:class="[column.align ? `align-${column.align}` : '']"
+						:class="[
+							column.align ? `align-${column.align}` : '',
+							column.fixed
+								? `gov-table-column--fixed-${column.fixed}`
+								: '',
+						]"
 					>
 						{{ column.title }}
 						<span v-if="column.sort" class="gov-table-arrow">
@@ -74,7 +80,7 @@
 				>
 					<td
 						v-if="selection"
-						class="gov-table-td gov-table-th-selection"
+						class="gov-table-td gov-table-td-selection gov-table-column--fixed-left"
 					>
 						<GovCheckbox
 							v-model="selectedItems"
@@ -83,7 +89,7 @@
 					</td>
 					<td
 						v-if="indexed"
-						class="gov-table-td gov-table-th-indexed"
+						class="gov-table-td gov-table-td-indexed gov-table-column--fixed-left"
 					>
 						{{ indexStr(row, index) }}
 					</td>
@@ -91,7 +97,12 @@
 						v-for="column in columns"
 						:key="column.dataIndex"
 						class="gov-table-td"
-						:class="[column.align ? `align-${column.align}` : '']"
+						:class="[
+							column.align ? `align-${column.align}` : '',
+							column.fixed
+								? `gov-table-column--fixed-${column.fixed}`
+								: '',
+						]"
 					>
 						<slot :name="column.dataIndex" :row="row">
 							{{
@@ -112,6 +123,7 @@
 
 <script setup>
 import { ref, computed, watchEffect, watch } from "vue";
+import { useStickyTable } from "./useStickyTable.js";
 import GovCheckbox from "../checkbox/checkbox.vue";
 import GovIcon from "../icon/icon.vue";
 
@@ -256,7 +268,9 @@ const handleSort = (column, sort) => {
 	}
 };
 
-//
+// 设置table动态计算
+const tableEl = ref(null);
+useStickyTable(tableEl);
 </script>
 
 <style lang="scss" scoped>

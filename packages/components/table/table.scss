@@ -18,29 +18,26 @@
 	border-top: 1px solid var(--gov-border-color-3);
 
 	&-tr {
-		background-color: transparent;
-		transition: background-color 0.5s;
-		border: 1px solid var(--gov-border-color-3);
-		&:hover {
-			background-color: var(--gov-fill-color-5);
+		border: none;
+		background-color: #fff;
+		&:nth-child(2n) {
+			background-color: #fff;
 		}
-	}
-	thead &-tr {
-		border-top: none;
+		&:hover {
+			td,
+			th {
+				transition: background-color 0.5s;
+				background-color: var(--gov-fill-color-5);
+			}
+		}
 	}
 
-	&-tr:nth-child(2n) {
-		background-color: transparent;
-		&:hover {
-			background-color: var(--gov-fill-color-5);
-		}
-	}
 	&-th,
 	&-td {
 		border: 1px solid var(--gov-border-color-3);
 		padding: 10px 8px;
 		text-align: left;
-		background-color: transparent;
+		background-color: #fff;
 		&.align-center {
 			text-align: center;
 		}
@@ -50,6 +47,13 @@
 		&.align-right {
 			text-align: right;
 		}
+		&-indexed,
+		&-selection {
+			width: 0;
+			white-space: nowrap;
+			padding: 0 15px;
+			text-align: center;
+		}
 	}
 	&-th {
 		text-align: left;
@@ -58,12 +62,42 @@
 		border-top: none;
 		background-color: var(--gov-fill-color-3);
 		color: var(--gov-text-color);
-		&-indexed,
-		&-selection {
-			width: 0;
-			white-space: nowrap;
-			padding: 0 15px;
-			text-align: center;
+	}
+
+	// 定位
+	&-column--fixed-left,
+	&-column--fixed-right {
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			width: 1px;
+			top: 0;
+			bottom: 0;
+			height: 100%;
+			background-color: var(--gov-border-color-3);
+		}
+		&::before {
+			left: -1px;
+		}
+		&::after {
+			right: -1px;
+		}
+	}
+	&-column--fixed-left {
+		position: sticky;
+		left: 0;
+		z-index: 998;
+		&.is-fixed-left-last::after{
+			box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+		}
+	}
+	&-column--fixed-right {
+		position: sticky;
+		right: 0;
+		z-index: 998;
+		&.is-fixed-right-first::before{
+			box-shadow: 0 0 10px rgba(0, 0, 0, .3);
 		}
 	}
 
@@ -120,6 +154,7 @@
 		thead {
 			position: sticky;
 			top: 0;
+			z-index: 999;
 		}
 	}
 }
