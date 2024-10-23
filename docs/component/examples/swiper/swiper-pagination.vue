@@ -1,6 +1,6 @@
 <template>
 	<demo-container class="gov-demo-swiper">
-		<gov-swiper>
+		<gov-swiper pagination>
 			<gov-swiper-slide>Slide 1</gov-swiper-slide>
 			<gov-swiper-slide>Slide 2</gov-swiper-slide>
 			<gov-swiper-slide>Slide 3</gov-swiper-slide>
@@ -12,7 +12,7 @@
 
 <script setup>
 defineOptions({
-	name: "swiperBase",
+	name: "swiperPagination",
 });
 </script>
 
