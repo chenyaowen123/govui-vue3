@@ -21,6 +21,8 @@ import checkbox from "./components/checkbox/checkbox.vue";
 import checkboxGroup from "./components/checkbox/checkbox-group.vue";
 import datepicker from "./components/datepicker/datepicker.vue";
 
+import cascaderPanel from "./components/cascader/cascader-panel.vue";
+
 import popper from "./components/popper/popper.vue";
 import popconfirm from "./components/popconfirm/popconfirm.vue";
 
@@ -56,6 +58,8 @@ const components = {
 	checkbox,
 	checkboxGroup,
 	datepicker,
+
+	cascaderPanel,
 
 	popper,
 	popconfirm,

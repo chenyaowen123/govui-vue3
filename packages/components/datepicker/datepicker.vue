@@ -62,7 +62,6 @@ const year = computed(() => props.mode === "year");
 <style lang="scss" scoped>
 .gov-datepicker {
 	display: inline-block;
-	min-width: 250px;
 	:deep(.dp__input_wrap) {
 		svg {
 			fill: currentColor;

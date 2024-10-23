@@ -67,7 +67,7 @@ const componentSidebar = [
 					},
 					{
 						text: "Cascader 级联选择器",
-						link: "/component/link",
+						link: "/component/cascader",
 					},
 					{
 						text: "Switch 开关",

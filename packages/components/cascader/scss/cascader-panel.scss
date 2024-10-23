@@ -1,0 +1,61 @@
+.gov-cascader-panel {
+	font-size: 14px;
+	display: inline-flex;
+	border: 1px solid var(--gov-border-color);
+	border-radius: var(--gov-border-radius-base);
+}
+
+.gov-cascader-panel-list {
+	& + & {
+		border-left: 1px solid var(--gov-border-color);
+	}
+	background: #fff;
+	padding: 10px 0;
+	box-sizing: border-box;
+	&__li {
+		height: 34px;
+		line-height: 34px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: var(--gov-text-color-2);
+		cursor: pointer;
+		background: #fff;
+		&:hover {
+			background: var(--gov-fill-color-5);
+		}
+		&.is-disabled {
+			cursor: not-allowed;
+			color: var(--gov-text-color-5);
+			&:hover {
+				background: #fff;
+			}
+		}
+		&.is-active {
+			color: var(--gov-primary);
+			background: var(--gov-fill-color-5);
+			&:not(.is-expand) .gov-cascader-panel-list__left .gov-icon {
+				display: block;
+			}
+		}
+		&.is-expand{
+			.gov-cascader-panel-list__right .gov-icon {
+				display: block;
+			}
+		}
+	}
+
+	&__left,
+	&__right {
+		width: 22px;
+		text-align: center;
+		.gov-icon {
+			display: none;
+		}
+	}
+
+	&__text {
+		flex: 1;
+		min-width: 120px;
+	}
+}
