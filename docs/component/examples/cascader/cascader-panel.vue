@@ -1,6 +1,6 @@
 <template>
 	<demo-container class="gov-demo-cascader">
-		<gov-cascader-panel :options="options" />
+		<gov-cascader-panel :options="options" style="height: 240px" />
 	</demo-container>
 </template>
 
