@@ -19,6 +19,7 @@ import radio from "./components/radio/radio.vue";
 import radioGroup from "./components/radio/radio-group.vue";
 import checkbox from "./components/checkbox/checkbox.vue";
 import checkboxGroup from "./components/checkbox/checkbox-group.vue";
+import datepicker from "./components/datepicker/datepicker.vue";
 
 import popper from "./components/popper/popper.vue";
 import popconfirm from "./components/popconfirm/popconfirm.vue";
@@ -54,6 +55,7 @@ const components = {
 	radioGroup,
 	checkbox,
 	checkboxGroup,
+	datepicker,
 
 	popper,
 	popconfirm,

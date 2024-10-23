@@ -78,16 +78,8 @@ const componentSidebar = [
 						link: "/component/link",
 					},
 					{
-						text: "TimePicker 时间选择器",
-						link: "/component/link",
-					},
-					{
-						text: "DatePicker 日期选择器",
-						link: "/component/link",
-					},
-					{
-						text: "DateTimePicker 时间选择器",
-						link: "/component/link",
+						text: "Datepicker 日期选择器",
+						link: "/component/datepicker",
 					},
 					{
 						text: "Upload 上传",

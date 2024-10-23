@@ -1,52 +1,70 @@
 {
-  "hash": "792eb7fa",
+  "hash": "c7d9480d",
   "configHash": "038cdcea",
-  "lockfileHash": "7ccebb6b",
-  "browserHash": "e6bba178",
+  "lockfileHash": "d2398ca5",
+  "browserHash": "76e3f170",
   "optimized": {
     "vue": {
       "src": "../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "dfd0c6bb",
+      "fileHash": "588f57ac",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "0fb8ce17",
+      "fileHash": "8a572c2a",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "abcc3c56",
+      "fileHash": "61415b16",
       "needsInterop": false
     },
     "vue3-popper": {
       "src": "../../../node_modules/vue3-popper/dist/popper.esm.js",
       "file": "vue3-popper.js",
-      "fileHash": "2f2398d3",
+      "fileHash": "1202d7fd",
       "needsInterop": false
     },
     "swiper/vue": {
       "src": "../../../node_modules/swiper/swiper-vue.mjs",
       "file": "swiper_vue.js",
-      "fileHash": "cb58a535",
+      "fileHash": "8a99ff65",
       "needsInterop": false
     },
     "swiper/modules": {
       "src": "../../../node_modules/swiper/modules/index.mjs",
       "file": "swiper_modules.js",
-      "fileHash": "623b6c58",
+      "fileHash": "515b6562",
+      "needsInterop": false
+    },
+    "@vuepic/vue-datepicker": {
+      "src": "../../../node_modules/@vuepic/vue-datepicker/dist/vue-datepicker.js",
+      "file": "@vuepic_vue-datepicker.js",
+      "fileHash": "97bd64e4",
+      "needsInterop": false
+    },
+    "date-fns": {
+      "src": "../../../node_modules/date-fns/index.mjs",
+      "file": "date-fns.js",
+      "fileHash": "66621061",
       "needsInterop": false
     }
   },
   "chunks": {
+    "chunk-FPASK5HI": {
+      "file": "chunk-FPASK5HI.js"
+    },
+    "chunk-A7J3DFXU": {
+      "file": "chunk-A7J3DFXU.js"
+    },
     "chunk-QPQFSO6H": {
       "file": "chunk-QPQFSO6H.js"
     },
-    "chunk-FPASK5HI": {
-      "file": "chunk-FPASK5HI.js"
+    "chunk-V6TY7KAL": {
+      "file": "chunk-V6TY7KAL.js"
     }
   }
 }
