@@ -1,0 +1,157 @@
+.gov-input-wrap {
+	text-align: start;
+	vertical-align: top;
+	position: relative;
+	display: inline-table;
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+.gov-input-addon {
+	position: relative;
+	padding: 0 11px;
+	color: var(--gov-text-color);
+	font-weight: normal;
+	font-size: 14px;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.02);
+	border: 1px solid var(--gov-border-color);
+	border-radius: var(--gov-border-radius-base);
+	line-height: 1;
+	display: table-cell;
+	width: 1px;
+	white-space: nowrap;
+	vertical-align: middle;
+
+	&--before {
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+		border-right: 0;
+	}
+
+	&--after {
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+		border-left: 0;
+	}
+}
+
+.gov-input {
+	color: var(--gov-text-color);
+	position: relative;
+	display: inline-flex;
+	width: 100%;
+	min-width: 0;
+	background-color: #fff;
+	border: 1px solid var(--gov-border-color);
+	border-radius: var(--gov-border-radius-base);
+	padding: 0 15px;
+	transition: all 0.2s;
+
+	&-clear {
+		visibility: hidden;
+		opacity: 0;
+		transition: all 0.3s;
+	}
+
+	&-password{
+		opacity: 0.5;
+		transition: all 0.3s;
+		&.is-active{
+			opacity: 1;
+		}
+	}
+
+	&:hover {
+		border-color: var(--gov-primary);
+		.gov-input-clear.has-value {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+
+	// 它或它的后代获得焦点。
+	&:focus-within {
+		border-color: var(--gov-primary);
+		outline: 0;
+	}
+
+	&-prefix {
+		margin-right: 4px;
+		display: flex;
+		flex: none;
+		align-items: center;
+	}
+
+	&-field {
+		color: var(--gov-text-color);
+		// line-height: 1.5;
+		position: relative;
+		display: inline-block;
+		width: 100%;
+		min-width: 0;
+		background-color: transparent;
+		border: none;
+		outline: none;
+		text-overflow: ellipsis;
+	}
+
+	&-suffix {
+		margin-left: 4px;
+		display: flex;
+		flex: none;
+		gap: 8px;
+		align-items: center;
+	}
+
+	&-action {
+		display: inline-flex;
+		align-items: center;
+		cursor: pointer;
+	}
+
+	&-count {
+		color: rgba(0, 0, 0, 0.45);
+	}
+
+	&--disabled {
+		color: rgba(0, 0, 0, 0.25);
+		background-color: rgba(0, 0, 0, 0.04);
+		cursor: not-allowed;
+
+		.gov-input-field {
+			color: rgba(0, 0, 0, 0.25);
+			background-color: transparent;
+			cursor: not-allowed;
+		}
+	}
+
+	// 大小尺寸
+	&--size-large {
+		height: var(--gov-large-height);
+		font-size: var(--gov-large-font-size);
+		&--field {
+			font-size: var(--gov-large-font-size);
+		}
+	}
+
+	&--size-default {
+		height: var(--gov-default-height);
+		font-size: var(--gov-default-font-size);
+	}
+
+	&--size-small {
+		height: var(--gov-small-height);
+		font-size: var(--gov-small-font-size);
+	}
+
+	&--before {
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+
+	&--after {
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+}

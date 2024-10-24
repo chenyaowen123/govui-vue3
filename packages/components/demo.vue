@@ -1,24 +1,24 @@
 <template>
-	<div></div>
+  <div></div>
 </template>
 
 <script setup>
 defineOptions({
-	name: "Gov",
+  name: "Gov",
 });
 
 const props = defineProps({
-	type: {
-		type: String,
-		default: "default",
-	},
-	underline: {
-		type: Boolean,
-		default: true,
-	},
-	disabled: Boolean,
-	href: String,
-	icon: String,
+  type: {
+    type: String,
+    default: "default",
+  },
+  underline: {
+    type: Boolean,
+    default: true,
+  },
+  disabled: Boolean,
+  href: String,
+  icon: String,
 });
 </script>
 

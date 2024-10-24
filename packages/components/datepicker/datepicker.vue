@@ -34,7 +34,7 @@ defineOptions({
 const props = defineProps({
 	width: {
 		type: Number,
-		default: null, // 日期选择器宽度，默认 220px
+		default: null, // 日期选择器宽度
 	},
 	mode: {
 		type: String,
