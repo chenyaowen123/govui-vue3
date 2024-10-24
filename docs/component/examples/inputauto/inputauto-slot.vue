@@ -3,7 +3,9 @@
 		<gov-input-auto v-model="value" :fetch="querySearch" clear>
 			<template #default="{ item }">
 				<div>大写：{{ item.toUpperCase() }}</div>
-				<div>正常：{{ item }}</div>
+				<div style="font-size: 12px; color: #666">
+					正常：<i>{{ item }}</i>
+				</div>
 			</template>
 		</gov-input-auto>
 	</demo-container>

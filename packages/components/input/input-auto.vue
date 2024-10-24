@@ -36,7 +36,7 @@
 				:key="index"
 				@click="handleClick(item)"
 			>
-				<slot name="item" :item="item">{{ item }}</slot>
+				<slot :item="item">{{ item }}</slot>
 			</div>
 		</div>
 	</gov-popper>
@@ -121,6 +121,7 @@ const handleClick = (item) => {
 	&__li {
 		background: #fff;
 		padding: 5px 20px;
+		margin: 2px 0;
 		cursor: pointer;
 		transition: background-color 0.2s;
 		&:hover {
