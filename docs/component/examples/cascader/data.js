@@ -261,4 +261,15 @@ export default [
 			},
 		],
 	},
+	{
+		value: "disabled",
+		label: "禁用状态",
+		disabled: true,
+		children: [
+			{
+				value: "disabled",
+				label: "禁用2",
+			},
+		],
+	},
 ];

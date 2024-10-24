@@ -59,15 +59,15 @@
 
 	&--large {
 		font-size: var(--gov-large-font-size);
-		height: var(--gov-checkbox-radio-large-height);
+		height: var(--gov-large-height);
 	}
 	&--default {
 		font-size: var(--gov-default-font-size);
-		height: var(--gov-checkbox-radio-default-height);
+		height: var(--gov-default-height);
 	}
 	&--small {
 		font-size: var(--gov-small-font-size);
-		height: var(--gov-checkbox-radio-small-height);
+		height: var(--gov-small-height);
 	}
 
 	// Button 模式

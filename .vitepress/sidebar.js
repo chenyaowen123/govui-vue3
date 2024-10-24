@@ -70,6 +70,10 @@ const componentSidebar = [
 						link: "/component/cascader",
 					},
 					{
+						text: "CascaderPanel 级联面板",
+						link: "/component/cascaderpanel",
+					},
+					{
 						text: "Switch 开关",
 						link: "/component/link",
 					},

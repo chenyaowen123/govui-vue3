@@ -11,6 +11,11 @@
 	--gov-default-font-size: 14px;
 	--gov-small-font-size: 12px;
 
+	// 不同尺寸的常规高度，例如input select Button ...
+	--gov-large-height: 40px;
+	--gov-default-height: 36px;
+	--gov-small-height: 32px;
+
 	// container
 	--gov-aside-width: 200px;
 	--gov-footer-height: 60px;
@@ -32,9 +37,6 @@
 
 	// radio checkbox
 	--gov-checkbox-radio-gutter:30px;
-	--gov-checkbox-radio-large-height:40px;
-	--gov-checkbox-radio-default-height:36px;
-	--gov-checkbox-radio-small-height:32px;
 
 	// popper插件
 	--popper-theme-background-color: #ffffff;

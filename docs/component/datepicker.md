@@ -1,5 +1,6 @@
 <script setup>
 import datepickerBase from "./examples/datepicker/datepicker-base.vue"
+import datepickerSize from "./examples/datepicker/datepicker-size.vue"
 import datepickerDisable from "./examples/datepicker/datepicker-disabled.vue"
 import datepickerDatetime from "./examples/datepicker/datepicker-datetime.vue"
 import datepickerRange from "./examples/datepicker/datepicker-range.vue"
@@ -39,6 +40,24 @@ import { ref } from "vue";
 const dateValue = ref("2024-10-01");
 </script>
 ```
+
+## 设置尺寸
+
+<datepickerSize />
+
+```vue
+<template>
+	<gov-datepicker v-model="dateValue" format="yyyy-MM-dd" size="large"/>
+	<gov-datepicker v-model="dateValue" format="yyyy-MM-dd"/>
+	<gov-datepicker v-model="dateValue" format="yyyy-MM-dd" size="small"/>
+</template>
+
+<script setup>
+import { ref } from "vue";
+const dateValue = ref("2024-10-01");
+</script>
+```
+
 
 ## 禁用过去/未来
 

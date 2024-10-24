@@ -2,6 +2,7 @@
 	<div
 		class="gov-datepicker"
 		:style="width ? `width: ${props.width}px;` : ''"
+		:class="`gov-datepicker--${_size}`"
 	>
 		<VueDatePicker
 			locale="zh-CN"
@@ -22,7 +23,7 @@
 	</div>
 </template>
 <script setup>
-import { computed } from "vue";
+import { computed, inject } from "vue";
 import VueDatePicker from "@vuepic/vue-datepicker";
 import "@vuepic/vue-datepicker/dist/main.css";
 
@@ -51,12 +52,21 @@ const props = defineProps({
 		type: String,
 		default: "format", // v-model 值类型，默认 'format'
 	},
+	size: {
+		type: String,
+		default: "default",
+	},
 });
 
 const time = computed(() => props.mode === "time");
 const week = computed(() => props.mode === "week");
 const month = computed(() => props.mode === "month");
 const year = computed(() => props.mode === "year");
+
+const govFormItem = inject("govFormItem", null);
+const _size = computed(() => {
+	return props?.size || govFormItem?.size || "default";
+});
 </script>
 
 <style lang="scss" scoped>
@@ -65,6 +75,26 @@ const year = computed(() => props.mode === "year");
 	:deep(.dp__input_wrap) {
 		svg {
 			fill: currentColor;
+		}
+	}
+
+	// 尺寸
+	&--large {
+		:deep(.dp__input) {
+			height: var(--gov-large-height);
+			font-size: var(--gov-large-font-size);
+		}
+	}
+	&--default {
+		:deep(.dp__input) {
+			height: var(--gov-default-height);
+			font-size: var(--gov-default-font-size);
+		}
+	}
+	&--small {
+		:deep(.dp__input) {
+			height: var(--gov-small-height);
+			font-size: var(--gov-small-font-size);
 		}
 	}
 }

@@ -1,12 +1,16 @@
 <template>
 	<div class="gov-cascader-panel">
 		<GovCascaderPanelList :level="0" :options="options" />
-		<GovCascaderPanelList
+		<template
 			v-for="(nodeObj, index) in cascaderSelected"
 			:key="nodeObj.value"
-			:level="index + 1"
-			:options="nodeObj.children"
-		/>
+		>
+			<GovCascaderPanelList
+				v-if="nodeObj.children && nodeObj.children.length"
+				:level="index + 1"
+				:options="nodeObj.children"
+			/>
+		</template>
 	</div>
 </template>
 
@@ -71,7 +75,7 @@ const updateCascaderPanelValue = (level, nodeObj) => {
 	}
 	updatedSelected.push(nodeObj);
 	cascaderSelected.value = updatedSelected;
-	emit("change", updatedSelected);
+	emit("change", cascaderSelectedValues.value, updatedSelected);
 	emit("update:modelValue", cascaderSelectedValues.value);
 };
 
