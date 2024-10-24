@@ -13,7 +13,7 @@
 		<template #content>
 			<div
 				class="gov-popper__wrap"
-				:style="{ width: width + 'px' }"
+				:style="styleObject"
 				ref="govPopperWrapNode"
 			>
 				<div v-if="title" class="gov-popper__title">
@@ -31,7 +31,7 @@
 </template>
 
 <script setup>
-import { ref, watchEffect } from "vue";
+import { ref, computed, watchEffect } from "vue";
 import Popper from "vue3-popper";
 import useClickAway from "./useClickAway";
 
@@ -47,24 +47,29 @@ const props = defineProps({
 		type: Boolean,
 		default: true,
 	},
-	width: {},
+	width: { type: Number },
+	height: { type: Number },
+	padding: {
+		type: Number,
+		default: 16,
+	},
 	clickAwayClose: {
 		type: Boolean,
 		default: true,
 	},
 });
 
-const emit = defineEmits(["update:modelValue", "change", "show", "hide"]);
+const emit = defineEmits(["update:modelValue", "toggle", "show", "hide"]);
 
 const handleOpen = () => {
 	emit("update:modelValue", true);
-	emit("change", true);
+	emit("toggle", true);
 	emit("show");
 };
 
 const handleClose = () => {
 	emit("update:modelValue", false);
-	emit("change", false);
+	emit("toggle", false);
 	emit("hide");
 };
 
@@ -76,6 +81,14 @@ watchEffect(() => {
 	if (props.clickAwayClose) {
 		useClickAway([govPopperWrapNode, govPopperTriggerNode], handleClose);
 	}
+});
+
+const styleObject = computed(() => {
+	return {
+		width: props.width ? `${props.width}px` : undefined,
+		height: props.height ? `${props.height}px` : undefined,
+		padding: props.padding ? `${props.padding}px` : undefined,
+	};
 });
 </script>
 
@@ -89,6 +102,9 @@ watchEffect(() => {
 	&__content {
 		font-size: 14px;
 		color: var(--gov-text-color);
+	}
+	&__wrap {
+		overflow: auto;
 	}
 }
 </style>

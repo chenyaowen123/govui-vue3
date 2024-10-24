@@ -20,6 +20,7 @@ import radioGroup from "./components/radio/radio-group.vue";
 import checkbox from "./components/checkbox/checkbox.vue";
 import checkboxGroup from "./components/checkbox/checkbox-group.vue";
 import input from "./components/input/input.vue";
+import inputAuto from "./components/input/input-auto.vue";
 import datepicker from "./components/datepicker/datepicker.vue";
 
 import cascaderPanel from "./components/cascader/cascader-panel.vue";
@@ -59,6 +60,7 @@ const components = {
 	checkbox,
 	checkboxGroup,
 	input,
+	inputAuto,
 	datepicker,
 
 	cascaderPanel,

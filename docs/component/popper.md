@@ -230,7 +230,7 @@ const show2 = ref(false);
   </thead>
   <tbody>
   	<tr>
-      <td>change</td>
+      <td>toggle</td>
       <td>显示隐藏变化时触发的事件。</td>
 	  <td>Function</td>
     </tr>

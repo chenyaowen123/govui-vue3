@@ -33,6 +33,8 @@
 				:disabled="disabled"
 				@input="onInput"
 				@change="onChange"
+				@focus="emits('focus', $event)"
+				@blur="emits('blur', $event)"
 			/>
 			<span v-if="showInputSuffix" class="gov-input-suffix">
 				<span
@@ -138,7 +140,13 @@ const props = defineProps({
 const inputRef = ref(null);
 const showPassword = ref(false);
 
-const emits = defineEmits(["update:modelValue", "input", "change", "enter"]);
+const emits = defineEmits([
+	"update:modelValue",
+	"input",
+	"change",
+	"focus",
+	"blur",
+]);
 
 // 根据插槽和props判断是否有元素
 const slots = useSlots();
@@ -168,17 +176,17 @@ const showInputSuffix = computed(() => {
 
 function onInput(e) {
 	emits("update:modelValue", e.target.value);
-	emits("input", e);
+	emits("input", e.target.value);
 }
 
 function onChange(e) {
 	emits("update:modelValue", e.target.value);
-	emits("change", e);
+	emits("change", e.target.value);
 }
 
 function onClear() {
 	emits("update:modelValue", "");
-	inputRef.value.focus();
+	emits("input", "");
 }
 </script>
 

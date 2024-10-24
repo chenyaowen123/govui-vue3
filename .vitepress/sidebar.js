@@ -58,6 +58,10 @@ const componentSidebar = [
 						link: "/component/input",
 					},
 					{
+						text: "InputAuto 自动补全",
+						link: "/component/inputauto",
+					},
+					{
 						text: "InputNumber 计数器",
 						link: "/component/button",
 					},
