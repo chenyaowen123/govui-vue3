@@ -27,14 +27,14 @@
 				ref="inputRef"
 				class="gov-input-field"
 				:type="password && !showPassword ? 'password' : 'text'"
-				:value="modelValue"
+				v-model="innerValue"
 				:placeholder="placeholder"
 				:maxlength="maxlength"
 				:disabled="disabled"
 				@input="onInput"
 				@change="onChange"
-				@focus="emits('focus', $event)"
-				@blur="emits('blur', $event)"
+				@focus="onFocus"
+				@blur="onBlur"
 			/>
 			<span v-if="showInputSuffix" class="gov-input-suffix">
 				<span
@@ -71,7 +71,7 @@
 </template>
 
 <script setup>
-import { ref, computed, useSlots } from "vue";
+import { ref, computed, useSlots, nextTick } from "vue";
 import GovIcon from "../icon/icon.vue";
 
 defineOptions({
@@ -131,10 +131,6 @@ const props = defineProps({
 		type: String,
 		default: undefined,
 	},
-	modelValueModifiers: {
-		type: Object,
-		default: () => ({}),
-	},
 });
 
 const inputRef = ref(null);
@@ -147,6 +143,16 @@ const emits = defineEmits([
 	"focus",
 	"blur",
 ]);
+
+// 绑定值
+const innerValue = computed({
+	get() {
+		return props.modelValue;
+	},
+	set(val) {
+		emits("update:modelValue", val);
+	},
+});
 
 // 根据插槽和props判断是否有元素
 const slots = useSlots();
@@ -175,18 +181,32 @@ const showInputSuffix = computed(() => {
 });
 
 function onInput(e) {
-	emits("update:modelValue", e.target.value);
 	emits("input", e.target.value);
 }
 
 function onChange(e) {
-	emits("update:modelValue", e.target.value);
 	emits("change", e.target.value);
+	// 以下是解决因为vue缓存问题
+	// 正常情况输入内容和value属性的值是一致的，但是会有外层处理数据的情况。
+	// 例如输入数字，外层更改为最大值，不同的输入可能导致外层传递的 modelValue 是相同值（即都是最大值），
+	// 这时候 dom 是不会更新的，因为 vue 认为没有必要更新，也就意味着 input 框始终是输入值，而不是最大值，两者就出现了脱节。
+	nextTick(() => {
+		inputRef.value.value = props.modelValue;
+	});
 }
 
 function onClear() {
 	emits("update:modelValue", "");
 	emits("input", "");
+	emits("change", "");
+}
+
+function onBlur(e) {
+	emits("blur", e);
+}
+
+function onFocus(e) {
+	emits("focus", e);
 }
 </script>
 

@@ -47,7 +47,7 @@ const props = defineProps({
 		type: Boolean,
 		default: true,
 	},
-	width: { type: Number },
+	width: { type: [Number, String] },
 	height: { type: Number },
 	padding: {
 		type: Number,

@@ -63,7 +63,7 @@ const componentSidebar = [
 					},
 					{
 						text: "InputNumber 计数器",
-						link: "/component/button",
+						link: "/component/inputnumber",
 					},
 					{
 						text: "Select 选择器",

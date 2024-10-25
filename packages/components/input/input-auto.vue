@@ -9,7 +9,7 @@
 	>
 		<template #reference>
 			<gov-input
-				:modelValue="modelValue"
+				v-model="innerValue"
 				v-bind="$attrs"
 				@focus="handleFocus"
 				@blur="handleBlur"
@@ -73,17 +73,33 @@ const props = defineProps({
 
 const show = ref(false);
 const list = ref([]);
-const emits = defineEmits(["update:modelValue", "input"]);
+const emits = defineEmits([
+	"update:modelValue",
+	"input",
+	"select",
+	"focus",
+	"blur",
+]);
 
 // 创建一个计算属性来提供默认的 fetch 函数
 const fetchWithDefault = computed(() => {
 	return props.fetch || (() => Promise.resolve([]));
 });
 
+// 绑定
+const innerValue = computed({
+	get() {
+		return props.modelValue;
+	},
+	set(val) {
+		emits("update:modelValue", val);
+	},
+});
+
 // 抛出外层
 const handleInput = (inputValue) => {
 	list.value = fetchWithDefault.value(inputValue);
-	emits("update:modelValue", inputValue);
+	show.value = true;
 	emits("input", inputValue);
 };
 
@@ -105,6 +121,7 @@ const handleClick = (item) => {
 	if (typeof item !== "string") {
 		inputValue = item[props.valueKey];
 	}
+	emits("select", item);
 	emits("update:modelValue", inputValue);
 	emits("input", inputValue);
 };
