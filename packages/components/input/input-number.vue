@@ -1,23 +1,48 @@
 <template>
 	<div class="gov-input-number">
-		<gov-input
-			:model-value="innerValue"
+		<GovInput
 			v-bind="$attrs"
-			type="text"
+			:prefix="prefix"
+			:disabled="disabled"
+			:model-value="innerValue"
 			@change="handleChange"
 			@input="handleInput"
 			class="gov-input-number__input"
-		/>
-		<div class="gov-input-number__buttons">
-			<div @click="decrement">-</div>
-			<div @click="increment">+</div>
+		>
+			<template v-if="$slots.addonBefore" #addonBefore>
+				<slot name="addonBefore" />
+			</template>
+			<template v-if="$slots.addonAfter" #addonAfter>
+				<slot name="addonAfter" />
+			</template>
+			<template v-if="$slots.prefix" #prefix>
+				<slot name="prefix" />
+			</template>
+			<template v-if="$slots.suffix" #suffix>
+				<slot name="suffix" />
+			</template>
+		</GovInput>
+		<div class="gov-input-number__buttons" v-if="controls">
+			<div
+				@click="increment"
+				:class="[{ 'is-disabled': incrementDisabled }]"
+			>
+				<GovIcon name="plus" />
+			</div>
+			<div
+				@click="decrement"
+				:class="[{ 'is-disabled': decrementDisabled }]"
+			>
+				<GovIcon name="minus" />
+			</div>
 		</div>
 	</div>
 </template>
 
 <script setup>
 import { computed } from "vue";
-import govInput from "./input.vue";
+import GovInput from "./input.vue";
+import GovIcon from "../icon/icon.vue";
 import numeral from "numeral";
 
 defineOptions({
@@ -44,7 +69,21 @@ const props = defineProps({
 		type: String,
 		default: "0,0",
 	},
+	// 双向绑定值是否为格式化后的
 	valueFormat: {
+		type: Boolean,
+		default: false,
+	},
+	// 是否显示加减按钮
+	controls: {
+		type: Boolean,
+		default: false,
+	},
+	prefix: {
+		type: [String, Number],
+		default: undefined,
+	},
+	disabled: {
 		type: Boolean,
 		default: false,
 	},
@@ -97,8 +136,20 @@ function handleInput(value) {
 	emits("input", value);
 }
 
+// 加减按钮的disabled
+const incrementDisabled = computed(() => {
+	let val = numeral(props.modelValue).add(props.step).value();
+	return props.disabled || val > props.max;
+});
+
+const decrementDisabled = computed(() => {
+	let val = numeral(props.modelValue).subtract(props.step).value();
+	return props.disabled || val < props.min;
+});
+
 // 加减
 function increment() {
+	if (incrementDisabled.value) return;
 	const newValue = numeral(props.modelValue).add(props.step).value();
 	const emitValue = emitValueFormat(newValue);
 	emits("update:modelValue", emitValue);
@@ -107,6 +158,7 @@ function increment() {
 }
 
 function decrement() {
+	if (decrementDisabled.value) return;
 	const newValue = numeral(props.modelValue).subtract(props.step).value();
 	const emitValue = emitValueFormat(newValue);
 	emits("update:modelValue", emitValue);
@@ -117,16 +169,43 @@ function decrement() {
 
 <style lang="scss">
 .gov-input-number {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	display: inline-flex;
+	align-items: stretch;
+	justify-content: space-between;
+	&__input {
+		flex-grow: 1;
+	}
 	&__buttons {
 		display: flex;
-		width: 100%;
+		align-items: stretch;
 		justify-content: space-between;
-		button {
-			flex: 1;
-			margin: 2px;
+
+		div {
+			cursor: pointer;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 40px;
+			margin-left: 5px;
+			border-radius: var(--gov-border-radius-base);
+			border: 1px solid var(--gov-border-color);
+			color: var(--gov-text-color);
+			font-size: 12px;
+			transition: all 0.2s;
+			&:hover {
+				background-color: var(--gov-primary);
+				border-color: var(--gov-primary);
+				color: #fff;
+			}
+			&.is-disabled {
+				cursor: not-allowed;
+				background: var(--gov-fill-color-5);
+				border-color: var(--gov-border-color-5);
+				color: var(--gov-text-color-5);
+				&:hover {
+					border-color: var(--gov-border-color);
+				}
+			}
 		}
 	}
 }

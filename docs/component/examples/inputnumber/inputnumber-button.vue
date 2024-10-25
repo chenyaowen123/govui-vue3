@@ -1,6 +1,6 @@
 <template>
 	<demo-container class="gov-demo-inputnumber">
-		<gov-input-number v-model="value" />
+		<gov-input-number v-model="value" controls :step="100" />
 		<template #console>
 			{{ value }}
 		</template>
@@ -9,7 +9,7 @@
 
 <script setup>
 import { ref } from "vue";
-const value = ref(9999);
+const value = ref();
 </script>
 
 <style lang="scss"></style>

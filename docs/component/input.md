@@ -3,6 +3,7 @@ import inputBase from "./examples/input/input-base.vue"
 import inputSize from "./examples/input/input-size.vue"
 import inputDisabled from "./examples/input/input-disabled.vue"
 import inputFix from "./examples/input/input-fix.vue"
+import inputAddon from "./examples/input/input-addon.vue"
 import inputClear from "./examples/input/input-clear.vue"
 import inputPwd from "./examples/input/input-pwd.vue"
 import inputCount from "./examples/input/input-count.vue"
@@ -28,7 +29,9 @@ import inputCount from "./examples/input/input-count.vue"
 
 <inputFix />
 
+## 前置后置
 
+<inputAddon />
 
 ## 清空按钮
 

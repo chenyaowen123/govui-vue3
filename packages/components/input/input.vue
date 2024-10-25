@@ -14,8 +14,8 @@
 			:class="[
 				`gov-input--size-${size}`,
 				{
-					'gov-input-before': slotsExist.addonBefore,
-					'gov-input-after': slotsExist.addonAfter,
+					'gov-input--before': slotsExist.addonBefore,
+					'gov-input--after': slotsExist.addonAfter,
 					'gov-input--disabled': disabled,
 				},
 			]"
@@ -88,24 +88,24 @@ const props = defineProps({
 		default: "default",
 	},
 	addonBefore: {
-		type: [String, Object],
+		type: [String, Number],
 		default: undefined,
 	},
 	addonAfter: {
-		type: [String, Object],
+		type: [String, Number],
 		default: undefined,
 	},
 	prefix: {
-		type: [String, Object],
+		type: [String, Number],
 		default: undefined,
 	},
 	suffix: {
-		type: [String, Object],
+		type: [String, Number],
 		default: undefined,
 	},
 	clear: {
 		type: Boolean,
-		default: false,
+		default: true,
 	},
 	password: {
 		type: Boolean,

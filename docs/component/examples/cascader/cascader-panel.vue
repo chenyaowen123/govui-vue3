@@ -5,9 +5,9 @@
 			style="height: 240px"
 			v-model="values"
 		/>
-		<div class="language-text">
-			<pre><code>{{ values }}</code></pre>
-		</div>
+		<template #console>
+			{{ values }}
+		</template>
 	</demo-container>
 </template>
 
