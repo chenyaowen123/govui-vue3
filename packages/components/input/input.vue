@@ -31,6 +31,7 @@
 				:placeholder="placeholder"
 				:maxlength="maxlength"
 				:disabled="disabled"
+				:readonly="readonly"
 				@input="onInput"
 				@change="onChange"
 				@focus="onFocus"
@@ -115,6 +116,10 @@ const props = defineProps({
 		type: Boolean,
 		default: false,
 	},
+	readonly: {
+		type: Boolean,
+		default: false,
+	},
 	placeholder: {
 		type: String,
 		default: "请输入",
@@ -138,6 +143,7 @@ const showPassword = ref(false);
 
 const emits = defineEmits([
 	"update:modelValue",
+	"clear",
 	"input",
 	"change",
 	"focus",
@@ -197,6 +203,7 @@ function onChange(e) {
 
 function onClear() {
 	emits("update:modelValue", "");
+	emits("clear");
 	emits("input", "");
 	emits("change", "");
 }

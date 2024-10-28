@@ -1,9 +1,6 @@
 <template>
 	<demo-container class="gov-demo-inputnumber">
 		<gov-input-number v-model="value" controls :step="100" disabled />
-		<template #console>
-			{{ value }}
-		</template>
 	</demo-container>
 </template>
 

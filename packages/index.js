@@ -22,6 +22,8 @@ import checkboxGroup from "./components/checkbox/checkbox-group.vue";
 import input from "./components/input/input.vue";
 import inputAuto from "./components/input/input-auto.vue";
 import inputNumber from "./components/input/input-number.vue";
+import select from "./components/select/select.vue";
+import selectOption from "./components/select/select-option.vue";
 import datepicker from "./components/datepicker/datepicker.vue";
 
 import cascaderPanel from "./components/cascader/cascader-panel.vue";
@@ -63,6 +65,8 @@ const components = {
 	input,
 	inputAuto,
 	inputNumber,
+	select,
+	selectOption,
 	datepicker,
 
 	cascaderPanel,

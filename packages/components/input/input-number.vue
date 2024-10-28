@@ -50,9 +50,7 @@ defineOptions({
 });
 
 const props = defineProps({
-	modelValue: {
-		type: Number,
-	},
+	modelValue: {},
 	min: {
 		type: Number,
 		default: Number.MIN_SAFE_INTEGER,

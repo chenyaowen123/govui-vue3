@@ -121,6 +121,7 @@ const handleClick = (item) => {
 	if (typeof item !== "string") {
 		inputValue = item[props.valueKey];
 	}
+	show.value = false;
 	emits("select", item);
 	emits("update:modelValue", inputValue);
 	emits("input", inputValue);

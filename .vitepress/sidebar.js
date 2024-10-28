@@ -67,7 +67,7 @@ const componentSidebar = [
 					},
 					{
 						text: "Select 选择器",
-						link: "/component/link",
+						link: "/component/select",
 					},
 					{
 						text: "Cascader 级联选择器",
