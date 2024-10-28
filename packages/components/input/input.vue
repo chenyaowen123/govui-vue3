@@ -42,7 +42,7 @@
 					v-if="showClear"
 					class="gov-input-action gov-input-clear"
 					:class="[{ 'has-value': modelValue && modelValue != 0 }]"
-					@click="onClear"
+					@click.stop="onClear"
 				>
 					<GovIcon name="close" />
 				</span>

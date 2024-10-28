@@ -1,5 +1,15 @@
 <template>
 	<demo-container class="gov-demo-select">
+		<gov-select v-model="value" size="large">
+			<gov-select-option
+				v-for="option in options"
+				:key="option.value"
+				:label="option.label"
+				:value="option.value"
+				:disabled="option.disabled"
+			/>
+		</gov-select>
+		<br /><br />
 		<gov-select v-model="value">
 			<gov-select-option
 				v-for="option in options"
@@ -9,7 +19,16 @@
 				:disabled="option.disabled"
 			/>
 		</gov-select>
-		<template #console>{{ value }}</template>
+		<br /><br />
+		<gov-select v-model="value" size="small">
+			<gov-select-option
+				v-for="option in options"
+				:key="option.value"
+				:label="option.label"
+				:value="option.value"
+				:disabled="option.disabled"
+			/>
+		</gov-select>
 	</demo-container>
 </template>
 
@@ -25,7 +44,7 @@ const options = ref([
 	{ label: "荔枝", value: "荔枝" },
 ]);
 
-const value = ref(options.value[1].value); // 默认选中桃子
+const value = ref(null); // 默认选中桃子
 </script>
 
 <style lang="scss"></style>

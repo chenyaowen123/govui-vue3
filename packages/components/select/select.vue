@@ -19,7 +19,7 @@
 				@clear="handleClear"
 				@click="handleClick"
 				readonly
-				clear
+				:clear="clear"
 			>
 				<template #suffix>
 					<gov-icon
@@ -67,6 +67,18 @@ const props = defineProps({
 		type: Boolean,
 		default: false,
 	},
+	clear: {
+		type: Boolean,
+		default: true,
+	},
+	popperWidth: {
+		type: Number,
+		default: null,
+	},
+	popperHeight: {
+		type: Number,
+		default: 200,
+	},
 });
 
 const show = ref(false);
@@ -78,9 +90,13 @@ const inputValue = ref("");
 // 更新value
 const updateValue = (item) => {
 	show.value = false;
-	inputValue.value = item.label;
 	emits("change", item);
 	emits("update:modelValue", item.value);
+};
+
+// 更新input的文字
+const updateInputText = (label) => {
+	inputValue.value = label;
 };
 
 // 禁用的时候关闭下来
@@ -94,51 +110,27 @@ watch(
 // 点击
 const handleClick = () => {
 	if (!props.disabled) {
-		show.value = true;
+		show.value = !show.value;
 	}
 };
 
 // 清空
 const handleClear = () => {
-	updateValue({ value: "", label: "" });
+	show.value = false;
+	updateInputText(undefined);
+	updateValue({ value: undefined, label: undefined });
 };
 
 provide(
 	"govSelect",
 	reactive({
 		...toRefs(props),
+		updateInputText,
 		updateValue,
 	}),
 );
 </script>
 
 <style lang="scss">
-.gov-select {
-	&__input {
-		cursor: pointer;
-		.gov-input-field {
-			cursor: pointer;
-		}
-	}
-	&__icon {
-		transition: all 0.2s;
-		&.is-open {
-			transform: rotate(180deg);
-		}
-	}
-	&__box {
-		background: #fff;
-		box-sizing: border-box;
-		min-width: 200px;
-		max-height: 300px;
-	}
-	&.is-disabled {
-		.gov-select__input {
-			cursor: not-allowed;
-			.gov-input-field {
-				cursor: not-allowed;
-			}
-		}
-	}
-}
+@import "./scss/select.scss";
 </style>

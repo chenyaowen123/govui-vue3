@@ -1,6 +1,6 @@
 <template>
 	<demo-container class="gov-demo-select">
-		<gov-select v-model="value">
+		<gov-select v-model="value" :clear="false">
 			<gov-select-option
 				v-for="option in options"
 				:key="option.value"

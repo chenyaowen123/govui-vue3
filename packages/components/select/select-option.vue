@@ -31,51 +31,31 @@ const props = defineProps({
 
 const govSelect = inject("govSelect", null);
 
+// 是否选中
 const isSelected = computed(() => {
 	return govSelect?.modelValue === props.value;
 });
 
-const emitValue = () => {
-	const { disabled, value, label } = props;
-	if (!disabled) {
-		govSelect.updateValue({ value, label });
-	}
-};
-
-// 监听外层有 modelValue，并且子组件有这个，抛出一个事件，给外层更新值。
+// 监听外层有 modelValue，更新input显示，因为input的显示来自于label。
 watchEffect(() => {
-	if (govSelect?.modelValue == props.value) {
-		emitValue();
+	const val = govSelect?.modelValue;
+	if (val == props.value) {
+		govSelect?.updateInputText(props.label);
+	} else if (!val && val !== 0) {
+		govSelect?.updateInputText(undefined);
 	}
 });
 
+// 抛出事件更新外层
 const handleClick = () => {
-	emitValue();
+	const { disabled, value, label } = props;
+	if (!disabled) {
+		govSelect?.updateInputText(label);
+		govSelect?.updateValue({ value, label });
+	}
 };
 </script>
 
 <style lang="scss">
-.gov-select-option {
-	background: #fff;
-	padding: 5px 20px;
-	margin: 2px 0;
-	cursor: pointer;
-	transition: all 0.2s;
-	color: var(--gov-text-color);
-	&:hover {
-		color: var(--gov-primary);
-		background: var(--gov-fill-color-5);
-	}
-	&.is-selected {
-		color: var(--gov-primary);
-		background: var(--gov-fill-color-5);
-	}
-	&.is-disabled {
-		color: var(--gov-text-color-5);
-		cursor: not-allowed;
-		&.is-selected {
-			color: var(--gov-primary-5);
-		}
-	}
-}
+@import "./scss/select-option.scss";
 </style>
