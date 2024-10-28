@@ -33,7 +33,7 @@ const props = defineProps({
 	},
 });
 
-const emit = defineEmits(["change", "update:modelValue"]);
+const emits = defineEmits(["change", "update:modelValue", "expand", "select"]);
 
 // 记录选中列表，索引为层级，值为选中的Object
 const cascaderSelected = ref([]);
@@ -75,8 +75,15 @@ const updateCascaderPanelValue = (level, nodeObj) => {
 	}
 	updatedSelected.push(nodeObj);
 	cascaderSelected.value = updatedSelected;
-	emit("change", cascaderSelectedValues.value, updatedSelected);
-	emit("update:modelValue", cascaderSelectedValues.value);
+	emits("change", cascaderSelectedValues.value, updatedSelected);
+	emits("update:modelValue", cascaderSelectedValues.value);
+	// 判断是否为展开项，或者最后一项。
+	let last = updatedSelected[updatedSelected.length - 1];
+	if (last?.children?.length) {
+		emits("expand", cascaderSelectedValues.value, updatedSelected);
+	} else {
+		emits("select", cascaderSelectedValues.value, updatedSelected);
+	}
 };
 
 // 给下层

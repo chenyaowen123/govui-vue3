@@ -32,7 +32,7 @@
 			<gov-cascader-panel
 				v-model="innerValue"
 				:options="options"
-				style="height: 100%"
+				@select="show = false"
 			/>
 		</div>
 	</gov-popper>
@@ -78,6 +78,11 @@ const props = defineProps({
 		type: Boolean,
 		default: true,
 	},
+	// 是否显示完整的路径，将其赋值为false则仅显示最后一级
+	showAllLevels: {
+		type: Boolean,
+		default: true,
+	},
 });
 
 const show = ref(false);
@@ -115,7 +120,14 @@ const findLabels = (options, values) => {
 
 // input展示
 const inputText = computed(() => {
-	return findLabels(props.options, innerValue.value).join(" / ");
+	let labels = findLabels(props.options, innerValue.value);
+	if (props.showAllLevels) {
+		return labels.join(" / ");
+	} else if (labels.length > 0) {
+		return labels[labels.length - 1];
+	} else {
+		return "";
+	}
 });
 
 // 禁用的时候关闭下来
