@@ -5,6 +5,7 @@
 		:arrow="arrow"
 		@open:popper="handleOpen"
 		@close:popper="handleClose"
+		placement="bottom-start"
 		class="gov-popper"
 	>
 		<div ref="govPopperTriggerNode" class="gov-popper__trigger">

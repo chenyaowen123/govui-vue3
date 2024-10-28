@@ -1,0 +1,40 @@
+@use "@/styles/theme.scss" as *;
+
+
+.gov-cascader {
+	@include utils-user-select(none);
+
+	.popper{
+		padding: 0 !important;
+		// overflow: hidden;
+	}
+
+	&__input {
+		cursor: pointer;
+		.gov-input-field {
+			cursor: pointer;
+		}
+	}
+	&__icon {
+		transition: all 0.2s;
+		&.is-open {
+			transform: rotate(180deg);
+		}
+	}
+	&__box {
+		background: #fff;
+		box-sizing: border-box;
+		min-width: 200px;
+		.gov-cascader-panel{
+			border: none;
+		}
+	}
+	&.is-disabled {
+		.gov-cascader__input {
+			cursor: not-allowed;
+			.gov-input-field {
+				cursor: not-allowed;
+			}
+		}
+	}
+}

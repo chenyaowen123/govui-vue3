@@ -1,5 +1,5 @@
 <script setup>
-import cascaderPanel from "./examples/cascader/cascader-panel.vue"
+import cascaderBase from "./examples/cascader/cascader-base.vue"
 </script>
 
 # Cascader 级联选择器
@@ -8,17 +8,11 @@ import cascaderPanel from "./examples/cascader/cascader-panel.vue"
 
 级联选择器。
 
-
-## 级联面板
-
-级联面板，比较级联选择器更加直观。
-
-<cascaderPanel />
+<cascaderBase />
 
 ```vue
 <template>
-	<gov-cascader-panel v-model="values" :options="options" style="height: 240px" />
-	<div> {{ values }}</div>
+	<gov-cascader v-model="values" :options="options"  />
 </template>
 
 <script setup>
