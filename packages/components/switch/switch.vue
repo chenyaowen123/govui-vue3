@@ -11,6 +11,7 @@
 				type="checkbox"
 				v-bind="$attrs"
 				v-model="innerValue"
+				:disabled="isDisabled"
 				:true-value="trueValue"
 				:false-value="falseValue"
 			/>
@@ -32,6 +33,7 @@ const props = defineProps({
 		type: String,
 		default: "default",
 	},
+	disabled: Boolean,
 	trueValue: {
 		default: true,
 	},

@@ -39,6 +39,7 @@
 
 	&.is-disabled {
 		.gov-switch__layer {
+			cursor: not-allowed;
 			background-color: var(--gov-fill-color-5);
 		}
 	}
