@@ -1,0 +1,71 @@
+@use "@/styles/theme.scss" as *;
+
+@mixin switch-type($type) {
+	.gov-switch__layer:has(input[type="checkbox"]:checked) {
+		background-color: var(--gov-#{$type});
+	}
+	&.is-disabled {
+		.gov-switch__layer:has(input[type="checkbox"]:checked) {
+			background-color: var(--gov-#{$type}-5);
+		}
+	}
+}
+
+.gov-switch {
+	display: inline-block;
+	& + & {
+		margin-left: 15px;
+	}
+	&__layer {
+		cursor: pointer;
+		width: 60px;
+		height: 28px;
+		display: block;
+		border-radius: 15px;
+		background-color: var(--gov-fill-color);
+		transition: background 0.2s;
+	}
+
+	&__point {
+		width: 20px;
+		height: 20px;
+		display: inline-block;
+		background-color: white;
+		border-radius: 50%;
+		margin: 4px;
+		transition: margin 0.2s;
+	}
+
+	&.is-disabled {
+		.gov-switch__layer {
+			background-color: var(--gov-fill-color-5);
+		}
+	}
+
+	// 隐藏原生checkbox
+	input[type="checkbox"] {
+		display: none;
+	}
+
+	input[type="checkbox"]:checked + &__point {
+		margin-left: 35px;
+	}
+
+	// 不同 type 不同的背景色
+	&--default,
+	&--primary {
+		@include switch-type(primary);
+	}
+	&--success {
+		@include switch-type(success);
+	}
+	&--info {
+		@include switch-type(info);
+	}
+	&--warning {
+		@include switch-type(warning);
+	}
+	&--danger {
+		@include switch-type(danger);
+	}
+}

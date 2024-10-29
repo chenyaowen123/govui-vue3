@@ -25,9 +25,9 @@ import inputNumber from "./components/input/input-number.vue";
 import select from "./components/select/select.vue";
 import selectOption from "./components/select/select-option.vue";
 import datepicker from "./components/datepicker/datepicker.vue";
-
 import cascaderPanel from "./components/cascader/cascader-panel.vue";
 import cascader from "./components/cascader/cascader.vue";
+import Switch from "./components/switch/switch.vue";
 
 import popper from "./components/popper/popper.vue";
 import popconfirm from "./components/popconfirm/popconfirm.vue";
@@ -69,9 +69,9 @@ const components = {
 	select,
 	selectOption,
 	datepicker,
-
 	cascader,
 	cascaderPanel,
+	Switch,
 
 	popper,
 	popconfirm,

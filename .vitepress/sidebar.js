@@ -79,7 +79,7 @@ const componentSidebar = [
 					},
 					{
 						text: "Switch 开关",
-						link: "/component/link",
+						link: "/component/switch",
 					},
 					{
 						text: "Slider 滑块",
