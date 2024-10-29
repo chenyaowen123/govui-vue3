@@ -1,6 +1,7 @@
 <script setup>
 import switchBase from "./examples/switch/switch-base.vue"
 import switchType from "./examples/switch/switch-type.vue"
+import switchTrueValue from "./examples/switch/switch-true-value.vue"
 </script>
 
 # Switch 开关
@@ -17,3 +18,8 @@ import switchType from "./examples/switch/switch-type.vue"
 
 <switchType />
 
+## 设置 TrueValue 和 FalseValue
+
+设置checkbox原生组件的 ```trueValue/falseValue``` 属性。
+
+<switchTrueValue />

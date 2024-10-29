@@ -9,8 +9,10 @@
 		<label class="gov-switch__layer">
 			<input
 				type="checkbox"
-				:checked="modelValue"
-				@change="handleChange"
+				v-bind="$attrs"
+				v-model="innerValue"
+				:true-value="trueValue"
+				:false-value="falseValue"
 			/>
 			<span class="gov-switch__point"></span>
 		</label>
@@ -30,14 +32,26 @@ const props = defineProps({
 		type: String,
 		default: "default",
 	},
+	trueValue: {
+		default: true,
+	},
+	falseValue: {
+		default: false,
+	},
 });
 // 依赖注入
 const govForm = inject("govForm", "");
 
-const emit = defineEmits(["update:modelValue"]);
-const handleChange = (e) => {
-	emit("update:modelValue", e.target.checked);
-};
+const emit = defineEmits(["update:modelValue", "change"]);
+const innerValue = computed({
+	get() {
+		return props.modelValue;
+	},
+	set(val) {
+		emit("change", val);
+		emit("update:modelValue", val);
+	},
+});
 
 // 计算是否禁用
 const isDisabled = computed(() => {
