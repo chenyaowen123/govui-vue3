@@ -11,9 +11,10 @@
 					{{ buttonText }}
 				</GovButton>
 				<input
+					v-bind="$attrs"
 					type="file"
+					:multiple="multiple"
 					ref="fileInput"
-					multiple
 					:disabled="disabled"
 					@change="handleFileChange"
 					class="gov-upload__original"
@@ -79,7 +80,7 @@
 </template>
 
 <script setup>
-import { ref, computed, defineProps, defineEmits } from "vue";
+import { ref, computed, nextTick } from "vue";
 import GovButton from "../button/button.vue";
 import GovIcon from "../icon/icon.vue";
 
@@ -103,7 +104,8 @@ const props = defineProps({
 	},
 	buttonType: {
 		type: String,
-		default: "primary",
+		// default: "primary",
+		default: "default",
 	},
 	tip: {
 		type: String,
@@ -117,6 +119,10 @@ const props = defineProps({
 		type: Function,
 		default: null,
 	},
+	multiple: {
+		type: Boolean,
+		default: false, // 是否多选
+	},
 });
 
 const emits = defineEmits(["update:modelValue"]);
@@ -128,7 +134,7 @@ const triggerFileInput = () => {
 	}
 };
 
-// props.modelValue 副本
+// props.modelValue 副本，处理格式化，以及方便操作。
 const modelValueComputed = computed({
 	get: () =>
 		props.modelValue.map((file) => {
@@ -157,7 +163,6 @@ const modelValueComputed = computed({
 		emits("update:modelValue", newValue);
 	},
 });
-console.log(props.modelValue);
 
 // 更新文件项的通用函数
 const updateFileItem = (fileId, updateFn) => {
@@ -167,47 +172,48 @@ const updateFileItem = (fileId, updateFn) => {
 	if (index !== -1) {
 		const newValue = [...modelValueComputed.value];
 		updateFn(newValue[index]);
-		console.log(newValue);
 		emits("update:modelValue", newValue);
 	}
 };
 
-// 处理文件变更
+// 处理文件变更，实际上是添加逻辑。
 const handleFileChange = (event) => {
+	// 添加到数据
 	const files = event.target.files;
-	Array.from(files).forEach((file) => {
+	const newFiles = Array.from(files).map((file) => {
 		const fileId = Symbol();
-		const initialFile = {
+		return {
 			id: fileId,
 			status: "pending",
 			name: file.name,
 			type: file.type.startsWith("image/") ? "img" : "file",
 			progress: 0,
 		};
-		const newValue = [...modelValueComputed.value, initialFile];
-		emits("update:modelValue", newValue);
-
-		if (props.uploadRequest) {
-			props
-				.uploadRequest(file, fileId, (progress) => {
-					updateFileItem(fileId, (fileItem) => {
-						fileItem.progress = progress;
+	});
+	emits("update:modelValue", [...modelValueComputed.value, ...newFiles]);
+	// 执行上传
+	nextTick(() => {
+		newFiles.forEach((file) => {
+			if (props.uploadRequest) {
+				props
+					.uploadRequest(file, file.id, (progress) => {
+						updateFileItem(file.id, (fileItem) => {
+							fileItem.progress = progress;
+						});
+					})
+					.then((response) => {
+						updateFileItem(file.id, (fileItem) => {
+							fileItem.status = "success";
+							fileItem.url = response.url;
+						});
+					})
+					.catch(() => {
+						updateFileItem(file.id, (fileItem) => {
+							fileItem.status = "failed";
+						});
 					});
-				})
-				.then((response) => {
-					updateFileItem(fileId, (fileItem) => {
-						fileItem.status = "success";
-						fileItem.url = response.url;
-					});
-					console.log(1);
-				})
-				.catch(() => {
-					updateFileItem(fileId, (fileItem) => {
-						fileItem.status = "failed";
-					});
-					console.log(2);
-				});
-		}
+			}
+		});
 	});
 };
 

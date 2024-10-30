@@ -1,24 +1,53 @@
 <template>
 	<demo-container class="gov-demo-upload">
 		<gov-upload
-			:uploadRequest="simulateUpload"
 			v-model="value"
-			buttonType="success"
+			buttonType="default"
+			:uploadRequest="simulateUpload"
 			append="上传文件最大 500KB"
 		/>
-		<template #console>{{ value }}</template>
+		<hr />
+		<gov-upload
+			v-model="value"
+			buttonType="primary"
+			:uploadRequest="simulateUpload"
+			append="上传文件最大 500KB"
+		/>
+		<hr />
+		<gov-upload
+			v-model="value"
+			buttonType="success"
+			:uploadRequest="simulateUpload"
+			append="上传文件最大 500KB"
+		/>
+		<hr />
+		<gov-upload
+			v-model="value"
+			buttonType="warning"
+			:uploadRequest="simulateUpload"
+			append="上传文件最大 500KB"
+		/>
+		<hr />
+		<gov-upload
+			v-model="value"
+			buttonType="danger"
+			:uploadRequest="simulateUpload"
+			append="上传文件最大 500KB"
+		/>
+		<hr />
+		<gov-upload
+			v-model="value"
+			buttonType="info"
+			:uploadRequest="simulateUpload"
+			append="上传文件最大 500KB"
+		/>
 	</demo-container>
 </template>
 
 <script setup>
 import { ref } from "vue";
 
-const value = ref([
-	{
-		name: "GovUi",
-		url: "/logo.png",
-	},
-]);
+const value = ref([]);
 
 // 模拟上传请求
 function simulateUpload(file, fileId, onProgress) {
