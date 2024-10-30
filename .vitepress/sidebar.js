@@ -91,7 +91,7 @@ const componentSidebar = [
 					},
 					{
 						text: "Rate 评分",
-						link: "/component/link",
+						link: "/component/rate",
 					},
 					{
 						text: "Editor 富文本",

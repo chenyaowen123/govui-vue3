@@ -29,6 +29,7 @@ import cascaderPanel from "./components/cascader/cascader-panel.vue";
 import cascader from "./components/cascader/cascader.vue";
 import Switch from "./components/switch/switch.vue";
 import upload from "./components/upload/upload.vue";
+import rate from "./components/rate/rate.vue";
 
 import popper from "./components/popper/popper.vue";
 import popconfirm from "./components/popconfirm/popconfirm.vue";
@@ -74,6 +75,7 @@ const components = {
 	cascaderPanel,
 	Switch,
 	upload,
+	rate,
 
 	popper,
 	popconfirm,
