@@ -82,16 +82,12 @@ const componentSidebar = [
 						link: "/component/switch",
 					},
 					{
-						text: "Slider 滑块",
-						link: "/component/link",
-					},
-					{
 						text: "Datepicker 日期选择器",
 						link: "/component/datepicker",
 					},
 					{
 						text: "Upload 上传",
-						link: "/component/link",
+						link: "/component/upload",
 					},
 					{
 						text: "Rate 评分",
@@ -147,6 +143,15 @@ const componentSidebar = [
 					{
 						text: "Swiper 轮播",
 						link: "/component/swiper",
+					},
+				],
+			},
+			{
+				text: "导航",
+				items: [
+					{
+						text: "Menu 菜单",
+						link: "/component/table",
 					},
 				],
 			},

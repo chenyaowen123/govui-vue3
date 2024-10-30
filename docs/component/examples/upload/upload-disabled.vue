@@ -1,0 +1,18 @@
+<template>
+	<demo-container class="gov-demo-upload">
+		<gov-upload v-model="value" disabled tip="上传文件最大 500KB" />
+	</demo-container>
+</template>
+
+<script setup>
+import { ref } from "vue";
+
+const value = ref([
+	{
+		name: "GovUi",
+		url: "/logo.png",
+	},
+]);
+</script>
+
+<style lang="scss"></style>
