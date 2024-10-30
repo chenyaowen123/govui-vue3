@@ -32,6 +32,9 @@
 		border-radius: var(--gov-border-radius-base);
 		margin-bottom: 4px;
 		transition: all 0.2s;
+		&:hover{
+			box-shadow: 0 2px 7px rgba(0, 0, 0, 0.1);
+		}
 		&.is-pending {
 			border-color: var(--gov-border-color-8);
 			background-color: var(--gov-fill-color-8);
