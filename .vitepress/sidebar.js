@@ -13,6 +13,27 @@ const componentSidebar = [
 		text: "组件",
 		items: [
 			{
+				text: "规范化",
+				items: [
+					{
+						text: "Guoqi 国旗",
+						link: "/component/link", // https://www.gov.cn/guoqing/guoqi/
+					},
+					{
+						text: "Guohui 国徽",
+						link: "/component/link", // https://www.gov.cn/guoqing/guohui/
+					},
+					{
+						text: "Dangqi 党旗",
+						link: "/component/link", // https://mp.weixin.qq.com/s?__biz=MzIwMTY1Mjc0NQ==&mid=2651449627&idx=3&sn=3cf62a89191e1b7b976dd010f3409ad3&chksm=8cc1a39c3412675408560549aaa59fab8e73b892bc9dd22981bd379b50ecb08ef9665a9077ce&scene=27
+					},
+					{
+						text: "Danghui 党徽",
+						link: "/component/link", // https://mp.weixin.qq.com/s?__biz=MzIwMTY1Mjc0NQ==&mid=2651449627&idx=3&sn=3cf62a89191e1b7b976dd010f3409ad3&chksm=8cc1a39c3412675408560549aaa59fab8e73b892bc9dd22981bd379b50ecb08ef9665a9077ce&scene=27
+					},
+				],
+			},
+			{
 				text: "基础组件",
 				items: [
 					{
@@ -39,7 +60,22 @@ const componentSidebar = [
 						text: "Alert 警告",
 						link: "/component/alert",
 					},
-					// blockquote
+					{
+						text: "Blockquote 引用",
+						link: "/component/blockquote",
+					},
+					{
+						text: "Tag 标签",
+						link: "/component/link",
+					},
+					{
+						text: "Ellipsis 文本省略",
+						link: "/component/link",
+					},
+					{
+						text: "Loading 加载",
+						link: "/component/link",
+					},
 				],
 			},
 			{
@@ -64,6 +100,10 @@ const componentSidebar = [
 					{
 						text: "InputNumber 计数器",
 						link: "/component/inputnumber",
+					},
+					{
+						text: "Textarea 多行文本",
+						link: "/component/link",
 					},
 					{
 						text: "Select 选择器",
@@ -95,11 +135,7 @@ const componentSidebar = [
 					},
 					{
 						text: "Editor 富文本",
-						link: "/component/link",
-					},
-					{
-						text: "Markdown Editor 富文本",
-						link: "/component/link",
+						link: "/component/link", // 自定义表单控件和表单组件配合
 					},
 					{
 						text: "Form 表单",
@@ -111,6 +147,22 @@ const componentSidebar = [
 				text: "弹出",
 				items: [
 					{
+						text: "Drawer 抽屉",
+						link: "/component/drawer",
+					},
+					{
+						text: "Dialog 对话框",
+						link: "/component/dialog",
+					},
+					{
+						text: "Message 消息提示",
+						link: "/component/link", // Message 消息提示，基于（Alert 警告）组件的
+					},
+					{
+						text: "MessageBox 消息弹框",
+						link: "/component/messagebox",
+					},
+					{
 						text: "Popper 弹窗",
 						link: "/component/popper",
 					},
@@ -118,24 +170,58 @@ const componentSidebar = [
 						text: "Popconfirm 气泡确认框",
 						link: "/component/popconfirm",
 					},
-					// 基于 vue-popper 写一个 Tooltip 文字提示
 					{
-						text: "Dialog 对话框",
-						link: "/component/dialog",
+						text: "Tooltip 文字提示",
+						link: "/component/link",
 					},
 					{
-						text: "MessageBox 消息弹框",
-						link: "/component/messagebox",
+						text: "Notification 通知",
+						link: "/component/link",
 					},
-					// Message 消息提示，基于（Alert 警告）组件的
-					// Notification 通知
-					// 抽屉
 					// 引导
 				],
 			},
 			{
 				text: "数据",
 				items: [
+					{
+						text: "Avatar 头像",
+						link: "/component/link",
+					},
+					{
+						text: "User Card 人员信息卡",
+						link: "/component/link",
+					},
+					{
+						text: "Badge 徽章",
+						link: "/component/link",
+					},
+					{
+						text: "Card 卡片",
+						link: "/component/link",
+					},
+					{
+						text: "Collapse 折叠面板",
+						link: "/component/link",
+					},
+					// Descriptions 描述列表
+					{
+						text: "Empty 空状态",
+						link: "/component/link",
+					},
+					{
+						text: "Pagination 分页",
+						link: "/component/link",
+					},
+					{
+						text: "Progress 进度条",
+						link: "/component/link",
+					},
+					{
+						text: "Result 结果",
+						link: "/component/link",
+					},
+
 					{
 						text: "Table 表格",
 						link: "/component/table",
@@ -144,14 +230,61 @@ const componentSidebar = [
 						text: "Swiper 轮播",
 						link: "/component/swiper",
 					},
+					{
+						text: "Timeline 时间线",
+						link: "/component/swiper",
+					},
+					{
+						text: "Tree 树形控件",
+						link: "/component/swiper",
+					},
 				],
 			},
 			{
 				text: "导航",
 				items: [
 					{
+						text: "Backtop 回到顶部",
+						link: "/component/link",
+					},
+					{
+						text: "Breadcrumb 面包屑",
+						link: "/component/link",
+					},
+					{
+						text: "Dropdown 下拉菜单",
+						link: "/component/link",
+					},
+					{
 						text: "Menu 菜单",
 						link: "/component/table",
+					},
+					{
+						text: "Page Header 页头",
+						link: "/component/link",
+					},
+					// 页面模块标题。
+					{
+						text: "Steps 步骤条",
+						link: "/component/link",
+					},
+					{
+						text: "Tabs 标签页",
+						link: "/component/link",
+					},
+				],
+			},
+
+			{
+				text: "其它",
+				items: [
+					{
+						text: "Weather 天气",
+						link: "/component/link", // https://weatherwidget.org/zh/
+					},
+					{
+						text: "Qrcode 二维码",
+						link: "/component/link",
 					},
 				],
 			},

@@ -12,6 +12,7 @@ import button from "./components/button/button.vue";
 import buttonGroup from "./components/button/button-group.vue";
 import link from "./components/link/link.vue";
 import alert from "./components/alert/alert.vue";
+import blockquote from "./components/blockquote/blockquote.vue";
 
 import form from "./components/form/form.vue";
 import formItem from "./components/form/form-item.vue";
@@ -58,6 +59,7 @@ const components = {
 	buttonGroup,
 	link,
 	alert,
+	blockquote,
 
 	form,
 	formItem,

@@ -1,0 +1,40 @@
+@use "@/styles/theme.scss" as *;
+
+.gov-blockquote {
+	margin: 10px 0;
+	padding: 10px 16px;
+	border-left: 6px solid transparent;
+	color: var(--gov-text-color-3);
+	background-color: var(--gov-fill-color-5);
+	font-size: inherit;
+
+	&--reverse {
+		border-left: none;
+		border-right: 4px solid transparent;
+		text-align: right;
+	}
+
+	&--default {
+		border-color: var(--gov-border-color-3);
+	}
+
+	&--primary {
+		border-color: var(--gov-primary);
+	}
+
+	&--success {
+		border-color: var(--gov-success);
+	}
+
+	&--info {
+		border-color: var(--gov-info);
+	}
+
+	&--warning {
+		border-color: var(--gov-warning);
+	}
+
+	&--danger {
+		border-color: var(--gov-danger);
+	}
+}

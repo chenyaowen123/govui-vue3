@@ -16,12 +16,18 @@ import rateCustom from "./examples/rate/rate-custom.vue"
 
 ## 设置长度
 
+默认显示 5 个图标，可以设置 ```max``` 来指定长度。
+
 <rateMax />
 
 ## 禁用状态
 
+设置 ```disabled``` 禁用时其实是“只读模式”。
+
 <rateDisabled />
 
 ## 自定义图标
+
+根据插槽自定义图标。
 
 <rateCustom />
