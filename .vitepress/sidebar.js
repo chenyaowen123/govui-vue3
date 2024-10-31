@@ -69,8 +69,8 @@ const componentSidebar = [
 						link: "/component/tag",
 					},
 					{
-						text: "Ellipsis 文本省略",
-						link: "/component/link",
+						text: "Ellipsis 文本折叠",
+						link: "/component/ellipsis",
 					},
 					{
 						text: "Loading 加载",

@@ -1,5 +1,5 @@
 <template>
-	<demo-container class="gov-demo-blockquote">
+	<demo-container>
 		<gov-tag> 默认 </gov-tag>
 		<gov-tag type="primary"> 主要 </gov-tag>
 		<gov-tag type="success"> 成功 </gov-tag>
