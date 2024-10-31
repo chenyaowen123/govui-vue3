@@ -66,7 +66,7 @@ const componentSidebar = [
 					},
 					{
 						text: "Tag 标签",
-						link: "/component/link",
+						link: "/component/tag",
 					},
 					{
 						text: "Ellipsis 文本省略",

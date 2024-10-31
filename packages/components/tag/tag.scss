@@ -1,0 +1,87 @@
+@use "@/styles/theme.scss" as *;
+
+@mixin tag-type($type) {
+	background-color: var(--gov-#{$type}-9);
+	color: var(--gov-#{$type});
+	border-color: var(--gov-#{$type});
+	&.is-fill {
+		background-color: var(--gov-#{$type});
+		border-color: var(--gov-#{$type});
+		color: #fff;
+	}
+}
+
+.gov-tag {
+	display: inline-flex;
+	align-items: center;
+	border: 1px solid var(--gov-border-color);
+	border-radius: var(--gov-border-radius-base);
+	font-size: 12px;
+	& + & {
+		margin-left: 10px;
+	}
+
+	// 大小
+	&--size-large {
+		padding: 0 11px;
+		height: 30px;
+		&.is-closable{
+			padding-right: 4px;
+		}
+	}
+	&--size-default {
+		padding: 0 9px;
+		height: 26px;
+		&.is-closable{
+			padding-right: 4px;
+		}
+	}
+	&--size-small {
+		padding: 0 7px;
+		height: 20px;
+		&.is-closable{
+			padding-right: 3px;
+		}
+	}
+
+	// 圆角
+	&.is-round {
+		border-radius: 15px;
+	}
+
+	// 类型
+	&--default {
+		background-color: var(--gov-fill-color-5);
+		color: var(--gov-text-color);
+		border-color: var(--gov-border-color);
+		&.is-fill {
+			background-color: var(--gov-border-color-dark);
+			border-color: var(--gov-border-color-dark);
+			color: #fff;
+		}
+	}
+	&--primary {
+		@include tag-type(primary);
+	}
+	&--success {
+		@include tag-type(success);
+	}
+	&--info {
+		@include tag-type(info);
+	}
+	&--warning {
+		@include tag-type(warning);
+	}
+	&--danger {
+		@include tag-type(danger);
+	}
+
+	// 图标和关闭
+	.gov-icon{
+		margin-right: 5px;
+	}
+	.gov-tag__close {
+		margin-left: 5px;
+		cursor: pointer;
+	}
+}
