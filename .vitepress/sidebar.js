@@ -102,8 +102,8 @@ const componentSidebar = [
 						link: "/component/inputnumber",
 					},
 					{
-						text: "Textarea 多行文本",
-						link: "/component/link",
+						text: "Textarea 文本域",
+						link: "/component/textarea",
 					},
 					{
 						text: "Select 选择器",

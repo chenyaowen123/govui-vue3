@@ -19,7 +19,7 @@
 				@clear="handleClear"
 				@click="handleClick"
 				readonly
-				:clear="clear"
+				:clearable="clearable"
 			>
 				<template #suffix>
 					<gov-icon
@@ -67,7 +67,7 @@ const props = defineProps({
 		type: Boolean,
 		default: false,
 	},
-	clear: {
+	clearable: {
 		type: Boolean,
 		default: true,
 	},

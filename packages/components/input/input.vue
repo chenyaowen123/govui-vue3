@@ -104,7 +104,7 @@ const props = defineProps({
 		type: [String, Number],
 		default: undefined,
 	},
-	clear: {
+	clearable: {
 		type: Boolean,
 		default: true,
 	},
@@ -170,7 +170,7 @@ const slotsExist = {
 };
 
 const showClear = computed(() => {
-	return !props.disabled && props.clear;
+	return !props.disabled && props.clearable;
 });
 
 const showCountNum = computed(() => {

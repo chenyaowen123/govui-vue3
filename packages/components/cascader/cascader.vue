@@ -17,7 +17,7 @@
 				@clear="handleClear"
 				@click="handleClick"
 				readonly
-				:clear="clear"
+				:clearable="clearable"
 			>
 				<template #suffix>
 					<gov-icon

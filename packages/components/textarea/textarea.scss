@@ -1,0 +1,43 @@
+
+.gov-textarea {
+	position: relative;
+	display: inline-block;
+	line-height: 0;
+	&__input {
+		position: relative;
+		width: 100%;
+		background-color: white;
+		border: 1px solid var(--gov-border-color);
+		padding: 10px;
+		overflow-y: auto;
+		border-radius: var(--gov-border-radius-base);
+		line-height: 1.5;
+		box-sizing: border-box;
+	}
+	&__footer {
+		position: absolute;
+		bottom: 1px;
+		left: 1px;
+		right:1px;
+		height: 20px;
+		line-height: 20px;
+		text-align: right;
+		font-size: 12px;
+		color: var(--gov-text-color-5);
+		background-color: white;
+		padding: 0 8px;
+		border-radius: var(--gov-border-radius-base);
+	}
+	&.is-resize{
+		.gov-textarea__footer{
+			right:10px;
+		}
+	}
+	&__clear-btn {
+		cursor: pointer;
+		margin-left: 8px;
+		color: var(--gov-primary);
+	}
+}
+
+

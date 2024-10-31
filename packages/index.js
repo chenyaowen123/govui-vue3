@@ -26,6 +26,7 @@ import checkboxGroup from "./components/checkbox/checkbox-group.vue";
 import input from "./components/input/input.vue";
 import inputAuto from "./components/input/input-auto.vue";
 import inputNumber from "./components/input/input-number.vue";
+import textarea from "./components/textarea/textarea.vue";
 import select from "./components/select/select.vue";
 import selectOption from "./components/select/select-option.vue";
 import datepicker from "./components/datepicker/datepicker.vue";
@@ -76,6 +77,7 @@ const components = {
 	input,
 	inputAuto,
 	inputNumber,
+	textarea,
 	select,
 	selectOption,
 	datepicker,
