@@ -9,17 +9,27 @@ import textareaResize from "./examples/textarea/textarea-resize.vue"
 
 # Textarea 文本域
 
+增强的文本域。
+
+## 基础使用
+
 <textareaBase />
 
 ## 设置行数
+
+默认 ```rows``` 为3行。
 
 <textareaRows />
 
 ## 最大长度
 
+可设置最大输入长度，并带有统计提示。
+
 <textareaMax />
 
 ## 清空按钮
+
+```clearable``` 是否显示清空按钮。
 
 <textareaClear />
 
