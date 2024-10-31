@@ -74,7 +74,7 @@ const componentSidebar = [
 					},
 					{
 						text: "Loading 加载",
-						link: "/component/link",
+						link: "/component/loading",
 					},
 				],
 			},

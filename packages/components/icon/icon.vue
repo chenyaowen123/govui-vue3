@@ -1,5 +1,9 @@
 <template>
-	<i class="gov-icon" :class="`gov-icon-${name}`"></i>
+	<i
+		class="gov-icon"
+		:class="`gov-icon-${name}`"
+		:style="size ? { fontSize: `${parseFloat(size)}px` } : {}"
+	></i>
 </template>
 
 <script setup>
@@ -9,6 +13,7 @@ defineOptions({
 
 defineProps({
 	name: String,
+	size: String,
 });
 </script>
 

@@ -15,6 +15,7 @@ import alert from "./components/alert/alert.vue";
 import blockquote from "./components/blockquote/blockquote.vue";
 import tag from "./components/tag/tag.vue";
 import ellipsis from "./components/ellipsis/ellipsis.vue";
+import loading from "./components/loading/loading.vue";
 
 import form from "./components/form/form.vue";
 import formItem from "./components/form/form-item.vue";
@@ -64,6 +65,7 @@ const components = {
 	blockquote,
 	tag,
 	ellipsis,
+	loading,
 
 	form,
 	formItem,

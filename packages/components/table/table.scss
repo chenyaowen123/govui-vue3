@@ -87,7 +87,7 @@
 	&-column--fixed-left {
 		position: sticky;
 		left: 0;
-		z-index: 998;
+		z-index: 996;
 		&.is-fixed-left-last::after{
 			box-shadow: 0 0 10px rgba(0, 0, 0, .3);
 		}
@@ -95,7 +95,7 @@
 	&-column--fixed-right {
 		position: sticky;
 		right: 0;
-		z-index: 998;
+		z-index: 996;
 		&.is-fixed-right-first::before{
 			box-shadow: 0 0 10px rgba(0, 0, 0, .3);
 		}
@@ -154,7 +154,7 @@
 		thead {
 			position: sticky;
 			top: 0;
-			z-index: 999;
+			z-index: 997;
 		}
 	}
 }
