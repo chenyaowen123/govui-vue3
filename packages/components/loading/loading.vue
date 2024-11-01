@@ -21,7 +21,6 @@
 </template>
 
 <script setup>
-import { defineProps } from "vue";
 import GovIcon from "../icon/icon.vue";
 
 defineOptions({

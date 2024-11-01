@@ -63,9 +63,9 @@ const props = defineProps({
 	icon: String, // icon名称
 	customClass: String, // 自定义class
 	onBeforeOpen: Function, // 打开前
-	onOpen: Function, // 打开后
+	onOpend: Function, // 打开后
 	onBeforeClose: Function, // 关闭前
-	onClose: Function, // 关闭后
+	onClosed: Function, // 关闭后
 	closable: Boolean, // 是否显示关闭
 });
 
@@ -109,7 +109,7 @@ const handleBeforeEnter = () => {
 // 打开后
 const handleAfterEnter = () => {
 	startTimer();
-	props.onOpen?.();
+	props.onOpend?.();
 };
 
 // 关闭前
@@ -120,12 +120,22 @@ const handleBeforeLeave = () => {
 // 关闭后
 const handleAfterLeave = () => {
 	clearTimeout(timer.value);
-	props.onClose?.();
+	props.onClosed?.();
 };
 
 // 销毁时清理
 onBeforeUnmount(() => {
 	clearTimeout(timer.value);
+});
+
+// 关闭
+const close = () => {
+	visible.value = false;
+};
+
+// 给外层提供关闭调用
+defineExpose({
+	close,
 });
 </script>
 
