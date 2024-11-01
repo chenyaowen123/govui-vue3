@@ -4,6 +4,7 @@ import GovNotificationType from "./examples/notification/notification-type.vue"
 import GovNotificationCustom from "./examples/notification/notification-custom.vue"
 import GovNotificationPosition from "./examples/notification/notification-position.vue"
 import GovNotificationCloseall from "./examples/notification/notification-closeall.vue"
+import GovNotificationNoclose from "./examples/notification/notification-noclose.vue"
 
 </script>
 
@@ -36,3 +37,8 @@ import GovNotificationCloseall from "./examples/notification/notification-closea
 ## 关闭所有
 
 <GovNotificationCloseall />
+
+
+## 禁用自动关闭
+
+<GovNotificationNoclose />
