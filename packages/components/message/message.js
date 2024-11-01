@@ -30,6 +30,8 @@ function createInstance(options) {
 			instances = instances.filter(
 				(instance) => instance !== componentInstance,
 			);
+			app.unmount();
+			document.body.removeChild(mountNode);
 			updateInstanceTop();
 		},
 	});

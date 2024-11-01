@@ -1,5 +1,11 @@
 @use "@/styles/theme.scss" as *;
 
+@mixin message-type($type) {
+	background-color: var(--gov-#{$type}-9);
+	color: var(--gov-#{$type});
+	border-color: var(--gov-#{$type});
+}
+
 .gov-message {
 	width: fit-content;
 	max-width: calc(100% - 32px);
@@ -23,7 +29,24 @@
 	}
 	&__closeBtn {
 		cursor: pointer;
-		color: var(--gov-text-color-5);
+		color: var(--gov-text-color-2);
+	}
+
+	// 不同类型
+	&--primary {
+		@include message-type(primary);
+	}
+	&--success {
+		@include message-type(success);
+	}
+	&--info {
+		@include message-type(info);
+	}
+	&--warning {
+		@include message-type(warning);
+	}
+	&--danger {
+		@include message-type(danger);
 	}
 }
 

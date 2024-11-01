@@ -1,6 +1,7 @@
 <script setup>
 import GovMessageBase from "./examples/message/message-base.vue"
 import GovMessageOption from "./examples/message/message-option.vue"
+import GovMessageType from "./examples/message/message-type.vue"
 </script>
 
 
@@ -15,3 +16,7 @@ import GovMessageOption from "./examples/message/message-option.vue"
 ## 更多控制
 
 <GovMessageOption />
+
+## 不同类型
+
+<GovMessageType />

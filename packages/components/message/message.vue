@@ -17,7 +17,7 @@
 			@mouseenter="clearTimer"
 			@mouseleave="startTimer"
 		>
-			<GovIcon :name="icon ? icon : type" />
+			<GovIcon :name="iconName" />
 			<slot>
 				<div v-html="message" class="gov-message__content"></div>
 			</slot>
@@ -33,7 +33,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from "vue";
+import { ref, computed, onMounted, onBeforeUnmount } from "vue";
 import GovIcon from "../icon/icon.vue";
 
 defineOptions({
@@ -48,7 +48,17 @@ const props = defineProps({
 	},
 	type: {
 		type: String,
-		default: "info", // 类型
+		default: "default",
+		validator: (value) => {
+			return [
+				"default",
+				"primary",
+				"success",
+				"info",
+				"warning",
+				"danger",
+			].includes(value);
+		},
 	},
 	icon: String, // icon名称
 	customClass: String, // 自定义class
@@ -61,6 +71,17 @@ const props = defineProps({
 
 const visible = ref(false);
 const timer = ref(null);
+
+const iconName = computed(() => {
+	if (props.icon) {
+		return props.icon;
+	} else if (props.type) {
+		if (!["default", "primary"].includes(props.type)) {
+			return props.type;
+		}
+	}
+	return "message-solid";
+});
 
 onMounted(() => {
 	visible.value = true;
