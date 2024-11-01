@@ -40,6 +40,7 @@ import popper from "./components/popper/popper.vue";
 import popconfirm from "./components/popconfirm/popconfirm.vue";
 
 import dialog from "./components/dialog/dialog.vue";
+import GovMessage from "./components/message/message.js"; //
 import GovMessageBox from "./components/messagebox/message-box.js"; //
 
 import table from "./components/table/table.vue";
@@ -114,4 +115,4 @@ export default {
 	install,
 };
 
-export { GovMessageBox };
+export { GovMessage, GovMessageBox };

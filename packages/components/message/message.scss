@@ -1,0 +1,34 @@
+@use "@/styles/theme.scss" as *;
+
+.gov-message {
+	width: fit-content;
+	max-width: calc(100% - 32px);
+	box-sizing: border-box;
+	border-radius: var(--gov-border-radius-base);
+	border: 1px solid var(--gov-border-color);
+	background-color: var(--gov-fill-color);
+	position: fixed;
+	z-index: 2001;
+	left: 50%;
+	top: 20px;
+	transform: translateX(-50%);
+	transition: all 0.4s;
+	padding: 6px 15px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	&__content {
+		color: var(--gov-message-text-color);
+		overflow-wrap: break-word;
+	}
+	&__closeBtn {
+		cursor: pointer;
+		color: var(--gov-text-color-5);
+	}
+}
+
+.gov-message-fade-enter-from,
+.gov-message-fade-leave-to {
+	opacity: 0;
+	transform: translate(-50%, -100%);
+}

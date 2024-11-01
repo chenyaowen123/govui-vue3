@@ -156,7 +156,7 @@ const componentSidebar = [
 					},
 					{
 						text: "Message 消息提示",
-						link: "/component/link", // Message 消息提示，基于（Alert 警告）组件的
+						link: "/component/message",
 					},
 					{
 						text: "MessageBox 消息弹框",
