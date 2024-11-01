@@ -1,12 +1,15 @@
 import { createVNode, render } from "vue";
-import GovMessageComponent from "./message.vue";
+import GovNotificationComponent from "./notification.vue";
 
 let instances = []; // 存储所有消息提示实例的数组
 
-// 计算下一个消息的顶部偏移量
-function calculateOffsetTop(index) {
-	return instances.slice(0, index).reduce((acc, instance) => {
-		return acc + instance.vnode.el.offsetHeight + 20;
+// 计算下一个消息的顶部偏移量，过滤相同的
+function calculateOffsetTop(instance, index) {
+	let newarr = instances
+		.slice(0, index)
+		.filter((item) => item?.props?.position === instance?.props?.position);
+	return newarr.reduce((acc, item) => {
+		return acc + item.vnode.el.offsetHeight + 20;
 	}, 20);
 }
 
@@ -14,7 +17,12 @@ function calculateOffsetTop(index) {
 function updateInstanceTop() {
 	instances.forEach((instance, index) => {
 		if (instance && instance.vnode) {
-			instance.vnode.el.style["top"] = calculateOffsetTop(index) + "px";
+			// 判断位置
+			let str = instance.vnode.props?.position?.startsWith("bottom")
+				? "bottom"
+				: "top";
+			instance.vnode.el.style[str] =
+				calculateOffsetTop(instance, index) + "px";
 		}
 	});
 }
@@ -25,7 +33,7 @@ function createInstance(options) {
 	const container = document.createElement("div");
 
 	// 创建 VNode
-	const vnode = createVNode(GovMessageComponent, {
+	const vnode = createVNode(GovNotificationComponent, {
 		...options,
 		onBeforeOpen: () => {
 			updateInstanceTop();
@@ -50,15 +58,16 @@ function createInstance(options) {
 	return componentInstance;
 }
 
-// GovMessage 函数
-export default function GovMessage(options) {
+// GovNotification 函数
+export default function GovNotification(options) {
 	return new Promise((resolve, reject) => {
 		if (typeof options === "string") {
-			options = { message: options };
+			options = { content: options };
 		}
 
 		// 创建实例
 		const instance = createInstance({
+			position: "top-right",
 			...options,
 			onOpen: () => {
 				resolve();
@@ -87,4 +96,4 @@ export function closeAll() {
 	instances.length = 0; // 清空实例数组
 }
 
-GovMessage.closeAll = closeAll;
+GovNotification.closeAll = closeAll;

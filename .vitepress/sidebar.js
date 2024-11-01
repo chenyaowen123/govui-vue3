@@ -176,7 +176,7 @@ const componentSidebar = [
 					},
 					{
 						text: "Notification 通知",
-						link: "/component/link",
+						link: "/component/notification",
 					},
 					// 引导
 				],

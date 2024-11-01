@@ -1,0 +1,89 @@
+@use "@/styles/theme.scss" as *;
+
+.gov-notification {
+	box-sizing: border-box;
+	border-radius: var(--gov-border-radius-base);
+	border: 1px solid var(--gov-border-color);
+	background-color: #fff;
+	position: fixed;
+	z-index: 2001;
+	transition: all 0.4s;
+	padding: 15px 20px;
+	box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.12);
+	width: 320px;
+
+	&.at-right {
+		right: 20px;
+	}
+
+	&.at-left {
+		left: 20px;
+	}
+
+	&.at-top {
+		top: 20px;
+	}
+
+	&.at-bottom {
+		bottom: 20px;
+	}
+
+	&__title {
+		display: flex;
+		align-items: center;
+		font-size: 16px;
+		font-weight: bold;
+		color: var(--gov-text-color);
+		.gov-icon {
+			font-size: 20px;
+		}
+		&-txt {
+			flex: 1;
+			padding: 0 5px;
+		}
+	}
+
+	&__content {
+		color: var(--gov-text-color-2);
+		overflow-wrap: break-word;
+		font-size: 14px;
+		padding-top: 5px;
+	}
+	&__closeBtn {
+		cursor: pointer;
+		color: var(--gov-text-color-2);
+	}
+
+	// 不同类型
+	&--primary &__lefticon {
+		color: var(--gov-primary);
+	}
+	&--success &__lefticon {
+		color: var(--gov-success);
+	}
+	&--info &__lefticon {
+		color: var(--gov-info);
+	}
+	&--warning &__lefticon {
+		color: var(--gov-warning);
+	}
+	&--danger &__lefticon {
+		color: var(--gov-danger);
+	}
+}
+
+.gov-notification-fade-enter-from {
+	&.at-right {
+		right: 0;
+		transform: translateX(100%);
+	}
+
+	&.at-left {
+		left: 0;
+		transform: translateX(-100%);
+	}
+}
+.gov-notification-fade-leave-to {
+	opacity: 0;
+	transform: translateX(0);
+}
