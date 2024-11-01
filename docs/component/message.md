@@ -13,10 +13,13 @@ import GovMessageType from "./examples/message/message-type.vue"
 
 <GovMessageBase />
 
-## 更多控制
 
-<GovMessageOption />
 
 ## 不同类型
 
 <GovMessageType />
+
+
+## 更多控制
+
+<GovMessageOption />
