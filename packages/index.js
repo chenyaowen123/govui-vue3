@@ -54,6 +54,9 @@ import tree from "./components/tree/tree.vue";
 import timeline from "./components/timeline/timeline.vue";
 import timelineItem from "./components/timeline/timeline-item.vue";
 
+import breadcrumb from "./components/breadcrumb/breadcrumb.vue";
+import breadcrumbItem from "./components/breadcrumb/breadcrumb-item.vue";
+
 // 导出所有组件
 const components = {
 	aside,
@@ -107,6 +110,9 @@ const components = {
 	timeline,
 	timelineItem,
 	tree,
+
+	breadcrumb,
+	breadcrumbItem,
 };
 
 // 提供一个全局安装方法

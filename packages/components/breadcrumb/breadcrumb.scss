@@ -1,0 +1,36 @@
+@use "@/styles/theme.scss" as *;
+
+.gov-breadcrumb {
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+
+	&--size-large {
+		font-size: 16px;
+	}
+	&--size-default {
+		font-size: 14px;
+	}
+	&--size-small {
+		font-size: 12px;
+	}
+}
+
+.gov-breadcrumb-item {
+	display: inline-flex;
+	align-items: center;
+	color: var(--gov-text-color);
+	a {
+		text-decoration: none;
+		font-weight: bold;
+		color: var(--gov-text-color);
+		&:hover {
+			color: var(--gov-primary);
+		}
+	}
+	&:last-child .gov-icon {
+		display: none;
+	}
+}

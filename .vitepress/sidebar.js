@@ -249,7 +249,7 @@ const componentSidebar = [
 					},
 					{
 						text: "Breadcrumb 面包屑",
-						link: "/component/link",
+						link: "/component/breadcrumb",
 					},
 					{
 						text: "Dropdown 下拉菜单",

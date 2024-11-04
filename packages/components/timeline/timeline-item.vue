@@ -7,7 +7,7 @@
 			v-if="!$slots.dot"
 			:class="[
 				'gov-timeline-item__node',
-				`gov-timeline-item__node-size--${size}`,
+				`gov-timeline-item__node--size-${size}`,
 				`gov-timeline-item__node--${type}`,
 				{ 'gov-timeline-item__node--hollow': hollow },
 			]"
