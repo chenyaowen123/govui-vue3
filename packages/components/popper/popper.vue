@@ -94,6 +94,7 @@ const styleObject = computed(() => {
 </script>
 
 <style lang="scss" scoped>
+@use "@/styles/theme.scss" as *;
 .gov-popper {
 	&__title {
 		font-size: 16px;

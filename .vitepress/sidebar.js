@@ -172,7 +172,7 @@ const componentSidebar = [
 					},
 					{
 						text: "Tooltip 文字提示",
-						link: "/component/link",
+						link: "/component/tooltip",
 					},
 					{
 						text: "Notification 通知",

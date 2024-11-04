@@ -86,6 +86,7 @@ const handleConfirm = () => {
 </script>
 
 <style lang="scss">
+@use "@/styles/theme.scss" as *;
 .gov-popconfirm {
 	&__reference {
 		display: inline-block;
