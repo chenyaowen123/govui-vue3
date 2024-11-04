@@ -232,7 +232,7 @@ const componentSidebar = [
 					},
 					{
 						text: "Timeline 时间线",
-						link: "/component/swiper",
+						link: "/component/timeline",
 					},
 					{
 						text: "Tree 树形控件",
