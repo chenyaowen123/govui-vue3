@@ -45,10 +45,12 @@ import GovMessage from "./components/message/message.js"; //
 import GovMessageBox from "./components/messagebox/message-box.js"; //
 import GovNotification from "./components/notification/notification.js"; //
 
+import cellapseTransiton from "./components/cellapse/collapse-transition.vue";
 import table from "./components/table/table.vue";
 
 import swiper from "./components/swiper/swiper.vue";
 import { GovSwiperSlide } from "./components/swiper/swiperSlide.js"; //
+import tree from "./components/tree/tree.vue";
 
 // 导出所有组件
 const components = {
@@ -96,9 +98,11 @@ const components = {
 
 	dialog,
 
+	cellapseTransiton,
 	table,
 
 	swiper,
+	tree,
 };
 
 // 提供一个全局安装方法

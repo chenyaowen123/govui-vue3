@@ -236,7 +236,7 @@ const componentSidebar = [
 					},
 					{
 						text: "Tree 树形控件",
-						link: "/component/swiper",
+						link: "/component/tree",
 					},
 				],
 			},
