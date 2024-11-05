@@ -253,7 +253,7 @@ const componentSidebar = [
 					},
 					{
 						text: "Dropdown 下拉菜单",
-						link: "/component/link",
+						link: "/component/dropdown",
 					},
 					{
 						text: "Menu 菜单",

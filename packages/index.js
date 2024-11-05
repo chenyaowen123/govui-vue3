@@ -57,6 +57,8 @@ import timelineItem from "./components/timeline/timeline-item.vue";
 import backtop from "./components/backtop/backtop.vue";
 import breadcrumb from "./components/breadcrumb/breadcrumb.vue";
 import breadcrumbItem from "./components/breadcrumb/breadcrumb-item.vue";
+import dropdown from "./components/dropdown/dropdown.vue";
+import dropdownItem from "./components/dropdown/dropdown-item.vue";
 
 // 导出所有组件
 const components = {
@@ -115,6 +117,8 @@ const components = {
 	backtop,
 	breadcrumb,
 	breadcrumbItem,
+	dropdown,
+	dropdownItem,
 };
 
 // 提供一个全局安装方法

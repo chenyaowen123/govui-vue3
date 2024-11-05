@@ -36,6 +36,9 @@ provide(
 </script>
 
 <style lang="scss">
+.gov-radio-group {
+	display: inline-block;
+}
 .gov-radio-group.is-disabled {
 	cursor: not-allowed;
 }
