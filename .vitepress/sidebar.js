@@ -260,8 +260,8 @@ const componentSidebar = [
 						link: "/component/table",
 					},
 					{
-						text: "Page Header 页头",
-						link: "/component/link",
+						text: "Page Container 页面容器",
+						link: "/component/pagecontainer",
 					},
 					// 页面模块标题。
 					{

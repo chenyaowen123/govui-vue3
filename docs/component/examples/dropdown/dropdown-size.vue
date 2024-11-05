@@ -11,6 +11,7 @@
 				点击下拉菜单后是否关闭
 			</gov-checkbox>
 			<gov-checkbox v-model="disabled">是否禁用</gov-checkbox>
+			<gov-checkbox v-model="center">居中布局</gov-checkbox>
 		</div>
 		<hr />
 		<gov-dropdown
@@ -18,7 +19,7 @@
 			:size="size"
 			:hideAfterClick="hideAfterClick"
 			:disabled="disabled"
-			center
+			:center="center"
 		>
 			<gov-button @click="visible = !visible">下拉菜单</gov-button>
 			<template #dropdown>
@@ -35,7 +36,8 @@
 			visible: {{ visible }} <br />
 			size: {{ size }} <br />
 			hideAfterClick: {{ hideAfterClick }} <br />
-			disabled: {{ disabled }}
+			disabled: {{ disabled }}<br />
+			center: {{ center }}
 		</template>
 	</demo-container>
 </template>
@@ -46,6 +48,7 @@ const visible = ref(false);
 const size = ref("default");
 const hideAfterClick = ref(false);
 const disabled = ref(false);
+const center = ref(true);
 </script>
 
 <style lang="scss">

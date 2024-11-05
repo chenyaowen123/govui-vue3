@@ -59,6 +59,7 @@ import breadcrumb from "./components/breadcrumb/breadcrumb.vue";
 import breadcrumbItem from "./components/breadcrumb/breadcrumb-item.vue";
 import dropdown from "./components/dropdown/dropdown.vue";
 import dropdownItem from "./components/dropdown/dropdown-item.vue";
+import pageContainer from "./components/pageContainer/page-container.vue";
 
 // 导出所有组件
 const components = {
@@ -119,6 +120,7 @@ const components = {
 	breadcrumbItem,
 	dropdown,
 	dropdownItem,
+	pageContainer,
 };
 
 // 提供一个全局安装方法
