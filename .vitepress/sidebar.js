@@ -245,7 +245,7 @@ const componentSidebar = [
 				items: [
 					{
 						text: "Backtop 回到顶部",
-						link: "/component/link",
+						link: "/component/backtop",
 					},
 					{
 						text: "Breadcrumb 面包屑",

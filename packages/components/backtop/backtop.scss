@@ -1,0 +1,33 @@
+@use "@/styles/theme.scss" as *;
+
+.gov-backtop {
+	position: fixed;
+	cursor: pointer;
+	z-index: 2000;
+	opacity: 1;
+	transition: opacity 0.3s;
+	&__default {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 40px;
+		height: 40px;
+		background-color: #fff;
+		border-radius: 50%;
+		box-shadow: 0 0 6px rgba(0, 0, 0, 0.12);
+		transition: all 0.3s;
+		&:hover {
+			box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
+		}
+	}
+}
+
+.gov-backtop-fade-in-enter-active,
+.gov-backtop-fade-in-leave-active {
+	transition: opacity 0.5s;
+}
+
+.gov-backtop-fade-in-enter-from,
+.gov-backtop-fade-in-leave-to {
+	opacity: 0;
+}

@@ -54,6 +54,7 @@ import tree from "./components/tree/tree.vue";
 import timeline from "./components/timeline/timeline.vue";
 import timelineItem from "./components/timeline/timeline-item.vue";
 
+import backtop from "./components/backtop/backtop.vue";
 import breadcrumb from "./components/breadcrumb/breadcrumb.vue";
 import breadcrumbItem from "./components/breadcrumb/breadcrumb-item.vue";
 
@@ -111,6 +112,7 @@ const components = {
 	timelineItem,
 	tree,
 
+	backtop,
 	breadcrumb,
 	breadcrumbItem,
 };
