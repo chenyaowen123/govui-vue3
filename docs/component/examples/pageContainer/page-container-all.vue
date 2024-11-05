@@ -22,6 +22,8 @@
 
 <style lang="scss">
 .gov-demo-page-container {
-	background: #f1f1f1;
+	background: url(./transparent.jpg);
+	background-repeat: repeat;
+	background-attachment: fixed;
 }
 </style>
