@@ -1,5 +1,5 @@
 <template>
-	<demo-container class="gov-demo-page-container">
+	<demo-container transparent>
 		<gov-page-container title="页面标题" :border="false" :round="false">
 			这是内容主体部分。
 		</gov-page-container>
@@ -8,8 +8,4 @@
 
 <script setup></script>
 
-<style lang="scss">
-.gov-demo-page-container {
-	background: #f1f1f1;
-}
-</style>
+<style lang="scss"></style>

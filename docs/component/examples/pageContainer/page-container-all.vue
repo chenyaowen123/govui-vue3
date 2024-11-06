@@ -1,5 +1,5 @@
 <template>
-	<demo-container class="gov-demo-page-container">
+	<demo-container transparent>
 		<gov-page-container title="页面标题" border round>
 			<template #before>
 				<gov-breadcrumb>

@@ -270,7 +270,7 @@ const componentSidebar = [
 					},
 					{
 						text: "Tabs 标签页",
-						link: "/component/link",
+						link: "/component/tabs",
 					},
 				],
 			},
