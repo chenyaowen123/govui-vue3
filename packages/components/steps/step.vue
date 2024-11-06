@@ -88,12 +88,12 @@ const internalStatus = computed(() => {
 		width: 100%;
 		&-line {
 			width: 100%;
-			height: 0;
+			height: 2px;
 			position: absolute;
 			right: 100%;
 			z-index: 0;
 			top: calc(50% - 1px);
-			border-bottom: 2px solid var(--gov-border-color);
+			background-color: var(--gov-border-color);
 		}
 		&-icon {
 			position: relative;
@@ -158,7 +158,7 @@ const internalStatus = computed(() => {
 	&.is-finish {
 		.gov-step__head {
 			&-line {
-				border-color: var(--gov-success);
+				background-color: var(--gov-success);
 			}
 			&-icon {
 				border-color: var(--gov-success);
@@ -182,7 +182,11 @@ const internalStatus = computed(() => {
 	&.is-active {
 		.gov-step__head {
 			&-line {
-				border-color: var(--gov-border-color);
+				background: linear-gradient(
+					to right,
+					var(--gov-success),
+					var(--gov-primary)
+				);
 			}
 			&-icon {
 				border-color: var(--gov-primary);
@@ -206,7 +210,7 @@ const internalStatus = computed(() => {
 	&.is-wait {
 		.gov-step__head {
 			&-line {
-				border-color: var(--gov-border-color);
+				background-color: var(--gov-border-color);
 			}
 			&-icon {
 				border-color: var(--gov-border-color);
