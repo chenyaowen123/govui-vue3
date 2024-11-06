@@ -266,7 +266,7 @@ const componentSidebar = [
 					// 页面模块标题。
 					{
 						text: "Steps 步骤条",
-						link: "/component/link",
+						link: "/component/steps",
 					},
 					{
 						text: "Tabs 标签页",

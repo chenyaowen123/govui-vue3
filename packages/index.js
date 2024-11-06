@@ -60,6 +60,8 @@ import breadcrumbItem from "./components/breadcrumb/breadcrumb-item.vue";
 import dropdown from "./components/dropdown/dropdown.vue";
 import dropdownItem from "./components/dropdown/dropdown-item.vue";
 import pageContainer from "./components/pageContainer/page-container.vue";
+import steps from "./components/steps/steps.vue";
+import step from "./components/steps/step.vue";
 import tabs from "./components/tabs/tabs.vue";
 import tabPane from "./components/tabs/tab-pane.vue";
 
@@ -123,6 +125,9 @@ const components = {
 	dropdown,
 	dropdownItem,
 	pageContainer,
+
+	steps,
+	step,
 	tabs,
 	tabPane,
 };
