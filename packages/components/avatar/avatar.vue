@@ -39,7 +39,7 @@ const props = defineProps({
 	href: String, // 是否为href链接
 	target: {
 		type: String,
-		default: "target",
+		default: "_blank",
 	},
 });
 
