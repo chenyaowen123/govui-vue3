@@ -1,6 +1,6 @@
 <template>
 	<demo-container>
-		<gov-steps :active="active" :size="size">
+		<gov-steps :active="active">
 			<gov-step title="步骤一" description="">
 				<template #icon="{ index }">{{ index }}</template>
 				<template #title>自定义标题</template>
@@ -21,7 +21,7 @@
 
 <script setup>
 import { ref } from "vue";
-const active = ref(1);
+const active = ref(2);
 </script>
 
 <style lang="scss"></style>

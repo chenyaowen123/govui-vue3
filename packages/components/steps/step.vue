@@ -9,7 +9,7 @@
 	>
 		<div class="gov-step__head">
 			<div class="gov-step__head-line"></div>
-			<div class="gov-step__head-icon" :class="iconClass">
+			<div class="gov-step__head-icon">
 				<slot name="icon" :index="innerNumber" :status="internalStatus">
 					<GovIcon v-if="icon" :name="icon" />
 					<div v-else class="gov-step__head-icon-inner">
@@ -28,7 +28,10 @@
 					{{ title }}
 				</slot>
 			</div>
-			<div v-if="!isSimple" class="gov-step__main-description">
+			<div
+				v-if="description || $slots.description"
+				class="gov-step__main-description"
+			>
 				<slot
 					name="description"
 					:index="innerNumber"

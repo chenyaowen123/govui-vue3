@@ -45,6 +45,7 @@ import GovMessage from "./components/message/message.js"; //
 import GovMessageBox from "./components/messagebox/message-box.js"; //
 import GovNotification from "./components/notification/notification.js"; //
 
+import avatar from "./components/avatar/avatar.vue";
 import cellapseTransiton from "./components/collapse/collapse-transition.vue";
 import table from "./components/table/table.vue";
 
@@ -111,6 +112,8 @@ const components = {
 
 	dialog,
 
+	// 数据
+	avatar,
 	cellapseTransiton,
 	table,
 
@@ -119,6 +122,7 @@ const components = {
 	timelineItem,
 	tree,
 
+	// 导航
 	backtop,
 	breadcrumb,
 	breadcrumbItem,

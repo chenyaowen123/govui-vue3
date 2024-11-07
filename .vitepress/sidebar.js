@@ -186,7 +186,7 @@ const componentSidebar = [
 				items: [
 					{
 						text: "Avatar 头像",
-						link: "/component/link",
+						link: "/component/avatar",
 					},
 					{
 						text: "User Card 人员信息卡",

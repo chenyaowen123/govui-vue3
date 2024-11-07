@@ -15,7 +15,7 @@
 
 <script setup>
 import { ref } from "vue";
-const active = ref(1);
+const active = ref(2);
 </script>
 
 <style lang="scss"></style>
