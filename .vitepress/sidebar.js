@@ -207,7 +207,7 @@ const componentSidebar = [
 					// Descriptions 描述列表
 					{
 						text: "Empty 空状态",
-						link: "/component/link",
+						link: "/component/empty",
 					},
 					{
 						text: "Pagination 分页",

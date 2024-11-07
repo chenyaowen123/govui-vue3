@@ -6,6 +6,7 @@
 		:style="avatarStyle"
 		:href="props.href"
 		:target="props.target"
+		@click="handleClick"
 	>
 		<img v-if="props.src" :src="props.src" class="gov-avatar__image" />
 		<span v-else-if="props.icon || $slots.icon" class="gov-avatar__icon">
@@ -71,6 +72,12 @@ const avatarStyle = computed(() => {
 	}
 	return style;
 });
+
+// click事件
+const emit = defineEmits(["click"]);
+function handleClick(e) {
+	emit("click", e);
+}
 </script>
 
 <style lang="scss" scoped>
