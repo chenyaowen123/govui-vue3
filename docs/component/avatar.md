@@ -6,10 +6,12 @@ import avatarCustom from "./examples/avatar/avatar-custom.vue"
 import avatarHref from "./examples/avatar/avatar-href.vue"
 </script>
 
-## Avatar 头像
+# Avatar 头像
 
 
 ## 基础用法
+
+默认浅色背景，可设置 ```dark``` 为深色背景；```circle``` 可设置为圆形。
 
 <avatarBase />
 

@@ -36,7 +36,7 @@
 						</slot>
 					</div>
 				</div>
-				<ElCollapseTransition>
+				<govCollapseTransition>
 					<div
 						v-show="
 							node.children &&
@@ -62,7 +62,7 @@
 							</template>
 						</gov-tree>
 					</div>
-				</ElCollapseTransition>
+				</govCollapseTransition>
 			</div>
 		</template>
 	</div>
@@ -70,7 +70,7 @@
 
 <script setup>
 import GovIcon from "../icon/icon.vue";
-import ElCollapseTransition from "../collapse/collapse-transition.vue";
+import govCollapseTransition from "../collapse/collapse-transition.vue";
 
 defineOptions({
 	name: "GovTree",

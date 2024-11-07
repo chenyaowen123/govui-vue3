@@ -6,7 +6,7 @@
 <script setup>
 // 无固定高度的收缩折叠动画。
 defineOptions({
-	name: "ElCollapseTransition",
+	name: "GovCollapseTransition",
 });
 
 const reset = (el) => {

@@ -35,6 +35,7 @@ const props = defineProps({
 		type: [Number, String],
 		default: "default", // 设置大小，当为number的时候，应该是px单位的，'small', 'default', 'large',
 	},
+	dark: Boolean, // 深背景
 	src: String,
 	icon: String,
 	href: String, // 是否为href链接
@@ -48,6 +49,7 @@ const avatarClasses = computed(() => {
 	return {
 		"gov-avatar--circle": props.circle,
 		"gov-avatar--square": !props.circle,
+		"gov-avatar--dark": props.dark,
 		"gov-avatar--size-small": props.size === "small",
 		"gov-avatar--size-default": props.size === "default",
 		"gov-avatar--size-large": props.size === "large",
