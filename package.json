@@ -6,6 +6,7 @@
   "dependencies": {
     "@vuepic/vue-datepicker": "^9.0.3",
     "numeral": "^2.0.6",
+    "qrcode": "^1.5.4",
     "swiper": "^11.1.14",
     "vite": "^5.4.8",
     "vue": "^3.0.0",

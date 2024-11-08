@@ -32,7 +32,7 @@ import {
   setCSSProperty,
   showWarning
 } from "./chunk-FPASK5HI.js";
-import "./chunk-JVWSFFO4.js";
+import "./chunk-EQCVQC35.js";
 
 // node_modules/swiper/shared/swiper-core.mjs
 var support;

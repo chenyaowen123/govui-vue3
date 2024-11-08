@@ -70,6 +70,9 @@ import step from "./components/steps/step.vue";
 import tabs from "./components/tabs/tabs.vue";
 import tabPane from "./components/tabs/tab-pane.vue";
 
+// 其它
+import qrcode from "./components/qrcode/qrcode.vue";
+
 // 导出所有组件
 const components = {
 	aside,
@@ -142,6 +145,9 @@ const components = {
 	step,
 	tabs,
 	tabPane,
+
+	// 其它
+	qrcode,
 };
 
 // 提供一个全局安装方法

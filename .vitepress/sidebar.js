@@ -284,7 +284,7 @@ const componentSidebar = [
 					},
 					{
 						text: "Qrcode 二维码",
-						link: "/component/link",
+						link: "/component/qrcode",
 					},
 				],
 			},
