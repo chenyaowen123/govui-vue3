@@ -189,7 +189,7 @@ const componentSidebar = [
 						link: "/component/avatar",
 					},
 					{
-						text: "User Card 人员信息卡",
+						text: "UserCard 人员信息卡",
 						link: "/component/link",
 					},
 					{
@@ -198,7 +198,7 @@ const componentSidebar = [
 					},
 					{
 						text: "Card 卡片",
-						link: "/component/link",
+						link: "/component/Card",
 					},
 					{
 						text: "Collapse 折叠面板",
@@ -260,7 +260,7 @@ const componentSidebar = [
 						link: "/component/table",
 					},
 					{
-						text: "Page Container 页面容器",
+						text: "PageContainer 页面容器",
 						link: "/component/pagecontainer",
 					},
 					// 页面模块标题。

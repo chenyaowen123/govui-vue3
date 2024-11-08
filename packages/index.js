@@ -47,6 +47,7 @@ import GovNotification from "./components/notification/notification.js"; //
 
 import avatar from "./components/avatar/avatar.vue";
 import empty from "./components/empty/empty.vue";
+import card from "./components/card/card.vue";
 import collapse from "./components/collapse/collapse.vue";
 import collapseItem from "./components/collapse/collapse-item.vue";
 import cellapseTransiton from "./components/collapse/collapse-transition.vue";
@@ -118,6 +119,7 @@ const components = {
 	// 数据
 	avatar,
 	empty,
+	card,
 	collapse,
 	collapseItem,
 	cellapseTransiton,
