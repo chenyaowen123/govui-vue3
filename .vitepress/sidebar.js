@@ -202,7 +202,7 @@ const componentSidebar = [
 					},
 					{
 						text: "Collapse 折叠面板",
-						link: "/component/link",
+						link: "/component/collapse",
 					},
 					// Descriptions 描述列表
 					{
