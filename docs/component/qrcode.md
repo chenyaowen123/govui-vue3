@@ -23,4 +23,6 @@ import qrcodeColor from "./examples/qrcode/qrcode-color.vue"
 
 ## 自定义颜色
 
+自定义二维码颜色和背景色。
+
 <qrcodeColor/>

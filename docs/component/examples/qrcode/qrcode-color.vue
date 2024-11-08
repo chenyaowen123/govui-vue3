@@ -2,6 +2,10 @@
 	<demo-container>
 		<gov-qrcode :value="url" color="#ff857b" />
 		&nbsp;
+		<gov-qrcode :value="url" color="#6ebe37" />
+		&nbsp;
+		<gov-qrcode :value="url" color="#008bf3" />
+		<hr />
 		<gov-qrcode
 			:value="url"
 			color="#ff857b"
@@ -9,12 +13,16 @@
 			:border="false"
 		/>
 		&nbsp;
-		<gov-qrcode :value="url" color="#6ebe37" />
-
-		&nbsp;
 		<gov-qrcode
 			:value="url"
 			color="#6ebe37"
+			backgroundColor="#f1f1f1"
+			:border="false"
+		/>
+		&nbsp;
+		<gov-qrcode
+			:value="url"
+			color="#008bf3"
 			backgroundColor="#f1f1f1"
 			:border="false"
 		/>
