@@ -6,7 +6,7 @@ import qrcodeColor from "./examples/qrcode/qrcode-color.vue"
 
 # Qrcode 二维码
 
-常用于需要将链接转换成为二维码时使用。
+常用于链接/文字转换为二维码。
 
 ## 基础使用
 

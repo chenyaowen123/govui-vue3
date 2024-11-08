@@ -279,10 +279,6 @@ const componentSidebar = [
 				text: "其它",
 				items: [
 					{
-						text: "Weather 天气",
-						link: "/component/link", // https://weatherwidget.org/zh/
-					},
-					{
 						text: "Qrcode 二维码",
 						link: "/component/qrcode",
 					},
