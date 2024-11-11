@@ -53,13 +53,24 @@ defineProps({
 	hideTimestamp: Boolean, // 隐藏时间戳
 	placement: {
 		type: String,
-		values: ["top", "bottom"],
 		default: "bottom", // 内容和时间戳的位置
+		validator: (value) => {
+			return ["top", "bottom"].includes(value);
+		},
 	},
 	type: {
 		type: String,
-		values: ["primary", "success", "warning", "danger", "info"],
 		default: "default", // 圆点颜色类型
+		validator: (value) => {
+			return [
+				"default",
+				"primary",
+				"success",
+				"info",
+				"warning",
+				"danger",
+			].includes(value);
+		},
 	},
 	color: {
 		type: String,
@@ -67,8 +78,10 @@ defineProps({
 	},
 	size: {
 		type: String,
-		values: ["large", "default", "small"],
 		default: "default", // 大小
+		validator: (value) => {
+			return ["default", "large", "small"].includes(value);
+		},
 	},
 	icon: String, // 图标名称
 	hollow: Boolean, // 是否空心

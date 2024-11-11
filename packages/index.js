@@ -47,6 +47,7 @@ import GovNotification from "./components/notification/notification.js"; //
 
 import avatar from "./components/avatar/avatar.vue";
 import usercard from "./components/usercard/usercard.vue";
+import badge from "./components/badge/badge.vue";
 import empty from "./components/empty/empty.vue";
 import card from "./components/card/card.vue";
 import collapse from "./components/collapse/collapse.vue";
@@ -123,6 +124,7 @@ const components = {
 	// 数据
 	avatar,
 	usercard,
+	badge,
 	empty,
 	card,
 	collapse,
