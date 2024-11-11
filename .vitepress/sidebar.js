@@ -189,8 +189,8 @@ const componentSidebar = [
 						link: "/component/avatar",
 					},
 					{
-						text: "UserCard 人员信息卡",
-						link: "/component/link",
+						text: "Usercard 人员信息卡",
+						link: "/component/usercard",
 					},
 					{
 						text: "Badge 徽章",

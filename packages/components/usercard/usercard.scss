@@ -1,0 +1,60 @@
+@use "@/styles/theme.scss" as *;
+
+.gov-usercard {
+	position: relative;
+	width: 450px;
+	height: 254px;
+	background: url("./default.jpg") center center no-repeat;
+	background-size: cover;
+	border-radius: var(--gov-border-radius-base);
+	font-weight: bold;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+
+	&.is-horizontal {
+		width: 450px;
+		height: 254px;
+	}
+
+	&__header {
+		height: 90px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		&-title {
+			font-size: 30px;
+			color: #fff;
+		}
+	}
+
+	.gov-avatar {
+		position: absolute;
+		left: 40px;
+		top: 90px;
+	}
+	&__text {
+		position: absolute;
+		left: 160px;
+		top: 90px;
+		font-size: 16px;
+		color: #fff;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: start;
+		height: 100px;
+		line-height: 1.5;
+	}
+	&__qrcode {
+		position: absolute;
+		right: 40px;
+	}
+	&__footer{
+		position: absolute;
+		bottom: 10px;
+		font-size: 12px;
+		color: #fff;
+		width: 100%;
+		text-align: center;
+	}
+}

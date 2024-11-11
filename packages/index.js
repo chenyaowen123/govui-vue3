@@ -46,6 +46,7 @@ import GovMessageBox from "./components/messagebox/message-box.js"; //
 import GovNotification from "./components/notification/notification.js"; //
 
 import avatar from "./components/avatar/avatar.vue";
+import usercard from "./components/usercard/usercard.vue";
 import empty from "./components/empty/empty.vue";
 import card from "./components/card/card.vue";
 import collapse from "./components/collapse/collapse.vue";
@@ -121,6 +122,7 @@ const components = {
 
 	// 数据
 	avatar,
+	usercard,
 	empty,
 	card,
 	collapse,
