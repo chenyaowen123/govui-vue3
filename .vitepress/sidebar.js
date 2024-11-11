@@ -215,7 +215,7 @@ const componentSidebar = [
 					},
 					{
 						text: "Progress 进度条",
-						link: "/component/link",
+						link: "/component/progress",
 					},
 					{
 						text: "Result 结果",
