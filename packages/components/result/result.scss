@@ -1,0 +1,42 @@
+@use "@/styles/theme.scss" as *;
+
+.gov-result {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+	box-sizing: border-box;
+	padding: 20px;
+
+	&__icon {
+		font-size: 60px;
+		color: var(--gov-text-color);
+	}
+
+	&__title {
+		color: var(--gov-text-color);
+		font-size: 16px;
+		line-height: 1.5;
+		padding: 15px 0;
+	}
+	&__description {
+		color: var(--gov-text-color-3);
+		line-height: 1.3;
+		font-size: 16px;
+		padding: 0 0 20px;
+	}
+
+	&.is-success &__icon {
+		color: var(--gov-success);
+	}
+	&.is-info &__icon {
+		color: var(--gov-info);
+	}
+	&.is-warning &__icon {
+		color: var(--gov-warning);
+	}
+	&.is-danger &__icon {
+		color: var(--gov-danger);
+	}
+}

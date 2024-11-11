@@ -219,7 +219,7 @@ const componentSidebar = [
 					},
 					{
 						text: "Result 结果",
-						link: "/component/link",
+						link: "/component/result",
 					},
 
 					{

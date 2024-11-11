@@ -53,6 +53,7 @@ import card from "./components/card/card.vue";
 import collapse from "./components/collapse/collapse.vue";
 import collapseItem from "./components/collapse/collapse-item.vue";
 import cellapseTransiton from "./components/collapse/collapse-transition.vue";
+import result from "./components/result/result.vue";
 import table from "./components/table/table.vue";
 
 import swiper from "./components/swiper/swiper.vue";
@@ -130,6 +131,7 @@ const components = {
 	collapse,
 	collapseItem,
 	cellapseTransiton,
+	result,
 	table,
 
 	swiper,
