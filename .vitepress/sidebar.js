@@ -211,7 +211,7 @@ const componentSidebar = [
 					},
 					{
 						text: "Pagination 分页",
-						link: "/component/link",
+						link: "/component/pagination",
 					},
 					{
 						text: "Progress 进度条",

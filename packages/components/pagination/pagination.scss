@@ -1,0 +1,73 @@
+@use "@/styles/theme.scss" as *;
+
+.gov-pagination {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 14px;
+	color: var(--gov-text-color);
+	&.is-disabled {
+		cursor: not-allowed;
+		color: var(--gov-text-color-5);
+	}
+	&__total {
+		margin-right: 8px;
+	}
+	&__sizes,
+	&__jumper {
+		margin: 0 8px;
+	}
+	&__prev,
+	&__next {
+		margin: 0 4px;
+		cursor: pointer;
+		user-select: none;
+	}
+}
+
+.gov-pager {
+	display: flex;
+	align-items: center;
+	color: var(--gov-text-color);
+	&__page {
+		margin: 0 4px;
+		padding: 0 2px;
+		cursor: pointer;
+		user-select: none;
+		&.is-active {
+			font-weight: bold;
+			color: var(--gov-primary);
+		}
+	}
+	&__ellipsis {
+		margin: 0 4px;
+	}
+
+
+	&.is-background {
+		.gov-pager__page {
+			background: var(--gov-fill-color);
+			padding: 0 7px;
+			border-radius: 3px;
+			&.is-active{
+				background: var(--gov-primary);
+				color: #fff;
+			}
+		}
+		&.is-disabled{
+			.gov-pager__page {
+				background: var(--gov-fill-color-5);
+				&.is-active{
+					background: var(--gov-primary-5);
+				}
+			}
+		}
+	}
+	&.is-disabled {
+		color: var(--gov-text-color-5);
+		.gov-pager__page {
+			cursor: not-allowed;
+		}
+	}
+
+}

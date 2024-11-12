@@ -48,7 +48,7 @@ defineOptions({
 
 const props = defineProps({
 	modelValue: {
-		type: String,
+		type: [String, Number],
 		default: undefined, // 绑定在输入框的值
 	},
 	width: {

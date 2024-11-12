@@ -101,7 +101,7 @@ const lineColor = computed(() => {
 
 // 圆形的样式
 const circleStyle = computed(() => {
-	const circumference = 2 * Math.PI * 54;
+	const circumference = 2 * Math.PI * innerRadius.value;
 	const offset = ((100 - props.modelValue) / 100) * circumference;
 	return {
 		stroke: lineColor.value,
