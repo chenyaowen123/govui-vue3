@@ -1,3 +1,6 @@
+import guoqi from "./components/guoqi/guoqi.vue";
+import guohui from "./components/guohui/guohui.vue";
+
 import aside from "./components/container/aside.vue";
 import container from "./components/container/container.vue";
 import footer from "./components/container/footer.vue";
@@ -80,6 +83,9 @@ import qrcode from "./components/qrcode/qrcode.vue";
 
 // 导出所有组件
 const components = {
+	guoqi,
+	guohui,
+
 	aside,
 	container,
 	footer,

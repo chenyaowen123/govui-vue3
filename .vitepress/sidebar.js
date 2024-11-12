@@ -17,11 +17,11 @@ const componentSidebar = [
 				items: [
 					{
 						text: "Guoqi 国旗",
-						link: "/component/link", // https://www.gov.cn/guoqing/guoqi/
+						link: "/component/guoqi", // https://www.gov.cn/guoqing/guoqi/
 					},
 					{
 						text: "Guohui 国徽",
-						link: "/component/link", // https://www.gov.cn/guoqing/guohui/
+						link: "/component/guohui", // https://www.gov.cn/guoqing/guohui/
 					},
 					{
 						text: "Dangqi 党旗",
@@ -148,7 +148,7 @@ const componentSidebar = [
 				items: [
 					{
 						text: "Drawer 抽屉",
-						link: "/component/drawer",
+						link: "/component/link",
 					},
 					{
 						text: "Dialog 对话框",
