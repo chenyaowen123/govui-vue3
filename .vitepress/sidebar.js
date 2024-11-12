@@ -257,7 +257,7 @@ const componentSidebar = [
 					},
 					{
 						text: "Menu 菜单",
-						link: "/component/table",
+						link: "/component/link",
 					},
 					{
 						text: "PageContainer 页面容器",

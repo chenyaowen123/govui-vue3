@@ -1,5 +1,5 @@
 <template>
-	<div class="gov-usercard" :class="[`is-${direction}`]" :style="style">
+	<div class="gov-usercard" :style="style">
 		<div class="gov-usercard__header">
 			<slot name="header">
 				<div class="gov-usercard__header-title">{{ title }}</div>
