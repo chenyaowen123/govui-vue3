@@ -25,11 +25,11 @@ const componentSidebar = [
 					},
 					{
 						text: "Dangqi 党旗",
-						link: "/component/link", // https://mp.weixin.qq.com/s?__biz=MzIwMTY1Mjc0NQ==&mid=2651449627&idx=3&sn=3cf62a89191e1b7b976dd010f3409ad3&chksm=8cc1a39c3412675408560549aaa59fab8e73b892bc9dd22981bd379b50ecb08ef9665a9077ce&scene=27
+						link: "/component/dangqi", // https://mp.weixin.qq.com/s?__biz=MzIwMTY1Mjc0NQ==&mid=2651449627&idx=3&sn=3cf62a89191e1b7b976dd010f3409ad3&chksm=8cc1a39c3412675408560549aaa59fab8e73b892bc9dd22981bd379b50ecb08ef9665a9077ce&scene=27
 					},
 					{
 						text: "Danghui 党徽",
-						link: "/component/link", // https://mp.weixin.qq.com/s?__biz=MzIwMTY1Mjc0NQ==&mid=2651449627&idx=3&sn=3cf62a89191e1b7b976dd010f3409ad3&chksm=8cc1a39c3412675408560549aaa59fab8e73b892bc9dd22981bd379b50ecb08ef9665a9077ce&scene=27
+						link: "/component/danghui", // https://mp.weixin.qq.com/s?__biz=MzIwMTY1Mjc0NQ==&mid=2651449627&idx=3&sn=3cf62a89191e1b7b976dd010f3409ad3&chksm=8cc1a39c3412675408560549aaa59fab8e73b892bc9dd22981bd379b50ecb08ef9665a9077ce&scene=27
 					},
 				],
 			},

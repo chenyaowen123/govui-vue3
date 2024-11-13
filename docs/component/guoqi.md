@@ -20,3 +20,36 @@ import guoqiBase from "./examples/guoqi/guoqi-base.vue"
 
 <guoqiBase />
 
+```vue
+<template>
+	<gov-guoqi :width="width" />
+</template>
+
+<script setup>
+import { ref } from "vue";
+const width = ref(200);
+</script>
+```
+
+
+
+## Attributes
+
+<table style="width:100%; display:table;">
+  <thead>
+    <tr>
+      <th>参数</th>
+      <th width="150">类型</th>
+      <th width="100">默认值</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>width</td>
+      <td>Number / String</td>
+      <td>1080</td>
+      <td>团宽度，单位 px。</td>
+    </tr>
+  </tbody>
+</table>

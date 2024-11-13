@@ -1,6 +1,6 @@
 <template>
 	<div class="gov-guohui">
-		<img src="./guohui-1024.png" :style="imgStyle" />
+		<img src="./guohui.png" :style="imgStyle" />
 	</div>
 </template>
 
@@ -14,14 +14,14 @@ defineOptions({
 const props = defineProps({
 	width: {
 		type: [String, Number],
-		default: 2048,
+		default: 1080,
 	},
 });
 
 // 计算图片样式
 const imgStyle = computed(() => {
 	return {
-		width: props.width + "px",
+		width: Number(props.width) + "px",
 		height: "auto",
 	};
 });

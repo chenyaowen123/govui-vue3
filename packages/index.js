@@ -1,5 +1,7 @@
 import guoqi from "./components/guoqi/guoqi.vue";
 import guohui from "./components/guohui/guohui.vue";
+import dangqi from "./components/dangqi/dangqi.vue";
+import danghui from "./components/danghui/danghui.vue";
 
 import aside from "./components/container/aside.vue";
 import container from "./components/container/container.vue";
@@ -85,6 +87,8 @@ import qrcode from "./components/qrcode/qrcode.vue";
 const components = {
 	guoqi,
 	guohui,
+	dangqi,
+	danghui,
 
 	aside,
 	container,

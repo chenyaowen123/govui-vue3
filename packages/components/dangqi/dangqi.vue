@@ -1,6 +1,6 @@
 <template>
-	<div class="gov-guoqi">
-		<img src="./guoqi.png" :style="imgStyle" />
+	<div class="gov-dangqi">
+		<img src="./dangqi.png" :style="imgStyle" />
 	</div>
 </template>
 
@@ -8,7 +8,7 @@
 import { computed } from "vue";
 
 defineOptions({
-	name: "GovGuoqi",
+	name: "GovDangqi",
 });
 
 const props = defineProps({
@@ -28,7 +28,7 @@ const imgStyle = computed(() => {
 </script>
 
 <style scoped lang="scss">
-.gov-guoqi {
+.gov-dangqi {
 	display: inline-block;
 	font-size: 0;
 	img {

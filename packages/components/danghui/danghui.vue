@@ -1,6 +1,7 @@
 <template>
-	<div class="gov-guoqi">
-		<img src="./guoqi.png" :style="imgStyle" />
+	<div class="gov-danghui">
+		<img src="./danghui-red.png" :style="imgStyle" v-if="type === 'red'" />
+		<img src="./danghui-yellow.png" :style="imgStyle" v-else />
 	</div>
 </template>
 
@@ -8,13 +9,20 @@
 import { computed } from "vue";
 
 defineOptions({
-	name: "GovGuoqi",
+	name: "GovDanghui",
 });
 
 const props = defineProps({
 	width: {
 		type: [String, Number],
 		default: 1080,
+	},
+	type: {
+		type: String,
+		default: "red",
+		validator: (value) => {
+			return ["red", "yellow"].includes(value);
+		},
 	},
 });
 
@@ -28,7 +36,7 @@ const imgStyle = computed(() => {
 </script>
 
 <style scoped lang="scss">
-.gov-guoqi {
+.gov-danghui {
 	display: inline-block;
 	font-size: 0;
 	img {
