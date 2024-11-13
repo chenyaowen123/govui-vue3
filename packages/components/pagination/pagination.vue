@@ -8,7 +8,7 @@
 		</div>
 		<div class="gov-pagination__sizes" v-if="!plain">
 			<gov-select
-				v-model="modelPageSize"
+				v-model="innerPageSize"
 				:disabled="disabled"
 				:clearable="false"
 				size="small"
@@ -27,7 +27,7 @@
 		</div>
 		<gov-pager
 			:pages="pages"
-			v-model="modelCurrentPage"
+			v-model="innerCurrentPage"
 			:disabled="disabled"
 			:background="background"
 		/>
@@ -37,7 +37,7 @@
 		</div>
 		<div class="gov-pagination__jumper" v-if="!plain">
 			跳至：<gov-input-number
-				v-model="modelCurrentPage"
+				v-model="innerCurrentPage"
 				:step="1"
 				:min="1"
 				:max="pages.length"
@@ -52,7 +52,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, watchEffect } from "vue";
 import GovPager from "./pager.vue";
 import GovSelect from "../select/select.vue";
 import GovSelectOption from "../select/select-option.vue";
@@ -93,17 +93,15 @@ const emit = defineEmits([
 
 // 组件内记录的分页大小
 const innerPageSize = ref(props.pageSize);
-const modelPageSize = computed({
-	get() {
-		return innerPageSize.value || props.pageSize;
-	},
-	set(value) {
-		innerPageSize.value = value;
-		if (value !== props.pageSize) {
-			emit("update:pageSize", value);
-			emit("sizeChange", value);
-		}
-	},
+watchEffect(() => {
+	innerPageSize.value = props.pageSize;
+});
+watchEffect(() => {
+	let value = innerPageSize.value;
+	if (value !== props.pageSize) {
+		emit("update:pageSize", value);
+		emit("sizeChange", value);
+	}
 });
 
 // page 总数列表 1,2,3...
@@ -116,24 +114,24 @@ const pages = computed(() => {
 
 // 组件内记录的当前页，带有判断边界
 const innerCurrentPage = ref(props.modelValue);
-const modelCurrentPage = computed({
-	get() {
-		return innerCurrentPage.value || props.modelValue;
-	},
-	set(value) {
-		let newValue = value;
-		if (newValue < 1) {
-			newValue = 1;
-		}
-		if (newValue > pages.value.length) {
-			newValue = pages.value.length;
-		}
-		innerCurrentPage.value = newValue;
-		if (newValue !== props.modelValue) {
-			emit("update:modelValue", newValue);
-			emit("currentChange", newValue);
-		}
-	},
+const checkPageValueBounds = (value) => {
+	if (value < 1) {
+		value = 1;
+	}
+	if (value > pages.value.length) {
+		value = pages.value.length;
+	}
+	return value;
+};
+watchEffect(() => {
+	innerCurrentPage.value = props.modelValue;
+});
+watchEffect(() => {
+	let value = checkPageValueBounds(innerCurrentPage.value);
+	if (value !== props.modelValue) {
+		emit("update:modelValue", value);
+		emit("currentChange", value);
+	}
 });
 
 // 下一页

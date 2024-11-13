@@ -1,0 +1,43 @@
+@use "@/styles/theme.scss" as *;
+
+
+
+.gov-drawer__wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: auto;
+	z-index: 1000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.gov-drawer__container {
+	position: absolute;
+}
+
+.gov-drawer__open {
+	transform: translate(0, 0);
+}
+
+.gov-drawer {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+	border-radius: 4px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.gov-drawer-fade-enter-active,
+.gov-drawer-fade-leave-active {
+	transition: opacity 0.3s;
+}
+
+.gov-drawer-fade-enter-from,
+.gov-drawer-fade-leave-to {
+	opacity: 0;
+}

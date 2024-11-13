@@ -11,7 +11,8 @@
 		>
 			<template #header>
 				<div class="custom-header">
-					<span>XXX工作证2</span>
+					<gov-danghui width="40" type="yellow" />
+					<span>XXX党支部</span>
 				</div>
 			</template>
 		</gov-usercard>
@@ -28,6 +29,7 @@
 		align-items: center;
 		color: #fff;
 		font-size: 30px;
+		gap: 9px;
 	}
 }
 </style>

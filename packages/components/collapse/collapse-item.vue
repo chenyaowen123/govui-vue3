@@ -70,7 +70,10 @@ watchEffect(() => {
 	}
 });
 
-// 打开的value和当前name不相等的情况
+// 手风琴效果实现
+// collapse 组件外层可能绑定 ref()  ref(null)  ref(stringName) 三种可能，
+// 因为有默认值等情况，理论上来说无法判断调用组件的人是否设置了 v-model，也就无法知道是否有手风琴效果
+// 折中方案是，当点开一个面板，那么理论上，govCollapse.modelValue 就会有值同步，就代表需要开启手风琴，需要对比 modelValue 和 name来实现手风琴
 watchEffect(() => {
 	if (govCollapse?.modelValue) {
 		opend.value = govCollapse?.modelValue === props.name;
