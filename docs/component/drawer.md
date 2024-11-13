@@ -10,12 +10,13 @@ import drawerModal from "./examples/drawer/drawer-modal.vue"
 ## 基础使用
 
 设置 ```at``` 可控制弹出位置。
-
+<hr/>
 <drawerBase />
 
 ## 遮罩层
 
 设置 ```modal``` 可控制是否有遮罩层； 设置 ```drawerModal``` 可控制点击遮罩层是否触发关闭。
+
 
 <drawerModal />
 

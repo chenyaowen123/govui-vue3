@@ -1,61 +1,61 @@
 {
-  "hash": "85e87e5a",
+  "hash": "dc213bbc",
   "configHash": "038cdcea",
-  "lockfileHash": "273bc470",
-  "browserHash": "eecf784a",
+  "lockfileHash": "faeda834",
+  "browserHash": "2196b8aa",
   "optimized": {
     "vue": {
       "src": "../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "73938227",
+      "fileHash": "0136df9d",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "12155260",
+      "fileHash": "688ff8dc",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "4424a3f9",
+      "fileHash": "bfe1879f",
       "needsInterop": false
     },
     "numeral": {
       "src": "../../../node_modules/numeral/numeral.js",
       "file": "numeral.js",
-      "fileHash": "7aadae69",
+      "fileHash": "a3316ee7",
       "needsInterop": true
     },
     "@vuepic/vue-datepicker": {
       "src": "../../../node_modules/@vuepic/vue-datepicker/dist/vue-datepicker.js",
       "file": "@vuepic_vue-datepicker.js",
-      "fileHash": "19228c0b",
+      "fileHash": "e7b1cf52",
       "needsInterop": false
     },
     "vue3-popper": {
       "src": "../../../node_modules/vue3-popper/dist/popper.esm.js",
       "file": "vue3-popper.js",
-      "fileHash": "d8a14f5f",
+      "fileHash": "f4e80ab5",
       "needsInterop": false
     },
     "swiper/vue": {
       "src": "../../../node_modules/swiper/swiper-vue.mjs",
       "file": "swiper_vue.js",
-      "fileHash": "18c1ba6b",
+      "fileHash": "aa626bcc",
       "needsInterop": false
     },
     "swiper/modules": {
       "src": "../../../node_modules/swiper/modules/index.mjs",
       "file": "swiper_modules.js",
-      "fileHash": "2552fd2a",
+      "fileHash": "c3e13ba1",
       "needsInterop": false
     },
     "@vueuse/integrations/useQRCode": {
       "src": "../../../node_modules/@vueuse/integrations/useQRCode.mjs",
       "file": "@vueuse_integrations_useQRCode.js",
-      "fileHash": "d0484d4b",
+      "fileHash": "c141f2b7",
       "needsInterop": false
     }
   },
