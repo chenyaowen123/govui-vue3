@@ -148,7 +148,7 @@ const componentSidebar = [
 				items: [
 					{
 						text: "Drawer 抽屉",
-						link: "/component/link",
+						link: "/component/drawer",
 					},
 					{
 						text: "Dialog 对话框",

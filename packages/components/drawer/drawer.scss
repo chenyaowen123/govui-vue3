@@ -1,43 +1,143 @@
 @use "@/styles/theme.scss" as *;
 
-
-
-.gov-drawer__wrapper {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	overflow: auto;
-	z-index: 1000;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+// modal动画
+@keyframes el-drawer-fade-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
-.gov-drawer__container {
-	position: absolute;
+.gov-drawer-modal-fade-enter-active {
+	animation: el-drawer-fade-in 0.3s;
 }
 
-.gov-drawer__open {
+.gov-drawer-modal-fade-leave-active {
+	animation: el-drawer-fade-in 0.3s reverse;
+}
+
+// 抽屉动画
+.gov-drawer-easing-enter-active,
+.gov-drawer-easing-leave-active {
+	transition: all 0.3s;
 	transform: translate(0, 0);
 }
 
+.gov-drawer-easing-enter-from,
+.gov-drawer-easing-leave-to {
+	&.at-left {
+		transform: translate(-100%, 0);
+	}
+	&.at-right {
+		transform: translate(100%, 0);
+	}
+	&.at-top {
+		transform: translate(0, -100%);
+	}
+	&.at-bottom {
+		transform: translate(0, 100%);
+	}
+}
+
 .gov-drawer {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	background-color: #fff;
-	border-radius: 4px;
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
+	&__modal {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(0, 0, 0, 0.4);
+		z-index: 2000;
+	}
 
-.gov-drawer-fade-enter-active,
-.gov-drawer-fade-leave-active {
-	transition: opacity 0.3s;
-}
+	&__container {
+		position: fixed;
+		z-index: 2000;
+		background: #fff;
+		padding: 20px;
+		&.at-left {
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: auto;
+			box-shadow: 5px 0 10px 0px rgba(0, 0, 0, 0.2);
+		}
+		&.at-right {
+			top: 0;
+			bottom: 0;
+			left: auto;
+			right: 0;
+			box-shadow: -5px 0 10px 0px rgba(0, 0, 0, 0.2);
+		}
+		&.at-top {
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: auto;
+			box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.2);
+		}
+		&.at-bottom {
+			left: 0;
+			right: 0;
+			top: auto;
+			bottom: 0;
+			box-shadow: 0 -5px 10px 0px rgba(0, 0, 0, 0.2);
+		}
+	}
+	&__body {
+		position: absolute;
+		left: 20px;
+		right: 20px;
+		top: 20px;
+		bottom: 20px;
+		overflow: auto;
+	}
+	&__close {
+		position: absolute;
+		cursor: pointer;
+		font-size: 14px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: #fff;
 
-.gov-drawer-fade-enter-from,
-.gov-drawer-fade-leave-to {
-	opacity: 0;
+
+		&.at-left,
+		&.at-right {
+			width: 25px;
+			height: 40px;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		&.at-left {
+			right: -25px;
+			border-radius: 0 3px 3px 0;
+			box-shadow: 5px 0 10px 0px rgba(0, 0, 0, 0.2);
+		}
+		&.at-right {
+			left: -25px;
+			border-radius: 3px 0 0 3px;
+			box-shadow: -5px 0 10px 0px rgba(0, 0, 0, 0.2);
+		}
+
+		&.at-top,
+		&.at-bottom {
+			width: 40px;
+			height: 25px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		&.at-top {
+			bottom: -25px;
+			border-radius: 0 0 3px 3px;
+			box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.2);
+		}
+		&.at-bottom {
+			top: -25px;
+			border-radius: 3px 3px 0 0;
+			box-shadow: 0 -5px 10px 0px rgba(0, 0, 0, 0.2);
+		}
+	}
 }

@@ -1,32 +1,42 @@
 <template>
-	<transition
-		name="gov-drawer-fade"
-		@after-enter="afterEnter"
-		@after-leave="afterLeave"
-	>
-		<div class="gov-drawer__wrapper" v-show="modelValue">
+	<div class="gov-drawer" ref="drawer">
+		<transition name="gov-drawer-modal-fade">
 			<div
+				v-if="modal && modelValue"
+				class="gov-drawer__modal"
+				@click.stop="handleWrapperClick"
+			/>
+		</transition>
+		<transition
+			name="gov-drawer-easing"
+			@after-enter="afterEnter"
+			@after-leave="afterLeave"
+		>
+			<div
+				v-show="modelValue"
 				class="gov-drawer__container"
-				:class="{ 'gov-drawer__open': modelValue }"
-				@click.self="handleWrapperClick"
+				:class="[`at-${at}`]"
+				:style="drawerStyle"
 			>
+				<div class="gov-drawer__body" :class="[customClass]">
+					<slot />
+				</div>
 				<div
-					class="gov-drawer"
-					:class="[direction, customClass]"
-					:style="drawerStyle"
-					ref="drawer"
+					v-if="hasClose"
+					class="gov-drawer__close"
+					:class="[`at-${at}`]"
+					@click="close"
 				>
-					<section class="gov-drawer__body">
-						<slot />
-					</section>
+					<govIcon name="close" />
 				</div>
 			</div>
-		</div>
-	</transition>
+		</transition>
+	</div>
 </template>
 
 <script setup>
-import { ref, computed, watch, onMounted, onBeforeUnmount } from "vue";
+import { ref, computed, onMounted, onBeforeUnmount, watchEffect } from "vue";
+import govIcon from "../icon/icon.vue";
 
 defineOptions({
 	name: "GovDrawer",
@@ -37,17 +47,35 @@ const props = defineProps({
 		type: Boolean,
 		default: false,
 	},
+	// 是否有关闭按钮
+	hasClose: {
+		type: Boolean,
+		default: true,
+	},
+	// 是否显示遮罩层
+	modal: {
+		type: Boolean,
+		default: true,
+	},
+	// 点击遮罩层是否关闭
+	modalClosable: {
+		type: Boolean,
+		default: true,
+	},
+	// 自定义class
 	customClass: {
 		type: String,
 		default: "",
 	},
-	direction: {
+	// 方向
+	at: {
 		type: String,
-		default: "rtl",
+		default: "right",
 		validator(val) {
-			return ["ltr", "rtl", "ttb", "btt"].includes(val);
+			return ["left", "right", "top", "bottom"].includes(val);
 		},
 	},
+	// 抽屉大小
 	size: {
 		type: [Number, String],
 		default: "30%",
@@ -64,11 +92,9 @@ const emit = defineEmits([
 
 const drawer = ref(null);
 
-const innerVisible = ref(props.modelValue);
-
-// 判断方向
+// 是否水平方向的
 const isHorizontal = computed(() => {
-	return props.direction === "rtl" || props.direction === "ltr";
+	return ["right", "left"].includes(props.at);
 });
 
 // 判断尺寸
@@ -96,17 +122,19 @@ const afterLeave = () => {
 };
 
 // 打开关闭事件
-watch(
-	() => props.modelValue,
-	(val) => {
-		emit(val ? "open" : "close");
-	},
-);
+watchEffect(() => {
+	emit(props.modelValue ? "open" : "close");
+});
+
+// 关闭
+const close = () => {
+	emit("update:modelValue", false);
+};
 
 // 点击遮罩层
 const handleWrapperClick = () => {
-	if (props.modelValue) {
-		emit("update:modelValue", false);
+	if (props.modalClosable) {
+		close();
 	}
 };
 

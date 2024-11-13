@@ -44,7 +44,7 @@ import rate from "./components/rate/rate.vue";
 import popper from "./components/popper/popper.vue";
 import popconfirm from "./components/popconfirm/popconfirm.vue";
 import tooltip from "./components/tooltip/tooltip.vue";
-
+import drawer from "./components/drawer/drawer.vue";
 import dialog from "./components/dialog/dialog.vue";
 import GovMessage from "./components/message/message.js"; //
 import GovMessageBox from "./components/messagebox/message-box.js"; //
@@ -132,6 +132,7 @@ const components = {
 	popconfirm,
 	tooltip,
 
+	drawer,
 	dialog,
 
 	// 数据
