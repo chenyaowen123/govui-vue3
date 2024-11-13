@@ -79,7 +79,9 @@
 		flex-wrap: wrap;
 		gap: 0;
 		padding-left: 1px;
+		box-sizing: border-box;
 		.box {
+			box-sizing: border-box;
 			width: 25%;
 			height: 145px;
 			border: 1px solid var(--vp-c-divider);

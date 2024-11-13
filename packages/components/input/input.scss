@@ -38,6 +38,7 @@
 
 .gov-input {
 	color: var(--gov-text-color);
+	box-sizing: border-box;
 	position: relative;
 	display: inline-flex;
 	width: 100%;
