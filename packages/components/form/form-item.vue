@@ -55,19 +55,19 @@ const getTriggerRule = (trigger) => {
 	return rules;
 };
 
-// Value、状态、提示语
+// 定义当前表单项的：状态、提示语、Value
 const validateState = ref(true); // validating  success error
 const validateMessage = ref("");
 const fieldValue = computed(() => {
 	let model = govForm?.model;
-	if (!model || !props.prop) {
-		return;
-	} else {
+	if (model && props.prop) {
 		return model[props.prop];
+	} else {
+		return undefined;
 	}
 });
 
-// 表单验证
+// 当前表单项的验证
 const validate = (trigger, callback) => {
 	let rules = getTriggerRule(trigger);
 	if (!rules || rules.length === 0) {
@@ -102,16 +102,27 @@ const validate = (trigger, callback) => {
 
 // 清空表单验证
 const clearValidate = () => {
-	// 清除验证整个表单验证结果
+	validateState.value = "";
+	validateMessage.value = "";
 };
 
-// 管理上层 form[fields] 添加表单项
+// 重置表单
+//  resetField()
+
+// 提供给自定义控件触发表单验证
+const triggerValidateEvents = (eventNames = ["change", "blur"], callback) => {
+	eventNames = Array.isArray(eventNames) ? eventNames : [eventNames];
+	eventNames.forEach((trigger) => {
+		validate(trigger, callback);
+	});
+};
+
+// 管理上层 form[fields] 添加表单项，没有 props.prop 将不会收集
 watch(
 	() => props.prop,
 	(newValue, oldValue) => {
-		let field = { validate, clearValidate };
 		govForm?.removeField({ prop: oldValue });
-		govForm?.addField({ ...field, prop: newValue });
+		govForm?.addField({ validate, clearValidate, prop: newValue });
 	},
 );
 
@@ -142,6 +153,7 @@ provide(
 	reactive({
 		size,
 		disabled,
+		triggerValidateEvents,
 	}),
 );
 </script>
