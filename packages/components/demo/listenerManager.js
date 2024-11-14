@@ -29,6 +29,7 @@ export const listenerManager = reactive({
 // 自动清理监听器
 export function useListenerManager() {
 	onUnmounted(() => {
+		console.log("卸载了。")
 		for (const [event, listeners] of listenerManager.listeners) {
 			listeners.forEach((callback) => {
 				listenerManager.off(event, callback);
