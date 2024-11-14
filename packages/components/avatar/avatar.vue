@@ -23,6 +23,7 @@
 <script setup>
 import { computed } from "vue";
 import GovIcon from "../icon/icon.vue";
+import "@/styles/theme.scss";
 
 defineOptions({
 	name: "GovAvatar",
@@ -82,6 +83,6 @@ function handleClick(e) {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @use "./avatar.scss";
 </style>
