@@ -75,5 +75,5 @@ const clearText = () => {
 <style scoped></style>
 
 <style lang="scss">
-@import "./textarea.scss";
+@use "./textarea.scss";
 </style>

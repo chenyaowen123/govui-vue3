@@ -131,5 +131,5 @@ const lineStyle = computed(() => {
 </script>
 
 <style lang="scss">
-@import "./progress.scss";
+@use "./progress.scss";
 </style>

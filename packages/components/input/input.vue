@@ -218,5 +218,5 @@ function onFocus(e) {
 </script>
 
 <style lang="scss">
-@import "./input.scss";
+@use "./input.scss";
 </style>

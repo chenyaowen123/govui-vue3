@@ -42,5 +42,5 @@ defineProps({
 </script>
 
 <style lang="scss">
-@import "./result.scss";
+@use "./result.scss";
 </style>

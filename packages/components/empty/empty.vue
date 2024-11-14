@@ -61,5 +61,5 @@ const textStyle = computed(() => {
 </script>
 
 <style lang="scss">
-@import "./empty.scss";
+@use "./empty.scss";
 </style>

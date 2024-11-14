@@ -81,5 +81,5 @@ const handleClick = (evt) => {
 </script>
 
 <style lang="scss">
-@import "./scss/button.scss";
+@use "./scss/button.scss";
 </style>

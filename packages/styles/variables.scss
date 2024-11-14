@@ -1,4 +1,6 @@
 @use "sass:math";
+@use 'sass:map';
+@use 'sass:color';
 
 // 定义主题色板
 $theme-colors: (
@@ -18,14 +20,14 @@ $special-colors: (
 ) !default;
 
 // 合并两个映射
-$colors: map-merge($theme-colors, $special-colors) !default;
+$colors: map.merge($theme-colors, $special-colors) !default;
 
 :root {
 	@each $color-name, $color-value in $colors {
-		--gov-#{$color-name}-dark: #{mix(#000, $color-value, 25%)};
+		--gov-#{$color-name}-dark: color.mix(#000, $color-value, 25%);
 		--gov-#{$color-name}: #{$color-value};
 		@for $i from 1 through 9 {
-			$color-tint: mix(white, $color-value, $i * 10%); // 10% - 90%
+			$color-tint: color.mix(white, $color-value, $i * 10%); // 10% - 90%
 			--gov-#{$color-name}-#{$i}: #{$color-tint};
 		}
 	}

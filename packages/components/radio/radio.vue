@@ -73,5 +73,5 @@ const isButton = computed(() => {
 </script>
 
 <style lang="scss">
-@import "./scss/radio.scss";
+@use "./scss/radio.scss";
 </style>

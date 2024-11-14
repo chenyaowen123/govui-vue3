@@ -49,5 +49,5 @@ const handleClick = (event) => {
 </script>
 
 <style lang="scss">
-@import "./link.scss";
+@use "./link.scss";
 </style>

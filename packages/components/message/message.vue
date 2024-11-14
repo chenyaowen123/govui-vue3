@@ -140,5 +140,5 @@ defineExpose({
 </script>
 
 <style lang="scss">
-@import "./message.scss";
+@use "./message.scss";
 </style>

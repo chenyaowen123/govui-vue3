@@ -23,5 +23,5 @@ const props = defineProps({
 </script>
 
 <style lang="scss">
-@import "./demo.scss";
+@use "./demo.scss";
 </style>

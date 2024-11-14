@@ -8,7 +8,7 @@
 	justify-content: left;
 	align-items: center;
 	position: relative;
-	@include utils-user-select(none);
+	user-select:none;
 
 	&:last-child {
 		margin-right: 0;

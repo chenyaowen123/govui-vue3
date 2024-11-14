@@ -1,7 +1,12 @@
 @use "@/styles/theme.scss" as *;
 
 .gov-button-group {
-	@include utils-clearfix;
+	&::after {
+		display: inline-block;
+		content: "";
+		height: 100%;
+		vertical-align: middle;
+	}
 	display: inline-block;
 	vertical-align: middle;
 	& > .gov-button {

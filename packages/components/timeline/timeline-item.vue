@@ -89,5 +89,5 @@ defineProps({
 </script>
 
 <style lang="scss">
-@import "./timeline-item.scss";
+@use "./timeline-item.scss";
 </style>

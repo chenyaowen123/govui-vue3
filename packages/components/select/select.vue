@@ -132,5 +132,5 @@ provide(
 </script>
 
 <style lang="scss">
-@import "./scss/select.scss";
+@use "./scss/select.scss";
 </style>

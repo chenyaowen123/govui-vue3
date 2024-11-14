@@ -158,5 +158,5 @@ const handleClose = () => {
 </script>
 
 <style lang="scss">
-@import "./scss/dialog.scss";
+@use "./scss/dialog.scss";
 </style>

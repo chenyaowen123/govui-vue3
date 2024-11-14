@@ -57,5 +57,5 @@ const handleClick = () => {
 </script>
 
 <style lang="scss">
-@import "./scss/select-option.scss";
+@use "./scss/select-option.scss";
 </style>

@@ -56,5 +56,5 @@ const style = computed(() => {
 </script>
 
 <style lang="scss">
-@import "./usercard.scss";
+@use "./usercard.scss";
 </style>

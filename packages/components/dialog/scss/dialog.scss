@@ -1,5 +1,5 @@
 @use "@/styles/theme.scss" as *;
-@import "./transition.scss";
+@use "./transition.scss" as *;
 
 // 样式
 .gov-dialog__wrapper {

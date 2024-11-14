@@ -150,5 +150,5 @@ const next = () => {
 </script>
 
 <style scoped lang="scss">
-@import "./pagination.scss";
+@use "./pagination.scss";
 </style>

@@ -83,5 +83,5 @@ function handleClick(e) {
 </script>
 
 <style lang="scss" scoped>
-@import "./avatar.scss";
+@use "./avatar.scss";
 </style>

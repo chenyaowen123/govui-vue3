@@ -10,5 +10,5 @@ defineOptions({
 </script>
 
 <style lang="scss">
-@import "./scss/button-group.scss";
+@use "./scss/button-group.scss";
 </style>

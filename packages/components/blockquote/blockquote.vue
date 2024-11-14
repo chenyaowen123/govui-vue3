@@ -41,5 +41,5 @@ defineProps({
 </script>
 
 <style lang="scss">
-@import "./blockquote.scss";
+@use "./blockquote.scss";
 </style>

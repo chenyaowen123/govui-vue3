@@ -19,5 +19,5 @@ const iconName = computed(() => {
 </script>
 
 <style lang="scss">
-@import "./breadcrumb.scss";
+@use "./breadcrumb.scss";
 </style>

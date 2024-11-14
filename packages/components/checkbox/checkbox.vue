@@ -81,5 +81,5 @@ const isButton = computed(() => {
 </script>
 
 <style lang="scss">
-@import "./scss/checkbox.scss";
+@use "./scss/checkbox.scss";
 </style>

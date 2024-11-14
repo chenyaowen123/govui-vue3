@@ -62,5 +62,5 @@ const handleClose = () => {
 </script>
 
 <style lang="scss">
-@import "./tag.scss";
+@use "./tag.scss";
 </style>

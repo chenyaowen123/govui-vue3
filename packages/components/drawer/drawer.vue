@@ -154,5 +154,5 @@ onBeforeUnmount(() => {
 </script>
 
 <style lang="scss">
-@import "./drawer.scss";
+@use "./drawer.scss";
 </style>

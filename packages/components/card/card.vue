@@ -34,5 +34,5 @@ defineProps({
 </script>
 
 <style lang="scss">
-@import "./card.scss";
+@use "./card.scss";
 </style>

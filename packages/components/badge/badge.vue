@@ -56,5 +56,5 @@ const content = computed(() => {
 </script>
 
 <style lang="scss">
-@import "./badge.scss";
+@use "./badge.scss";
 </style>

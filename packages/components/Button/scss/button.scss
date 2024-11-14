@@ -1,5 +1,5 @@
 @use "@/styles/theme.scss" as *;
-@import "./type.scss";
+@use "./type.scss" as *;
 
 @mixin button-size($size) {
 	padding: var(--gov-button-#{$size}-padding);
@@ -30,7 +30,7 @@
 	margin: 0;
 	transition: 0.1s;
 	font-weight: normal;
-	@include utils-user-select(none);
+	user-select:none;
 
 	// 结构组合
 	& + & {

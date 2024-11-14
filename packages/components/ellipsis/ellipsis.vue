@@ -81,5 +81,5 @@ const toggleExpand = () => {
 </script>
 
 <style lang="scss">
-@import "./ellipsis.scss";
+@use "./ellipsis.scss";
 </style>

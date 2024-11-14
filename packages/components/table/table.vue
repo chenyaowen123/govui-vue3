@@ -274,5 +274,5 @@ useStickyTable(tableEl);
 </script>
 
 <style lang="scss" scoped>
-@import "./table.scss";
+@use "./table.scss";
 </style>

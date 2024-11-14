@@ -1,3 +1,19 @@
+
+// 使用示例
+
+// @use '@/styles/utils.scss' as *;
+// .a{
+// @include utils-user-select(none);
+// }
+
+// @use '@/styles/utils.scss' as utils;
+// .a{
+// @include utils.utils-user-select(none);
+// }
+
+
+
+
 /**
  * 设置用户选择文本的行为。
  * 这个 mixin 用于控制用户是否能够选择页面上的文字或其他内容。

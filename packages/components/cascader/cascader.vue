@@ -155,5 +155,5 @@ const handleClear = () => {
 </script>
 
 <style lang="scss">
-@import "./scss/cascader.scss";
+@use "./scss/cascader.scss";
 </style>

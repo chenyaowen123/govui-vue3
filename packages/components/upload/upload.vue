@@ -227,5 +227,5 @@ const handleDelete = (fileId) => {
 </script>
 
 <style lang="scss">
-@import "./upload.scss";
+@use "./upload.scss";
 </style>

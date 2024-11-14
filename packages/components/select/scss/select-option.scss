@@ -1,7 +1,7 @@
 @use "@/styles/theme.scss" as *;
 
 .gov-select-option {
-	@include utils-user-select(none);
+	user-select:none;
 	background: #fff;
 	padding: 5px 20px;
 	margin: 2px 0;

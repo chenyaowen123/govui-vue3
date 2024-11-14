@@ -97,5 +97,5 @@ provide(
 </script>
 
 <style lang="scss">
-@import "./scss/cascader-panel.scss";
+@use "./scss/cascader-panel.scss";
 </style>

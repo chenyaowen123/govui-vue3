@@ -174,5 +174,5 @@ defineExpose({
 </script>
 
 <style lang="scss">
-@import "./notification.scss";
+@use "./notification.scss";
 </style>
