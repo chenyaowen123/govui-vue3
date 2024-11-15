@@ -3,7 +3,8 @@
 </template>
 
 <script setup>
-import { ref,reactive, toRefs, provide } from "vue";
+import { ref, reactive, toRefs, provide } from "vue";
+// import { listenerManager } from "./listenerManager";
 
 defineOptions({
 	name: "GovForm",
@@ -83,7 +84,7 @@ const clearValidate = (modelProps = []) => {
 		if (typeof modelProps === "string") {
 			arr = fields.value.filter((field) => modelProps === field.prop);
 		} else {
-			arr = files.value.filter(
+			arr = fields.value.filter(
 				(field) => modelProps.indexOf(field.prop) > -1,
 			);
 		}

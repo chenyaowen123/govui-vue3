@@ -110,7 +110,7 @@ import {
   watchTriggerable,
   watchWithFilter,
   whenever
-} from "./chunk-HZXA3TWK.js";
+} from "./chunk-M3RQE6ZL.js";
 import {
   Fragment,
   TransitionGroup,
@@ -138,8 +138,8 @@ import {
   version,
   watch,
   watchEffect
-} from "./chunk-QPQFSO6H.js";
-import "./chunk-ULBN3QDT.js";
+} from "./chunk-XYSSNQS4.js";
+import "./chunk-EQCVQC35.js";
 
 // node_modules/@vueuse/core/index.mjs
 function computedAsync(evaluationCallback, initialState, optionsOrRef) {
@@ -1413,6 +1413,13 @@ var breakpointsPrimeFlex = {
   lg: 992,
   xl: 1200
 };
+var breakpointsElement = {
+  xs: 0,
+  sm: 768,
+  md: 992,
+  lg: 1200,
+  xl: 1920
+};
 function useBreakpoints(breakpoints, options = {}) {
   function getValue2(k, delta) {
     let v = toValue(breakpoints[toValue(k)]);
@@ -2443,9 +2450,15 @@ function useDevicesList(options = {}) {
     const { state, query } = usePermission("camera", { controls: true });
     await query();
     if (state.value !== "granted") {
-      stream = await navigator.mediaDevices.getUserMedia(constraints);
+      let granted = true;
+      try {
+        stream = await navigator.mediaDevices.getUserMedia(constraints);
+      } catch (e) {
+        stream = null;
+        granted = false;
+      }
       update();
-      permissionGranted.value = true;
+      permissionGranted.value = granted;
     } else {
       permissionGranted.value = true;
     }
@@ -2656,9 +2669,9 @@ function useDropZone(target, options = {}) {
     const checkValidity = (event) => {
       var _a2, _b2;
       const items = Array.from((_b2 = (_a2 = event.dataTransfer) == null ? void 0 : _a2.items) != null ? _b2 : []);
-      const types = items.filter((item) => item.kind === "file").map((item) => item.type);
+      const types = items.map((item) => item.type);
       const dataTypesValid = checkDataTypes(types);
-      const multipleFilesValid = multiple || items.filter((item) => item.kind === "file").length <= 1;
+      const multipleFilesValid = multiple || items.length <= 1;
       return dataTypesValid && multipleFilesValid;
     };
     const handleDragEvent = (event, eventType) => {
@@ -4480,6 +4493,7 @@ function useMediaControls(target, options = {}) {
   const muted = ref(false);
   const supportsPictureInPicture = document2 && "pictureInPictureEnabled" in document2;
   const sourceErrorEvent = createEventHook();
+  const playbackErrorEvent = createEventHook();
   const disableTrack = (track) => {
     usingElRef(target, (el) => {
       if (track) {
@@ -4597,10 +4611,14 @@ function useMediaControls(target, options = {}) {
     const el = toValue(target);
     if (!el)
       return;
-    if (isPlaying)
-      el.play();
-    else
+    if (isPlaying) {
+      el.play().catch((e) => {
+        playbackErrorEvent.trigger(e);
+        throw e;
+      });
+    } else {
       el.pause();
+    }
   });
   useEventListener(target, "timeupdate", () => ignoreCurrentTimeUpdates(() => currentTime.value = toValue(target).currentTime));
   useEventListener(target, "durationchange", () => duration.value = toValue(target).duration);
@@ -4665,7 +4683,8 @@ function useMediaControls(target, options = {}) {
     togglePictureInPicture,
     isPictureInPicture,
     // Events
-    onSourceError: sourceErrorEvent.on
+    onSourceError: sourceErrorEvent.on,
+    onPlaybackError: playbackErrorEvent.on
   };
 }
 function getMapVue2Compat() {
@@ -7284,7 +7303,7 @@ function useWebSocket(url, options = {}) {
     ws.onclose = (ev) => {
       status.value = "CLOSED";
       onDisconnected == null ? void 0 : onDisconnected(ws, ev);
-      if (!explicitlyClosed && options.autoReconnect && ws === wsRef.value) {
+      if (!explicitlyClosed && options.autoReconnect && (wsRef.value == null || ws === wsRef.value)) {
         const {
           retries = -1,
           delay = 1e3,
@@ -7613,6 +7632,7 @@ export {
   refAutoReset as autoResetRef,
   breakpointsAntDesign,
   breakpointsBootstrapV5,
+  breakpointsElement,
   breakpointsMasterCss,
   breakpointsPrimeFlex,
   breakpointsQuasar,

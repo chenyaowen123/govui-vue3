@@ -8,6 +8,10 @@ export const listenerManager = reactive({
 			this.listeners.set(event, new Set());
 		}
 		this.listeners.get(event).add(callback);
+		// 注册 onUnmounted 生命周期钩子来自动清理监听器
+		onUnmounted(() => {
+			this.off(event, callback);
+		});
 	},
 	off(event, callback) {
 		const eventListeners = this.listeners.get(event);
@@ -25,14 +29,3 @@ export const listenerManager = reactive({
 		}
 	},
 });
-
-// 自动清理监听器
-export function useListenerManager() {
-	onUnmounted(() => {
-		for (const [event, listeners] of listenerManager.listeners) {
-			listeners.forEach((callback) => {
-				listenerManager.off(event, callback);
-			});
-		}
-	});
-}

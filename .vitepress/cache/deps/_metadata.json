@@ -1,91 +1,82 @@
 {
-  "hash": "dc213bbc",
+  "hash": "6e6da3bd",
   "configHash": "038cdcea",
-  "lockfileHash": "faeda834",
-  "browserHash": "8caaffb2",
+  "lockfileHash": "49c49744",
+  "browserHash": "7fd2cc30",
   "optimized": {
     "vue": {
       "src": "../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "1b3e5afe",
+      "fileHash": "41888ba8",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "60dfa9ae",
+      "fileHash": "a8f7f608",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "40aaf8cc",
+      "fileHash": "f9246f1c",
+      "needsInterop": false
+    },
+    "async-validator": {
+      "src": "../../../node_modules/async-validator/dist-web/index.js",
+      "file": "async-validator.js",
+      "fileHash": "4ed27dbc",
       "needsInterop": false
     },
     "numeral": {
       "src": "../../../node_modules/numeral/numeral.js",
       "file": "numeral.js",
-      "fileHash": "4c9206a2",
+      "fileHash": "b2a957d7",
       "needsInterop": true
     },
     "@vuepic/vue-datepicker": {
       "src": "../../../node_modules/@vuepic/vue-datepicker/dist/vue-datepicker.js",
       "file": "@vuepic_vue-datepicker.js",
-      "fileHash": "16c3f8eb",
+      "fileHash": "917ed162",
       "needsInterop": false
     },
     "vue3-popper": {
       "src": "../../../node_modules/vue3-popper/dist/popper.esm.js",
       "file": "vue3-popper.js",
-      "fileHash": "9945cc63",
+      "fileHash": "99b22483",
       "needsInterop": false
     },
     "swiper/vue": {
       "src": "../../../node_modules/swiper/swiper-vue.mjs",
       "file": "swiper_vue.js",
-      "fileHash": "4a39f68a",
+      "fileHash": "f5c414ee",
       "needsInterop": false
     },
     "swiper/modules": {
       "src": "../../../node_modules/swiper/modules/index.mjs",
       "file": "swiper_modules.js",
-      "fileHash": "0c3c9f5f",
+      "fileHash": "e4c655a2",
       "needsInterop": false
     },
     "@vueuse/integrations/useQRCode": {
       "src": "../../../node_modules/@vueuse/integrations/useQRCode.mjs",
       "file": "@vueuse_integrations_useQRCode.js",
-      "fileHash": "15f1705b",
+      "fileHash": "416e295c",
       "needsInterop": false
-    },
-    "eslint-plugin-vue": {
-      "src": "../../../node_modules/eslint-plugin-vue/lib/index.js",
-      "file": "eslint-plugin-vue.js",
-      "fileHash": "2a41d805",
-      "needsInterop": true
     }
   },
   "chunks": {
-    "src-OHC5EWA2": {
-      "file": "src-OHC5EWA2.js"
-    },
-    "__vite-optional-peer-dep_jiti_eslint-QMLDNTOK": {
-      "file": "__vite-optional-peer-dep_jiti_eslint-QMLDNTOK.js"
-    },
-    "chunk-CT5R67CV": {
-      "file": "chunk-CT5R67CV.js"
-    },
-    "chunk-HZXA3TWK": {
-      "file": "chunk-HZXA3TWK.js"
+    "chunk-M3RQE6ZL": {
+      "file": "chunk-M3RQE6ZL.js"
     },
     "chunk-FPASK5HI": {
       "file": "chunk-FPASK5HI.js"
     },
-    "chunk-QPQFSO6H": {
-      "file": "chunk-QPQFSO6H.js"
+    "chunk-XYSSNQS4": {
+      "file": "chunk-XYSSNQS4.js"
     },
-    "chunk-ULBN3QDT": {
-      "file": "chunk-ULBN3QDT.js"
+    "chunk-EQCVQC35": {
+      "file": "chunk-EQCVQC35.js"
     }
   }
 }
