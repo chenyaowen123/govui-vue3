@@ -9,4 +9,58 @@
 	opacity: 0;
 }
 
+.gov-form-item {
+	display: flex;
+	flex-direction: row;
+	align-items: top;
 
+	// 不同尺寸
+	&--size-large &__label {
+		font-size: var(--gov-large-font-size);
+		height: var(--gov-large-height);
+		line-height: var(--gov-large-height);
+	}
+	&--size-default &__label {
+		font-size: var(--gov-default-font-size);
+		height: var(--gov-default-height);
+		line-height: var(--gov-default-height);
+	}
+	&--size-small &__label {
+		font-size: var(--gov-small-font-size);
+		height: var(--gov-small-height);
+		line-height: var(--gov-default-height);
+	}
+
+	// label内容
+	&__label {
+		width: 100px;
+		text-align: right;
+		color: var(--gov-text-color);
+		padding: 0 12px 0 0;
+		box-sizing: border-box;
+	}
+	&--label-left &__label {
+		text-align: left;
+	}
+	&--label-top &__label {
+		text-align: left;
+		width: 100%;
+	}
+
+	// 如果label在顶部
+	&--label-top {
+		flex-direction: column;
+	}
+
+	// 内容
+	&__content {
+		flex: 1;
+	}
+	&__validate {
+		min-height: 12px;
+		line-height: 12px;
+		font-size: 12px;
+		padding: 2px 0;
+		color: #e74c3c; // 写死红色
+	}
+}

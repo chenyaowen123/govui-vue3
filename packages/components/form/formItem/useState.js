@@ -17,5 +17,16 @@ export function useState(props, govForm) {
 	const innerDisabled = computed(() => {
 		return props?.disabled || govForm?.disabled;
 	});
-	return { innerSize, innerDisabled };
+
+	// label位置
+	const innerLabelPosition = computed(() => {
+		return props?.labelPosition || govForm?.labelPosition;
+	});
+
+	// label宽度
+	const innerLabelWidth = computed(() => {
+		let width = props?.labelWidth || govForm?.labelWidth;
+		return typeof width === "string" ? width : width + "px";
+	});
+	return { innerSize, innerDisabled, innerLabelPosition, innerLabelWidth };
 }

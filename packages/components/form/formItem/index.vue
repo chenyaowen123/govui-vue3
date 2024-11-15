@@ -1,12 +1,15 @@
 <template>
-	<div
+	<GovCol
+		v-bind="$attrs"
+		:span="span"
 		class="gov-form-item"
 		:class="[
-			`gov-form-item--size-${size}`,
-			`gov-form-item--label-${labelPosition}`,
+			`gov-form-item--size-${innerSize}`,
+			`gov-form-item--label-${innerLabelPosition}`,
 			`is-${validateState}`,
-			{ 'is-disabled': disabled },
+			{ 'is-disabled': innerDisabled },
 		]"
+		:style="{ width: innerLabelWidth }"
 	>
 		<div class="gov-form-item__label">
 			<span class="gov-form-item__label-required">*</span>
@@ -16,8 +19,10 @@
 				</span>
 			</slot>
 		</div>
-		<div class="gov-form-item__body">
-			<slot />
+		<div class="gov-form-item__content">
+			<div class="gov-form-item__body">
+				<slot />
+			</div>
 			<div class="gov-form-item__validate">
 				<transition name="gov-form-validate-fade-in">
 					<slot name="validate" v-if="validateState === 'error'">
@@ -26,7 +31,7 @@
 				</transition>
 			</div>
 		</div>
-	</div>
+	</GovCol>
 </template>
 
 <script setup>
@@ -35,6 +40,7 @@ import { useManageFieldToForm } from "./useManageFieldToForm";
 import { useState } from "./useState";
 import { useValidation } from "./useValidation";
 import { useListenerManager } from "./listenerManager";
+import GovCol from "../../grid/col/index.vue";
 
 defineOptions({
 	name: "govFormItem",
@@ -44,20 +50,35 @@ const props = defineProps({
 	prop: String, // 表单域 model 字段
 	label: String,
 	rules: Object, // 表单验证规则，可以是 Object，也可以是 Array
-	labelWidth: String,
+	labelPosition: {
+		type: String,
+		default: "right",
+		validator: (value) => {
+			return ["left", "right", "top"].includes(value);
+		},
+	},
+	labelWidth: {
+		type: [String, Number],
+		default: "100px",
+	},
 	size: String,
 	disabled: Boolean,
+	// 提供给col的 span，默认是24
+	span: {
+		type: Number,
+		default: 24,
+		validator: (value) => {
+			return value === undefined || (value >= 0 && value <= 24);
+		},
+	},
 });
 
 // 获取到 form
 const govForm = inject("govForm", null);
 
-// 管理表单项管理模块
-// 自动添加/删除到 form[fileds]，用于 form 组件批量操作
-useManageFieldToForm(props, govForm, validate, clearValidate);
-
 // 状态计算
-const { innerSize, innerDisabled } = useState(props, govForm);
+const { innerSize, innerDisabled, innerLabelPosition, innerLabelWidth } =
+	useState(props, govForm);
 
 // 表单验证模块
 const {
@@ -67,6 +88,10 @@ const {
 	clearValidate,
 	triggerValidateEvents,
 } = useValidation(props, govForm);
+
+// 管理表单项管理模块
+// 自动添加/删除到 form[fileds]，用于 form 组件批量操作
+useManageFieldToForm(props, govForm, validate, clearValidate);
 
 // 创建事件管理器
 const listenerManager = useListenerManager();

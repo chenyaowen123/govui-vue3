@@ -258,10 +258,15 @@ Row 组件 提供 ```gutter``` 属性来指定每一栏之间的间隔，默认�
 
 ```vue
 <template>
+	<!--示例 1：基本水平间隔-->
 	<gov-row :gutter="16"> </gov-row>
+	<!--示例 2：响应式水平间隔-->
 	<gov-row :gutter="{ xs: 8, sm: 16, md: 24 }"> </gov-row>
+	<!--示例 3：水平和垂直间隔-->
 	<gov-row :gutter="[16, 24]"> </gov-row>
+	<!--示例 4：水平间隔和响应式垂直间隔-->
 	<gov-row :gutter="[16, { xs: 8, sm: 16, md: 24 }]"> </gov-row>
+	<!--示例 5：响应式水平间隔和垂直间隔-->
 	<gov-row :gutter="[{ xs: 8, sm: 16 }, 24]"> </gov-row>
 </template>
 ```

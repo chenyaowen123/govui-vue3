@@ -9,6 +9,7 @@
 	align-items: center;
 	position: relative;
 	user-select:none;
+	box-sizing: border-box;
 
 	&:last-child {
 		margin-right: 0;
@@ -43,9 +44,7 @@
 	}
 
 	// 尺寸
-	&--large,
-	&--default,
-	&--small {
+	&.is-border, &.is-button{
 		padding: 0 15px 0 8px;
 		border: 1px solid var(--gov-border-color);
 		border-radius: var(--gov-border-radius-base);

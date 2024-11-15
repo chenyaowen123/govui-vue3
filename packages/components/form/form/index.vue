@@ -1,5 +1,6 @@
 <template>
-	<div
+	<GovRow
+		v-bind="$attrs"
 		class="gov-form"
 		:class="[
 			`gov-form--size-${size}`,
@@ -8,21 +9,22 @@
 		]"
 	>
 		<slot />
-	</div>
+	</GovRow>
 </template>
 
 <script setup>
 import { reactive, toRefs, provide } from "vue";
 import { useFields } from "./useFields";
 import { useValidation } from "./useValidation";
+import GovRow from "../../grid/row/index.vue";
 
 defineOptions({
 	name: "GovForm",
 });
 
 const props = defineProps({
-	model: Object,
-	rules: Object,
+	model: {},
+	rules: {},
 	size: {
 		type: String,
 		default: "default",
@@ -39,7 +41,7 @@ const props = defineProps({
 	},
 	labelWidth: {
 		type: [String, Number],
-		default: "",
+		default: "100px",
 	},
 	disabled: Boolean,
 });

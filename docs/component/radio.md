@@ -97,11 +97,13 @@ const radio3 = ref('1');
 		<gov-radio value="3">备选项</gov-radio>
 	</gov-radio-group>
 	<br/>
+	<br/>
 	<gov-radio-group button v-model="radio4">
 		<gov-radio value="1">备选项</gov-radio>
 		<gov-radio value="2" disabled>备选项</gov-radio>
 		<gov-radio value="3">备选项</gov-radio>
 	</gov-radio-group>
+	<br/>
 	<br/>
 	<gov-radio-group button v-model="radio4" size="small" disabled>
 		<gov-radio value="1">备选项</gov-radio>
