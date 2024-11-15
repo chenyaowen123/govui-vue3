@@ -4,7 +4,6 @@
 
 <script setup>
 import { ref, reactive, toRefs, provide } from "vue";
-// import { listenerManager } from "./listenerManager";
 
 defineOptions({
 	name: "GovForm",
@@ -61,7 +60,7 @@ const validate = (callback) => {
 	return validateFields(fields.value, callback);
 };
 
-// 验证指定的表单项
+// 验证指定的表单项：循环指定 field 里的验证并收集起来。
 const validateField = (modelProps, callback) => {
 	modelProps = [].concat(modelProps);
 	const newFields = fields.value.filter(
@@ -96,14 +95,22 @@ const clearValidate = (modelProps = []) => {
 	});
 };
 
-// 组件暴露的方法
+// 重置表单：逐一触发表单项的重置
+const resetFields = () => {
+	fields.value.forEach((field) => {
+		field.resetField();
+	});
+};
+
+// 组件暴露给组件使用者的方法
 defineExpose({
 	validate,
 	validateField,
 	clearValidate,
+	resetFields,
 });
 
-// 提供给 formItem
+// 提供给 formItem 的状态和方法
 provide(
 	"govForm",
 	reactive({

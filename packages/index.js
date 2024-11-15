@@ -23,7 +23,7 @@ import ellipsis from "./components/ellipsis/ellipsis.vue";
 import loading from "./components/loading/loading.vue";
 
 import form from "./components/form/form.vue";
-import formItem from "./components/form/form-item.vue";
+import formItem from "./components/form/formItem/index.vue";
 import radio from "./components/radio/radio.vue";
 import radioGroup from "./components/radio/radio-group.vue";
 import checkbox from "./components/checkbox/checkbox.vue";
