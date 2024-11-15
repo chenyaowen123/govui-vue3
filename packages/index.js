@@ -9,8 +9,8 @@ import footer from "./components/container/footer.vue";
 import header from "./components/container/header.vue";
 import main from "./components/container/main.vue";
 
-import row from "./components/grid/row.vue";
-import col from "./components/grid/col.vue";
+import row from "./components/grid/row/index.vue";
+import col from "./components/grid/col/index.vue";
 
 import icon from "./components/icon/icon.vue";
 import button from "./components/button/button.vue";

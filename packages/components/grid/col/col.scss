@@ -1,0 +1,28 @@
+
+@use "sass:math";
+.gov-grid-col {
+	position: relative;
+	max-width: 100%;
+	min-height: 1px;
+	font-size: 14px;
+	color: rgba(0, 0, 0, 0.88);
+	line-height: 1.5714285714285714;
+	transition: all 0.3s;
+	box-sizing: border-box;
+}
+
+.gov-grid-col-0 {
+	display: none;
+}
+
+@for $i from 1 through 24 {
+	.gov-grid-col-#{$i} {
+		display: block;
+		flex: 0 0 math.percentage(math.div($i, 24));
+		max-width: math.percentage(math.div($i, 24));
+	}
+
+	.gov-grid-offset-#{$i} {
+		margin-left: math.percentage(math.div($i, 24));
+	}
+}

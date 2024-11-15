@@ -14,12 +14,12 @@
 }
 
 // Grid栅格化
-.demo-gov-row {
-	.gov-row {
-		& + .gov-row {
+.demo-gov-grid-row {
+	.gov-grid-row {
+		& + .gov-grid-row {
 			margin-top: 15px;
 		}
-		.gov-col {
+		.gov-grid-col {
 			&::before {
 				display: block;
 				content: "";
