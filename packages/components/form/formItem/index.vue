@@ -8,9 +8,9 @@
 
 <script setup>
 import { reactive, provide, inject } from "vue";
-import { useValidation } from "./useValidation";
 import { useManageFieldToForm } from "./useManageFieldToForm";
 import { useState } from "./useState";
+import { useValidation } from "./useValidation";
 import { useListenerManager } from "./listenerManager";
 
 defineOptions({
@@ -29,8 +29,12 @@ const props = defineProps({
 // 获取到 form
 const govForm = inject("govForm", null);
 
+// 管理表单项管理模块
+// 自动添加/删除到 form[fileds]，用于 form 组件批量操作
+useManageFieldToForm(props, govForm, validate, clearValidate);
+
 // 状态计算
-const { size, disabled } = useState(props, govForm);
+const { innerSize, innerDisabled } = useState(props, govForm);
 
 // 表单验证模块
 const {
@@ -40,10 +44,6 @@ const {
 	clearValidate,
 	triggerValidateEvents,
 } = useValidation(props, govForm);
-
-// 管理表单项管理模块
-// 自动添加/删除到 form[fileds]，用于 form 组件批量操作
-useManageFieldToForm(props, govForm, validate, clearValidate);
 
 // 创建事件管理器
 const listenerManager = useListenerManager();
@@ -75,8 +75,8 @@ const provideListener = {
 provide(
 	"govFormItem",
 	reactive({
-		size,
-		disabled,
+		size: innerSize,
+		disabled: innerDisabled,
 		validateState,
 		validateMessage,
 		triggerValidateEvents,

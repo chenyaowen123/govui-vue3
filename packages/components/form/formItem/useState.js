@@ -9,13 +9,13 @@ import { computed } from "vue";
 
 export function useState(props, govForm) {
 	// 计算大小
-	const size = computed(() => {
+	const innerSize = computed(() => {
 		return props?.size || govForm?.size;
 	});
 
 	// 是否禁用
-	const disabled = computed(() => {
+	const innerDisabled = computed(() => {
 		return props?.disabled || govForm?.disabled;
 	});
-	return { size, disabled };
+	return { innerSize, innerDisabled };
 }
