@@ -1,8 +1,31 @@
 <template>
-	<div class="gov-form-item">
-		{{ validateState }}
-		{{ validateMessage }}
-		<slot />
+	<div
+		class="gov-form-item"
+		:class="[
+			`gov-form-item--size-${size}`,
+			`gov-form-item--label-${labelPosition}`,
+			`is-${validateState}`,
+			{ 'is-disabled': disabled },
+		]"
+	>
+		<div class="gov-form-item__label">
+			<span class="gov-form-item__label-required">*</span>
+			<slot name="label">
+				<span class="gov-form-item__label-txt">
+					{{ label }}
+				</span>
+			</slot>
+		</div>
+		<div class="gov-form-item__body">
+			<slot />
+			<div class="gov-form-item__validate">
+				<transition name="gov-form-validate-fade-in">
+					<slot name="validate" v-if="validateState === 'error'">
+						{{ validateMessage }}
+					</slot>
+				</transition>
+			</div>
+		</div>
 	</div>
 </template>
 
@@ -85,4 +108,6 @@ provide(
 );
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+@use "./formItem.scss";
+</style>

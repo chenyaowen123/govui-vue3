@@ -1,5 +1,14 @@
 <template>
-	<div class="gov-form"><slot /></div>
+	<div
+		class="gov-form"
+		:class="[
+			`gov-form--size-${size}`,
+			`gov-form--label-${labelPosition}`,
+			{ 'is-disabled': disabled },
+		]"
+	>
+		<slot />
+	</div>
 </template>
 
 <script setup>
@@ -14,7 +23,24 @@ defineOptions({
 const props = defineProps({
 	model: Object,
 	rules: Object,
-	size: String,
+	size: {
+		type: String,
+		default: "default",
+		validator: (value) => {
+			return ["default", "large", "small"].includes(value);
+		},
+	},
+	labelPosition: {
+		type: String,
+		default: "right",
+		validator: (value) => {
+			return ["left", "right", "top"].includes(value);
+		},
+	},
+	labelWidth: {
+		type: [String, Number],
+		default: "",
+	},
 	disabled: Boolean,
 });
 

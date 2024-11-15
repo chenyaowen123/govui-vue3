@@ -1,0 +1,12 @@
+// 验证动画
+.gov-form-validate-fade-in-enter-active,
+.gov-form-validate-fade-in-leave-active {
+	transition: opacity 0.5s;
+}
+
+.gov-form-validate-fade-in-enter-from,
+.gov-form-validate-fade-in-leave-to {
+	opacity: 0;
+}
+
+
