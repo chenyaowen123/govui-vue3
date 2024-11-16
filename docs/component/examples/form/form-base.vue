@@ -16,7 +16,7 @@
 		</gov-form>
 		<template #console>
 			validState: {{ validState }}<br />
-			callbackFields: {{ callbackFields }}
+			invalidFields: {{ invalidFields }}
 		</template>
 	</demo-container>
 </template>
@@ -46,12 +46,12 @@ const formRules = reactive({
 });
 const ruleFormRef = ref();
 const validState = ref(null);
-const callbackFields = ref(null);
+const invalidFields = ref(null);
 
 const handleSubmit = () => {
 	ruleFormRef.value.validate((valid, fields) => {
 		validState.value = valid;
-		callbackFields.value = fields;
+		invalidFields.value = fields;
 	});
 };
 </script>

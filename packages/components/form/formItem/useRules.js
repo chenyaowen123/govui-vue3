@@ -27,7 +27,7 @@ export function useRules(props, govForm) {
 	// 适应于不同触发场景，例如 blur change
 	const getTriggerRule = (trigger) => {
 		let rules = innerRules.value.filter((rule) => {
-			if (!rule.trigger || trigger === "") return true;
+			if (!rule.trigger || !trigger) return true;
 			if (Array.isArray(rule.trigger)) {
 				return rule.trigger.indexOf(trigger) > -1;
 			} else {

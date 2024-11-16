@@ -32,7 +32,6 @@ export function useValidation(props, govForm) {
 			return true;
 		}
 		validateState.value = "validating";
-
 		// 组装 AsyncValidator 必要的 model， descriptor
 		const model = {};
 		const descriptor = {};
@@ -49,9 +48,9 @@ export function useValidation(props, govForm) {
 			model,
 			{ firstFields: true },
 			(errors, invalidFields) => {
-				let state = errors && errors.length == 0;
-				validateState.value = state ? "error" : "success";
-				validateMessage.value = state ? errors[0].message : "";
+				let isError = errors && errors.length !== 0;
+				validateState.value = isError ? "error" : "success";
+				validateMessage.value = isError ? errors[0].message : "";
 				callback(validateState.value, invalidFields);
 			},
 		);

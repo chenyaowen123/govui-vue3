@@ -12,8 +12,15 @@ export function useManageFieldToForm(props, govForm, validate, clearValidate) {
 	watch(
 		() => props.prop,
 		(newValue, oldValue) => {
-			govForm?.removeField({ prop: oldValue });
-			govForm?.addField({ validate, clearValidate, prop: newValue });
+			if (oldValue) {
+				govForm?.removeField({ prop: oldValue });
+			}
+			if (newValue) {
+				govForm?.addField({ validate, clearValidate, prop: newValue });
+			}
+		},
+		{
+			immediate: true,
 		},
 	);
 
