@@ -26,10 +26,15 @@
 				<slot />
 			</div>
 			<div class="gov-form-item__validate">
-				<transition name="gov-form-validate-fade-in">
-					<slot name="validate" v-if="validateState === 'error'">
-						{{ validateMessage }}
-					</slot>
+				<transition name="gov-form-validate-fade">
+					<div
+						v-if="validateState === 'error'"
+						class="gov-form-item__validate-body"
+					>
+						<slot name="validate">
+							{{ validateMessage }}
+						</slot>
+					</div>
 				</transition>
 			</div>
 		</div>
