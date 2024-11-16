@@ -12,7 +12,9 @@
 		:style="{ width: innerLabelWidth }"
 	>
 		<div class="gov-form-item__label">
-			<span class="gov-form-item__label-required">*</span>
+			<span class="gov-form-item__label-required" v-if="isRequired">
+				*
+			</span>
 			<slot name="label">
 				<span class="gov-form-item__label-txt">
 					{{ label }}
@@ -82,6 +84,7 @@ const { innerSize, innerDisabled, innerLabelPosition, innerLabelWidth } =
 
 // 表单验证模块
 const {
+	isRequired,
 	validateState,
 	validateMessage,
 	validate,

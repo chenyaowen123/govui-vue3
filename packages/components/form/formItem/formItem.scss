@@ -46,6 +46,9 @@
 		text-align: left;
 		width: 100%;
 	}
+	&__label-required{
+		color:var(--gov-primary);
+	}
 
 	// 如果label在顶部
 	&--label-top {
@@ -61,6 +64,6 @@
 		line-height: 12px;
 		font-size: 12px;
 		padding: 2px 0;
-		color: #e74c3c; // 写死红色
+		color:var(--gov-primary);
 	}
 }

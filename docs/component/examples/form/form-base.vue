@@ -1,10 +1,10 @@
 <template>
 	<demo-container>
 		<gov-form ref="ruleFormRef" :model="formData" :rules="formRules">
-			<gov-form-item label="姓名" :span="12">
+			<gov-form-item prop="name" label="姓名" :span="12">
 				<gov-input v-model="formData.name" />
 			</gov-form-item>
-			<gov-form-item label="性别" :span="12">
+			<gov-form-item prop="sex" label="性别" :span="12">
 				<gov-radio-group v-model="formData.sex">
 					<gov-radio value="1">男生</gov-radio>
 					<gov-radio value="2">女生</gov-radio>
@@ -24,8 +24,8 @@
 <script setup>
 import { ref, reactive } from "vue";
 const formData = reactive({
-	name: "",
-	sex: "1",
+	name: null,
+	sex: null,
 });
 const formRules = reactive({
 	name: [

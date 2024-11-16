@@ -18,6 +18,11 @@ export function useRules(props, govForm) {
 		return rules;
 	});
 
+	// 是否必填项
+	const isRequired = computed(() =>
+		innerRules.value.some((rule) => rule.required),
+	);
+
 	// 获取特定时间的规则
 	// 适应于不同触发场景，例如 blur change
 	const getTriggerRule = (trigger) => {
@@ -31,5 +36,5 @@ export function useRules(props, govForm) {
 		});
 		return rules;
 	};
-	return { getTriggerRule };
+	return { isRequired, innerRules, getTriggerRule };
 }

@@ -10,7 +10,7 @@ import AsyncValidator from "async-validator";
  */
 
 export function useValidation(props, govForm) {
-	const { getTriggerRule } = useRules(props, govForm);
+	const { isRequired, getTriggerRule } = useRules(props, govForm);
 
 	// 定义当前表单项的：状态、提示语、Value
 	const validateState = ref(true); // validating  success error
@@ -74,6 +74,7 @@ export function useValidation(props, govForm) {
 		});
 	};
 	return {
+		isRequired,
 		validateState,
 		validateMessage,
 		validate,
