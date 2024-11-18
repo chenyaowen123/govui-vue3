@@ -188,6 +188,7 @@ const handleFileChange = (event) => {
 			name: file.name,
 			type: file.type.startsWith("image/") ? "img" : "file",
 			progress: 0,
+			_file: file,
 		};
 	});
 	emits("update:modelValue", [...modelValueComputed.value, ...newFiles]);

@@ -1,30 +1,48 @@
 <template>
 	<demo-container>
-		<gov-form ref="ruleFormRef" :model="formData" :rules="formRules">
-			<gov-form-item prop="name" label="姓名" :span="spanNum">
+		<div>
+			<gov-radio-group button v-model="formSize">
+				<gov-radio value="large">大尺寸</gov-radio>
+				<gov-radio value="default">默认尺寸</gov-radio>
+				<gov-radio value="small">小尺寸</gov-radio>
+			</gov-radio-group>
+			&nbsp;
+			<gov-radio-group button v-model="formItemSpan">
+				<gov-radio :value="24">一列显示</gov-radio>
+				<gov-radio :value="12">两列显示</gov-radio>
+			</gov-radio-group>
+		</div>
+		<hr />
+		<gov-form
+			ref="ruleFormRef"
+			:model="formData"
+			:rules="formRules"
+			:size="formSize"
+		>
+			<gov-form-item prop="name" label="姓名" :span="formItemSpan">
 				<gov-input v-model="formData.name" />
 			</gov-form-item>
-			<gov-form-item prop="sex" label="性别" :span="spanNum">
+			<gov-form-item prop="sex" label="性别" :span="formItemSpan">
 				<gov-radio-group v-model="formData.sex">
 					<gov-radio value="1">男生</gov-radio>
 					<gov-radio value="2">女生</gov-radio>
 				</gov-radio-group>
 			</gov-form-item>
-			<gov-form-item prop="hobby" label="爱好" :span="spanNum">
+			<gov-form-item prop="hobby" label="爱好" :span="formItemSpan">
 				<gov-checkbox-group v-model="formData.hobby">
 					<gov-checkbox value="1">篮球</gov-checkbox>
 					<gov-checkbox value="2">唱歌</gov-checkbox>
 					<gov-checkbox value="3">跳舞</gov-checkbox>
 				</gov-checkbox-group>
 			</gov-form-item>
-			<gov-form-item prop="fruit" label="喜欢水果" :span="spanNum">
+			<gov-form-item prop="fruit" label="喜欢水果" :span="formItemSpan">
 				<gov-input-auto
 					v-model="formData.fruit"
 					:fetch="querySearch"
 					placeholder="请选择喜欢的水果"
 				/>
 			</gov-form-item>
-			<gov-form-item prop="orderTotal" label="订购" :span="spanNum">
+			<gov-form-item prop="orderTotal" label="订购" :span="formItemSpan">
 				<gov-input-number
 					v-model="formData.orderTotal"
 					controls
@@ -33,26 +51,38 @@
 					placeholder="请填写"
 				/>
 			</gov-form-item>
-			<gov-form-item prop="deliveryType" label="配送" :span="spanNum">
+			<gov-form-item
+				prop="deliveryType"
+				label="配送"
+				:span="formItemSpan"
+			>
 				<gov-select v-model="formData.deliveryType">
 					<gov-select-option label="货到付款" value="1" />
 					<gov-select-option label="先买后付" value="2" />
 					<gov-select-option label="在线支付" value="3" />
 				</gov-select>
 			</gov-form-item>
-			<gov-form-item prop="address" label="地址" :span="spanNum">
+			<gov-form-item prop="address" label="地址" :span="formItemSpan">
 				<gov-cascader
 					v-model="formData.address"
 					:options="locationTree"
 				/>
 			</gov-form-item>
-			<gov-form-item prop="addressInfo" label="详细地址" :span="spanNum">
+			<gov-form-item
+				prop="addressInfo"
+				label="详细地址"
+				:span="formItemSpan"
+			>
 				<gov-textarea
 					v-model="formData.addressInfo"
 					placeholder="请输入"
 				/>
 			</gov-form-item>
-			<gov-form-item prop="deliveryDate" label="配送日期" :span="spanNum">
+			<gov-form-item
+				prop="deliveryDate"
+				label="配送日期"
+				:span="formItemSpan"
+			>
 				<gov-datepicker
 					v-model="formData.deliveryDate"
 					format="yyyy-MM-dd"
@@ -62,14 +92,14 @@
 			<gov-form-item
 				prop="immediateDelivery"
 				label="立即配送"
-				:span="spanNum"
+				:span="formItemSpan"
 			>
 				<gov-switch v-model="formData.immediateDelivery" />
 			</gov-form-item>
-			<gov-form-item prop="rateNum" label="评分" :span="spanNum">
+			<gov-form-item prop="rateNum" label="评分" :span="formItemSpan">
 				<gov-rate v-model="formData.rateNum" />
 			</gov-form-item>
-			<gov-form-item prop="files" label="附件" :span="spanNum">
+			<gov-form-item prop="files" label="附件" :span="formItemSpan">
 				<gov-upload
 					v-model="formData.files"
 					:uploadRequest="simulateUpload"
@@ -93,7 +123,8 @@ import { fruits } from "./fruits.js";
 import locationTree from "./locationTree.js";
 
 const ruleFormRef = ref();
-const spanNum = ref(24);
+const formSize = ref("default");
+const formItemSpan = ref(24);
 const validState = ref(null);
 const invalidFields = ref(null);
 
@@ -219,8 +250,9 @@ function simulateUpload(file, fileId, onProgress) {
 				// 模拟随机的成功或失败
 				const success = Math.random() > 0.5 ? true : false;
 				if (success) {
+					const url = URL.createObjectURL(file._file); // 实际项目换成真实地址
 					resolve({
-						url: "/logo.png",
+						url,
 					});
 				} else {
 					reject(new Error("Upload failed"));
