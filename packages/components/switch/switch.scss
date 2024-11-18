@@ -12,15 +12,18 @@
 }
 
 .gov-switch {
-	display: inline-block;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
 	vertical-align: middle;
+
 	& + & {
 		margin-left: 15px;
 	}
 	&__layer {
 		cursor: pointer;
-		width: 60px;
-		height: 28px;
+		width: 50px;
+		height: 24px;
 		display: block;
 		border-radius: 15px;
 		background-color: var(--gov-fill-color);
@@ -28,20 +31,13 @@
 	}
 
 	&__point {
-		width: 20px;
-		height: 20px;
+		width: 16px;
+		height: 16px;
 		display: inline-block;
 		background-color: white;
 		border-radius: 50%;
 		margin: 4px;
 		transition: margin 0.2s;
-	}
-
-	&.is-disabled {
-		.gov-switch__layer {
-			cursor: not-allowed;
-			background-color: var(--gov-fill-color-5);
-		}
 	}
 
 	// 隐藏原生checkbox
@@ -52,6 +48,63 @@
 	input[type="checkbox"]:checked + &__point {
 		margin-left: 35px;
 	}
+
+	// 不同尺寸
+	&--size-large {
+		font-size: var(--gov-large-font-size);
+		height: var(--gov-large-height);
+		.gov-switch__layer {
+			height: 28px;
+			width: 60px;
+		}
+		.gov-switch__point {
+			width: 20px;
+			height: 20px;
+		}
+		input[type="checkbox"]:checked + .gov-switch__point{
+			margin-left: 35px;
+		}
+	}
+	&--size-default {
+		font-size: var(--gov-default-font-size);
+		height: var(--gov-default-height);
+		.gov-switch__layer {
+			height: 24px;
+			width: 50px;
+		}
+		.gov-switch__point {
+			width: 16px;
+			height: 16px;
+		}
+		input[type="checkbox"]:checked + .gov-switch__point{
+			margin-left: 30px;
+		}
+	}
+	&--size-small {
+		font-size: var(--gov-small-font-size);
+		height: var(--gov-small-height);
+		.gov-switch__layer {
+			height: 20px;
+			width: 40px;
+		}
+		.gov-switch__point {
+			width: 12px;
+			height: 12px;
+		}
+		input[type="checkbox"]:checked + .gov-switch__point{
+			margin-left: 24px;
+		}
+	}
+
+	// 禁用状态
+	&.is-disabled {
+		.gov-switch__layer {
+			cursor: not-allowed;
+			background-color: var(--gov-fill-color-5);
+		}
+	}
+
+
 
 	// 不同 type 不同的背景色
 	&--default,

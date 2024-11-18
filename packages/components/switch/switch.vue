@@ -2,6 +2,7 @@
 	<div
 		class="gov-switch"
 		:class="[
+			`gov-switch--size-${innerSize}`,
 			type ? 'gov-switch--' + type : '',
 			{ 'is-disabled': isDisabled },
 		]"
@@ -29,6 +30,10 @@ defineOptions({
 
 const props = defineProps({
 	modelValue: {},
+	size: {
+		type: String,
+		default: "default",
+	},
 	type: {
 		type: String,
 		default: "default",
@@ -42,7 +47,7 @@ const props = defineProps({
 	},
 });
 // 依赖注入
-const govForm = inject("govForm", "");
+const govFormItem = inject("govFormItem", null);
 
 const emit = defineEmits(["update:modelValue", "change"]);
 const innerValue = computed({
@@ -57,7 +62,14 @@ const innerValue = computed({
 
 // 计算是否禁用
 const isDisabled = computed(() => {
-	return props.disabled != null ? props.disabled : (govForm || {}).disabled;
+	return props.disabled != null
+		? props.disabled
+		: (govFormItem || {}).disabled;
+});
+
+// 大小
+const innerSize = computed(() => {
+	return props?.size || govFormItem?.size || "default";
 });
 </script>
 

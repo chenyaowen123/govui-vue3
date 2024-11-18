@@ -1,5 +1,6 @@
 <script setup>
 import switchBase from "./examples/switch/switch-base.vue"
+import switchSize from "./examples/switch/switch-size.vue"
 import switchDisabled from "./examples/switch/switch-disabled.vue"
 import switchType from "./examples/switch/switch-type.vue"
 import switchTrueValue from "./examples/switch/switch-true-value.vue"
@@ -12,6 +13,10 @@ import switchTrueValue from "./examples/switch/switch-true-value.vue"
 ## 基础用法
 
 <switchBase />
+
+## 不同尺寸
+
+<switchSize />
 
 ## 禁用状态
 
