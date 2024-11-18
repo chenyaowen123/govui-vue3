@@ -1,5 +1,5 @@
 <script setup>
-import cascaderPanel from "./examples/cascader/cascader-panel.vue"
+import cascaderPanel from "./cascader-panel.vue"
 </script>
 
 # CascaderPanel 级联面板
