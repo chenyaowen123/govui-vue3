@@ -5,6 +5,7 @@
 	display: inline-table;
 	border-collapse: separate;
 	border-spacing: 0;
+	width: 100%;
 }
 
 .gov-input-addon {
@@ -128,6 +129,11 @@
 	}
 
 	// 大小尺寸
+	&,&--size-default {
+		height: var(--gov-default-height);
+		font-size: var(--gov-default-font-size);
+	}
+
 	&--size-large {
 		height: var(--gov-large-height);
 		font-size: var(--gov-large-font-size);
@@ -136,10 +142,6 @@
 		}
 	}
 
-	&,&--size-default {
-		height: var(--gov-default-height);
-		font-size: var(--gov-default-font-size);
-	}
 
 	&--size-small {
 		height: var(--gov-small-height);

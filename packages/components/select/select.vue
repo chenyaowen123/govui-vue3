@@ -1,10 +1,10 @@
 <template>
 	<gov-popper
 		v-model="show"
-		:width="popperWidth"
 		:height="popperHeight"
-		:padding="0"
+		padding="0"
 		v-bind="$attrs"
+		placement="bottom-start"
 		class="gov-select"
 		:class="[{ 'is-disabled': innerDisabled }]"
 	>
@@ -12,7 +12,6 @@
 			<gov-input
 				class="gov-select__input"
 				:modelValue="inputValue"
-				:width="width"
 				:size="innerSize"
 				:placeholder="placeholder"
 				:disabled="innerDisabled"
@@ -51,10 +50,6 @@ const props = defineProps({
 		type: [String, Number],
 		default: undefined, // 绑定在输入框的值
 	},
-	width: {
-		type: Number,
-		default: null, // 日期选择器宽度
-	},
 	size: String,
 	placeholder: {
 		type: String,
@@ -68,13 +63,9 @@ const props = defineProps({
 		type: Boolean,
 		default: true,
 	},
-	popperWidth: {
-		type: Number,
-		default: null,
-	},
 	popperHeight: {
-		type: Number,
-		default: 200,
+		type: String,
+		default: "200px",
 	},
 });
 

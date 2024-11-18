@@ -1,16 +1,16 @@
 <template>
 	<gov-popper
 		v-model="show"
-		:padding="0"
+		padding="0"
 		v-bind="$attrs"
 		class="gov-cascader"
+		placement="bottom-start"
 		:class="[{ 'is-disabled': innerDisabled }]"
 	>
 		<template #reference>
 			<gov-input
 				class="gov-cascader__input"
 				:modelValue="inputText"
-				:width="width"
 				:size="innerSize"
 				:placeholder="placeholder"
 				:disabled="innerDisabled"
@@ -56,10 +56,6 @@ const props = defineProps({
 	options: {
 		type: Array,
 		default: () => [],
-	},
-	width: {
-		type: Number,
-		default: null, // 日期选择器宽度
 	},
 	size: String,
 	placeholder: {

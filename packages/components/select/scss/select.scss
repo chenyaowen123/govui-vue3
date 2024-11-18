@@ -3,6 +3,15 @@
 
 .gov-select {
 	user-select:none;
+	width: 100%;
+	position: relative;
+	.popper {
+		width: 100%;
+		#arrow{
+			// 当popper设置了100%，popper的 placement 不能准确计算
+			transform: translate(50px, 0) !important;
+		}
+	}
 	&__input {
 		cursor: pointer;
 		.gov-input-field {

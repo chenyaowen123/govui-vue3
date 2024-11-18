@@ -79,6 +79,7 @@ const innerDisabled = computed(() => {
 <style lang="scss" scoped>
 .gov-datepicker {
 	display: inline-block;
+	width: 100%;
 	:deep(.dp__input_wrap) {
 		svg {
 			fill: currentColor;

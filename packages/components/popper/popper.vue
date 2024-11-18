@@ -1,11 +1,11 @@
 <template>
 	<Popper
 		v-bind="$attrs"
+		:placement="placement"
 		:show="modelValue"
 		:arrow="arrow"
 		@open:popper="handleOpen"
 		@close:popper="handleClose"
-		placement="bottom-start"
 		class="gov-popper"
 	>
 		<div ref="govPopperTriggerNode" class="gov-popper__trigger">
@@ -48,15 +48,35 @@ const props = defineProps({
 		type: Boolean,
 		default: true,
 	},
-	width: { type: [Number, String] },
-	height: { type: Number },
+	width: String,
+	height: String,
 	padding: {
-		type: Number,
-		default: 16,
+		type: String,
+		default: "16px",
 	},
 	clickAwayClose: {
 		type: Boolean,
 		default: true,
+	},
+	placement: {
+		type: String,
+		default: "bottom-start",
+		validator: (value) => {
+			return [
+				"top",
+				"top-start",
+				"top-end",
+				"bottom",
+				"bottom-start",
+				"bottom-end",
+				"left",
+				"left-start",
+				"left-end",
+				"right",
+				"right-start",
+				"right-end",
+			].includes(value);
+		},
 	},
 });
 
@@ -86,9 +106,9 @@ watchEffect(() => {
 
 const styleObject = computed(() => {
 	return {
-		width: props.width ? `${props.width}px` : undefined,
-		height: props.height ? `${props.height}px` : undefined,
-		padding: props.padding ? `${props.padding}px` : undefined,
+		width: props.width ? props.width : undefined,
+		height: props.height ? props.height : undefined,
+		padding: props.padding ? props.padding : undefined,
 	};
 });
 </script>

@@ -190,6 +190,8 @@ function decrement() {
 
 <style lang="scss">
 .gov-input-number {
+	width: 100%;
+	box-sizing: border-box;
 	display: inline-flex;
 	align-items: stretch;
 	justify-content: space-between;

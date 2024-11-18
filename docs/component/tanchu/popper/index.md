@@ -20,7 +20,6 @@ const show2 = ref(false);
 	title="标题"
 	content="存在即合理，一切事物的存在都有其独特的价值。"
 	placement="right"
-	width="200"
 >
 	<template #reference>
 		<gov-button @click="show = !show">click激活</gov-button>
@@ -34,7 +33,6 @@ const show2 = ref(false);
 	title="标题"
 	content="存在即合理，一切事物的存在都有其独特的价值。"
 	placement="right"
-	width="200"
 >
 	<template #reference>
 		<gov-button @click="show = !show">click激活</gov-button>
@@ -57,7 +55,7 @@ const show = ref(false);
 	v-model="show2"
 	title="GovUI是专为政府定制的"
 	placement="right"
-	width="200"
+	width="200px"
 >
 	<template #reference>
 		<gov-button @click="show2 = !show2">点击弹出</gov-button>
@@ -76,7 +74,7 @@ const show = ref(false);
 	v-model="show2"
 	title="GovUI是专为政府定制的"
 	placement="right"
-	width="200"
+	width="200px"
 >
 	<template #reference>
 		<gov-button @click="show2 = !show2">点击弹出</gov-button>

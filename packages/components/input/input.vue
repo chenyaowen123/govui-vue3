@@ -82,7 +82,7 @@ defineOptions({
 const props = defineProps({
 	width: {
 		type: Number,
-		default: null, // 日期选择器宽度
+		default: null,
 	},
 	size: String,
 	addonBefore: {
