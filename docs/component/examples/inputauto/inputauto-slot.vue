@@ -1,6 +1,6 @@
 <template>
 	<demo-container class="gov-demo-inputauto">
-		<gov-input-auto v-model="value" :fetch="querySearch" clear>
+		<gov-input-auto v-model="value" :fetch="querySearch">
 			<template #default="{ item }">
 				<div>大写：{{ item.value.toUpperCase() }}</div>
 				<div style="font-size: 12px; color: #666">

@@ -15,7 +15,7 @@ import inputAutoSlot from "./examples/inputauto/inputauto-slot.vue"
 ::: code-group
 ```vue [index.vue]
 <template>
-	<gov-input-auto v-model="value" :fetch="querySearch" clear/>
+	<gov-input-auto v-model="value" :fetch="querySearch" />
 </template>
 
 <script setup>
@@ -53,7 +53,7 @@ export const fruitInfos = fruits.map((item) => ({
 ::: code-group
 ```vue [index.vue]
 <template>
-	<gov-input-auto v-model="value" :fetch="querySearch" clear>
+	<gov-input-auto v-model="value" :fetch="querySearch" >
 		<template #default="{ item }">
 			<div>大写：{{ item.value.toUpperCase() }}</div>
 			<div style="font-size: 12px; color: #666">

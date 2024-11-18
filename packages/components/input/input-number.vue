@@ -99,7 +99,7 @@ const emits = defineEmits([
 // 1、需要判断是否设置了forat 和 valueFormat，两者同时满足，则返回给外层的值是一个有格式的，否则给外层的是没有格式的
 // 2、需要判断边界
 const emitValueFormat = (value) => {
-	if (!value & (value !== 0)) {
+	if (!value && value !== 0) {
 		return undefined;
 	}
 	const numValue = numeral(value).value();
@@ -113,7 +113,7 @@ const emitValueFormat = (value) => {
 
 // 计算GovInput显示值
 const innerValue = computed(() => {
-	if (!props.modelValue & (props.modelValue !== 0)) {
+	if (!props.modelValue && props.modelValue !== 0) {
 		return undefined;
 	} else if (props.format) {
 		return numeral(props.modelValue).format(props.format);
@@ -136,11 +136,13 @@ function handleInput(value) {
 
 // 加减按钮的disabled
 const incrementDisabled = computed(() => {
+	if (!props.modelValue && props.modelValue !== 0) return false;
 	let val = numeral(props.modelValue).add(props.step).value();
 	return props.disabled || val > props.max;
 });
 
 const decrementDisabled = computed(() => {
+	if (!props.modelValue && props.modelValue !== 0) return false;
 	let val = numeral(props.modelValue).subtract(props.step).value();
 	return props.disabled || val < props.min;
 });
@@ -148,7 +150,9 @@ const decrementDisabled = computed(() => {
 // 加减
 function increment() {
 	if (incrementDisabled.value) return;
-	const newValue = numeral(props.modelValue).add(props.step).value();
+	const newValue = numeral(props.modelValue || 0)
+		.add(props.step)
+		.value();
 	const emitValue = emitValueFormat(newValue);
 	emits("update:modelValue", emitValue);
 	emits("change", emitValue);
@@ -157,7 +161,9 @@ function increment() {
 
 function decrement() {
 	if (decrementDisabled.value) return;
-	const newValue = numeral(props.modelValue).subtract(props.step).value();
+	const newValue = numeral(props.modelValue || 0)
+		.subtract(props.step)
+		.value();
 	const emitValue = emitValueFormat(newValue);
 	emits("update:modelValue", emitValue);
 	emits("change", emitValue);

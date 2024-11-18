@@ -1,6 +1,6 @@
 <template>
 	<demo-container class="gov-demo-inputauto">
-		<gov-input-auto v-model="value" :fetch="querySearch" clear />
+		<gov-input-auto v-model="value" :fetch="querySearch" />
 	</demo-container>
 </template>
 
