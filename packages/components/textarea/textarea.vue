@@ -1,7 +1,9 @@
 <template>
-	<div class="gov-textarea" :class="[{ 'is-resize': resize }]">
+	<div
+		class="gov-textarea"
+		:class="[{ 'is-resize': resize, 'is-disabled': innerDisabled }]"
+	>
 		<textarea
-			ref="textarea"
 			:rows="rows"
 			:placeholder="placeholder"
 			v-model="innerValue"
@@ -9,6 +11,7 @@
 			v-bind="$attrs"
 			class="gov-textarea__input"
 			:style="textareaStyle"
+			:disabled="innerDisabled"
 		/>
 		<div class="gov-textarea__footer" v-if="hasFooter">
 			<span v-if="maxlength">{{ currentLength }}/{{ maxlength }}</span>
@@ -24,7 +27,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { inject, computed } from "vue";
 
 defineOptions({
 	name: "GovTextarea",
@@ -43,10 +46,12 @@ const props = defineProps({
 		type: Boolean,
 		default: true,
 	},
+	disabled: Boolean,
 });
 
 const emits = defineEmits(["update:modelValue", "clear"]);
 
+// 绑定Value
 const innerValue = computed({
 	get() {
 		return props.modelValue;
@@ -55,7 +60,16 @@ const innerValue = computed({
 		emits("update:modelValue", val);
 	},
 });
-const textarea = ref(null);
+
+// 获取formItem
+const govFormItem = inject("govFormItem", null);
+
+// 是否禁用
+const innerDisabled = computed(() => {
+	return props?.disabled || govFormItem?.disabled;
+});
+
+// 统计相关
 const currentLength = computed(() => innerValue.value.length);
 const hasFooter = computed(() => props.maxlength || props.clearable);
 const textareaStyle = computed(() => {

@@ -96,6 +96,7 @@ const innerDisabled = computed(() => {
 			font-size: var(--gov-large-font-size);
 		}
 	}
+	&,
 	&--size-default {
 		:deep(.dp__input) {
 			height: var(--gov-default-height);

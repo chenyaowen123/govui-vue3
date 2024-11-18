@@ -1,11 +1,11 @@
 <template>
-	<div class="gov-rate" :class="{ 'is-disabled': disabled }">
+	<div class="gov-rate" :class="{ 'is-disabled': innerDisabled }">
 		<span
 			v-for="i in max"
 			:key="i"
 			class="gov-rate__item"
 			@click="setRating(i)"
-			@mouseover="!disabled && (hoverRating = i)"
+			@mouseover="!innerDisabled && (hoverRating = i)"
 			@mouseleave="hoverRating = null"
 		>
 			<span
@@ -28,7 +28,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, inject, computed } from "vue";
 import GovIcon from "../icon/icon.vue";
 
 defineOptions({
@@ -50,20 +50,28 @@ const props = defineProps({
 
 const emits = defineEmits(["update:modelValue"]);
 
+// 获取formItem
+const govFormItem = inject("govFormItem", null);
+
+// 是否禁用
+const innerDisabled = computed(() => {
+	return props?.disabled || govFormItem?.disabled;
+});
+
 // 跟踪鼠标悬停的评分等级
 const hoverRating = ref(null);
 
 // 计算属性，返回当前应该显示的评分值
 // 判断是否禁用，如果禁用使用的是modelValue，否则需要比较 hoverRating 和 modelValue 谁大谁小
 const currentRatingValue = computed(() => {
-	if (props.disabled) {
+	if (innerDisabled.value) {
 		return props.modelValue;
 	}
 	return hoverRating.value !== null ? hoverRating.value : props.modelValue;
 });
 
 const setRating = (value) => {
-	if (!props.disabled) {
+	if (!innerDisabled.value) {
 		emits("update:modelValue", value);
 	}
 };

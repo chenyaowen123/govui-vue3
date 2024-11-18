@@ -109,7 +109,9 @@
 				/>
 			</gov-form-item>
 			<gov-form-item>
-				<gov-button @click="handleSubmit">提交</gov-button>
+				<gov-button @click="handleSubmit" type="primary">
+					提交
+				</gov-button>
 			</gov-form-item>
 		</gov-form>
 		<template #console>

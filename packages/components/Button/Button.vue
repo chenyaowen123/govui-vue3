@@ -2,14 +2,14 @@
 	<button
 		class="gov-button"
 		@click="handleClick"
-		:disabled="buttonDisabled || loading"
+		:disabled="innerDisabled || loading"
 		:autofocus="autofocus"
 		:type="nativeType"
 		:class="[
 			type ? 'gov-button--' + type : '',
-			buttonSize ? 'gov-button--size-' + buttonSize : '',
+			`gov-button--size-${innerSize}`,
 			{
-				'is-disabled': buttonDisabled,
+				'is-disabled': innerDisabled,
 				'is-loading': loading,
 				'is-plain': plain,
 				'is-round': round,
@@ -19,12 +19,14 @@
 	>
 		<GovIcon name="loading" v-if="loading" />
 		<GovIcon :name="icon" v-if="icon && !loading" />
-		<span v-if="hasDefaultSlotContent"><slot></slot></span>
+		<span v-if="$slots.default || label">
+			<slot>{{ label }}</slot>
+		</span>
 	</button>
 </template>
 
 <script setup>
-import { computed, inject, useSlots } from "vue";
+import { computed, inject } from "vue";
 import GovIcon from "../icon/icon.vue";
 
 defineOptions({
@@ -37,6 +39,7 @@ const props = defineProps({
 		type: String,
 		default: "default",
 	},
+	label: String,
 	size: String,
 	icon: {
 		type: String,
@@ -54,24 +57,17 @@ const props = defineProps({
 	circle: Boolean,
 });
 
-// 依赖注入
-const govForm = inject("govForm", "");
-const govFormItem = inject("govFormItem", "");
+// 获取formItem
+const govFormItem = inject("govFormItem", null);
 
-// 是否有默认插入内容
-const slots = useSlots();
-const hasDefaultSlotContent = computed(() => {
-	return slots.default && slots.default().length > 0;
+// 计算大小
+const innerSize = computed(() => {
+	return props?.size || govFormItem?.size;
 });
 
-// 计算按钮大小
-const buttonSize = computed(() => {
-	return props.size || (govFormItem || {}).govFormItemSize || "default";
-});
-
-// 计算按钮是否禁用
-const buttonDisabled = computed(() => {
-	return props.disabled != null ? props.disabled : (govForm || {}).disabled;
+// 是否禁用
+const innerDisabled = computed(() => {
+	return props?.disabled || govFormItem?.disabled;
 });
 
 const emit = defineEmits(["click"]);

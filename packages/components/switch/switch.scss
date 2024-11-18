@@ -65,7 +65,7 @@
 			margin-left: 35px;
 		}
 	}
-	&--size-default {
+	&,&--size-default {
 		font-size: var(--gov-default-font-size);
 		height: var(--gov-default-height);
 		.gov-switch__layer {

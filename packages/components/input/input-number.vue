@@ -151,14 +151,16 @@ const innerDisabled = computed(() => {
 
 // 加减按钮的disabled
 const incrementDisabled = computed(() => {
-	if (!props.modelValue && props.modelValue !== 0) return false;
-	let val = numeral(props.modelValue).add(props.step).value();
+	if (innerDisabled.value) return true;
+	let modelValue = props.modelValue || 0;
+	let val = numeral(modelValue).add(props.step).value();
 	return innerDisabled.value || val > props.max;
 });
 
 const decrementDisabled = computed(() => {
-	if (!props.modelValue && props.modelValue !== 0) return false;
-	let val = numeral(props.modelValue).subtract(props.step).value();
+	if (innerDisabled.value) return true;
+	let modelValue = props.modelValue || 0;
+	let val = numeral(modelValue).subtract(props.step).value();
 	return innerDisabled.value || val < props.min;
 });
 

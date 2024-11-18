@@ -221,6 +221,13 @@
       <td>primary / success / warning / danger / info / text</td>
       <td>—</td>
     </tr>
+	 <tr>
+      <td>label</td>
+      <td>按钮文字</td>
+      <td>string</td>
+      <td>-</td>
+      <td>—</td>
+    </tr>
     <tr>
       <td>plain</td>
       <td>是否朴素按钮</td>

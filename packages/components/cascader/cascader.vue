@@ -66,10 +66,7 @@ const props = defineProps({
 		type: String,
 		default: "请输入",
 	},
-	disabled: {
-		type: Boolean,
-		default: false,
-	},
+	disabled: Boolean,
 	clear: {
 		type: Boolean,
 		default: true,

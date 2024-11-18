@@ -4,6 +4,7 @@
 	position: relative;
 	display: inline-block;
 	line-height: 0;
+
 	&__input {
 		position: relative;
 		width: 100%;
@@ -14,6 +15,7 @@
 		border-radius: var(--gov-border-radius-base);
 		line-height: 1.5;
 		box-sizing: border-box;
+		background: #fff;
 	}
 	&__footer {
 		position: absolute;
@@ -33,6 +35,10 @@
 		.gov-textarea__footer {
 			right: 8px;
 		}
+	}
+	&.is-disabled &__input{
+		cursor: not-allowed;
+		background: var(--gov-fill-color-5);
 	}
 	&__clear-btn {
 		cursor: pointer;
