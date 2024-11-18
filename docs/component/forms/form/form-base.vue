@@ -1,6 +1,6 @@
 <template>
 	<demo-container>
-		<div>
+		<div style="font-size: 14px">
 			<gov-radio-group button v-model="formSize">
 				<gov-radio value="large">大尺寸</gov-radio>
 				<gov-radio value="default">默认尺寸</gov-radio>
@@ -11,6 +11,7 @@
 				<gov-radio :value="24">一列显示</gov-radio>
 				<gov-radio :value="12">两列显示</gov-radio>
 			</gov-radio-group>
+			&nbsp; 是否禁用：<gov-switch v-model="formDisabled" />
 		</div>
 		<hr />
 		<gov-form
@@ -18,6 +19,7 @@
 			:model="formData"
 			:rules="formRules"
 			:size="formSize"
+			:disabled="formDisabled"
 		>
 			<gov-form-item prop="name" label="姓名" :span="formItemSpan">
 				<gov-input v-model="formData.name" />
@@ -125,6 +127,7 @@ import locationTree from "./locationTree.js";
 const ruleFormRef = ref();
 const formSize = ref("default");
 const formItemSpan = ref(24);
+const formDisabled = ref(false);
 const validState = ref(null);
 const invalidFields = ref(null);
 
@@ -132,7 +135,7 @@ const formData = reactive({
 	name: null,
 	sex: null,
 	hobby: null,
-	fruit: null,
+	fruit: "",
 	orderTotal: null,
 	deliveryType: null,
 	address: [],
@@ -232,7 +235,7 @@ const formRules = reactive({
 });
 
 // 自动补全
-const querySearch = (str) => {
+const querySearch = (str = "") => {
 	return fruits.filter((el) => el.toLowerCase().includes(str.toLowerCase()));
 };
 
