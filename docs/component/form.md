@@ -6,4 +6,6 @@ import formBase from "./examples/form/form-base.vue"
 
 用于组织表单项。
 
+## 基础用法
+
 <formBase />

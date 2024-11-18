@@ -12,7 +12,10 @@ defineOptions({
 });
 
 const props = defineProps({
-	modelValue: Array,
+	modelValue: {
+		type: Array,
+		default: () => [],
+	},
 	border: Boolean,
 	size: String,
 	button: Boolean,

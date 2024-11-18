@@ -2,7 +2,8 @@
 	<label
 		class="gov-checkbox"
 		:class="[
-			isBorder || isButton ? `gov-checkbox--${checkboxSize}` : '',
+			`gov-checkbox--${checkboxSize}`,
+			{ 'is-border': isBorder },
 			{ 'is-button': isButton },
 			{ 'is-disabled': isDisabled },
 		]"
@@ -47,7 +48,11 @@ const govCheckboxGroup = inject("govCheckboxGroup", null);
 
 const innerValue = computed({
 	get() {
-		return govCheckboxGroup?.modelValue || props.modelValue;
+		if (govCheckboxGroup) {
+			return govCheckboxGroup.modelValue || [];
+		} else {
+			return props.modelValue;
+		}
 	},
 	set(val) {
 		if (govCheckboxGroup) {
