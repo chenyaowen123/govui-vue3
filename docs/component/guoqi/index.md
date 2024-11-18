@@ -1,5 +1,5 @@
 <script setup>
-import guoqiBase from "./examples/guoqi/guoqi-base.vue"
+import guoqiBase from "./guoqi-base.vue"
 </script>
 
 # Guoqi 国旗

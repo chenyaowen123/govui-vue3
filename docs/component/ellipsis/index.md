@@ -1,7 +1,7 @@
 <script setup>
-import ellipsisBase from "./examples/ellipsis/ellipsis-base.vue"
-import ellipsisFold from "./examples/ellipsis/ellipsis-fold.vue"
-import ellipsisHidefoldup from "./examples/ellipsis/ellipsis-hidefoldup.vue"
+import ellipsisBase from "./ellipsis-base.vue"
+import ellipsisFold from "./ellipsis-fold.vue"
+import ellipsisHidefoldup from "./ellipsis-hidefoldup.vue"
 </script>
 
 

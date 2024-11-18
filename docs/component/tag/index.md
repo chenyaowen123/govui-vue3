@@ -1,8 +1,8 @@
 <script setup>
-import tagBase from "./examples/tag/tag-base.vue"
-import tagClose from "./examples/tag/tag-close.vue"
-import tagSize from "./examples/tag/tag-size.vue"
-import tagIcon from "./examples/tag/tag-icon.vue"
+import tagBase from "./tag-base.vue"
+import tagClose from "./tag-close.vue"
+import tagSize from "./tag-size.vue"
+import tagIcon from "./tag-icon.vue"
 </script>
 
 

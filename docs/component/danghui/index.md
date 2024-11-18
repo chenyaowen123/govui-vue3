@@ -1,5 +1,5 @@
 <script setup>
-import danghuiBase from "./examples/danghui/danghui-base.vue"
+import danghuiBase from "./danghui-base.vue"
 </script>
 
 # Danghui 党徽

@@ -1,7 +1,7 @@
 <script setup>
-import loadingBase from "./examples/loading/loading-base.vue"
-import loadingStyle from "./examples/loading/loading-style.vue"
-import loadingSlot from "./examples/loading/loading-slot.vue"
+import loadingBase from "./loading-base.vue"
+import loadingStyle from "./loading-style.vue"
+import loadingSlot from "./loading-slot.vue"
 </script>
 
 

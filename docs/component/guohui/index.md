@@ -1,5 +1,5 @@
 <script setup>
-import guohuiBase from "./examples/guohui/guohui-base.vue"
+import guohuiBase from "./guohui-base.vue"
 </script>
 
 # Guohui 国徽

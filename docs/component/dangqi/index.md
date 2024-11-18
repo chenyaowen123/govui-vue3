@@ -1,5 +1,5 @@
 <script setup>
-import dangqiBase from "./examples/dangqi/dangqi-base.vue"
+import dangqiBase from "./dangqi-base.vue"
 </script>
 
 # Dangqi 党旗

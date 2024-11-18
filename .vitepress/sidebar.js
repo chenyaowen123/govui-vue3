@@ -17,19 +17,19 @@ const componentSidebar = [
 				items: [
 					{
 						text: "Guoqi 国旗",
-						link: "/component/guoqi", // https://www.gov.cn/guoqing/guoqi/
+						link: "/component/guoqi/",
 					},
 					{
 						text: "Guohui 国徽",
-						link: "/component/guohui", // https://www.gov.cn/guoqing/guohui/
+						link: "/component/guohui/",
 					},
 					{
 						text: "Dangqi 党旗",
-						link: "/component/dangqi", // https://mp.weixin.qq.com/s?__biz=MzIwMTY1Mjc0NQ==&mid=2651449627&idx=3&sn=3cf62a89191e1b7b976dd010f3409ad3&chksm=8cc1a39c3412675408560549aaa59fab8e73b892bc9dd22981bd379b50ecb08ef9665a9077ce&scene=27
+						link: "/component/dangqi/",
 					},
 					{
 						text: "Danghui 党徽",
-						link: "/component/danghui", // https://mp.weixin.qq.com/s?__biz=MzIwMTY1Mjc0NQ==&mid=2651449627&idx=3&sn=3cf62a89191e1b7b976dd010f3409ad3&chksm=8cc1a39c3412675408560549aaa59fab8e73b892bc9dd22981bd379b50ecb08ef9665a9077ce&scene=27
+						link: "/component/danghui/",
 					},
 				],
 			},
@@ -38,43 +38,43 @@ const componentSidebar = [
 				items: [
 					{
 						text: "Grid 栅格化",
-						link: "/component/grid",
+						link: "/component/grid/",
 					},
 					{
 						text: "Container 布局容器",
-						link: "/component/container",
+						link: "/component/container/",
 					},
 					{
 						text: "Icon 图标",
-						link: "/component/icon",
+						link: "/component/icon/",
 					},
 					{
 						text: "Button 按钮",
-						link: "/component/button",
+						link: "/component/button/",
 					},
 					{
 						text: "Link 文本链接",
-						link: "/component/link",
+						link: "/component/link/",
 					},
 					{
 						text: "Alert 警告",
-						link: "/component/alert",
+						link: "/component/alert/",
 					},
 					{
 						text: "Blockquote 引用",
-						link: "/component/blockquote",
+						link: "/component/blockquote/",
 					},
 					{
 						text: "Tag 标签",
-						link: "/component/tag",
+						link: "/component/tag/",
 					},
 					{
 						text: "Ellipsis 文本折叠",
-						link: "/component/ellipsis",
+						link: "/component/ellipsis/",
 					},
 					{
 						text: "Loading 加载",
-						link: "/component/loading",
+						link: "/component/loading/",
 					},
 				],
 			},

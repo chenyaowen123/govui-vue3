@@ -1,8 +1,8 @@
 <script setup>
-import blockquoteBase from "./examples/blockquote/blockquote-base.vue"
-import blockquoteQiantao from "./examples/blockquote/blockquote-qiantao.vue"
-import blockquoteFontsize from "./examples/blockquote/blockquote-fontsize.vue"
-import blockquoteReverse from "./examples/blockquote/blockquote-reverse.vue"
+import blockquoteBase from "./blockquote-base.vue"
+import blockquoteQiantao from "./blockquote-qiantao.vue"
+import blockquoteFontsize from "./blockquote-fontsize.vue"
+import blockquoteReverse from "./blockquote-reverse.vue"
 </script>
 
 
