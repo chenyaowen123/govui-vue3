@@ -83,63 +83,63 @@ const componentSidebar = [
 				items: [
 					{
 						text: "Radio 单选框",
-						link: "/component/radio",
+						link: "/component/radio/",
 					},
 					{
 						text: "Checkbox 多选框",
-						link: "/component/checkbox",
+						link: "/component/checkbox/",
 					},
 					{
 						text: "Input 输入框",
-						link: "/component/input",
+						link: "/component/input/",
 					},
 					{
 						text: "InputAuto 自动补全",
-						link: "/component/inputauto",
+						link: "/component/inputauto/",
 					},
 					{
 						text: "InputNumber 计数器",
-						link: "/component/inputnumber",
+						link: "/component/inputnumber/",
 					},
 					{
 						text: "Textarea 文本域",
-						link: "/component/textarea",
+						link: "/component/textarea/",
 					},
 					{
 						text: "Select 选择器",
-						link: "/component/select",
+						link: "/component/select/",
 					},
 					{
 						text: "Cascader 级联选择器",
-						link: "/component/cascader",
+						link: "/component/cascader/",
 					},
 					{
 						text: "CascaderPanel 级联面板",
-						link: "/component/cascaderpanel",
+						link: "/component/cascaderpanel/",
 					},
 					{
 						text: "Switch 开关",
-						link: "/component/switch",
+						link: "/component/switch/",
 					},
 					{
 						text: "Datepicker 日期选择器",
-						link: "/component/datepicker",
+						link: "/component/datepicker/",
 					},
 					{
 						text: "Upload 上传",
-						link: "/component/upload",
+						link: "/component/upload/",
 					},
 					{
 						text: "Rate 评分",
-						link: "/component/rate",
+						link: "/component/rate/",
 					},
 					{
 						text: "Editor 富文本",
-						link: "/component/link", // 自定义表单控件和表单组件配合
+						link: "/component/link/", // 自定义表单控件和表单组件配合
 					},
 					{
 						text: "Form 表单",
-						link: "/component/form",
+						link: "/component/form/",
 					},
 				],
 			},
@@ -148,35 +148,35 @@ const componentSidebar = [
 				items: [
 					{
 						text: "Drawer 抽屉",
-						link: "/component/drawer",
+						link: "/component/drawer/",
 					},
 					{
 						text: "Dialog 对话框",
-						link: "/component/dialog",
+						link: "/component/dialog/",
 					},
 					{
 						text: "Message 消息提示",
-						link: "/component/message",
+						link: "/component/message/",
 					},
 					{
 						text: "MessageBox 消息弹框",
-						link: "/component/messagebox",
+						link: "/component/messagebox/",
 					},
 					{
 						text: "Popper 弹窗",
-						link: "/component/popper",
+						link: "/component/popper/",
 					},
 					{
 						text: "Popconfirm 气泡确认框",
-						link: "/component/popconfirm",
+						link: "/component/popconfirm/",
 					},
 					{
 						text: "Tooltip 文字提示",
-						link: "/component/tooltip",
+						link: "/component/tooltip/",
 					},
 					{
 						text: "Notification 通知",
-						link: "/component/notification",
+						link: "/component/notification/",
 					},
 					// 引导
 				],
@@ -186,57 +186,56 @@ const componentSidebar = [
 				items: [
 					{
 						text: "Avatar 头像",
-						link: "/component/avatar",
+						link: "/component/avatar/",
 					},
 					{
 						text: "Usercard 人员信息卡",
-						link: "/component/usercard",
+						link: "/component/usercard/",
 					},
 					{
 						text: "Badge 标记",
-						link: "/component/badge",
+						link: "/component/badge/",
 					},
 					{
 						text: "Card 卡片",
-						link: "/component/Card",
+						link: "/component/Card/",
 					},
 					{
 						text: "Collapse 折叠面板",
-						link: "/component/collapse",
+						link: "/component/collapse/",
 					},
-					// Descriptions 描述列表
 					{
 						text: "Empty 空状态",
-						link: "/component/empty",
+						link: "/component/empty/",
 					},
 					{
 						text: "Pagination 分页",
-						link: "/component/pagination",
+						link: "/component/pagination/",
 					},
 					{
 						text: "Progress 进度条",
-						link: "/component/progress",
+						link: "/component/progress/",
 					},
 					{
 						text: "Result 结果",
-						link: "/component/result",
+						link: "/component/result/",
 					},
 
 					{
 						text: "Table 表格",
-						link: "/component/table",
+						link: "/component/table/",
 					},
 					{
 						text: "Swiper 轮播",
-						link: "/component/swiper",
+						link: "/component/swiper/",
 					},
 					{
 						text: "Timeline 时间线",
-						link: "/component/timeline",
+						link: "/component/timeline/",
 					},
 					{
 						text: "Tree 树形控件",
-						link: "/component/tree",
+						link: "/component/tree/",
 					},
 				],
 			},
@@ -245,32 +244,31 @@ const componentSidebar = [
 				items: [
 					{
 						text: "Backtop 回到顶部",
-						link: "/component/backtop",
+						link: "/component/backtop/",
 					},
 					{
 						text: "Breadcrumb 面包屑",
-						link: "/component/breadcrumb",
+						link: "/component/breadcrumb/",
 					},
 					{
 						text: "Dropdown 下拉菜单",
-						link: "/component/dropdown",
+						link: "/component/dropdown/",
 					},
 					{
 						text: "Menu 菜单",
-						link: "/component/link",
+						link: "/component/link/",
 					},
 					{
 						text: "PageContainer 页面容器",
-						link: "/component/pagecontainer",
+						link: "/component/pagecontainer/",
 					},
-					// 页面模块标题。
 					{
 						text: "Steps 步骤条",
-						link: "/component/steps",
+						link: "/component/steps/",
 					},
 					{
 						text: "Tabs 标签页",
-						link: "/component/tabs",
+						link: "/component/tabs/",
 					},
 				],
 			},
@@ -280,7 +278,7 @@ const componentSidebar = [
 				items: [
 					{
 						text: "Qrcode 二维码",
-						link: "/component/qrcode",
+						link: "/component/qrcode/",
 					},
 				],
 			},

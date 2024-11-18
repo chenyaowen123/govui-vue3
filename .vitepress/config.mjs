@@ -7,6 +7,15 @@ export default defineConfig({
 	srcDir: "docs",
 	title: "GovUI",
 	description: "政府系统专用UI",
+	rewrites: {
+		"component/base/:page/(.*)": "component/:page/(.*)", // 基础
+		"component/datas/:page/(.*)": "component/:page/(.*)", // 数据类
+		"component/forms/:page/(.*)": "component/:page/(.*)", // 表单类
+		"component/navigation/:page/(.*)": "component/:page/(.*)", // 数据类
+		"component/other/:page/(.*)": "component/:page/(.*)", // 其它类
+		"component/standard/:page/(.*)": "component/:page/(.*)", // 规范化
+		"component/tanchu/:page/(.*)": "component/:page/(.*)", // 弹出类
+	},
 	themeConfig: {
 		logo: "/logo.png",
 		// https://vitepress.dev/reference/default-theme-config
