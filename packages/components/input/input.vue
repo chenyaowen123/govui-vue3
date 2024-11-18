@@ -12,11 +12,11 @@
 		<div
 			class="gov-input"
 			:class="[
-				`gov-input--size-${size}`,
+				`gov-input--size-${innerSize}`,
 				{
 					'gov-input--before': slotsExist.addonBefore,
 					'gov-input--after': slotsExist.addonAfter,
-					'gov-input--disabled': disabled,
+					'gov-input--disabled': innerDisabled,
 				},
 			]"
 		>
@@ -30,7 +30,7 @@
 				v-model="innerValue"
 				:placeholder="placeholder"
 				:maxlength="maxlength"
-				:disabled="disabled"
+				:disabled="innerDisabled"
 				:readonly="readonly"
 				@input="onInput"
 				@change="onChange"
@@ -72,7 +72,7 @@
 </template>
 
 <script setup>
-import { ref, computed, useSlots, nextTick } from "vue";
+import { ref, inject, computed, useSlots, nextTick } from "vue";
 import GovIcon from "../icon/icon.vue";
 
 defineOptions({
@@ -84,10 +84,7 @@ const props = defineProps({
 		type: Number,
 		default: null, // 日期选择器宽度
 	},
-	size: {
-		type: String,
-		default: "default",
-	},
+	size: String,
 	addonBefore: {
 		type: [String, Number],
 		default: undefined,
@@ -160,6 +157,19 @@ const innerValue = computed({
 	},
 });
 
+// 获取formItem
+const govFormItem = inject("govFormItem", null);
+
+// 计算大小
+const innerSize = computed(() => {
+	return props?.size || govFormItem?.size;
+});
+
+// 是否禁用
+const innerDisabled = computed(() => {
+	return props?.disabled || govFormItem?.disabled;
+});
+
 // 根据插槽和props判断是否有元素
 const slots = useSlots();
 const slotsExist = {
@@ -169,10 +179,12 @@ const slotsExist = {
 	addonAfter: slots.addonAfter || props.addonAfter !== undefined,
 };
 
+// 是否显示清空按钮
 const showClear = computed(() => {
-	return !props.disabled && props.clearable;
+	return !innerDisabled.value && props.clearable;
 });
 
+// 当设置最大长度显示统计数
 const showCountNum = computed(() => {
 	if (props.maxlength !== undefined) {
 		return `${props.modelValue ? props.modelValue.length : 0} / ${props.maxlength}`;

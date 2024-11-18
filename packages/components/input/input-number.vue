@@ -3,7 +3,8 @@
 		<GovInput
 			v-bind="$attrs"
 			:prefix="prefix"
-			:disabled="disabled"
+			:size="innerSize"
+			:disabled="innerDisabled"
 			:model-value="innerValue"
 			@change="handleChange"
 			@input="handleInput"
@@ -40,7 +41,7 @@
 </template>
 
 <script setup>
-import { computed } from "vue";
+import { inject, computed } from "vue";
 import GovInput from "./input.vue";
 import GovIcon from "../icon/icon.vue";
 import numeral from "numeral";
@@ -81,6 +82,7 @@ const props = defineProps({
 		type: [String, Number],
 		default: undefined,
 	},
+	size: String,
 	disabled: {
 		type: Boolean,
 		default: false,
@@ -134,17 +136,30 @@ function handleInput(value) {
 	emits("input", value);
 }
 
+// 获取formItem
+const govFormItem = inject("govFormItem", null);
+
+// 计算大小
+const innerSize = computed(() => {
+	return props?.size || govFormItem?.size;
+});
+
+// 是否禁用
+const innerDisabled = computed(() => {
+	return props?.disabled || govFormItem?.disabled;
+});
+
 // 加减按钮的disabled
 const incrementDisabled = computed(() => {
 	if (!props.modelValue && props.modelValue !== 0) return false;
 	let val = numeral(props.modelValue).add(props.step).value();
-	return props.disabled || val > props.max;
+	return innerDisabled.value || val > props.max;
 });
 
 const decrementDisabled = computed(() => {
 	if (!props.modelValue && props.modelValue !== 0) return false;
 	let val = numeral(props.modelValue).subtract(props.step).value();
-	return props.disabled || val < props.min;
+	return innerDisabled.value || val < props.min;
 });
 
 // 加减

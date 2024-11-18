@@ -14,6 +14,7 @@
 				@focus="handleFocus"
 				@blur="handleBlur"
 				@input="handleInput"
+				:size="size"
 			>
 				<template v-if="$slots.addonBefore" #addonBefore>
 					<slot name="addonBefore" />
@@ -69,6 +70,7 @@ const props = defineProps({
 		type: Number,
 		default: 200,
 	},
+	size: String,
 });
 
 const show = ref(false);

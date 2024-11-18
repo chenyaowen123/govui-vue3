@@ -4,16 +4,16 @@
 		:padding="0"
 		v-bind="$attrs"
 		class="gov-cascader"
-		:class="[{ 'is-disabled': disabled }]"
+		:class="[{ 'is-disabled': innerDisabled }]"
 	>
 		<template #reference>
 			<gov-input
 				class="gov-cascader__input"
 				:modelValue="inputText"
 				:width="width"
-				:size="size"
+				:size="innerSize"
 				:placeholder="placeholder"
-				:disabled="disabled"
+				:disabled="innerDisabled"
 				@clear="handleClear"
 				@click="handleClick"
 				readonly
@@ -38,7 +38,7 @@
 </template>
 
 <script setup>
-import { ref, watch, computed } from "vue";
+import { ref, inject, watch, computed } from "vue";
 import GovInput from "../input/input.vue";
 import GovPopper from "../popper/popper.vue";
 import GovIcon from "../icon/icon.vue";
@@ -61,10 +61,7 @@ const props = defineProps({
 		type: Number,
 		default: null, // 日期选择器宽度
 	},
-	size: {
-		type: String,
-		default: "default",
-	},
+	size: String,
 	placeholder: {
 		type: String,
 		default: "请输入",
@@ -96,6 +93,19 @@ const innerValue = computed({
 		emits("change", val);
 		emits("update:modelValue", val);
 	},
+});
+
+// 获取formItem
+const govFormItem = inject("govFormItem", null);
+
+// 计算大小
+const innerSize = computed(() => {
+	return props?.size || govFormItem?.size;
+});
+
+// 是否禁用
+const innerDisabled = computed(() => {
+	return props?.disabled || govFormItem?.disabled;
 });
 
 // 使用 computed 属性来创建一个根据 values 数组查找对应的 label 的函数
@@ -131,7 +141,7 @@ const inputText = computed(() => {
 
 // 禁用的时候关闭下来
 watch(
-	() => props.disabled,
+	() => innerDisabled.value,
 	() => {
 		show.value = false;
 	},
@@ -139,7 +149,7 @@ watch(
 
 // 点击
 const handleClick = () => {
-	if (!props.disabled) {
+	if (!innerDisabled.value) {
 		show.value = !show.value;
 	}
 };
