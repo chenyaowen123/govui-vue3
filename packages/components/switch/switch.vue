@@ -4,7 +4,7 @@
 		:class="[
 			`gov-switch--size-${innerSize}`,
 			type ? 'gov-switch--' + type : '',
-			{ 'is-disabled': isDisabled },
+			{ 'is-disabled': innerDisabled },
 		]"
 	>
 		<label class="gov-switch__layer">
@@ -12,7 +12,7 @@
 				type="checkbox"
 				v-bind="$attrs"
 				v-model="innerValue"
-				:disabled="isDisabled"
+				:disabled="innerDisabled"
 				:true-value="trueValue"
 				:false-value="falseValue"
 			/>
@@ -30,14 +30,11 @@ defineOptions({
 
 const props = defineProps({
 	modelValue: {},
-	size: {
-		type: String,
-		default: "default",
-	},
 	type: {
 		type: String,
 		default: "default",
 	},
+	size: String,
 	disabled: Boolean,
 	trueValue: {
 		default: true,
@@ -46,8 +43,6 @@ const props = defineProps({
 		default: false,
 	},
 });
-// 依赖注入
-const govFormItem = inject("govFormItem", null);
 
 const emit = defineEmits(["update:modelValue", "change"]);
 const innerValue = computed({
@@ -60,16 +55,17 @@ const innerValue = computed({
 	},
 });
 
-// 计算是否禁用
-const isDisabled = computed(() => {
-	return props.disabled != null
-		? props.disabled
-		: (govFormItem || {}).disabled;
+// 依赖注入
+const govFormItem = inject("govFormItem", null);
+
+// 计算大小
+const innerSize = computed(() => {
+	return props?.size || govFormItem?.size;
 });
 
-// 大小
-const innerSize = computed(() => {
-	return props?.size || govFormItem?.size || "default";
+// 是否禁用
+const innerDisabled = computed(() => {
+	return props?.disabled || govFormItem?.disabled;
 });
 </script>
 

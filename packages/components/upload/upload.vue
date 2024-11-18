@@ -1,11 +1,11 @@
 <template>
-	<div class="gov-upload" :class="[{ 'is-disabled': disabled }]">
+	<div class="gov-upload" :class="[{ 'is-disabled': innerDisabled }]">
 		<div class="gov-upload__header">
 			<label class="gov-upload__label">
 				<GovButton
-					:size="buttonSize"
+					:size="innerSize"
 					:type="buttonType"
-					:disabled="disabled"
+					:disabled="innerDisabled"
 					@click="triggerFileInput"
 				>
 					{{ buttonText }}
@@ -15,7 +15,7 @@
 					type="file"
 					:multiple="multiple"
 					ref="fileInput"
-					:disabled="disabled"
+					:disabled="innerDisabled"
 					@change="handleFileChange"
 					class="gov-upload__original"
 				/>
@@ -59,7 +59,7 @@
 					</div>
 					<div
 						class="gov-upload__delete"
-						v-if="!disabled"
+						v-if="!innerDisabled"
 						@click="handleDelete(item.id, index)"
 					>
 						<GovIcon name="circle-close" />
@@ -80,7 +80,7 @@
 </template>
 
 <script setup>
-import { ref, computed, nextTick } from "vue";
+import { ref, inject, computed, nextTick } from "vue";
 import GovButton from "../button/button.vue";
 import GovIcon from "../icon/icon.vue";
 
@@ -93,14 +93,11 @@ const props = defineProps({
 		type: Array,
 		default: () => [],
 	},
+	size: String,
 	disabled: Boolean,
 	buttonText: {
 		type: String,
 		default: "上传文件",
-	},
-	buttonSize: {
-		type: String,
-		default: "default",
 	},
 	buttonType: {
 		type: String,
@@ -127,9 +124,23 @@ const props = defineProps({
 
 const emits = defineEmits(["update:modelValue"]);
 
+// 获取formItem
+const govFormItem = inject("govFormItem", null);
+
+// 计算大小
+const innerSize = computed(() => {
+	return props?.size || govFormItem?.size;
+});
+
+// 是否禁用
+const innerDisabled = computed(() => {
+	return props?.disabled || govFormItem?.disabled;
+});
+
+// Button联动file控件
 const fileInput = ref(null);
 const triggerFileInput = () => {
-	if (fileInput.value && !props.disabled) {
+	if (fileInput.value && !innerDisabled.value) {
 		fileInput.value.click();
 	}
 };

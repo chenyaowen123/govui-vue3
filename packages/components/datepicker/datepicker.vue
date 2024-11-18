@@ -2,7 +2,7 @@
 	<div
 		class="gov-datepicker"
 		:style="width ? `width: ${props.width}px;` : ''"
-		:class="`gov-datepicker--${_size}`"
+		:class="`gov-datepicker--size-${innerSize}`"
 	>
 		<VueDatePicker
 			locale="zh-CN"
@@ -19,6 +19,7 @@
 			:model-type="props.modelType"
 			:day-names="['一', '二', '三', '四', '五', '六', '日']"
 			v-bind="$attrs"
+			:disabled="innerDisabled"
 		/>
 	</div>
 </template>
@@ -52,10 +53,8 @@ const props = defineProps({
 		type: String,
 		default: "format", // v-model 值类型，默认 'format'
 	},
-	size: {
-		type: String,
-		default: "default",
-	},
+	size: String,
+	disabled: Boolean,
 });
 
 const time = computed(() => props.mode === "time");
@@ -63,9 +62,17 @@ const week = computed(() => props.mode === "week");
 const month = computed(() => props.mode === "month");
 const year = computed(() => props.mode === "year");
 
+// 获取formItem
 const govFormItem = inject("govFormItem", null);
-const _size = computed(() => {
-	return props?.size || govFormItem?.size || "default";
+
+// 计算大小
+const innerSize = computed(() => {
+	return props?.size || govFormItem?.size;
+});
+
+// 是否禁用
+const innerDisabled = computed(() => {
+	return props?.disabled || govFormItem?.disabled;
 });
 </script>
 
@@ -78,20 +85,24 @@ const _size = computed(() => {
 		}
 	}
 
+	:deep(.dp__main *) {
+		font-size: 14px;
+	}
+
 	// 尺寸
-	&--large {
+	&--size-large {
 		:deep(.dp__input) {
 			height: var(--gov-large-height);
 			font-size: var(--gov-large-font-size);
 		}
 	}
-	&--default {
+	&--size-default {
 		:deep(.dp__input) {
 			height: var(--gov-default-height);
 			font-size: var(--gov-default-font-size);
 		}
 	}
-	&--small {
+	&--size-small {
 		:deep(.dp__input) {
 			height: var(--gov-small-height);
 			font-size: var(--gov-small-font-size);
