@@ -74,10 +74,10 @@ const setRating = (value) => {
 	display: flex;
 	align-items: center;
 	user-select: none;
-	cursor: pointer;
 
 	&__item {
 		padding-left: 4px;
+		cursor: pointer;
 	}
 
 	&__icon {
@@ -88,7 +88,7 @@ const setRating = (value) => {
 		color: var(--gov-warning);
 	}
 
-	&.is-disabled {
+	&.is-disabled &__item {
 		cursor: not-allowed;
 	}
 }

@@ -52,6 +52,13 @@
 					placeholder="请输入"
 				/>
 			</gov-form-item>
+			<gov-form-item prop="deliveryDate" label="配送日期" :span="spanNum">
+				<gov-datepicker
+					v-model="formData.deliveryDate"
+					format="yyyy-MM-dd"
+					placeholder="请选择日期"
+				/>
+			</gov-form-item>
 			<gov-form-item
 				prop="immediateDelivery"
 				label="立即配送"
@@ -59,7 +66,16 @@
 			>
 				<gov-switch v-model="formData.immediateDelivery" />
 			</gov-form-item>
-
+			<gov-form-item prop="rateNum" label="评分" :span="spanNum">
+				<gov-rate v-model="formData.rateNum" />
+			</gov-form-item>
+			<gov-form-item prop="files" label="附件" :span="spanNum">
+				<gov-upload
+					v-model="formData.files"
+					:uploadRequest="simulateUpload"
+					append="上传文件最大 500KB"
+				/>
+			</gov-form-item>
 			<gov-form-item>
 				<gov-button @click="handleSubmit">提交</gov-button>
 			</gov-form-item>
@@ -90,7 +106,10 @@ const formData = reactive({
 	deliveryType: null,
 	address: [],
 	addressInfo: null,
+	deliveryDate: null,
 	immediateDelivery: true,
+	rateNum: null,
+	files: [],
 });
 
 const formRules = reactive({
@@ -151,6 +170,13 @@ const formRules = reactive({
 			trigger: "change",
 		},
 	],
+	deliveryDate: [
+		{
+			required: true,
+			message: "该项为必填项！",
+			trigger: "change",
+		},
+	],
 	immediateDelivery: [
 		{
 			required: true,
@@ -158,11 +184,52 @@ const formRules = reactive({
 			trigger: "change",
 		},
 	],
+	rateNum: [
+		{
+			required: true,
+			message: "该项为必填项！",
+			trigger: "change",
+		},
+	],
+	files: [
+		{
+			required: true,
+			message: "该项为必填项！",
+			trigger: "change",
+		},
+	],
 });
 
+// 自动补全
 const querySearch = (str) => {
 	return fruits.filter((el) => el.toLowerCase().includes(str.toLowerCase()));
 };
+
+// 模拟上传请求
+function simulateUpload(file, fileId, onProgress) {
+	const uploader = new Promise((resolve, reject) => {
+		// 模拟上传进度
+		let total = 0;
+		const interval = setInterval(() => {
+			if (total < 100) {
+				total += 10;
+				onProgress(total);
+			} else {
+				clearInterval(interval);
+				// 模拟随机的成功或失败
+				const success = Math.random() > 0.5 ? true : false;
+				if (success) {
+					resolve({
+						url: "/logo.png",
+					});
+				} else {
+					reject(new Error("Upload failed"));
+				}
+			}
+		}, 500);
+	});
+	return uploader;
+}
 
 const handleSubmit = () => {
 	ruleFormRef.value.validate((valid, fields) => {
