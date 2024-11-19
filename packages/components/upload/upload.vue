@@ -135,7 +135,13 @@ const props = defineProps({
 
 // 获取formItem
 const govFormItem = inject("govFormItem", null);
-const emits = defineEmits(["update:modelValue", "change", "delete"]);
+const emits = defineEmits([
+	"update:modelValue",
+	"change",
+	"delete",
+	"focus",
+	"blur",
+]);
 
 // 计算大小
 const innerSize = computed(() => {
