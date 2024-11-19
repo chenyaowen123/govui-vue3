@@ -18,7 +18,7 @@
 		box-sizing: border-box;
 		background: #fff;
 		// 它或它的后代获得焦点。
-		&:focus-within {
+		&:focus-within,&:hover {
 			border-color: var(--gov-primary);
 			outline: 0;
 		}
