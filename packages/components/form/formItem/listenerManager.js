@@ -7,33 +7,53 @@ import { reactive, onUnmounted } from "vue";
 export function useListenerManager() {
 	const listeners = reactive(new Map());
 
+	// event 可以是数组或者字符串
 	const on = (event, callback) => {
-		if (!listeners.has(event)) {
-			listeners.set(event, new Set());
-		}
-		listeners.get(event).add(callback);
+		const events = Array.isArray(event) ? event : [event];
+		events.forEach((singleEvent) => {
+			if (!listeners.has(singleEvent)) {
+				listeners.set(singleEvent, new Set());
+			}
+			listeners.get(singleEvent).add(callback);
 
-		// 注册 onUnmounted 生命周期钩子来自动清理监听器
-		// 谁调用了监听，谁清理监听，这样不必主动显示的清理事件队列
-		onUnmounted(() => {
-			off(event, callback);
+			// 注册 onUnmounted 生命周期钩子来自动清理监听器
+			onUnmounted(() => {
+				off(singleEvent, callback);
+			});
 		});
 	};
 
+	// event 可以是数组或者字符串
 	const off = (event, callback) => {
-		const eventListeners = listeners.get(event);
-		if (eventListeners) {
-			eventListeners.delete(callback);
-			if (eventListeners.size === 0) {
-				listeners.delete(event);
+		const events = Array.isArray(event) ? event : [event];
+		events.forEach((singleEvent) => {
+			const eventListeners = listeners.get(singleEvent);
+			if (eventListeners) {
+				eventListeners.delete(callback);
+				if (eventListeners.size === 0) {
+					listeners.delete(singleEvent);
+				}
 			}
-		}
+		});
 	};
 
+	// event 可以是数组或者字符串
 	const emit = (event, payload) => {
-		const eventListeners = listeners.get(event);
-		if (eventListeners) {
-			eventListeners.forEach((callback) => callback(payload));
+		const events = Array.isArray(event) ? event : [event];
+		events.forEach((singleEvent) => {
+			const eventListeners = listeners.get(singleEvent);
+			if (eventListeners) {
+				eventListeners.forEach((callback) => callback(payload));
+			}
+		});
+		// 触发通用事件处理，任意事件都会触发 * 事件
+		const generalListeners = listeners.get("*");
+		if (generalListeners) {
+			events.forEach((singleEvent) => {
+				generalListeners.forEach((callback) =>
+					callback(singleEvent, payload),
+				);
+			});
 		}
 	};
 

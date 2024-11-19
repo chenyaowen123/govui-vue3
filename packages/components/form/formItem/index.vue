@@ -104,6 +104,12 @@ useManageFieldToForm(props, govForm, validate, clearValidate);
 // 创建事件管理器
 const listenerManager = useListenerManager();
 
+// 表单控件触发任意事件，都会触发表单验证
+// 表单验证会根据 trigger 来获取相应规则，没有规则是不会验证的
+listenerManager.on("*", (triggerEventNames) => {
+	validate(triggerEventNames, () => {});
+});
+
 // 组件暴露的方法
 defineExpose({
 	validate,

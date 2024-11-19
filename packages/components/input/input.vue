@@ -200,10 +200,12 @@ const showInputSuffix = computed(() => {
 
 function onInput(e) {
 	emits("input", e.target.value);
+	govFormItem?.$emit("input", e.target.value);
 }
 
 function onChange(e) {
 	emits("change", e.target.value);
+	govFormItem?.$emit("change", e.target.value);
 	// 以下是解决因为vue缓存问题
 	// 正常情况输入内容和value属性的值是一致的，但是会有外层处理数据的情况。
 	// 例如输入数字，外层更改为最大值，不同的输入可能导致外层传递的 modelValue 是相同值（即都是最大值），
@@ -218,14 +220,17 @@ function onClear() {
 	emits("clear");
 	emits("input", "");
 	emits("change", "");
+	govFormItem?.$emit(["change", "input"], "");
 }
 
 function onBlur(e) {
 	emits("blur", e);
+	govFormItem?.$emit("blur", e.target.value);
 }
 
 function onFocus(e) {
 	emits("focus", e);
+	govFormItem?.$emit("focus", e.target.value);
 }
 </script>
 

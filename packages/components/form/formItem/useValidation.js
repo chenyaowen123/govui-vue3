@@ -25,7 +25,7 @@ export function useValidation(props, govForm) {
 	});
 
 	// 当前表单项的验证
-	const validate = (trigger, callback) => {
+	const validate = (trigger, callback = () => {}) => {
 		let rules = getTriggerRule(trigger);
 		if (!rules || rules.length === 0) {
 			callback(validateState.value);
