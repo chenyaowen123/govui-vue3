@@ -18,6 +18,9 @@
 			class="gov-textarea__input"
 			:style="textareaStyle"
 			:disabled="innerDisabled"
+			@focus="handleFocus"
+			@blur="handleBlur"
+			@change="handleChange"
 		/>
 		<div class="gov-textarea__footer" v-if="hasFooter">
 			<span v-if="maxlength">{{ currentLength }}/{{ maxlength }}</span>
@@ -53,9 +56,24 @@ const props = defineProps({
 		default: true,
 	},
 	disabled: Boolean,
+	// 事件是否触发 formItem 表单验证，这在嵌套控件时候很有用
+	triggerForm: {
+		type: Boolean,
+		default: true,
+	},
 });
 
-const emits = defineEmits(["update:modelValue", "clear"]);
+const emits = defineEmits([
+	"update:modelValue",
+	"input",
+	"change",
+	"focus",
+	"blur",
+	"clear",
+]);
+
+// 获取formItem
+const govFormItem = inject("govFormItem", null);
 
 // 绑定Value
 const innerValue = computed({
@@ -64,11 +82,12 @@ const innerValue = computed({
 	},
 	set(val) {
 		emits("update:modelValue", val);
+		emits("input");
+		if (props.triggerForm) {
+			govFormItem?.$emit("input");
+		}
 	},
 });
-
-// 获取formItem
-const govFormItem = inject("govFormItem", null);
 
 // 是否禁用
 const innerDisabled = computed(() => {
@@ -90,6 +109,31 @@ const textareaStyle = computed(() => {
 	};
 });
 
+// change事件
+const handleChange = () => {
+	emits("change", props.modelValue);
+	if (props.triggerForm) {
+		govFormItem?.$emit("change");
+	}
+};
+
+// 获得焦点
+const handleFocus = () => {
+	emits("focus");
+	if (props.triggerForm) {
+		govFormItem?.$emit("focus");
+	}
+};
+
+// 失去焦点
+const handleBlur = () => {
+	emits("blur");
+	if (props.triggerForm) {
+		govFormItem?.$emit("blur");
+	}
+};
+
+// 清空
 const clearText = () => {
 	innerValue.value = "";
 	emits("update:modelValue", "");

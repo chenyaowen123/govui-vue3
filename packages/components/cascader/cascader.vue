@@ -14,6 +14,8 @@
 				:size="innerSize"
 				:placeholder="placeholder"
 				:disabled="innerDisabled"
+				@focus="handleFocus"
+				@blur="handleBlur"
 				@clear="handleClear"
 				@click="handleClick"
 				readonly
@@ -73,12 +75,26 @@ const props = defineProps({
 		type: Boolean,
 		default: true,
 	},
+	// 事件是否触发 formItem 表单验证，这在嵌套控件时候很有用
+	triggerForm: {
+		type: Boolean,
+		default: true,
+	},
 });
 
 const show = ref(false);
-const emits = defineEmits(["change", "clear", "update:modelValue"]);
+const emits = defineEmits([
+	"change",
+	"focus",
+	"blur",
+	"clear",
+	"update:modelValue",
+]);
 
-// innerValeu
+// 获取formItem
+const govFormItem = inject("govFormItem", null);
+
+// innerValue
 const innerValue = computed({
 	get() {
 		return props.modelValue;
@@ -86,11 +102,11 @@ const innerValue = computed({
 	set(val) {
 		emits("change", val);
 		emits("update:modelValue", val);
+		if (props.triggerForm) {
+			govFormItem?.$emit("change");
+		}
 	},
 });
-
-// 获取formItem
-const govFormItem = inject("govFormItem", null);
 
 // 计算大小
 const innerSize = computed(() => {
@@ -148,12 +164,31 @@ const handleClick = () => {
 	}
 };
 
+// 获得焦点
+const handleFocus = () => {
+	emits("focus");
+	if (props.triggerForm) {
+		govFormItem?.$emit("focus");
+	}
+};
+
+// 失去焦点
+const handleBlur = () => {
+	emits("blur");
+	if (props.triggerForm) {
+		govFormItem?.$emit("blur");
+	}
+};
+
 // 清空
 const handleClear = () => {
 	show.value = false;
 	emits("clear");
 	emits("change", []);
 	emits("update:modelValue", []);
+	if (props.triggerForm) {
+		govFormItem?.$emit(["clear", "change"]);
+	}
 };
 </script>
 

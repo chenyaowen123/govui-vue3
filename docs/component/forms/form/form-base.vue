@@ -194,21 +194,21 @@ const formRules = reactive({
 		{
 			required: true,
 			message: "请选择配送方式！",
-			trigger: "change",
+			trigger: ["blur", "input", "change"],
 		},
 	],
 	address: [
 		{
 			required: true,
 			message: "请选择配送方式！",
-			trigger: "change",
+			trigger: ["blur", "input", "change"],
 		},
 	],
 	addressInfo: [
 		{
 			required: true,
 			message: "该项为必填项！",
-			trigger: "change",
+			trigger: ["blur", "input", "change"],
 		},
 	],
 	deliveryDate: [

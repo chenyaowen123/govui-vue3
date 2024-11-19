@@ -15,6 +15,8 @@
 				:size="innerSize"
 				:placeholder="placeholder"
 				:disabled="innerDisabled"
+				@focus="handleFocus"
+				@blur="handleBlur"
 				@clear="handleClear"
 				@click="handleClick"
 				readonly
@@ -68,25 +70,24 @@ const props = defineProps({
 		type: String,
 		default: "200px",
 	},
+	// 事件是否触发 formItem 表单验证，这在嵌套控件时候很有用
+	triggerForm: {
+		type: Boolean,
+		default: true,
+	},
 });
 
 const show = ref(false);
-const emits = defineEmits(["change", "update:modelValue"]);
+const emits = defineEmits([
+	"update:modelValue",
+	"change",
+	"focus",
+	"blur",
+	"clear",
+]);
 
 // input展示
 const inputValue = ref("");
-
-// 更新value
-const updateValue = (item) => {
-	show.value = false;
-	emits("change", item);
-	emits("update:modelValue", item.value);
-};
-
-// 更新input的文字
-const updateInputText = (label) => {
-	inputValue.value = label;
-};
 
 // 获取formItem
 const govFormItem = inject("govFormItem", null);
@@ -100,6 +101,21 @@ const innerSize = computed(() => {
 const innerDisabled = computed(() => {
 	return props?.disabled || govFormItem?.disabled;
 });
+
+// 更新value
+const updateValue = (item) => {
+	show.value = false;
+	emits("change", item);
+	emits("update:modelValue", item.value);
+	if (props.triggerForm) {
+		govFormItem?.$emit("change");
+	}
+};
+
+// 更新input的文字
+const updateInputText = (label) => {
+	inputValue.value = label;
+};
 
 // 禁用的时候关闭下来
 watch(
@@ -116,11 +132,31 @@ const handleClick = () => {
 	}
 };
 
+// 获得焦点
+const handleFocus = () => {
+	emits("focus");
+	if (props.triggerForm) {
+		govFormItem?.$emit("focus");
+	}
+};
+
+// 失去焦点
+const handleBlur = () => {
+	emits("blur");
+	if (props.triggerForm) {
+		govFormItem?.$emit("blur");
+	}
+};
+
 // 清空
 const handleClear = () => {
 	show.value = false;
 	updateInputText(undefined);
 	updateValue({ value: undefined, label: undefined });
+	emits("clear");
+	if (props.triggerForm) {
+		govFormItem?.$emit("clear");
+	}
 };
 
 provide(

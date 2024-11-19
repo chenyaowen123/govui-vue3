@@ -18,8 +18,12 @@
 			text-input
 			:model-type="props.modelType"
 			:day-names="['一', '二', '三', '四', '五', '六', '日']"
-			v-bind="$attrs"
 			:disabled="innerDisabled"
+			v-bind="$attrs"
+			v-model="innerValue"
+			@focus="handleFocus"
+			@blur="handleBlur"
+			@cleared="handleClear"
 		/>
 	</div>
 </template>
@@ -33,6 +37,7 @@ defineOptions({
 });
 
 const props = defineProps({
+	modelValue: {},
 	width: {
 		type: Number,
 		default: null, // 日期选择器宽度
@@ -55,6 +60,11 @@ const props = defineProps({
 	},
 	size: String,
 	disabled: Boolean,
+	// 事件是否触发 formItem 表单验证，这在嵌套控件时候很有用
+	triggerForm: {
+		type: Boolean,
+		default: true,
+	},
 });
 
 const time = computed(() => props.mode === "time");
@@ -79,6 +89,52 @@ const innerDisabled = computed(() => {
 const isError = computed(() => {
 	return govFormItem?.validateState === "error";
 });
+
+const emits = defineEmits([
+	"update:modelValue",
+	"change",
+	"focus",
+	"blur",
+	"clear",
+]);
+
+// 绑定Value
+const innerValue = computed({
+	get() {
+		return props.modelValue;
+	},
+	set(val) {
+		emits("update:modelValue", val);
+		emits("change");
+		if (props.triggerForm) {
+			govFormItem?.$emit("change");
+		}
+	},
+});
+
+// 获得焦点
+const handleFocus = () => {
+	emits("focus");
+	if (props.triggerForm) {
+		govFormItem?.$emit("focus");
+	}
+};
+
+// 失去焦点
+const handleBlur = () => {
+	emits("blur");
+	if (props.triggerForm) {
+		govFormItem?.$emit("blur");
+	}
+};
+
+// clear
+const handleClear = () => {
+	emits("clear");
+	if (props.triggerForm) {
+		govFormItem?.$emit("clear");
+	}
+};
 </script>
 
 <style lang="scss">
