@@ -19,7 +19,7 @@
 		background: #fff;
 		// 它或它的后代获得焦点。
 		&:focus-within,&:hover {
-			border-color: var(--gov-primary);
+			border-color: var(--gov-border-color-dark);
 			outline: 0;
 		}
 	}
@@ -46,6 +46,11 @@
 		cursor: not-allowed;
 		background: var(--gov-fill-color-5);
 	}
+
+	&.is-error &__input{
+		border-color: var(--gov-primary);
+	}
+
 	&__clear-btn {
 		cursor: pointer;
 		margin-left: 8px;

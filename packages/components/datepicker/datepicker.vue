@@ -2,7 +2,7 @@
 	<div
 		class="gov-datepicker"
 		:style="width ? `width: ${props.width}px;` : ''"
-		:class="`gov-datepicker--size-${innerSize}`"
+		:class="[`gov-datepicker--size-${innerSize}`, { 'is-error': isError }]"
 	>
 		<VueDatePicker
 			locale="zh-CN"
@@ -74,6 +74,11 @@ const innerSize = computed(() => {
 const innerDisabled = computed(() => {
 	return props?.disabled || govFormItem?.disabled;
 });
+
+// 表单验证是否为错误状态
+const isError = computed(() => {
+	return govFormItem?.validateState === "error";
+});
 </script>
 
 <style lang="scss">
@@ -110,6 +115,12 @@ const innerDisabled = computed(() => {
 			font-size: var(--gov-small-font-size);
 		}
 	}
+
+	&.is-error .dp__theme_dark,
+	&.is-error .dp__theme_light {
+		--dp-border-color: var(--gov-primary);
+		--dp-border-color-hover: var(--gov-primary);
+	}
 }
 
 .dp__theme_dark,
@@ -125,7 +136,7 @@ const innerDisabled = computed(() => {
 	--dp-secondary-color: #c0c4cc;
 	--dp-border-color: var(--gov-border-color);
 	--dp-menu-border-color: var(--gov-border-color);
-	--dp-border-color-hover: var(--gov-primary);
+	--dp-border-color-hover: var(--gov-border-color-dark);
 	--dp-disabled-color: var(--gov-fill-color-5);
 	--dp-scroll-bar-background: #f3f3f3;
 	--dp-scroll-bar-color: #959595;

@@ -16,7 +16,8 @@
 				{
 					'gov-input--before': slotsExist.addonBefore,
 					'gov-input--after': slotsExist.addonAfter,
-					'gov-input--disabled': innerDisabled,
+					'is-disabled': innerDisabled,
+					'is-error': isError,
 				},
 			]"
 		>
@@ -41,7 +42,7 @@
 				<span
 					v-if="showClear"
 					class="gov-input-action gov-input-clear"
-					:class="[{ 'has-value': modelValue && modelValue != 0 }]"
+					:class="[{ 'has-value': modelValue || modelValue == 0 }]"
 					@click.stop="onClear"
 				>
 					<GovIcon name="close" />
@@ -173,6 +174,11 @@ const innerSize = computed(() => {
 // 是否禁用
 const innerDisabled = computed(() => {
 	return props?.disabled || govFormItem?.disabled;
+});
+
+// 表单验证是否为错误状态
+const isError = computed(() => {
+	return govFormItem?.validateState === "error";
 });
 
 // 根据插槽和props判断是否有元素

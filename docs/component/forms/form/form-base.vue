@@ -153,9 +153,14 @@ const formRules = reactive({
 		{
 			required: true,
 			message: "请输入姓名！",
-			trigger: "blur",
+			trigger: ["blur", "input", "change"],
 		},
-		{ min: 3, max: 5, message: "限制3-5个字符！", trigger: "blur" },
+		{
+			min: 3,
+			max: 5,
+			message: "限制3-5个字符！",
+			trigger: ["blur", "input", "change"],
+		},
 	],
 	sex: [
 		{
@@ -175,14 +180,14 @@ const formRules = reactive({
 		{
 			required: true,
 			message: "请选择喜欢的水果！",
-			trigger: "change",
+			trigger: ["blur", "input", "change"],
 		},
 	],
 	orderTotal: [
 		{
 			required: true,
 			message: "请选择订购数！",
-			trigger: "change",
+			trigger: ["blur", "input", "change"],
 		},
 	],
 	deliveryType: [

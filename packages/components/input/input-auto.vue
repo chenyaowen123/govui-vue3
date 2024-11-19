@@ -14,6 +14,8 @@
 				@focus="handleFocus"
 				@blur="handleBlur"
 				@input="handleInput"
+				@change="handleChange"
+				@clear="handleClear"
 				:size="size"
 				:triggerForm="false"
 			>
@@ -45,7 +47,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, inject, computed } from "vue";
 import GovInput from "./input.vue";
 import GovPopper from "../popper/popper.vue";
 
@@ -68,6 +70,11 @@ const props = defineProps({
 		default: "200px",
 	},
 	size: String,
+	// 事件是否触发 formItem 表单验证，这在嵌套控件时候很有用
+	triggerForm: {
+		type: Boolean,
+		default: true,
+	},
 });
 
 const show = ref(false);
@@ -75,9 +82,11 @@ const list = ref([]);
 const emits = defineEmits([
 	"update:modelValue",
 	"input",
+	"change",
 	"select",
 	"focus",
 	"blur",
+	"clear",
 ]);
 
 // 创建一个计算属性来提供默认的 fetch 函数
@@ -95,23 +104,49 @@ const innerValue = computed({
 	},
 });
 
+// 获取formItem
+const govFormItem = inject("govFormItem", null);
+
 // 抛出外层
 const handleInput = (inputValue) => {
 	list.value = fetchWithDefault.value(inputValue);
 	show.value = true;
 	emits("input", inputValue);
+	if (props.triggerForm) {
+		govFormItem?.$emit("input");
+	}
+};
+
+const handleChange = (value) => {
+	emits("change", value);
+	if (props.triggerForm) {
+		govFormItem?.$emit("change");
+	}
 };
 
 const handleFocus = () => {
 	list.value = fetchWithDefault.value(props.modelValue);
 	show.value = true;
 	emits("focus");
+	if (props.triggerForm) {
+		govFormItem?.$emit("focus");
+	}
 };
 
 const handleBlur = () => {
 	list.value = fetchWithDefault.value(props.modelValue);
 	show.value = false;
 	emits("blur");
+	if (props.triggerForm) {
+		govFormItem?.$emit("blur");
+	}
+};
+
+const handleClear = () => {
+	emits("clear");
+	if (props.triggerForm) {
+		govFormItem?.$emit("clear");
+	}
 };
 
 // 点击某个元素
@@ -124,6 +159,9 @@ const handleClick = (item) => {
 	emits("select", item);
 	emits("update:modelValue", inputValue);
 	emits("input", inputValue);
+	if (props.triggerForm) {
+		govFormItem?.$emit(["select", "input"]);
+	}
 };
 </script>
 

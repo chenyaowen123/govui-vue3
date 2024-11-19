@@ -1,7 +1,13 @@
 <template>
 	<div
 		class="gov-textarea"
-		:class="[{ 'is-resize': resize, 'is-disabled': innerDisabled }]"
+		:class="[
+			{
+				'is-resize': resize,
+				'is-disabled': innerDisabled,
+				'is-error': isError,
+			},
+		]"
 	>
 		<textarea
 			:rows="rows"
@@ -67,6 +73,11 @@ const govFormItem = inject("govFormItem", null);
 // 是否禁用
 const innerDisabled = computed(() => {
 	return props?.disabled || govFormItem?.disabled;
+});
+
+// 表单验证是否为错误状态
+const isError = computed(() => {
+	return govFormItem?.validateState === "error";
 });
 
 // 统计相关

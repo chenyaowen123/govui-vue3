@@ -65,7 +65,7 @@
 	}
 
 	&:hover {
-		border-color: var(--gov-primary);
+		border-color: var(--gov-border-color-dark);
 		.gov-input-clear.has-value {
 			visibility: visible;
 			opacity: 1;
@@ -74,7 +74,7 @@
 
 	// 它或它的后代获得焦点。
 	&:focus-within {
-		border-color: var(--gov-primary);
+		border-color: var(--gov-border-color-dark);
 		outline: 0;
 	}
 
@@ -116,7 +116,7 @@
 		color: rgba(0, 0, 0, 0.45);
 	}
 
-	&--disabled {
+	&.is-disabled {
 		color: rgba(0, 0, 0, 0.25);
 		background-color: var(--gov-fill-color-5);
 		cursor: not-allowed;
@@ -126,6 +126,10 @@
 			background-color: transparent;
 			cursor: not-allowed;
 		}
+	}
+
+	&.is-error{
+		border-color: var(--gov-primary);
 	}
 
 	// 大小尺寸

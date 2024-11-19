@@ -6,8 +6,11 @@
 			:size="innerSize"
 			:disabled="innerDisabled"
 			:model-value="innerValue"
+			@focus="handleFocus"
+			@blur="handleBlur"
 			@change="handleChange"
 			@input="handleInput"
+			@clear="handleClear"
 			:triggerForm="false"
 			class="gov-input-number__input"
 		>
@@ -84,16 +87,21 @@ const props = defineProps({
 		default: undefined,
 	},
 	size: String,
-	disabled: {
+	disabled: Boolean,
+	// 事件是否触发 formItem 表单验证，这在嵌套控件时候很有用
+	triggerForm: {
 		type: Boolean,
-		default: false,
+		default: true,
 	},
 });
 
 const emits = defineEmits([
 	"update:modelValue",
+	"focus",
+	"blur",
 	"change",
 	"input",
+	"clear",
 	"add",
 	"subtract",
 ]);
@@ -125,18 +133,6 @@ const innerValue = computed(() => {
 	}
 });
 
-// Change事件，格式化
-function handleChange(value) {
-	const emitValue = emitValueFormat(value);
-	emits("update:modelValue", emitValue);
-	emits("change", emitValue);
-}
-
-// Input事件，返回value 和 格式化后的值
-function handleInput(value) {
-	emits("input", value);
-}
-
 // 获取formItem
 const govFormItem = inject("govFormItem", null);
 
@@ -149,6 +145,48 @@ const innerSize = computed(() => {
 const innerDisabled = computed(() => {
 	return props?.disabled || govFormItem?.disabled;
 });
+
+// 获得焦点
+const handleFocus = () => {
+	emits("focus");
+	if (props.triggerForm) {
+		govFormItem?.$emit("focus");
+	}
+};
+
+// 失去焦点
+const handleBlur = () => {
+	emits("blur");
+	if (props.triggerForm) {
+		govFormItem?.$emit("blur");
+	}
+};
+
+// Change事件，格式化
+function handleChange(value) {
+	const emitValue = emitValueFormat(value);
+	emits("update:modelValue", emitValue);
+	emits("change", emitValue);
+	if (props.triggerForm) {
+		govFormItem?.$emit("change");
+	}
+}
+
+// Input事件，返回value 和 格式化后的值
+function handleInput(value) {
+	emits("input", value);
+	if (props.triggerForm) {
+		govFormItem?.$emit("input");
+	}
+}
+
+// clear事件
+const handleClear = () => {
+	emits("clear");
+	if (props.triggerForm) {
+		govFormItem?.$emit("clear");
+	}
+};
 
 // 加减按钮的disabled
 const incrementDisabled = computed(() => {
@@ -175,6 +213,9 @@ function increment() {
 	emits("update:modelValue", emitValue);
 	emits("change", emitValue);
 	emits("add", emitValue);
+	if (props.triggerForm) {
+		govFormItem?.$emit(["change", "add"]);
+	}
 }
 
 function decrement() {
@@ -186,6 +227,9 @@ function decrement() {
 	emits("update:modelValue", emitValue);
 	emits("change", emitValue);
 	emits("subtract", emitValue);
+	if (props.triggerForm) {
+		govFormItem?.$emit(["change", "subtract"]);
+	}
 }
 </script>
 
