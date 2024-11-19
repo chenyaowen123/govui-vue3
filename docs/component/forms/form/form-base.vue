@@ -166,14 +166,14 @@ const formRules = reactive({
 		{
 			required: true,
 			message: "请选择性别！",
-			trigger: "change",
+			trigger: ["blur", "change"],
 		},
 	],
 	hobby: [
 		{
 			required: true,
 			message: "请选择爱好！",
-			trigger: "change",
+			trigger: ["blur", "change"],
 		},
 	],
 	fruit: [
@@ -221,7 +221,14 @@ const formRules = reactive({
 	immediateDelivery: [
 		{
 			required: true,
-			message: "请选择配送方式！",
+			type: "boolean",
+			// 自定义校验函数，确保值必须是 true
+			validator: (rule, value, callback) => {
+				if (value !== true) {
+					return callback(new Error("你必须打开此项！"));
+				}
+				callback();
+			},
 			trigger: ["blur", "change"],
 		},
 	],
