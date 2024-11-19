@@ -1,5 +1,11 @@
 <template>
-	<div class="gov-rate" :class="{ 'is-disabled': innerDisabled }">
+	<div
+		class="gov-rate"
+		:class="{ 'is-disabled': innerDisabled }"
+		tabindex="0"
+		@focus="handleFocus"
+		@blur="handleBlur"
+	>
 		<span
 			v-for="i in max"
 			:key="i"
@@ -46,12 +52,16 @@ const props = defineProps({
 		type: String,
 		default: "#f5a623",
 	},
+	// 事件是否触发 formItem 表单验证，这在嵌套控件时候很有用
+	triggerForm: {
+		type: Boolean,
+		default: true,
+	},
 });
-
-const emits = defineEmits(["update:modelValue"]);
 
 // 获取formItem
 const govFormItem = inject("govFormItem", null);
+const emits = defineEmits(["update:modelValue", "change", "focus", "blur"]);
 
 // 是否禁用
 const innerDisabled = computed(() => {
@@ -72,9 +82,29 @@ const currentRatingValue = computed(() => {
 
 const setRating = (value) => {
 	if (!innerDisabled.value) {
+		emits("change", value);
 		emits("update:modelValue", value);
+		if (props.triggerForm) {
+			govFormItem?.$emit("change");
+		}
 	}
 };
+
+// 获得焦点
+function handleFocus() {
+	emits("focus");
+	if (props.triggerForm) {
+		govFormItem?.$emit("focus");
+	}
+}
+
+// 失去焦点
+function handleBlur() {
+	emits("blur");
+	if (props.triggerForm) {
+		govFormItem?.$emit("blur");
+	}
+}
 </script>
 
 <style lang="scss">
