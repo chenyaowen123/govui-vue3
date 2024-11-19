@@ -2,7 +2,7 @@
 	<label
 		class="gov-radio"
 		:class="[
-			`gov-radio--${radioSize}`,
+			`gov-radio--size-${radioSize}`,
 			{ 'is-border': isBorder },
 			{ 'is-button': isButton },
 			{ 'is-disabled': isDisabled },

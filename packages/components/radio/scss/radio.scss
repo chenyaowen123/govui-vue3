@@ -56,15 +56,15 @@
 		}
 	}
 
-	&--large {
+	&--size-large {
 		font-size: var(--gov-large-font-size);
 		height: var(--gov-large-height);
 	}
-	&--default {
+	&--size-default {
 		font-size: var(--gov-default-font-size);
 		height: var(--gov-default-height);
 	}
-	&--small {
+	&--size-small {
 		font-size: var(--gov-small-font-size);
 		height: var(--gov-small-height);
 	}

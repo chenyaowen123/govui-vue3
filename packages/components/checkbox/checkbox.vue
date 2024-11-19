@@ -2,7 +2,7 @@
 	<label
 		class="gov-checkbox"
 		:class="[
-			`gov-checkbox--${checkboxSize}`,
+			`gov-checkbox--size-${checkboxSize}`,
 			{ 'is-border': isBorder },
 			{ 'is-button': isButton },
 			{ 'is-disabled': isDisabled },
