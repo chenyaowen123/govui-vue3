@@ -32,6 +32,13 @@
 		justify-content: center;
 		align-items: center;
 
+		&,
+		&--size-default {
+			width: 12px;
+			height: 12px;
+			font-size: 10px;
+		}
+
 		&--size-large {
 			width: 16px;
 			height: 16px;
@@ -39,16 +46,10 @@
 			font-size: 12px;
 		}
 
-		&--size-default {
-			width: 12px;
-			height: 12px;
-			font-size: 10px;
-		}
-
 		&--size-small {
 			width: 10px;
 			height: 10px;
-			left:1px;
+			left: 1px;
 			font-size: 10px;
 		}
 
@@ -61,19 +62,19 @@
 		}
 
 		&--success {
-			background-color: var(--gov-success);;
+			background-color: var(--gov-success);
 		}
 
 		&--warning {
-			background-color: var(--gov-warning);;
+			background-color: var(--gov-warning);
 		}
 
 		&--danger {
-			background-color: var(--gov-danger);;
+			background-color: var(--gov-danger);
 		}
 
 		&--info {
-			background-color: var(--gov-info);;
+			background-color: var(--gov-info);
 		}
 
 		&--hollow {

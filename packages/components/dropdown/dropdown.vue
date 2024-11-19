@@ -27,10 +27,7 @@ const props = defineProps({
 	disabled: Boolean,
 	center: Boolean,
 	hideAfterClick: Boolean, // 点击后隐藏
-	size: {
-		type: String,
-		default: "default",
-	},
+	size: String,
 });
 
 const emits = defineEmits(["update:modelValue", "toggle"]);

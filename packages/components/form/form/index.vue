@@ -25,13 +25,7 @@ defineOptions({
 const props = defineProps({
 	model: {},
 	rules: {},
-	size: {
-		type: String,
-		default: "default",
-		validator: (value) => {
-			return ["default", "large", "small"].includes(value);
-		},
-	},
+	size: String,
 	labelPosition: {
 		type: String,
 		default: "right",

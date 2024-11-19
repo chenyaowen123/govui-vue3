@@ -82,14 +82,17 @@ function hadleClick() {
 	&.is-center {
 		text-align: center;
 	}
-	&--size-large {
-		font-size: 16px;
-		padding: 5px 16px;
-	}
+
+	&,
 	&--size-default {
 		font-size: 14px;
 		padding: 5px 16px;
 	}
+	&--size-large {
+		font-size: 16px;
+		padding: 5px 16px;
+	}
+
 	&--size-small {
 		font-size: 12px;
 		padding: 4px 10px;

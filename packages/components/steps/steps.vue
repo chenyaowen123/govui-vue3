@@ -14,10 +14,7 @@ defineOptions({
 const props = defineProps({
 	active: Number, // 在第几个 1 开始
 	center: Boolean, // 是否居中
-	size: {
-		type: String,
-		default: "default",
-	},
+	size: String,
 });
 
 const steps = ref([]); // stepid列表

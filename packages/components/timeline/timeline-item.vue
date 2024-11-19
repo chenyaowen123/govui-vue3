@@ -76,13 +76,7 @@ defineProps({
 		type: String,
 		default: "", // 圆点颜色（背景色）
 	},
-	size: {
-		type: String,
-		default: "default", // 大小
-		validator: (value) => {
-			return ["default", "large", "small"].includes(value);
-		},
-	},
+	size: String,
 	icon: String, // 图标名称
 	hollow: Boolean, // 是否空心
 });

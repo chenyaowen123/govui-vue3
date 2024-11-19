@@ -13,10 +13,7 @@ defineOptions({
 
 const props = defineProps({
 	icon: String,
-	size: {
-		type: String,
-		default: "default",
-	},
+	size: String,
 });
 
 provide(

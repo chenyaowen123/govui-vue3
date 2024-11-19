@@ -135,18 +135,19 @@ const internalStatus = computed(() => {
 		}
 	}
 	// 大小
-	&--size-large {
-		.gov-step__head-icon {
-			font-size: 18px;
-			width: 36px;
-			height: 36px;
-		}
-	}
+	&,
 	&--size-default {
 		.gov-step__head-icon {
 			font-size: 16px;
 			width: 30px;
 			height: 30px;
+		}
+	}
+	&--size-large {
+		.gov-step__head-icon {
+			font-size: 18px;
+			width: 36px;
+			height: 36px;
 		}
 	}
 	&--size-small {

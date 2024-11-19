@@ -22,16 +22,16 @@
 	}
 
 	// 大小
-	&--size-large {
-		padding: 0 11px;
-		height: 30px;
+	&, &--size-default {
+		padding: 0 9px;
+		height: 26px;
 		&.is-closable{
 			padding-right: 4px;
 		}
 	}
-	&--size-default {
-		padding: 0 9px;
-		height: 26px;
+	&--size-large {
+		padding: 0 11px;
+		height: 30px;
 		&.is-closable{
 			padding-right: 4px;
 		}

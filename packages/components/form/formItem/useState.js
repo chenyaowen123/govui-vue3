@@ -10,7 +10,7 @@ import { computed } from "vue";
 export function useState(props, govForm) {
 	// 计算大小
 	const innerSize = computed(() => {
-		return props?.size || govForm?.size;
+		return props?.size || govForm?.size || "default";
 	});
 
 	// 是否禁用

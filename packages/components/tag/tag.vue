@@ -48,10 +48,7 @@ defineProps({
 	round: Boolean, // 圆角
 	fill: Boolean, // 是否填充
 	text: String,
-	size: {
-		type: String,
-		default: "default",
-	},
+	size: String,
 });
 
 const emits = defineEmits(["close"]);
