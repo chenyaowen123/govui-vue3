@@ -33,17 +33,17 @@
 				:maxlength="maxlength"
 				:disabled="innerDisabled"
 				:readonly="readonly"
-				@input="onInput"
-				@change="onChange"
-				@focus="onFocus"
-				@blur="onBlur"
+				@input="handleInput"
+				@change="handleChange"
+				@focus="handleFocus"
+				@blur="handleBlur"
 			/>
 			<span v-if="showInputSuffix" class="gov-input-suffix">
 				<span
 					v-if="showClear"
 					class="gov-input-action gov-input-clear"
 					:class="[{ 'has-value': modelValue || modelValue == 0 }]"
-					@click.stop="onClear"
+					@click.stop="handleClear"
 				>
 					<GovIcon name="close" />
 				</span>
@@ -209,17 +209,17 @@ const showInputSuffix = computed(() => {
 	);
 });
 
-function onInput(e) {
+function handleInput(e) {
 	emits("input", e.target.value);
 	if (props.triggerForm) {
-		govFormItem?.$emit("input", e.target.value);
+		govFormItem?.$emit("input");
 	}
 }
 
-function onChange(e) {
+function handleChange(e) {
 	emits("change", e.target.value);
 	if (props.triggerForm) {
-		govFormItem?.$emit("change", e.target.value);
+		govFormItem?.$emit("change");
 	}
 	// 以下是解决因为vue缓存问题
 	// 正常情况输入内容和value属性的值是一致的，但是会有外层处理数据的情况。
@@ -230,27 +230,27 @@ function onChange(e) {
 	});
 }
 
-function onClear() {
+function handleClear() {
 	emits("update:modelValue", "");
 	emits("clear");
 	emits("input", "");
 	emits("change", "");
 	if (props.triggerForm) {
-		govFormItem?.$emit(["clear", "change", "input"], "");
+		govFormItem?.$emit(["clear", "change", "input"]);
 	}
 }
 
-function onBlur(e) {
+function handleBlur(e) {
 	emits("blur", e);
 	if (props.triggerForm) {
-		govFormItem?.$emit("blur", e.target.value);
+		govFormItem?.$emit("blur");
 	}
 }
 
-function onFocus(e) {
+function handleFocus(e) {
 	emits("focus", e);
 	if (props.triggerForm) {
-		govFormItem?.$emit("focus", e.target.value);
+		govFormItem?.$emit("focus");
 	}
 }
 </script>

@@ -215,7 +215,7 @@ const formRules = reactive({
 		{
 			required: true,
 			message: "该项为必填项！",
-			trigger: "change",
+			trigger: ["blur", "input", "change"],
 		},
 	],
 	immediateDelivery: [

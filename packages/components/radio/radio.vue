@@ -14,6 +14,8 @@
 			:disabled="isDisabled"
 			v-bind="$attrs"
 			v-model="innerValue"
+			@focus="handleFocus"
+			@blur="handleBlur"
 		/>
 		<span class="gov-radio__label">
 			<slot></slot>
@@ -35,12 +37,25 @@ const props = defineProps({
 	label: String,
 	border: Boolean,
 	disabled: Boolean,
+	// 事件是否触发 formItem 表单验证，这在嵌套控件时候很有用
+	triggerForm: {
+		type: Boolean,
+		default: true,
+	},
 });
 
-const emit = defineEmits(["change", "update:modelValue"]);
+const emits = defineEmits(["update:modelValue", "change", "blur", "focus"]);
 
 const govFormItem = inject("govFormItem", null);
 const govRadioGroup = inject("govRadioGroup", null);
+
+// 计算当前是否要触发给form事件，如果有 group 包裹，就交给 group，否则按照 props.triggerForm
+const innerTriggerForm = computed(() => {
+	if (govRadioGroup) {
+		return false;
+	}
+	return props?.triggerForm;
+});
 
 const innerValue = computed({
 	get() {
@@ -50,8 +65,11 @@ const innerValue = computed({
 		if (govRadioGroup) {
 			govRadioGroup.updateValue(val);
 		} else {
-			emit("change", val);
-			emit("update:modelValue", val);
+			emits("change", val);
+			emits("update:modelValue", val);
+			if (innerTriggerForm.value) {
+				govFormItem?.$emit("change");
+			}
 		}
 	},
 });
@@ -71,6 +89,22 @@ const isDisabled = computed(() => {
 const isButton = computed(() => {
 	return govRadioGroup?.button;
 });
+
+// 获得焦点
+function handleFocus(e) {
+	emits("focus", e);
+	if (innerTriggerForm.value) {
+		govFormItem?.$emit("focus");
+	}
+}
+
+// 失去焦点
+function handleBlur(e) {
+	emits("blur", e);
+	if (innerTriggerForm.value) {
+		govFormItem?.$emit("blur");
+	}
+}
 </script>
 
 <style lang="scss">
