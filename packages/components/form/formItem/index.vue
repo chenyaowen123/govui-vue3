@@ -88,14 +88,8 @@ const { innerSize, innerDisabled, innerLabelPosition, innerLabelWidth } =
 	useState(props, govForm);
 
 // 表单验证模块
-const {
-	isRequired,
-	validateState,
-	validateMessage,
-	validate,
-	clearValidate,
-	triggerValidateEvents,
-} = useValidation(props, govForm);
+const { isRequired, validateState, validateMessage, validate, clearValidate } =
+	useValidation(props, govForm);
 
 // 管理表单项管理模块
 // 自动添加/删除到 form[fileds]，用于 form 组件批量操作
@@ -104,7 +98,7 @@ useManageFieldToForm(props, govForm, validate, clearValidate);
 // 创建事件管理器
 const listenerManager = useListenerManager();
 
-// 表单控件触发任意事件，都会触发表单验证
+// 监听表单控件，触发任意事件都会触发表单验证
 // 表单验证会根据 trigger 来获取相应规则，没有规则是不会验证的
 listenerManager.on("*", (triggerEventNames) => {
 	validate(triggerEventNames, () => {});
@@ -141,7 +135,6 @@ provide(
 		disabled: innerDisabled,
 		validateState,
 		validateMessage,
-		triggerValidateEvents,
 		...provideListener,
 	}),
 );

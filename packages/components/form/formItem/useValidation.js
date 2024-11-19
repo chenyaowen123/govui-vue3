@@ -62,22 +62,11 @@ export function useValidation(props, govForm) {
 		validateMessage.value = "";
 	};
 
-	// 提供给自定义控件触发表单验证
-	const triggerValidateEvents = (
-		eventNames = ["change", "blur"],
-		callback,
-	) => {
-		eventNames = Array.isArray(eventNames) ? eventNames : [eventNames];
-		eventNames.forEach((trigger) => {
-			validate(trigger, callback);
-		});
-	};
 	return {
 		isRequired,
 		validateState,
 		validateMessage,
 		validate,
 		clearValidate,
-		triggerValidateEvents,
 	};
 }

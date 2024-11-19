@@ -8,6 +8,7 @@
 			:model-value="innerValue"
 			@change="handleChange"
 			@input="handleInput"
+			:triggerForm="false"
 			class="gov-input-number__input"
 		>
 			<template v-if="$slots.addonBefore" #addonBefore>

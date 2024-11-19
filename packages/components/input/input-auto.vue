@@ -15,6 +15,7 @@
 				@blur="handleBlur"
 				@input="handleInput"
 				:size="size"
+				:triggerForm="false"
 			>
 				<template v-if="$slots.addonBefore" #addonBefore>
 					<slot name="addonBefore" />

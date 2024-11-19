@@ -133,6 +133,11 @@ const props = defineProps({
 		type: [String, Number],
 		default: undefined,
 	},
+	// 事件是否触发 formItem 表单验证，这在嵌套控件时候很有用
+	triggerForm: {
+		type: Boolean,
+		default: true,
+	},
 });
 
 const inputRef = ref(null);
@@ -200,12 +205,16 @@ const showInputSuffix = computed(() => {
 
 function onInput(e) {
 	emits("input", e.target.value);
-	govFormItem?.$emit("input", e.target.value);
+	if (props.triggerForm) {
+		govFormItem?.$emit("input", e.target.value);
+	}
 }
 
 function onChange(e) {
 	emits("change", e.target.value);
-	govFormItem?.$emit("change", e.target.value);
+	if (props.triggerForm) {
+		govFormItem?.$emit("change", e.target.value);
+	}
 	// 以下是解决因为vue缓存问题
 	// 正常情况输入内容和value属性的值是一致的，但是会有外层处理数据的情况。
 	// 例如输入数字，外层更改为最大值，不同的输入可能导致外层传递的 modelValue 是相同值（即都是最大值），
@@ -220,17 +229,23 @@ function onClear() {
 	emits("clear");
 	emits("input", "");
 	emits("change", "");
-	govFormItem?.$emit(["change", "input"], "");
+	if (props.triggerForm) {
+		govFormItem?.$emit(["clear", "change", "input"], "");
+	}
 }
 
 function onBlur(e) {
 	emits("blur", e);
-	govFormItem?.$emit("blur", e.target.value);
+	if (props.triggerForm) {
+		govFormItem?.$emit("blur", e.target.value);
+	}
 }
 
 function onFocus(e) {
 	emits("focus", e);
-	govFormItem?.$emit("focus", e.target.value);
+	if (props.triggerForm) {
+		govFormItem?.$emit("focus", e.target.value);
+	}
 }
 </script>
 

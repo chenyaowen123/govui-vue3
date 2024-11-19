@@ -19,6 +19,7 @@
 				@click="handleClick"
 				readonly
 				:clearable="clearable"
+				:triggerForm="false"
 			>
 				<template #suffix>
 					<gov-icon
