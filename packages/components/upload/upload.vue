@@ -1,5 +1,11 @@
 <template>
-	<div class="gov-upload" :class="[{ 'is-disabled': innerDisabled }]">
+	<div
+		class="gov-upload"
+		:class="[{ 'is-disabled': innerDisabled }]"
+		tabindex="0"
+		@focus="handleFocus"
+		@blur="handleBlur"
+	>
 		<div class="gov-upload__header">
 			<label class="gov-upload__label">
 				<GovButton
@@ -120,12 +126,16 @@ const props = defineProps({
 		type: Boolean,
 		default: false, // 是否多选
 	},
+	// 事件是否触发 formItem 表单验证，这在嵌套控件时候很有用
+	triggerForm: {
+		type: Boolean,
+		default: true,
+	},
 });
-
-const emits = defineEmits(["update:modelValue"]);
 
 // 获取formItem
 const govFormItem = inject("govFormItem", null);
+const emits = defineEmits(["update:modelValue", "change", "delete"]);
 
 // 计算大小
 const innerSize = computed(() => {
@@ -171,7 +181,11 @@ const modelValueComputed = computed({
 			return fileCopy;
 		}),
 	set: (newValue) => {
+		emits("change", newValue);
 		emits("update:modelValue", newValue);
+		if (props.triggerForm) {
+			govFormItem?.$emit("change");
+		}
 	},
 });
 
@@ -203,6 +217,14 @@ const handleFileChange = (event) => {
 		};
 	});
 	emits("update:modelValue", [...modelValueComputed.value, ...newFiles]);
+
+	// 触发change事件
+	const triggerChangeEvent = () => {
+		emits("change", modelValueComputed.value);
+		if (props.triggerForm) {
+			govFormItem?.$emit("change");
+		}
+	};
 	// 执行上传
 	nextTick(() => {
 		newFiles.forEach((file) => {
@@ -217,11 +239,13 @@ const handleFileChange = (event) => {
 						updateFileItem(file.id, (fileItem) => {
 							fileItem.status = "success";
 							fileItem.url = response.url;
+							triggerChangeEvent();
 						});
 					})
 					.catch(() => {
 						updateFileItem(file.id, (fileItem) => {
 							fileItem.status = "failed";
+							triggerChangeEvent();
 						});
 					});
 			}
@@ -234,8 +258,29 @@ const handleDelete = (fileId) => {
 	const newValue = modelValueComputed.value.filter(
 		(item) => item.id !== fileId,
 	);
+	emits("delete", fileId);
+	emits("change", newValue);
 	emits("update:modelValue", newValue);
+	if (props.triggerForm) {
+		govFormItem?.$emit(["change", "delete"]);
+	}
 };
+
+// 获得焦点
+function handleFocus() {
+	emits("focus");
+	if (props.triggerForm) {
+		govFormItem?.$emit("focus");
+	}
+}
+
+// 失去焦点
+function handleBlur() {
+	emits("blur");
+	if (props.triggerForm) {
+		govFormItem?.$emit("blur");
+	}
+}
 </script>
 
 <style lang="scss">
