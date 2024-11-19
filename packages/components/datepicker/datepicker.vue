@@ -2,7 +2,10 @@
 	<div
 		class="gov-datepicker"
 		:style="width ? `width: ${props.width}px;` : ''"
-		:class="[`gov-datepicker--size-${innerSize}`, { 'is-error': isError }]"
+		:class="[
+			`gov-datepicker--size-${innerSize}`,
+			{ 'is-error': isError, 'is-disabled': innerDisabled },
+		]"
 	>
 		<VueDatePicker
 			locale="zh-CN"
@@ -170,6 +173,12 @@ const handleClear = () => {
 			height: var(--gov-small-height);
 			font-size: var(--gov-small-font-size);
 		}
+	}
+
+	&.is-disabled .dp__theme_dark,
+	&.is-disabled .dp__theme_light {
+		--dp-icon-color: var(--gov-text-color-5);
+		--dp-text-color: var(--gov-text-color-5);
 	}
 
 	&.is-error .dp__theme_dark,
