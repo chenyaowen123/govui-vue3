@@ -113,6 +113,12 @@
 					提交
 				</gov-button>
 				<gov-button @click="handleReset"> 重置 </gov-button>
+				<gov-button @click="handleValidateFields">
+					验证部分表单
+				</gov-button>
+				<gov-button @click="handleClearValidate">
+					清除表单验证
+				</gov-button>
 			</gov-form-item>
 		</gov-form>
 		<template #console>
@@ -139,9 +145,9 @@ const formData = reactive({
 	sex: null,
 	hobby: null,
 	fruit: "",
-	orderTotal: 20,
-	deliveryType: "1",
-	address: ["shanghai", "shanghai_huangpu", "shanghai_huangpu_street1"],
+	orderTotal: null,
+	deliveryType: null,
+	address: [],
 	addressInfo: null,
 	deliveryDate: null,
 	immediateDelivery: true,
@@ -292,6 +298,16 @@ const handleSubmit = () => {
 // 重置
 const handleReset = () => {
 	ruleFormRef.value.resetFields();
+};
+
+// 验证部分表单
+const handleValidateFields = () => {
+	ruleFormRef.value.validateFields(["name", "sex"]);
+};
+
+// 清除表单验证
+const handleClearValidate = () => {
+	ruleFormRef.value.clearValidate();
 };
 </script>
 
