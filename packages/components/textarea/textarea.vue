@@ -37,6 +37,7 @@
 
 <script setup>
 import { inject, computed } from "vue";
+import { useReset } from "../utils/useReset";
 
 defineOptions({
 	name: "GovTextarea",
@@ -87,6 +88,11 @@ const innerValue = computed({
 			govFormItem?.$emit("input");
 		}
 	},
+});
+
+// 监听重置功能
+useReset(govFormItem, props, (initialValue) => {
+	emits("update:modelValue", initialValue);
 });
 
 // 是否禁用

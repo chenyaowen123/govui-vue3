@@ -6,10 +6,11 @@ import AsyncValidator from "async-validator";
  * 处理表单项的验证逻辑。
  * @param {*} props 传入的表单项属性，包括验证规则等。
  * @param {*} govForm 表单的上下文，包含整个表单的状态和方法。
+ * @param {*} listenerManager 表单的上下文事件队列，用于重置表单。
  * @returns {Object} 提供验证、清空验证和触发验证事件的方法。
  */
 
-export function useValidation(props, govForm) {
+export function useValidation(props, govForm, listenerManager) {
 	const { isRequired, getTriggerRule } = useRules(props, govForm);
 
 	// 定义当前表单项的：状态、提示语、Value
@@ -62,11 +63,18 @@ export function useValidation(props, govForm) {
 		validateMessage.value = "";
 	};
 
+	// 重置表单
+	const resetField = () => {
+		listenerManager.emit("reset");
+		clearValidate();
+	};
+
 	return {
 		isRequired,
 		validateState,
 		validateMessage,
 		validate,
 		clearValidate,
+		resetField,
 	};
 }

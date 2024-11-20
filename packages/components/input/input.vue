@@ -75,6 +75,7 @@
 <script setup>
 import { ref, inject, computed, useSlots, nextTick } from "vue";
 import GovIcon from "../icon/icon.vue";
+import { useReset } from "../utils/useReset";
 
 defineOptions({
 	name: "GovInput",
@@ -165,6 +166,11 @@ const innerValue = computed({
 
 // 获取formItem
 const govFormItem = inject("govFormItem", null);
+
+// 监听重置功能
+useReset(govFormItem, props, (initialValue) => {
+	emits("update:modelValue", initialValue);
+});
 
 // 计算大小
 const innerSize = computed(() => {

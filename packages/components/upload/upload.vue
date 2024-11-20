@@ -89,6 +89,7 @@
 import { ref, inject, computed, nextTick } from "vue";
 import GovButton from "../button/button.vue";
 import GovIcon from "../icon/icon.vue";
+import { useReset } from "../utils/useReset";
 
 defineOptions({
 	name: "GovUpload",
@@ -142,6 +143,11 @@ const emits = defineEmits([
 	"focus",
 	"blur",
 ]);
+
+// 监听重置功能
+useReset(govFormItem, props, (initialValue) => {
+	emits("update:modelValue", initialValue);
+});
 
 // 计算大小
 const innerSize = computed(() => {

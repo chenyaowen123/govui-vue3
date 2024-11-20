@@ -36,6 +36,7 @@
 <script setup>
 import { ref, inject, computed } from "vue";
 import GovIcon from "../icon/icon.vue";
+import { useReset } from "../utils/useReset";
 
 defineOptions({
 	name: "GovRate",
@@ -62,6 +63,11 @@ const props = defineProps({
 // 获取formItem
 const govFormItem = inject("govFormItem", null);
 const emits = defineEmits(["update:modelValue", "change", "focus", "blur"]);
+
+// 监听重置功能
+useReset(govFormItem, props, (initialValue) => {
+	emits("update:modelValue", initialValue);
+});
 
 // 是否禁用
 const innerDisabled = computed(() => {

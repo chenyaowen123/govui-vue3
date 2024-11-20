@@ -112,6 +112,7 @@
 				<gov-button @click="handleSubmit" type="primary">
 					提交
 				</gov-button>
+				<gov-button @click="handleReset"> 重置 </gov-button>
 			</gov-form-item>
 		</gov-form>
 		<template #console>
@@ -138,9 +139,9 @@ const formData = reactive({
 	sex: null,
 	hobby: null,
 	fruit: "",
-	orderTotal: null,
-	deliveryType: null,
-	address: [],
+	orderTotal: 20,
+	deliveryType: "1",
+	address: ["shanghai", "shanghai_huangpu", "shanghai_huangpu_street1"],
 	addressInfo: null,
 	deliveryDate: null,
 	immediateDelivery: true,
@@ -280,11 +281,17 @@ function simulateUpload(file, fileId, onProgress) {
 	return uploader;
 }
 
+// 提交并验证
 const handleSubmit = () => {
 	ruleFormRef.value.validate((valid, fields) => {
 		validState.value = valid;
 		invalidFields.value = fields;
 	});
+};
+
+// 重置
+const handleReset = () => {
+	ruleFormRef.value.resetFields();
 };
 </script>
 

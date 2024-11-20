@@ -26,6 +26,7 @@
 
 <script setup>
 import { computed, inject } from "vue";
+import { useReset } from "../utils/useReset";
 
 defineOptions({
 	name: "GovSwitch",
@@ -67,6 +68,11 @@ const innerValue = computed({
 			govFormItem?.$emit("change");
 		}
 	},
+});
+
+// 监听重置功能
+useReset(govFormItem, props, (initialValue) => {
+	emits("update:modelValue", initialValue);
 });
 
 // 计算大小

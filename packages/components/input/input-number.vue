@@ -49,6 +49,7 @@ import { inject, computed } from "vue";
 import GovInput from "./input.vue";
 import GovIcon from "../icon/icon.vue";
 import numeral from "numeral";
+import { useReset } from "../utils/useReset";
 
 defineOptions({
 	name: "GovInputNumber",
@@ -135,6 +136,12 @@ const innerValue = computed(() => {
 
 // 获取formItem
 const govFormItem = inject("govFormItem", null);
+
+// 监听重置功能
+useReset(govFormItem, props, (initialValue) => {
+	const emitValue = emitValueFormat(initialValue);
+	emits("update:modelValue", emitValue);
+});
 
 // 计算大小
 const innerSize = computed(() => {

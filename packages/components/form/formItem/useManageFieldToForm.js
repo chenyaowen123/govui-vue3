@@ -4,10 +4,10 @@ import { watch, onBeforeUnmount } from "vue";
  * 管理表单项，添加/删除到 form[fileds]
  * @param {*} props 用于获取 formItem 绑定的规则
  * @param {*} govForm 用于获取 form 绑定的规则
- * @returns {Object} - 包含 getTriggerRule 方法的对象。
+ * @param {*} methods 给父级的管理方法，validate,clearValidate,resetField,
  */
 
-export function useManageFieldToForm(props, govForm, validate, clearValidate) {
+export function useManageFieldToForm(props, govForm, methods = {}) {
 	// 添加表单项，没有 props.prop 将不会收集
 	watch(
 		() => props.prop,
@@ -16,7 +16,7 @@ export function useManageFieldToForm(props, govForm, validate, clearValidate) {
 				govForm?.removeField({ prop: oldValue });
 			}
 			if (newValue) {
-				govForm?.addField({ validate, clearValidate, prop: newValue });
+				govForm?.addField({ ...methods, prop: newValue });
 			}
 		},
 		{

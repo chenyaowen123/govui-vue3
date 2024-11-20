@@ -50,6 +50,7 @@
 import { ref, inject, computed } from "vue";
 import GovInput from "./input.vue";
 import GovPopper from "../popper/popper.vue";
+import { useReset } from "../utils/useReset";
 
 defineOptions({
 	name: "GovInputAuto",
@@ -106,6 +107,11 @@ const innerValue = computed({
 
 // 获取formItem
 const govFormItem = inject("govFormItem", null);
+
+// 监听重置功能
+useReset(govFormItem, props, (initialValue) => {
+	emits("update:modelValue", initialValue);
+});
 
 // 抛出外层
 const handleInput = (inputValue) => {

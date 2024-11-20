@@ -26,6 +26,7 @@
 
 <script setup>
 import { inject, computed } from "vue";
+import { useReset } from "../utils/useReset";
 
 defineOptions({
 	name: "GovRadio",
@@ -72,6 +73,11 @@ const innerValue = computed({
 			}
 		}
 	},
+});
+
+// 监听重置功能
+useReset(govFormItem, props, (initialValue) => {
+	innerValue.value = initialValue;
 });
 
 const radioSize = computed(() => {

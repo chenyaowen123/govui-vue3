@@ -34,6 +34,7 @@
 import { computed, inject } from "vue";
 import VueDatePicker from "@vuepic/vue-datepicker";
 import "@vuepic/vue-datepicker/dist/main.css";
+import { useReset } from "../utils/useReset";
 
 defineOptions({
 	name: "GovDatepicker",
@@ -78,21 +79,6 @@ const year = computed(() => props.mode === "year");
 // 获取formItem
 const govFormItem = inject("govFormItem", null);
 
-// 计算大小
-const innerSize = computed(() => {
-	return props?.size || govFormItem?.size;
-});
-
-// 是否禁用
-const innerDisabled = computed(() => {
-	return props?.disabled || govFormItem?.disabled;
-});
-
-// 表单验证是否为错误状态
-const isError = computed(() => {
-	return govFormItem?.validateState === "error";
-});
-
 const emits = defineEmits([
 	"update:modelValue",
 	"change",
@@ -113,6 +99,26 @@ const innerValue = computed({
 			govFormItem?.$emit("change");
 		}
 	},
+});
+
+// 监听重置功能
+useReset(govFormItem, props, (initialValue) => {
+	emits("update:modelValue", initialValue);
+});
+
+// 计算大小
+const innerSize = computed(() => {
+	return props?.size || govFormItem?.size;
+});
+
+// 是否禁用
+const innerDisabled = computed(() => {
+	return props?.disabled || govFormItem?.disabled;
+});
+
+// 表单验证是否为错误状态
+const isError = computed(() => {
+	return govFormItem?.validateState === "error";
 });
 
 // 获得焦点

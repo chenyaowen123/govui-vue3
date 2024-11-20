@@ -43,6 +43,7 @@ import { inject, ref, computed, provide, reactive, watch, toRefs } from "vue";
 import GovInput from "../input/input.vue";
 import GovPopper from "../popper/popper.vue";
 import GovIcon from "../icon/icon.vue";
+import { useReset } from "../utils/useReset";
 
 defineOptions({
 	name: "GovSelect",
@@ -91,6 +92,11 @@ const inputValue = ref("");
 
 // 获取formItem
 const govFormItem = inject("govFormItem", null);
+
+// 监听重置功能
+useReset(govFormItem, props, (initialValue) => {
+	emits("update:modelValue", initialValue);
+});
 
 // 计算大小
 const innerSize = computed(() => {

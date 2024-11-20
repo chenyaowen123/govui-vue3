@@ -46,6 +46,7 @@ import GovInput from "../input/input.vue";
 import GovPopper from "../popper/popper.vue";
 import GovIcon from "../icon/icon.vue";
 import GovCascaderPanel from "./cascader-panel.vue";
+import { useReset } from "../utils/useReset";
 
 defineOptions({
 	name: "GovCascader",
@@ -106,6 +107,11 @@ const innerValue = computed({
 			govFormItem?.$emit("change");
 		}
 	},
+});
+
+// 监听重置功能
+useReset(govFormItem, props, (initialValue) => {
+	emits("update:modelValue", initialValue);
 });
 
 // 计算大小
