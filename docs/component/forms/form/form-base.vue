@@ -243,14 +243,14 @@ const formRules = reactive({
 		{
 			required: true,
 			message: "该项为必填项！",
-			trigger: ["blur", "change"],
+			trigger: "change",
 		},
 	],
 	files: [
 		{
 			required: true,
 			message: "该项为必填项！",
-			trigger: ["blur", "change"],
+			trigger: "change",
 		},
 	],
 });
@@ -297,16 +297,23 @@ const handleSubmit = () => {
 
 // 重置
 const handleReset = () => {
+	validState.value = null;
+	invalidFields.value = null;
 	ruleFormRef.value.resetFields();
 };
 
 // 验证部分表单
 const handleValidateFields = () => {
-	ruleFormRef.value.validateFields(["name", "sex"]);
+	ruleFormRef.value.validateFields(["name", "sex"], (valid, fields) => {
+		validState.value = valid;
+		invalidFields.value = fields;
+	});
 };
 
 // 清除表单验证
 const handleClearValidate = () => {
+	validState.value = null;
+	invalidFields.value = null;
 	ruleFormRef.value.clearValidate();
 };
 </script>
