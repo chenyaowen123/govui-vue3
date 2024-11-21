@@ -1,5 +1,5 @@
 <template>
-	<demo-container class="gov-demo-textarea">
+	<demo-container>
 		<gov-textarea v-model="value" rows="6" autosize placeholder="请输入" />
 	</demo-container>
 </template>
@@ -8,9 +8,3 @@
 import { ref } from "vue";
 const value = ref("");
 </script>
-
-<style lang="scss">
-.gov-demo-textarea .gov-textarea {
-	min-width: 300px;
-}
-</style>
