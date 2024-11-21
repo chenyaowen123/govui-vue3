@@ -33,7 +33,7 @@ const content = Array.from(
 ).join("");
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @keyframes load {
 	0%,
 	100% {

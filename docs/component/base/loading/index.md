@@ -40,3 +40,63 @@ import loadingSlot from "./loading-slot.vue"
 <<< ./loading-slot.vue#snippet{vue:line-numbers}
 :::
 
+
+## Attributes
+
+<table>
+  <thead>
+    <tr>
+      <th>属性名</th>
+      <th>说明</th>
+      <th>类型</th>
+      <th>可选值</th>
+      <th>默认值</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>modelValue</td>
+      <td>控制加载状态的显示与隐藏</td>
+      <td>Boolean</td>
+      <td>true, false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>loadingText</td>
+      <td>加载时显示的文本</td>
+      <td>String</td>
+      <td>—</td>
+      <td>"加载中..."</td>
+    </tr>
+    <tr>
+      <td>loadingBackground</td>
+      <td>加载时的背景样式</td>
+      <td>String</td>
+      <td>—</td>
+      <td>"rgba(0, 0, 0, 0.5)"</td>
+    </tr>
+  </tbody>
+</table>
+
+
+## Slots
+
+<table>
+  <thead>
+    <tr>
+      <th>插槽名</th>
+      <th>说明</th>
+      <th>内容</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>default</td>
+      <td>用于放置加载状态以外的内容，例如文本或 HTML 结构。</td>
+    </tr>
+    <tr>
+      <td>loading</td>
+      <td>用于自定义加载中的图标和文本</td>
+    </tr>
+  </tbody>
+</table>
