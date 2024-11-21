@@ -24,5 +24,3 @@ import { ref } from "vue";
 const at = ref("left");
 const visible = ref(false);
 </script>
-
-<style lang="scss"></style>

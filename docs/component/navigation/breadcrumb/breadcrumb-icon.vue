@@ -17,5 +17,3 @@ const handleClick = () => {
 	icon.value = "d-arrow-right";
 };
 </script>
-
-<style lang="scss"></style>

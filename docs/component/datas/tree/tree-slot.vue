@@ -14,5 +14,3 @@ import { ref } from "vue";
 import treeData from "./treeData.js";
 const expandeds = ref([]);
 </script>
-
-<style lang="scss"></style>

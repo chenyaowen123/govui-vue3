@@ -317,5 +317,3 @@ const handleClearValidate = () => {
 	ruleFormRef.value.clearValidate();
 };
 </script>
-
-<style lang="scss"></style>

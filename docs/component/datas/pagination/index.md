@@ -6,7 +6,6 @@ import paginationDisabled from "./pagination-disabled.vue"
 import paginationBackground from "./pagination-background.vue"
 import paginationCustom from "./pagination-custom.vue"
 </script>
-
 # Pagination 分页
 
 

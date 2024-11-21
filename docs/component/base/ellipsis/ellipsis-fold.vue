@@ -10,5 +10,3 @@ const content = Array.from(
 	() => "文字是人类用符号记录表达信息以传之久远的方式和工具，",
 ).join("");
 </script>
-
-<style lang="scss"></style>

@@ -4,7 +4,6 @@ import loadingStyle from "./loading-style.vue"
 import loadingSlot from "./loading-slot.vue"
 </script>
 
-
 # Loading 标签
 
 区域加载状态。

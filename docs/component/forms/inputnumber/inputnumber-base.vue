@@ -9,5 +9,3 @@
 import { ref } from "vue";
 const value = ref(9999);
 </script>
-
-<style lang="scss"></style>

@@ -49,5 +49,3 @@ const timelines = [
 	},
 ];
 </script>
-
-<style lang="scss"></style>

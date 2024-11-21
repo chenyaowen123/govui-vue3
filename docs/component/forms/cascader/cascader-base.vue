@@ -13,5 +13,3 @@ import options from "./data.js";
 
 const values = ref(["zujian", "form", "input-number"]);
 </script>
-
-<style lang="scss"></style>

@@ -15,7 +15,6 @@ defineOptions({
 	name: "swiperPagination",
 });
 </script>
-
 <style lang="scss">
 @use "./style.scss";
 </style>

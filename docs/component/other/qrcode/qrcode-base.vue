@@ -9,5 +9,3 @@
 import { ref } from "vue";
 const url = ref("https://www.baidu.com/");
 </script>
-
-<style lang="scss"></style>

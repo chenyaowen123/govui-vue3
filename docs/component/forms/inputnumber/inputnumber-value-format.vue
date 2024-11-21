@@ -11,5 +11,3 @@
 import { ref } from "vue";
 const value = ref("$ 314,159");
 </script>
-
-<style lang="scss"></style>

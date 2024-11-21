@@ -32,5 +32,3 @@ const active = ref(1);
 const size = ref("default");
 const center = ref(true);
 </script>
-
-<style lang="scss"></style>

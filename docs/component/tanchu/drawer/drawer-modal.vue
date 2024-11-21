@@ -30,5 +30,3 @@ const visible = ref(false);
 const modal = ref(true);
 const modalClosable = ref(true);
 </script>
-
-<style lang="scss"></style>

@@ -27,8 +27,7 @@ import guohuiBase from "./guohui-base.vue"
 <script setup>
 import { ref } from "vue";
 const width = ref(200);
-</script>
-```
+</script>```
 
 
 ## Attributes

@@ -6,7 +6,7 @@
 				<span v-else>♡</span>
 			</template>
 		</gov-rate>
-		<template #console>{{ value }}</template>
+		<template #console>value:{{ value }}</template>
 	</demo-container>
 </template>
 
@@ -14,5 +14,3 @@
 import { ref } from "vue";
 const value = ref(4);
 </script>
-
-<style lang="scss"></style>

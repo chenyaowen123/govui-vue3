@@ -14,5 +14,3 @@ const value = ref([
 	},
 ]);
 </script>
-
-<style lang="scss"></style>

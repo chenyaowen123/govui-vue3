@@ -16,5 +16,3 @@ const hancleCloseAll = () => {
 	GovNotification.closeAll();
 };
 </script>
-
-<style lang="scss"></style>

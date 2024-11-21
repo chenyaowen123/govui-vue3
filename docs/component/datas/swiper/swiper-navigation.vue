@@ -15,7 +15,6 @@ defineOptions({
 	name: "swiperNavigation",
 });
 </script>
-
 <style lang="scss">
 @use "./style.scss";
 </style>

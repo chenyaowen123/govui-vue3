@@ -61,5 +61,3 @@ function simulateUpload(file, fileId, onProgress) {
 	});
 }
 </script>
-
-<style lang="scss"></style>

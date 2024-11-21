@@ -3,7 +3,6 @@ import qrcodeBase from "./qrcode-base.vue"
 import qrcodeSize from "./qrcode-size.vue"
 import qrcodeColor from "./qrcode-color.vue"
 </script>
-
 # Qrcode 二维码
 
 常用于链接/文字转换为二维码。

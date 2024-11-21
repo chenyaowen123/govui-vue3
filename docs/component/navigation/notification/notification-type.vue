@@ -28,5 +28,3 @@ const handleClick = (type) => {
 	});
 };
 </script>
-
-<style lang="scss"></style>

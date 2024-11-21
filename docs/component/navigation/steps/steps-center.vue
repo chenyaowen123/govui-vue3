@@ -17,5 +17,3 @@
 import { ref } from "vue";
 const active = ref(1);
 </script>
-
-<style lang="scss"></style>

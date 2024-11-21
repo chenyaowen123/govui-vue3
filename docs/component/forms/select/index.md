@@ -5,7 +5,6 @@ import selectDisabled from "./select-disabled.vue"
 import selectSize from "./select-size.vue"
 </script>
 
-
 # Select 选择器
 
 下拉选择。

@@ -3,7 +3,6 @@ import cardBase from "./card-base.vue"
 import cardNoHeader from "./card-no-header.vue"
 import cardBoxShadow from "./card-box-shadow.vue"
 </script>
-
 # Card 卡片
 
 常用于某个内容模块。

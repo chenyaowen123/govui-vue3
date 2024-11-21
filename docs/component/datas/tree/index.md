@@ -4,7 +4,6 @@ import treeIcon from "./tree-icon.vue"
 import treeSlot from "./tree-slot.vue"
 </script>
 
-
 # Tree 树结构
 
 用于树结构展开。

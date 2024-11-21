@@ -7,7 +7,6 @@ const show = ref(false);
 const show2 = ref(false);
 </script>
 
-
 ## 基础用法
 
 可以根据绑定一个布尔值，然后根据不同的事件切换显示隐藏，可以配合Button、Radio、Checkbox、Switch等一起配合使用。
@@ -42,8 +41,7 @@ const show2 = ref(false);
 <script setup>
 import { ref } from 'vue';
 const show = ref(false);
-</script>
-```
+</script>```
 
 
 ## 自定义弹出
@@ -90,8 +88,7 @@ const show = ref(false);
 <script setup>
 import { ref } from 'vue';
 const show2 = ref(false);
-</script>
-```
+</script>```
 
 
 

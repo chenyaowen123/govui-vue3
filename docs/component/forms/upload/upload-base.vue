@@ -6,7 +6,7 @@
 			buttonType="success"
 			append="上传文件最大 500KB"
 		/>
-		<template #console>{{ value }}</template>
+		<template #console>value：{{ value }}</template>
 	</demo-container>
 </template>
 
@@ -32,5 +32,3 @@ function simulateUpload(file, fileId, onProgress) {
 	});
 }
 </script>
-
-<style lang="scss"></style>

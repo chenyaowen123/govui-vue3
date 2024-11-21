@@ -26,7 +26,6 @@
 import { ref } from "vue";
 const value = ref(12);
 </script>
-
 <style lang="scss">
 .gov-demo-badge {
 	.gov-badge + .gov-badge {

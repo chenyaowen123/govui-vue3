@@ -9,7 +9,6 @@ const dialogVisible2 = ref(false);
 const dialogVisible3 = ref(false);
 const dialogVisible4 = ref(false);
 </script>
-
 ## 基本用法
 
 你可以在任意位置弹出一个 Dialog对话框。

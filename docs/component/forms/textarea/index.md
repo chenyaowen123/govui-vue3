@@ -6,7 +6,6 @@ import textareaClear from "./textarea-clear.vue"
 import textareaResize from "./textarea-resize.vue"
 </script>
 
-
 # Textarea 文本域
 
 增强的文本域。

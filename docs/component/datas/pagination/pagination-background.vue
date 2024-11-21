@@ -15,5 +15,3 @@ import { ref } from "vue";
 const currentPage = ref(1);
 const total = ref(100);
 </script>
-
-<style lang="scss"></style>

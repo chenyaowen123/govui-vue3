@@ -2,7 +2,6 @@
 import tabsBase from "./tabs-base.vue"
 import tabsCustom from "./tabs-custom.vue"
 </script>
-
 # Tabs 标签页
 
 选项卡切换组件。

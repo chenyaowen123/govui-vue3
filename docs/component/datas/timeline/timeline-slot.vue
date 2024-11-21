@@ -46,7 +46,6 @@
 </template>
 
 <script setup></script>
-
 <style lang="scss">
 .demo-timesline__card {
 	padding: 10px;

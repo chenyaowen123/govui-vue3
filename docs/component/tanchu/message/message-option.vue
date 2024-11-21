@@ -23,5 +23,3 @@ const handleClick = () => {
 		});
 };
 </script>
-
-<style lang="scss"></style>

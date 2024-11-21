@@ -16,7 +16,6 @@ defineOptions({
 	name: "swiperSpaceBetween",
 });
 </script>
-
 <style lang="scss">
 @use "./style.scss";
 </style>

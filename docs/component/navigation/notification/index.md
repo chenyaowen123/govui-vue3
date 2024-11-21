@@ -8,7 +8,6 @@ import GovNotificationNoclose from "./notification-noclose.vue"
 
 </script>
 
-
 # Notification 弹窗
 
 常用于消息提示。

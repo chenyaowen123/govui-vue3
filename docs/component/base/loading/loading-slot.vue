@@ -32,7 +32,6 @@ const content = Array.from(
 	() => "你也可以自定义一些漂亮的loading，有很多效果很不错。",
 ).join("");
 </script>
-
 <style lang="scss" scoped>
 @keyframes load {
 	0%,

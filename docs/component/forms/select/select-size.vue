@@ -46,5 +46,3 @@ const options = ref([
 
 const value = ref(null); // 默认选中桃子
 </script>
-
-<style lang="scss"></style>

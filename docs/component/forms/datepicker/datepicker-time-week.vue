@@ -14,5 +14,3 @@ import { ref } from "vue";
 
 const weekValue = ref([]);
 </script>
-
-<style lang="scss"></style>

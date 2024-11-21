@@ -25,5 +25,3 @@ const url = ref("https://www.baidu.com/");
 const bordered = ref(true);
 const size = ref(100);
 </script>
-
-<style lang="scss"></style>

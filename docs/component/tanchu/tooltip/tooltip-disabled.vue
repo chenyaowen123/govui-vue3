@@ -15,5 +15,3 @@ function handleToggle() {
 	disabled.value = !disabled.value;
 }
 </script>
-
-<style lang="scss"></style>

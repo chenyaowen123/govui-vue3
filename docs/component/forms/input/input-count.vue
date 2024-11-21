@@ -14,5 +14,3 @@ const value = ref("");
 const value2 = ref("");
 const value3 = ref("");
 </script>
-
-<style lang="scss"></style>

@@ -4,7 +4,6 @@ import timelineCustom from "./timeline-custom.vue"
 import timelineSlot from "./timeline-slot.vue"
 </script>
 
-
 # Timeline 时间线
 
 通常用于某个事物完成节点，进度流程等。

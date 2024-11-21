@@ -22,5 +22,3 @@ import { ref } from "vue";
 const size = ref(100);
 const description = ref("暂无内容");
 </script>
-
-<style lang="scss"></style>

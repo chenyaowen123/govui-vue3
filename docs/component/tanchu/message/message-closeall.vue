@@ -16,5 +16,3 @@ const hancleCloseAll = () => {
 	GovMessage.closeAll();
 };
 </script>
-
-<style lang="scss"></style>

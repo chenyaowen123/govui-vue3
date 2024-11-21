@@ -19,5 +19,3 @@ defineOptions({
 
 const dateValue = ref("2024-10-10");
 </script>
-
-<style lang="scss"></style>

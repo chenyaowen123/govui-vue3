@@ -96,8 +96,7 @@ const handleCancel= () =>{
 const handleConfirm= () =>{
 	alert('点击了confirm');
 }
-</script>
-```
+</script>```
 
 
 ## Attributes

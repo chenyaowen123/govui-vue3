@@ -13,5 +13,3 @@ const querySearch = (str) => {
 	return fruits.filter((el) => el.toLowerCase().includes(str.toLowerCase()));
 };
 </script>
-
-<style lang="scss"></style>

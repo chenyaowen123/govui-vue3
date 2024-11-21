@@ -17,5 +17,3 @@ import { ref } from "vue";
 
 const timeValue = ref("23:45");
 </script>
-
-<style lang="scss"></style>

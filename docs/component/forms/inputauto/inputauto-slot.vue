@@ -22,5 +22,3 @@ const querySearch = (str) => {
 	);
 };
 </script>
-
-<style lang="scss"></style>

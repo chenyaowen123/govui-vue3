@@ -5,7 +5,6 @@ import GovMessageType from "./message-type.vue"
 import GovMessageCloseall from "./message-closeall.vue"
 </script>
 
-
 # Message 弹窗
 
 常用于消息提示。

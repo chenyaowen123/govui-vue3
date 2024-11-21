@@ -22,5 +22,3 @@ const pageSizes = ref([20, 40, 60]);
 const currentPage = ref(1);
 const total = ref(100);
 </script>
-
-<style lang="scss"></style>

@@ -12,7 +12,6 @@
 import { ref } from "vue";
 const value = ref("打开");
 </script>
-
 <style lang="scss">
 .gov-demo-switch .box {
 	line-height: 30px;

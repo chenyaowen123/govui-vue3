@@ -4,7 +4,6 @@ import ellipsisFold from "./ellipsis-fold.vue"
 import ellipsisHidefoldup from "./ellipsis-hidefoldup.vue"
 </script>
 
-
 # Ellipsis 文字省略
 
 用于长文本/内容的省略。

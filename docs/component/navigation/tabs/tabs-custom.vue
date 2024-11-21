@@ -23,5 +23,3 @@
 import { ref } from "vue";
 const active = ref("tab1");
 </script>
-
-<style lang="scss"></style>

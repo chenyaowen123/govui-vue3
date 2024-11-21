@@ -15,7 +15,6 @@ defineOptions({
 	name: "swiperBase",
 });
 </script>
-
 <style lang="scss">
 @use "./style.scss";
 </style>

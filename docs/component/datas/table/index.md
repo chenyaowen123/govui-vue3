@@ -47,8 +47,7 @@ const handleSort = (state) => {
 		data.value = JSON.parse(JSON.stringify(row)); // 无排序时，应该恢复原有数据顺序
 	}
 };
-</script>
-```
+</script>```
 
 ```js [columns.js]
 export default [
@@ -162,8 +161,7 @@ const slecteIds = ref([]);
 const handleSelection = (slected) => {
 	slecteIds.value = slected;
 };
-</script>
-```
+</script>```
 
 
 
@@ -192,8 +190,7 @@ const tableData = ref(data);
 
 // 自定义索引为数据的 id
 // const customIndex = (row, index) => row.id;
-</script>
-```
+</script>```
 
 
 ## 设置行样式
@@ -222,7 +219,6 @@ const fun = (row, index) => {
 	return `examples-table-row__${index}`;
 };
 </script>
-
 <style lang="scss">
 /* 设置第三行样式 */
 .examples-table-row__2 {
@@ -262,8 +258,7 @@ import data from "./data.js"
 
 const tableColumns = ref(columns);
 const tableData = ref(data);
-</script>
-```
+</script>```
 
 ```js [columns.js]
 const length = 15;

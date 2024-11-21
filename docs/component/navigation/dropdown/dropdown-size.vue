@@ -50,7 +50,6 @@ const hideAfterClick = ref(false);
 const disabled = ref(false);
 const center = ref(true);
 </script>
-
 <style lang="scss">
 .gov-demo-dropdown .gov-dropdown-item {
 	min-width: 100px;

@@ -18,5 +18,3 @@
 import { ref } from "vue";
 const width = ref(200);
 </script>
-
-<style lang="scss"></style>

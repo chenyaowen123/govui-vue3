@@ -8,5 +8,3 @@
 import { ref } from "vue";
 const value = ref("填充内容");
 </script>
-
-<style lang="scss"></style>

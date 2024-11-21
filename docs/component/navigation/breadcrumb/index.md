@@ -4,7 +4,6 @@ import breadcrumbSize from "./breadcrumb-size.vue"
 import breadcrumbIcon from "./breadcrumb-icon.vue"
 </script>
 
-
 # Breadcrumb 面包屑
 
 页面面包屑导航。

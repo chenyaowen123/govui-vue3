@@ -16,7 +16,6 @@ defineOptions({
 	name: "swiperSlidesPerView",
 });
 </script>
-
 <style lang="scss">
 @use "./style.scss";
 </style>

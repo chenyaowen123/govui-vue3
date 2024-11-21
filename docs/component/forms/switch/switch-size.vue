@@ -10,5 +10,3 @@
 import { ref } from "vue";
 const value = ref(false);
 </script>
-
-<style lang="scss"></style>

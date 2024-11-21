@@ -4,7 +4,6 @@ import GovTooltipDisabled from "./tooltip-disabled.vue"
 import GovTooltipCustom from "./tooltip-custom.vue"
 </script>
 
-
 # tooltip 文字提示
 
 鼠标 hover 时的提示信息。

@@ -4,7 +4,6 @@ import collapseAccordion from "./collapse-accordion.vue"
 import collapseDisabled from "./collapse-disabled.vue"
 import collapseDisabledAll from "./collapse-disabled-all.vue"
 </script>
-
 # Collapse 折叠面板
 
 常用于收纳一组内容。

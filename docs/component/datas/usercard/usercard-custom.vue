@@ -20,7 +20,6 @@
 </template>
 
 <script setup></script>
-
 <style lang="scss">
 .gov-demo-usercard {
 	.custom-header {

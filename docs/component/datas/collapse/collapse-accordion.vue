@@ -22,5 +22,3 @@
 import { ref } from "vue";
 const value = ref(null);
 </script>
-
-<style lang="scss"></style>

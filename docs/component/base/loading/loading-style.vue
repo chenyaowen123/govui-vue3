@@ -23,5 +23,3 @@
 import { ref } from "vue";
 const loading = ref(true);
 </script>
-
-<style lang="scss"></style>

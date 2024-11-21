@@ -40,7 +40,6 @@ const handleQuickConfirm=()=>{
 }
 </script>
 
-
 ## 基础用法 Alert
 
 <demo-container class="demo-gov-form">
@@ -63,8 +62,7 @@ const handleAlert = ()=>{
 		console.log("点击了关闭！");
 	})
 }
-</script>
-```
+</script>```
 
 ## 确认消息 Confirm
 
@@ -94,8 +92,7 @@ const handleConfirm = ()=>{
 		action.value="你点击了取消/关闭！";
 	})
 }
-</script>
-```
+</script>```
 
 
 ## 简写方式
@@ -119,5 +116,4 @@ const handleQuickAlert=()=>{
 const handleQuickConfirm=()=>{
 	GovMessageBox.confirm('更加简洁的Confirm！');
 }
-</script>
-```
+</script>```

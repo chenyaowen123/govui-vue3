@@ -3,7 +3,6 @@ import emptyBase from "./empty-base.vue"
 import emptySize from "./empty-size.vue"
 import emptyCustom from "./empty-custom.vue"
 </script>
-
 # Empty 空状态
 
 ## 基础用法

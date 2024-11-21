@@ -28,5 +28,3 @@ const handleSelection = (slected) => {
 	slecteIds.value = slected;
 };
 </script>
-
-<style lang="scss"></style>

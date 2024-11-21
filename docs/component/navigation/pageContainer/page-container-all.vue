@@ -19,7 +19,6 @@
 </template>
 
 <script setup></script>
-
 <style lang="scss">
 .gov-demo-page-container {
 	background: url(./transparent.jpg);

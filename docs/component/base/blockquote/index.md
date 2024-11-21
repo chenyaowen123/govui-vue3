@@ -5,7 +5,6 @@ import blockquoteFontsize from "./blockquote-fontsize.vue"
 import blockquoteReverse from "./blockquote-reverse.vue"
 </script>
 
-
 # Blockquote 引用
 
 一段引用。

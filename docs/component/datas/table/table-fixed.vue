@@ -41,5 +41,3 @@ const row = Array.from({ length }, (_, index) => {
 const columns = ref(column);
 const data = ref(row);
 </script>
-
-<style lang="scss"></style>

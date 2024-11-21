@@ -16,5 +16,3 @@ import { ref } from "vue";
 
 const rangeValue = ref(["2024-10-01", "2024-10-05"]);
 </script>
-
-<style lang="scss"></style>

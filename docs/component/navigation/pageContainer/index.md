@@ -3,7 +3,6 @@ import pageContainerBase from "./page-container-base.vue"
 import pageContainerAll from "./page-container-all.vue"
 </script>
 
-
 # PageContainer 页面容器
 
 页面容器，可以快速创建一个统一风格的页面容器。

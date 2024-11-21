@@ -11,5 +11,3 @@ const handleClick = () => {
 	GovMessage("Hello Word！");
 };
 </script>
-
-<style lang="scss"></style>

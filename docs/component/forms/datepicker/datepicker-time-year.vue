@@ -13,5 +13,3 @@
 import { ref } from "vue";
 const yearValue = ref("2024");
 </script>
-
-<style lang="scss"></style>

@@ -32,5 +32,3 @@ const handleSort = (state) => {
 	}
 };
 </script>
-
-<style lang="scss"></style>

@@ -6,7 +6,6 @@ import radioBorder from "./radio-border.vue"
 import radioButton from "./radio-button.vue"
 </script>
 
-
 # Radio 单选
 
 在一组备选项中进行备选项

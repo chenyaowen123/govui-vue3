@@ -5,7 +5,6 @@ import tagSize from "./tag-size.vue"
 import tagIcon from "./tag-icon.vue"
 </script>
 
-
 # Tag 标签
 
 常用于标记。

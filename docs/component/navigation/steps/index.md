@@ -5,7 +5,6 @@ import stepsIcon from "./steps-icon.vue"
 import stepsCenter from "./steps-center.vue"
 import stepsCustom from "./steps-custom.vue"
 </script>
-
 # Steps 步骤条
 
 显示某系列步骤流程。
