@@ -1,9 +1,7 @@
 <template>
 	<demo-container class="gov-demo-inputnumber">
 		<gov-input-number v-model="value" />
-		<template #console>
-			{{ value }}
-		</template>
+		<template #console> value:{{ value }} </template>
 	</demo-container>
 </template>
 

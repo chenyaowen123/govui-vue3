@@ -8,7 +8,9 @@
 			:min="500"
 			:max="1000"
 		/>
-		<template #console> {{ value }} // 最大值1000；最小值500 </template>
+		<template #console>
+			value:{{ value }} // 最大值1000；最小值500
+		</template>
 	</demo-container>
 </template>
 
