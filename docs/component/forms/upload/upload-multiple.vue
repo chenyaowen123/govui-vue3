@@ -1,5 +1,5 @@
 <template>
-	<demo-container class="gov-demo-upload">
+	<demo-container>
 		<gov-upload
 			v-model="value"
 			multiple
@@ -12,33 +12,19 @@
 
 <script setup>
 import { ref } from "vue";
+// import uploadFile from "./js/axiosUpload.js";
+import uploadFile from "./js/simulateUpload.js";
 
 const value = ref([]);
 
-// 模拟上传请求
 function simulateUpload(file, fileId, onProgress) {
-	const uploader = new Promise((resolve, reject) => {
-		// 模拟上传进度
-		let total = 0;
-		const interval = setInterval(() => {
-			if (total < 100) {
-				total += 10;
-				onProgress(total);
-			} else {
-				clearInterval(interval);
-				// 模拟随机的成功或失败
-				const success = Math.random() > 0.5 ? true : false;
-				if (success) {
-					resolve({
-						url: "/logo.png",
-					});
-				} else {
-					reject(new Error("Upload failed"));
-				}
-			}
-		}, 500);
+	return uploadFile({ myfile: file }, onProgress).then((response) => {
+		// 返回 url 预览图片；返回 response 后端数据。
+		return {
+			url: "/logo.png",
+			response,
+		};
 	});
-	return uploader;
 }
 </script>
 

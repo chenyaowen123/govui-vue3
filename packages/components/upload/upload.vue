@@ -175,14 +175,20 @@ const modelValueComputed = computed({
 			if (!fileCopy.id) {
 				fileCopy.id = Symbol();
 			}
-			if (fileCopy.status === undefined) {
+			if (!fileCopy.status) {
 				fileCopy.status = "success";
 			}
-			if (fileCopy.type === undefined) {
+			if (!fileCopy.name) {
+				fileCopy.name = "";
+			}
+			if (!fileCopy.type) {
 				fileCopy.type =
 					fileCopy.url && fileCopy.url.match(/\.(jpeg|jpg|gif|png)$/)
 						? "img"
 						: "file";
+			}
+			if (!["img", "filex"].includes(fileCopy.type)) {
+				fileCopy.type = "file";
 			}
 			if (fileCopy.progress === undefined) {
 				fileCopy.progress = 0;
@@ -241,22 +247,25 @@ const handleFileChange = (event) => {
 	nextTick(() => {
 		newFiles.forEach((file) => {
 			if (props.uploadRequest) {
+				const _file = file._file; // 选中的file
 				props
-					.uploadRequest(file, file.id, (progress) => {
+					.uploadRequest(_file, file.id, (progress) => {
 						updateFileItem(file.id, (fileItem) => {
 							fileItem.progress = progress;
 						});
 					})
-					.then((response) => {
+					.then(({ url, response }) => {
 						updateFileItem(file.id, (fileItem) => {
 							fileItem.status = "success";
-							fileItem.url = response.url;
+							fileItem.url = url; // 预览地址
+							fileItem.response = response; // 后端数据
 							triggerChangeEvent();
 						});
 					})
-					.catch(() => {
+					.catch((response) => {
 						updateFileItem(file.id, (fileItem) => {
 							fileItem.status = "failed";
+							fileItem.response = response; // 后端数据
 							triggerChangeEvent();
 						});
 					});

@@ -1,5 +1,5 @@
 <template>
-	<demo-container class="gov-demo-upload">
+	<demo-container>
 		<gov-upload v-model="value" disabled tip="上传文件最大 500KB" />
 	</demo-container>
 </template>
