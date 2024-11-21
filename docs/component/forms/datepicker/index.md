@@ -287,17 +287,84 @@ const yearValue = ref("2024");
 
 *更多使用 `API` 请参考 [官方文档](https://vue3datepicker.com/)*
 
-参数 | 说明 | 类型 | 默认值
--- | -- | -- | --
-width | 日期选择器宽度，单位 `px` | number | 180
-mode | 选择器模式 | 'time' &#124; 'date' &#124; 'week' &#124; 'month' &#124; 'year' | 'date'
-[format](#format-占位符) | 日期展示格式 | string &#124; ((date: Date) => string) &#124; ((dates: Date[]) => string) | [DefaultFormat](#Defaultformat-value)
-showTime | 是否增加时间选择 | boolean | false
-showToday | 是否展示”今天“按钮 | boolean | false
-modelValue <Tag color="cyan">v-model</Tag> | 双向绑定值 | number &#124; string &#124; object &#124; array | null
-modelType | `v-model` 值类型，可选 `timestamp`: 时间戳、`format`: 字符串，`mode` 为 `week` 或 `year` 时，该配置不生效 | 'timestamp' &#124; 'format' | 'format'
+<table>
+  <thead>
+    <tr>
+      <th>属性名</th>
+      <th>说明</th>
+      <th>类型</th>
+      <th>可选值</th>
+      <th>默认值</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>modelValue</td>
+      <td>绑定的值，表示日期选择器的值</td>
+      <td>String/Number/Date</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>width</td>
+      <td>日期选择器的宽度</td>
+      <td>Number</td>
+      <td>—</td>
+      <td>null</td>
+    </tr>
+    <tr>
+      <td>mode</td>
+      <td>选择器模式</td>
+      <td>String</td>
+      <td>date, time, week, month, year</td>
+      <td>date</td>
+    </tr>
+    <tr>
+      <td>showTime</td>
+      <td>是否增加时间选择</td>
+      <td>Boolean</td>
+      <td>true, false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>showToday</td>
+      <td>是否展示“今天”按钮</td>
+      <td>Boolean</td>
+      <td>true, false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>modelType</td>
+      <td>v-model 值类型</td>
+      <td>String</td>
+      <td>format, value</td>
+      <td>format</td>
+    </tr>
+    <tr>
+      <td>size</td>
+      <td>日期选择器的尺寸</td>
+      <td>String</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>disabled</td>
+      <td>是否禁用日期选择器</td>
+      <td>Boolean</td>
+      <td>true, false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>triggerForm</td>
+      <td>是否触发表单验证</td>
+      <td>Boolean</td>
+      <td>true, false</td>
+      <td>true</td>
+    </tr>
+  </tbody>
+</table>
 
-## DefaultFormat-Value
+### DefaultFormat-Value
 
 类型 | 值
 --- | ---
@@ -308,7 +375,7 @@ Time picker | 'HH:mm'
 Time picker range | 'HH:mm - HH:mm'
 Week picker | 'ww-yyyy'
 
-## format-占位符
+### format-占位符
 
 标识 | 示例 | 描述
 -- | -- | --
@@ -326,3 +393,43 @@ s | 0-59 | 秒
 ss | 00-59 | 秒，两位数
 w | 1-52 | 第几周
 ww | 01-52 | 第几周，两位数
+
+
+## Events
+
+<table>
+  <thead>
+    <tr>
+      <th>事件名</th>
+      <th>说明</th>
+      <th>回调参数</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>update:modelValue</td>
+      <td>绑定值更新时触发</td>
+      <td>新的值</td>
+    </tr>
+    <tr>
+      <td>change</td>
+      <td>日期改变时触发</td>
+      <td>新的值</td>
+    </tr>
+    <tr>
+      <td>focus</td>
+      <td>日期选择器获得焦点时触发</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>blur</td>
+      <td>日期选择器失去焦点时触发</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>clear</td>
+      <td>清空按钮点击时触发</td>
+      <td>—</td>
+    </tr>
+  </tbody>
+</table>

@@ -162,20 +162,20 @@ const handleClear = () => {
 
 	// 尺寸
 	&--size-large {
-		:deep(.dp__input) {
+		.dp__input {
 			height: var(--gov-large-height);
 			font-size: var(--gov-large-font-size);
 		}
 	}
 	&,
 	&--size-default {
-		:deep(.dp__input) {
+		.dp__input {
 			height: var(--gov-default-height);
 			font-size: var(--gov-default-font-size);
 		}
 	}
 	&--size-small {
-		:deep(.dp__input) {
+		.dp__input {
 			height: var(--gov-small-height);
 			font-size: var(--gov-small-font-size);
 		}
