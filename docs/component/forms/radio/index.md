@@ -23,7 +23,7 @@ import radioButton from "./radio-button.vue"
 
 ## 单选按钮组
 
-使用 ```RadioGroup``` 可以统一设置 ```disabled``` 、```size```、```v-model``` 等
+使用 ```RadioGroup``` 可以统一设置 ```disabled``` 、```size```、```v-model``` 等。
 
 <radioGroup/>
 
@@ -127,6 +127,13 @@ import radioButton from "./radio-button.vue"
       <td>—</td>
       <td>—</td>
     </tr>
+	<tr>
+      <td>triggerForm</td>
+      <td>是否触发表单验证</td>
+      <td>Boolean</td>
+      <td>true, false</td>
+      <td>true</td>
+    </tr>
   </tbody>
 </table>
 
@@ -137,14 +144,24 @@ import radioButton from "./radio-button.vue"
     <tr>
       <th>事件名</th>
       <th>说明</th>
-      <th>类型</th>
+      <th>回调参数</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>change</td>
       <td>绑定值变化时触发的事件</td>
-      <td>Function</td>
+      <td>value</td>
+    </tr>
+	<tr>
+      <td>blur</td>
+      <td>失去焦点时触发</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>focus</td>
+      <td>获得焦点时触发</td>
+      <td>—</td>
     </tr>
   </tbody>
 </table>
@@ -161,7 +178,7 @@ import radioButton from "./radio-button.vue"
   <tbody>
     <tr>
       <td>default</td>
-      <td>自定义默认内容</td>
+      <td>自定义标签内容，可以放置任何自定义的内容，例如文本或 HTML 结构。</td>
     </tr>
   </tbody>
 </table>
@@ -209,6 +226,13 @@ import radioButton from "./radio-button.vue"
       <td>large / default / small</td>
       <td>—</td>
     </tr>
+	<tr>
+      <td>triggerForm</td>
+      <td>是否触发表单验证</td>
+      <td>Boolean</td>
+      <td>true, false</td>
+      <td>true</td>
+    </tr>
   </tbody>
 </table>
 
@@ -219,52 +243,42 @@ import radioButton from "./radio-button.vue"
     <tr>
       <th>事件名</th>
       <th>说明</th>
-      <th>类型</th>
+      <th>回调参数</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>change</td>
       <td>绑定值变化时触发的事件</td>
-      <td>Function</td>
+      <td>value</td>
+    </tr>
+	<tr>
+      <td>blur</td>
+      <td>失去焦点时触发</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>focus</td>
+      <td>获得焦点时触发</td>
+      <td>—</td>
     </tr>
   </tbody>
 </table>
 
 
-## Radio Attributes
+## Radio-group Slots
 
 <table>
   <thead>
     <tr>
-      <th>属性</th>
+      <th>插槽名</th>
       <th>说明</th>
-      <th>类型</th>
-      <th>可选值</th>
-      <th>默认值</th>
     </tr>
   </thead>
   <tbody>
-	<tr>
-      <td>value</td>
-      <td>单选按钮的值</td>
-      <td>string / number / boolean</td>
-      <td>—</td>
-      <td>—</td>
-    </tr>
     <tr>
-      <td>disabled</td>
-      <td>是否禁用</td>
-      <td>boolean</td>
-      <td>—</td>
-      <td>false</td>
-    </tr>
-    <tr>
-      <td>name</td>
-      <td>原生 name 属性</td>
-      <td>string</td>
-      <td>—</td>
-      <td>—</td>
+      <td>default</td>
+      <td>用于放置复选框 GovRadio 组件实例。</td>
     </tr>
   </tbody>
 </table>
