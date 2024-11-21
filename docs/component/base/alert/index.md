@@ -1,3 +1,11 @@
+<script setup>
+import alertBase from "./alert-base.vue"
+import alertPlain from "./alert-plain.vue"
+import alertDescription from "./alert-description.vue"
+import alertIcon from "./alert-icon.vue"
+import alertSlot from "./alert-slot.vue"
+</script>
+
 # Alert 警告
 
 用于页面中展示重要的提示信息。
@@ -7,85 +15,47 @@
 
 默认为朴素风格。
 
-<demo-container class="demo-gov-alert">
-<gov-alert title="消息提示的文案"/>
-<gov-alert title="成功提示的文案" type="success"/>
-<gov-alert title="警告提示的文案" type="warning"/>
-<gov-alert title="危险提示的文案" type="danger"/>
-</demo-container>
+<alertBase />
 
-```md
-<gov-alert title="消息提示的文案"/>
-<gov-alert title="成功提示的文案" type="success"/>
-<gov-alert title="警告提示的文案" type="warning"/>
-<gov-alert title="危险提示的文案" type="danger"/>
-```
-
+::: details 查看代码
+<<< ./alert-base.vue{vue:line-numbers}
+:::
 
 
 ## 朴素风格
 
-<demo-container class="demo-gov-alert">
-<gov-alert plain title="消息提示的文案"/>
-<gov-alert plain title="成功提示的文案" type="success"/>
-<gov-alert plain title="警告提示的文案" type="warning"/>
-<gov-alert plain title="危险提示的文案" type="danger"/>
-</demo-container>
+<alertPlain />
 
-```md
-<gov-alert plain title="消息提示的文案"/>
-<gov-alert plain title="成功提示的文案" type="success"/>
-<gov-alert plain title="警告提示的文案" type="warning"/>
-<gov-alert plain title="危险提示的文案" type="danger"/>
-```
-
+::: details 查看代码
+<<< ./alert-plain.vue{vue:line-numbers}
+:::
 
 
 ## 辅助性文字介绍
 
-<demo-container class="demo-gov-alert">
-<gov-alert plain title="秦风·蒹葭" description="蒹葭苍苍，白露为霜。所谓伊人，在水一方。"/>
-<gov-alert plain type="success" title="秦风·蒹葭" description="蒹葭苍苍，白露为霜。所谓伊人，在水一方。"/>
-</demo-container>
+<alertDescription />
 
-```md
-<gov-alert plain title="秦风·蒹葭" description="蒹葭苍苍，白露为霜。所谓伊人，在水一方。"/>
-<gov-alert plain type="success" plain title="秦风·蒹葭" description="蒹葭苍苍，白露为霜。所谓伊人，在水一方。"/>
-```
+::: details 查看代码
+<<< ./alert-description.vue{vue:line-numbers}
+:::
+
 
 ## 带有Icon
 
-<demo-container class="demo-gov-alert">
-<gov-alert plain showIcon title="消息提示的文案"/>
-<gov-alert plain showIcon title="成功提示的文案" type="success"/>
-<gov-alert plain showIcon title="警告提示的文案" type="warning"/>
-<gov-alert plain showIcon title="危险提示的文案" type="danger"/>
-<gov-alert showIcon title="秦风·蒹葭" description="蒹葭苍苍，白露为霜。所谓伊人，在水一方。"/>
-</demo-container>
+<alertIcon />
 
-```md
-<gov-alert plain showIcon title="消息提示的文案"/>
-<gov-alert plain showIcon title="成功提示的文案" type="success"/>
-<gov-alert plain showIcon title="警告提示的文案" type="warning"/>
-<gov-alert plain showIcon title="危险提示的文案" type="danger"/>
-<!-- 当设置 description 或者默认插槽时，Icon自动变大 -->
-<gov-alert showIcon title="秦风·蒹葭" description="蒹葭苍苍，白露为霜。所谓伊人，在水一方。"/>
-```
+::: details 查看代码
+<<< ./alert-icon.vue{vue:line-numbers}
+:::
+
 
 ## 自定义内容
 
 你可以在默认插槽内自定义html。
 
-<demo-container class="demo-gov-alert">
-<gov-alert showIcon title="提示">
-蒹葭<sub><i>(一种植物)</i></sub>苍苍，白露为霜。所谓伊人，在水一方。<br/>
-溯洄从之,道阻且长;溯游从之,宛在水中央。
-</gov-alert>
-</demo-container>
+<alertSlot />
 
-```md
-<gov-alert showIcon title="提示">
-	蒹葭<sub><i>(一种植物)</i></sub>苍苍，白露为霜。所谓伊人，在水一方。<br/>
-	溯洄从之,道阻且长;溯游从之,宛在水中央。
-</gov-alert>
-```
+::: details 查看代码
+<<< ./alert-slot.vue{vue:line-numbers}
+:::
+

@@ -13,6 +13,17 @@
 	}
 }
 
+// alert
+.demo-gov-alert{
+	.gov-alert{
+		margin-top: 20px;
+		&:first-child{
+			margin-top: 0;
+		}
+	}
+}
+
+
 // Grid栅格化
 .demo-gov-grid-row {
 	.gov-grid-row {
@@ -113,15 +124,6 @@
 	}
 }
 
-// alert
-.demo-gov-alert{
-	.gov-alert{
-		margin-top: 20px;
-		&:first-child{
-			margin-top: 0;
-		}
-	}
-}
 
 
 // datepicker
