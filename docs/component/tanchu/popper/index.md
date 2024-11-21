@@ -41,7 +41,9 @@ const show2 = ref(false);
 <script setup>
 import { ref } from 'vue';
 const show = ref(false);
-</script>```
+</script>
+
+```
 
 
 ## 自定义弹出
@@ -88,7 +90,9 @@ const show = ref(false);
 <script setup>
 import { ref } from 'vue';
 const show2 = ref(false);
-</script>```
+</script>
+
+```
 
 
 

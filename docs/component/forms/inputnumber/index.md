@@ -32,7 +32,9 @@ import inputNumberInput from "./inputnumber-input.vue"
 <script setup>
 import { ref } from "vue";
 const value = ref(9999);
-</script>```
+</script>
+
+```
 
 
 ## 控制按钮
@@ -50,7 +52,9 @@ const value = ref(9999);
 <script setup>
 import { ref } from "vue";
 const value = ref();
-</script>```
+</script>
+
+```
 
 ## 禁用状态
 
@@ -67,7 +71,9 @@ const value = ref();
 <script setup>
 import { ref } from "vue";
 const value = ref();
-</script>```
+</script>
+
+```
 
 
 
@@ -93,7 +99,9 @@ const value = ref();
 <script setup>
 import { ref } from "vue";
 const value = ref();
-</script>```
+</script>
+
+```
 
 
 
@@ -114,7 +122,9 @@ const value = ref();
 <script setup>
 import { ref } from "vue";
 const value = ref("$ 314,159"); // 双向绑定都是格式化后的值
-</script>```
+</script>
+
+```
 
 
 
@@ -140,7 +150,9 @@ const value = ref("$ 314,159"); // 双向绑定都是格式化后的值
 <script setup>
 import { ref } from "vue";
 const value = ref(9999);
-</script>```
+</script>
+
+```
 
 
 

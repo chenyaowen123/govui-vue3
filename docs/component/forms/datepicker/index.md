@@ -38,7 +38,9 @@ import datepickerTimeYear from "./datepicker-time-year.vue"
 <script setup>
 import { ref } from "vue";
 const dateValue = ref("2024-10-01");
-</script>```
+</script>
+
+```
 
 ## 设置尺寸
 
@@ -54,7 +56,9 @@ const dateValue = ref("2024-10-01");
 <script setup>
 import { ref } from "vue";
 const dateValue = ref("2024-10-01");
-</script>```
+</script>
+
+```
 
 
 ## 禁用过去/未来
@@ -75,7 +79,9 @@ const dateValue = ref("2024-10-01");
 <script setup>
 import { ref } from "vue";
 const dateValue = ref("2024-10-01");
-</script>```
+</script>
+
+```
 
 ## 日期时间选择器
 
@@ -95,7 +101,9 @@ const dateValue = ref("2024-10-01");
 <script setup>
 import { ref } from "vue";
 const dateValue = ref("2024-10-10 12:00:35");
-</script>```
+</script>
+
+```
 
 
 ## 日期范围选择器
@@ -115,7 +123,9 @@ const dateValue = ref("2024-10-10 12:00:35");
 <script setup>
 import { ref } from "vue";
 const rangeValue = ref(["2024-10-01", "2024-10-05"]);
-</script>```
+</script>
+
+```
 
 ## 双面板日期范围
 
@@ -135,7 +145,9 @@ const rangeValue = ref(["2024-10-01", "2024-10-05"]);
 <script setup>
 import { ref } from "vue";
 const rangeValue = ref(["2024-10-01", "2024-10-05"]);
-</script>```
+</script>
+
+```
 
 
 ## 时分选择
@@ -156,7 +168,9 @@ const rangeValue = ref(["2024-10-01", "2024-10-05"]);
 <script setup>
 import { ref } from "vue";
 const timeValue = ref("23:45");
-</script>```
+</script>
+
+```
 
 ## 时分秒选择
 
@@ -177,7 +191,9 @@ const timeValue = ref("23:45");
 <script setup>
 import { ref } from "vue";
 const timeValue = ref("23:45:20");
-</script>```
+</script>
+
+```
 
 
 
@@ -201,7 +217,9 @@ const timeValue = ref("23:45:20");
 <script setup>
 import { ref } from "vue";
 const timeValue = ref(["16:45:12", "23:45:20"]);
-</script>```
+</script>
+
+```
 
 ## 周选择器
 
@@ -220,7 +238,9 @@ const timeValue = ref(["16:45:12", "23:45:20"]);
 <script setup>
 import { ref } from "vue";
 const weekValue = ref([]);
-</script>```
+</script>
+
+```
 
 
 
@@ -241,7 +261,9 @@ const weekValue = ref([]);
 <script setup>
 import { ref } from "vue";
 const monthValue = ref("2024-10");
-</script>```
+</script>
+
+```
 
 
 ## 年选择器
@@ -261,7 +283,9 @@ const monthValue = ref("2024-10");
 <script setup>
 import { ref } from "vue";
 const yearValue = ref("2024");
-</script>```
+</script>
+
+```
 
 
 

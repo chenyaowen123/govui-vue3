@@ -6,7 +6,7 @@
 
 <script setup>
 import {ref} from "vue"
-import {GovMessageBox} from "../../packages/index.js";
+import {GovMessageBox} from "../../../../packages/index.js";
 
 const handleAlert = ()=>{
 	GovMessageBox.alert({
@@ -40,6 +40,7 @@ const handleQuickConfirm=()=>{
 }
 </script>
 
+
 ## 基础用法 Alert
 
 <demo-container class="demo-gov-form">
@@ -47,7 +48,6 @@ const handleQuickConfirm=()=>{
 </demo-container>
 
 ```md
-
 <gov-button @click="handleAlert">点击弹出Alert</gov-button>
 
 <script setup>
@@ -62,7 +62,8 @@ const handleAlert = ()=>{
 		console.log("点击了关闭！");
 	})
 }
-</script>```
+</script>
+```
 
 ## 确认消息 Confirm
 
@@ -92,7 +93,8 @@ const handleConfirm = ()=>{
 		action.value="你点击了取消/关闭！";
 	})
 }
-</script>```
+</script>
+```
 
 
 ## 简写方式
@@ -116,4 +118,5 @@ const handleQuickAlert=()=>{
 const handleQuickConfirm=()=>{
 	GovMessageBox.confirm('更加简洁的Confirm！');
 }
-</script>```
+</script>
+```

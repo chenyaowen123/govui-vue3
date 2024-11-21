@@ -1,23 +1,11 @@
 <template>
 	<demo-container>
-		<gov-blockquote>
-			{{ content }}
-		</gov-blockquote>
-		<gov-blockquote type="primary">
-			{{ content }}
-		</gov-blockquote>
-		<gov-blockquote type="success">
-			{{ content }}
-		</gov-blockquote>
-		<gov-blockquote type="info">
-			{{ content }}
-		</gov-blockquote>
-		<gov-blockquote type="warning">
-			{{ content }}
-		</gov-blockquote>
-		<gov-blockquote type="danger">
-			{{ content }}
-		</gov-blockquote>
+		<gov-blockquote> {{ content }} </gov-blockquote>
+		<gov-blockquote type="primary">{{ content }} </gov-blockquote>
+		<gov-blockquote type="success">{{ content }} </gov-blockquote>
+		<gov-blockquote type="info">{{ content }} </gov-blockquote>
+		<gov-blockquote type="warning">{{ content }} </gov-blockquote>
+		<gov-blockquote type="danger">{{ content }} </gov-blockquote>
 	</demo-container>
 </template>
 
