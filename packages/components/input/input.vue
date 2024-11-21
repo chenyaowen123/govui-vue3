@@ -87,54 +87,24 @@ const props = defineProps({
 		default: null,
 	},
 	size: String,
-	addonBefore: {
-		type: [String, Number],
-		default: undefined,
-	},
-	addonAfter: {
-		type: [String, Number],
-		default: undefined,
-	},
-	prefix: {
-		type: [String, Number],
-		default: undefined,
-	},
-	suffix: {
-		type: [String, Number],
-		default: undefined,
-	},
+	addonBefore: [String, Number],
+	addonAfter: [String, Number],
+	prefix: [String, Number],
+	suffix: [String, Number],
 	clearable: {
 		type: Boolean,
 		default: true,
 	},
-	password: {
-		type: Boolean,
-		default: false,
-	},
-	disabled: {
-		type: Boolean,
-		default: false,
-	},
-	readonly: {
-		type: Boolean,
-		default: false,
-	},
+	password: Boolean,
+	disabled: Boolean,
+	readonly: Boolean,
 	placeholder: {
 		type: String,
 		default: "请输入",
 	},
-	maxlength: {
-		type: Number,
-		default: undefined,
-	},
-	count: {
-		type: Boolean,
-		default: false,
-	},
-	modelValue: {
-		type: [String, Number],
-		default: undefined,
-	},
+	maxlength: Number,
+	count: Boolean,
+	modelValue: [String, Number],
 	// 事件是否触发 formItem 表单验证，这在嵌套控件时候很有用
 	triggerForm: {
 		type: Boolean,
