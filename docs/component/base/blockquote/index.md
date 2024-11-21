@@ -8,15 +8,29 @@ import blockquoteReverse from "./blockquote-reverse.vue"
 
 # Blockquote 引用
 
-设置一段引用。
+一段引用。
 
 ## 基本使用
 
+设置 ```type``` 不同类型的引用。
+
 <blockquoteBase />
+
+::: details 查看代码
+<<< ./blockquote-base.vue{vue:line-numbers}
+:::
+
 
 ## 嵌套使用
 
+可以互相嵌套使用。
+
 <blockquoteQiantao />
+
+::: details 查看代码
+<<< ./blockquote-qiantao.vue{vue:line-numbers}
+:::
+
 
 ## 自定义
 
@@ -24,8 +38,16 @@ import blockquoteReverse from "./blockquote-reverse.vue"
 
 <blockquoteFontsize />
 
+::: details 查看代码
+<<< ./blockquote-fontsize.vue{vue:line-numbers}
+:::
+
 ## 翻转
 
 ```reverse``` 设置是否翻转，默认不翻转。
 
 <blockquoteReverse />
+
+::: details 查看代码
+<<< ./blockquote-reverse.vue{vue:line-numbers}
+:::
