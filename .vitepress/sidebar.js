@@ -198,7 +198,7 @@ const componentSidebar = [
 					},
 					{
 						text: "Card 卡片",
-						link: "/component/Card/",
+						link: "/component/card/",
 					},
 					{
 						text: "Collapse 折叠面板",
