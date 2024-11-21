@@ -26,3 +26,24 @@ import iconList from "./icon-list.vue"
 ::: details 查看代码
 <<< ./icon-list.vue#snippet{vue:line-numbers}
 :::
+
+
+
+## Attributes
+
+<table>
+  <thead>
+    <tr>
+      <th>属性名</th>
+      <th>说明</th>
+      <th>类型</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>name</td>
+      <td>icon 名称标识</td>
+      <td>String</td>
+    </tr>
+  </tbody>
+</table>
