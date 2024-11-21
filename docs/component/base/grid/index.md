@@ -1,205 +1,73 @@
+<script setup>
+import gridBase from "./grid-base.vue"
+import gridSpan from "./grid-span.vue"
+import gridHunhe from "./grid-hunhe.vue"
+import gridOffset from "./grid-offset.vue"
+import gridFlex from "./grid-flex.vue"
+</script>
+
 # Grid 栅格化
 
 通过基础的 24 分栏，迅速简便地创建布局。
 
 ## 基础布局
+
 通过 ```row``` 和 ```col``` 组件，并通过 ```col``` 组件的 ```span``` 属性我们就可以自由地组合布局。
 
-<demo-container class="demo-gov-grid-row">
-	<gov-row>
-		<gov-col :span="24"></gov-col>
-	</gov-row>
-	<gov-row>
-		<gov-col :span="12"></gov-col>
-		<gov-col :span="12"></gov-col>
-	</gov-row>
-	<gov-row>
-		<gov-col :span="8"></gov-col>
-		<gov-col :span="8"></gov-col>
-		<gov-col :span="8"></gov-col>
-	</gov-row>
-	<gov-row>
-		<gov-col :span="6"></gov-col>
-		<gov-col :span="6"></gov-col>
-		<gov-col :span="6"></gov-col>
-		<gov-col :span="6"></gov-col>
-	</gov-row>
-</demo-container>
+<gridBase/>
 
-```md
-<gov-row>
-	<gov-col :span="24"></gov-col>
-</gov-row>
-<gov-row>
-	<gov-col :span="12"></gov-col>
-	<gov-col :span="12"></gov-col>
-</gov-row>
-<gov-row>
-	<gov-col :span="8"></gov-col>
-	<gov-col :span="8"></gov-col>
-	<gov-col :span="8"></gov-col>
-</gov-row>
-<gov-row>
-	<gov-col :span="6"></gov-col>
-	<gov-col :span="6"></gov-col>
-	<gov-col :span="6"></gov-col>
-	<gov-col :span="6"></gov-col>
-</gov-row>
-```
-
+::: details 查看代码
+<<< ./grid-base.vue#snippet{vue:line-numbers}
+:::
 
 
 ## 分栏间隔
-Row 组件 提供 ```gutter``` 属性来指定每一栏之间的间隔，默认间隔为 0。
-<demo-container class="demo-gov-grid-row">
-	<gov-row :gutter="20">
-		<gov-col :span="6"></gov-col>
-		<gov-col :span="6"></gov-col>
-		<gov-col :span="6"></gov-col>
-		<gov-col :span="6"></gov-col>
-	</gov-row>
-</demo-container>
 
-```md
-<gov-row :gutter="20">
-	<gov-col :span="6"></gov-col>
-	<gov-col :span="6"></gov-col>
-	<gov-col :span="6"></gov-col>
-	<gov-col :span="6"></gov-col>
-</gov-row>
-```
+Row 组件 提供 ```gutter``` 属性来指定每一栏之间的间隔，默认间隔为 0。
+
+<gridSpan/>
+
+::: details 查看代码
+<<< ./grid-span.vue#snippet{vue:line-numbers}
+:::
+
 
 ## 混合布局
-<demo-container class="demo-gov-grid-row">
-	<gov-row :gutter="20">
-		<gov-col :span="16"></gov-col>
-		<gov-col :span="8"></gov-col>
-	</gov-row>
-	<gov-row :gutter="20">
-		<gov-col :span="8"></gov-col>
-		<gov-col :span="8"></gov-col>
-		<gov-col :span="4"></gov-col>
-		<gov-col :span="4"></gov-col>
-	</gov-row>
-	<gov-row :gutter="20">
-		<gov-col :span="4"></gov-col>
-		<gov-col :span="16"></gov-col>
-		<gov-col :span="4"></gov-col>
-	</gov-row>
-</demo-container>
 
-```md
-<gov-row :gutter="20">
-  <gov-col :span="16"></gov-col>
-  <gov-col :span="8"></gov-col>
-</gov-row>
-<gov-row :gutter="20">
-  <gov-col :span="8"></gov-col>
-  <gov-col :span="8"></gov-col>
-  <gov-col :span="4"></gov-col>
-  <gov-col :span="4"></gov-col>
-</gov-row>
-<gov-row :gutter="20">
-  <gov-col :span="4"></gov-col>
-  <gov-col :span="16"></gov-col>
-  <gov-col :span="4"></gov-col>
-</gov-row>
-```
+<gridHunhe />
+
+::: details 查看代码
+<<< ./grid-hunhe.vue#snippet{vue:line-numbers}
+:::
 
 
 ## 分栏偏移
-支持偏移指定的栏数。
-<demo-container class="demo-gov-grid-row">
-	<gov-row :gutter="20">
-		<gov-col :span="6"></gov-col>
-		<gov-col :span="6" :offset="6"></gov-col>
-	</gov-row>
-	<gov-row :gutter="20">
-		<gov-col :span="6" :offset="6"></gov-col>
-		<gov-col :span="6" :offset="6"></gov-col>
-	</gov-row>
-	<gov-row :gutter="20">
-		<gov-col :span="12" :offset="6"></gov-col>
-	</gov-row>
-</demo-container>
 
-```md
-<gov-row :gutter="20">
-	<gov-col :span="6"></gov-col>
-	<gov-col :span="6" :offset="6"></gov-col>
-</gov-row>
-<gov-row :gutter="20">
-	<gov-col :span="6" :offset="6"></gov-col>
-	<gov-col :span="6" :offset="6"></gov-col>
-</gov-row>
-<gov-row :gutter="20">
-	<gov-col :span="12" :offset="6"></gov-col>
-</gov-row>
-```
+支持偏移指定的栏数。
+
+<gridOffset />
+
+::: details 查看代码
+<<< ./grid-offset.vue#snippet{vue:line-numbers}
+:::
+
+
+
 
 ## 对齐方式
+
 当设置```align```属性和 ```justify``` 属性，会自动开启 flex 布局模式。
 
 ```justify``` 属性可设置为 ```start, center, end, space-between, space-around```
 
 ```align```属性可设置为```flex-start, center, flex-end, stretch```。
 
-<demo-container class="demo-gov-grid-row">
-	<gov-row>
-		<gov-col :span="6"></gov-col>
-		<gov-col :span="6"></gov-col>
-		<gov-col :span="6"></gov-col>
-	</gov-row>
-	<gov-row justify="center">
-		<gov-col :span="6"></gov-col>
-		<gov-col :span="6"></gov-col>
-		<gov-col :span="6"></gov-col>
-	</gov-row>
-	<gov-row justify="end">
-		<gov-col :span="6"></gov-col>
-		<gov-col :span="6"></gov-col>
-		<gov-col :span="6"></gov-col>
-	</gov-row>
-	<gov-row justify="space-between">
-		<gov-col :span="6"></gov-col>
-		<gov-col :span="6"></gov-col>
-		<gov-col :span="6"></gov-col>
-	</gov-row>
-	<gov-row justify="space-around">
-		<gov-col :span="6"></gov-col>
-		<gov-col :span="6"></gov-col>
-		<gov-col :span="6"></gov-col>
-	</gov-row>
-</demo-container>
 
-```md
-<gov-row>
-	<gov-col :span="6"></gov-col>
-	<gov-col :span="6"></gov-col>
-	<gov-col :span="6"></gov-col>
-</gov-row>
-<gov-row justify="center">
-	<gov-col :span="6"></gov-col>
-	<gov-col :span="6"></gov-col>
-	<gov-col :span="6"></gov-col>
-</gov-row>
-<gov-row justify="end">
-	<gov-col :span="6"></gov-col>
-	<gov-col :span="6"></gov-col>
-	<gov-col :span="6"></gov-col>
-</gov-row>
-<gov-row justify="space-between">
-	<gov-col :span="6"></gov-col>
-	<gov-col :span="6"></gov-col>
-	<gov-col :span="6"></gov-col>
-</gov-row>
-<gov-row justify="space-around">
-	<gov-col :span="6"></gov-col>
-	<gov-col :span="6"></gov-col>
-	<gov-col :span="6"></gov-col>
-</gov-row>
-```
+<gridFlex />
 
+::: details 查看代码
+<<< ./grid-flex.vue#snippet{vue:line-numbers}
+:::
 
 
 
