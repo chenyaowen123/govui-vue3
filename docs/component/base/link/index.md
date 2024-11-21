@@ -1,73 +1,121 @@
+<script setup>
+import linkBase from "./link-base.vue"
+import linkDisabled from "./link-disabled.vue"
+import linkUnderline from "./link-underline.vue"
+import linkIcon from "./link-icon.vue"
+</script>
+
 # Link 文字链接
 
 规范的超链接
 
 ## 基础用法
 
-<demo-container class="demo-gov-link">
-	<gov-link href="http://govui.org" target="_blank">默认链接</gov-link>
-	<gov-link type="primary">主要链接</gov-link>
-	<gov-link type="success">成功链接</gov-link>
-	<gov-link type="warning">警告链接</gov-link>
-	<gov-link type="danger">危险链接</gov-link>
-	<gov-link type="info">信息链接</gov-link>
-</demo-container>
+<linkBase />
 
-```md
-<gov-link href="http://govui.org" target="_blank">默认链接</gov-link>
-<gov-link type="primary">主要链接</gov-link>
-<gov-link type="success">成功链接</gov-link>
-<gov-link type="warning">警告链接</gov-link>
-<gov-link type="danger">危险链接</gov-link>
-<gov-link type="info">信息链接</gov-link>
-```
+::: details 查看代码
+<<< ./link-base.vue#snippet{vue:line-numbers}
+:::
 
 ## 禁用状态
 
 文字链接不可用状态。
 
-<demo-container class="demo-gov-link">
-	<gov-link disabled>默认链接</gov-link>
-	<gov-link type="primary" disabled>主要链接</gov-link>
-	<gov-link type="success" disabled>成功链接</gov-link>
-	<gov-link type="warning" disabled>警告链接</gov-link>
-	<gov-link type="danger" disabled>危险链接</gov-link>
-	<gov-link type="info" disabled>信息链接</gov-link>
-</demo-container>
+<linkDisabled />
 
-```md
-<gov-link disabled>默认链接</gov-link>
-<gov-link type="primary" disabled>主要链接</gov-link>
-<gov-link type="success" disabled>成功链接</gov-link>
-<gov-link type="warning" disabled>警告链接</gov-link>
-<gov-link type="danger" disabled>危险链接</gov-link>
-<gov-link type="info" disabled>信息链接</gov-link>
-```
+::: details 查看代码
+<<< ./link-disabled.vue#snippet{vue:line-numbers}
+:::
+
 
 ## 下划线
 
 文字链接下划线。
 
-<demo-container class="demo-gov-link">
-	<gov-link :underline="false">没有下划线</gov-link>
-	<gov-link type="primary">默认带下划线</gov-link>
-</demo-container>
+<linkUnderline />
 
-```md
-<gov-link :underline="false">没有下划线</gov-link>
-<gov-link>默认带下划线</gov-link>
-```
+::: details 查看代码
+<<< ./link-underline.vue#snippet{vue:line-numbers}
+:::
+
 
 ## 带图标
 
 带图标的文字链接可增强辨识度。
 
-<demo-container class="demo-gov-link">
-	<gov-link icon="edit">编辑</gov-link>
-	<gov-link icon="delete">删除</gov-link>
-</demo-container>
+<linkIcon />
 
-```md
-<gov-link icon="edit">编辑</gov-link>
-<gov-link icon="delete">删除</gov-link>
-```
+::: details 查看代码
+<<< ./link-icon.vue#snippet{vue:line-numbers}
+:::
+
+## Attributes
+
+<table>
+  <thead>
+    <tr>
+      <th>属性名</th>
+      <th>说明</th>
+      <th>类型</th>
+      <th>可选值</th>
+      <th>默认值</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>type</td>
+      <td>链接类型</td>
+      <td>String</td>
+      <td>default, primary, success, info, warning, danger</td>
+      <td>default</td>
+    </tr>
+    <tr>
+      <td>underline</td>
+      <td>是否显示下划线</td>
+      <td>Boolean</td>
+      <td>true, false</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>disabled</td>
+      <td>是否禁用链接</td>
+      <td>Boolean</td>
+      <td>true, false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>链接地址</td>
+      <td>String</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>icon</td>
+      <td>链接前的图标名称</td>
+      <td>String</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+## Slots
+
+<table>
+  <thead>
+    <tr>
+      <th>插槽名</th>
+      <th>说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>default</td>
+      <td>用于放置链接的内容</td>
+    </tr>
+  </tbody>
+</table>
