@@ -24,30 +24,6 @@
 }
 
 
-// Grid栅格化
-.demo-gov-grid-row {
-	.gov-grid-row {
-		& + .gov-grid-row {
-			margin-top: 15px;
-		}
-		.gov-grid-col {
-			&::before {
-				display: block;
-				content: "";
-				width: 100%;
-				height: 36px;
-				background: #cdd0d6;
-				border-radius: 4px;
-			}
-			&:nth-child(2n) {
-				&::before {
-					background: #e6e8eb;
-				}
-			}
-		}
-	}
-}
-
 // container 布局
 .demo-gov-container {
 	.gov-aside,
@@ -75,6 +51,32 @@
 		height: 100px;
 	}
 }
+
+
+// Grid栅格化
+.demo-gov-grid-row {
+	.gov-grid-row {
+		& + .gov-grid-row {
+			margin-top: 15px;
+		}
+		.gov-grid-col {
+			&::before {
+				display: block;
+				content: "";
+				width: 100%;
+				height: 36px;
+				background: #cdd0d6;
+				border-radius: 4px;
+			}
+			&:nth-child(2n) {
+				&::before {
+					background: #e6e8eb;
+				}
+			}
+		}
+	}
+}
+
 
 // icon
 .demo-gov-icon {

@@ -1,7 +1,85 @@
+<script setup>
+import container1 from "./container1.vue"
+import container2 from "./container2.vue"
+import container3 from "./container3.vue"
+import container4 from "./container4.vue"
+import container5 from "./container5.vue"
+import container6 from "./container6.vue"
+import container7 from "./container7.vue"
+</script>
+
 # Container 布局容器
+
 用于布局的容器组件，基于flex布局，方便快速搭建平台基本结构。
 
-以下四种布局组件提供名称为 ```default``` 的默认插槽，用于自定义内容。
+## 布局一
+
+<container1 />
+
+::: details 查看代码
+<<< ./container1.vue#snippet{vue:line-numbers}
+:::
+
+
+## 布局二
+
+<container2 />
+
+::: details 查看代码
+<<< ./container2.vue#snippet{vue:line-numbers}
+:::
+
+
+
+## 布局三
+
+<container3 />
+
+::: details 查看代码
+<<< ./container3.vue#snippet{vue:line-numbers}
+:::
+
+
+## 布局四
+
+<container4 />
+
+::: details 查看代码
+<<< ./container4.vue#snippet{vue:line-numbers}
+:::
+
+
+## 布局五
+
+<container5 />
+
+::: details 查看代码
+<<< ./container5.vue#snippet{vue:line-numbers}
+:::
+
+
+## 布局六
+
+<container6 />
+
+::: details 查看代码
+<<< ./container6.vue#snippet{vue:line-numbers}
+:::
+
+
+## 布局七
+
+<container7 />
+
+::: details 查看代码
+<<< ./container7.vue#snippet{vue:line-numbers}
+:::
+
+
+
+## Attributes / Slots
+
+以下几种布局组件提供名称为 ```default``` 的默认插槽，用于自定义内容。
 
 <table>
   <thead>
@@ -45,146 +123,3 @@
     </tr>
   </tbody>
 </table>
-
-## 布局一
-
-<demo-container class="demo-gov-container">
-	<gov-container>
-		<gov-header>Header</gov-header>
-		<gov-main>Main</gov-main>
-	</gov-container>
-</demo-container>
-
-```html
-<gov-container>
-	<gov-header>Header</gov-header>
-	<gov-main>Main</gov-main>
-</gov-container>
-```
-
-## 布局二
-
-<demo-container class="demo-gov-container">
-	<gov-container>
-		<gov-header>Header</gov-header>
-		<gov-main>Main</gov-main>
-		<gov-footer>Footer</gov-footer>
-	</gov-container>
-</demo-container>
-
-```html
-<gov-container>
-	<gov-header>Header</gov-header>
-	<gov-main>Main</gov-main>
-	<gov-footer>Footer</gov-footer>
-</gov-container>
-```
-
-## 布局三
-
-<demo-container class="demo-gov-container">
-	<gov-container>
-		<gov-aside width="200px">Aside</gov-aside>
-		<gov-main>Main</gov-main>
-	</gov-container>
-</demo-container>
-
-```html
-<gov-container>
-	<gov-aside width="200px">Aside</gov-aside>
-	<gov-main>Main</gov-main>
-</gov-container>
-```
-
-## 布局四
-
-<demo-container class="demo-gov-container">
-	<gov-container>
-		<gov-header>Header</gov-header>
-		<gov-container>
-			<gov-aside width="200px">Aside</gov-aside>
-			<gov-main>Main</gov-main>
-		</gov-container>
-	</gov-container>
-</demo-container>
-
-```html
-<gov-container>
-	<gov-header>Header</gov-header>
-	<gov-container>
-		<gov-aside width="200px">Aside</gov-aside>
-		<gov-main>Main</gov-main>
-	</gov-container>
-</gov-container>
-```
-
-## 布局五
-<demo-container class="demo-gov-container">
-	<gov-container>
-		<gov-header>Header</gov-header>
-		<gov-container>
-			<gov-aside width="200px">Aside</gov-aside>
-			<gov-container>
-				<gov-main>Main</gov-main>
-				<gov-footer>Footer</gov-footer>
-			</gov-container>
-		</gov-container>
-	</gov-container>
-</demo-container>
-
-```html
-<gov-container>
-	<gov-header>Header</gov-header>
-	<gov-container>
-		<gov-aside width="200px">Aside</gov-aside>
-		<gov-container>
-			<gov-main>Main</gov-main>
-			<gov-footer>Footer</gov-footer>
-		</gov-container>
-	</gov-container>
-</gov-container>
-```
-
-## 布局六
-<demo-container class="demo-gov-container">
-	<gov-container>
-		<gov-aside width="200px">Aside</gov-aside>
-		<gov-container>
-			<gov-header>Header</gov-header>
-			<gov-main>Main</gov-main>
-		</gov-container>
-	</gov-container>
-</demo-container>
-
-```html
-<gov-container>
-	<gov-aside width="200px">Aside</gov-aside>
-	<gov-container>
-		<gov-header>Header</gov-header>
-		<gov-main>Main</gov-main>
-	</gov-container>
-</gov-container>
-```
-
-## 布局七
-<demo-container class="demo-gov-container">
-	<gov-container>
-		<gov-aside width="200px">Aside</gov-aside>
-		<gov-container>
-			<gov-header>Header</gov-header>
-			<gov-main>Main</gov-main>
-			<gov-footer>Footer</gov-footer>
-		</gov-container>
-	</gov-container>
-</demo-container>
-
-```html
-<gov-container>
-	<gov-aside width="200px">Aside</gov-aside>
-	<gov-container>
-		<gov-header>Header</gov-header>
-		<gov-main>Main</gov-main>
-		<gov-footer>Footer</gov-footer>
-	</gov-container>
-</gov-container>
-```
