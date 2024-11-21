@@ -15,7 +15,7 @@
 			<GovIcon v-if="icon" :name="icon" />
 		</slot>
 		<slot>{{ text }}</slot>
-		<span v-if="closable" class="gov-tag__close" @click="handleClose">
+		<span v-if="closable" class="gov-tag__close" @click.stop="handleClose">
 			<GovIcon name="close" />
 		</span>
 	</div>

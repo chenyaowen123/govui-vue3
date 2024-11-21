@@ -75,8 +75,10 @@ const handleClick = () => {
 	}
 };
 
+const emits = defineEmits(["toggle"]);
 const toggleExpand = () => {
 	isExpanded.value = !isExpanded.value;
+	emits("toggle", isExpanded.value);
 };
 </script>
 

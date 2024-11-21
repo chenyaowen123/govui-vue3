@@ -104,3 +104,23 @@ import ellipsisHidefoldup from "./ellipsis-hidefoldup.vue"
     </tr>
   </tbody>
 </table>
+
+
+## Events
+
+<table>
+  <thead>
+    <tr>
+      <th>事件名</th>
+      <th>说明</th>
+	  <th>回调参数</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>toggle</td>
+      <td>(折叠/展开)切换事件。</td>
+	  <td>(value: boolean)</td>
+    </tr>
+  </tbody>
+</table>

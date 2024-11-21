@@ -86,7 +86,6 @@ import loadingSlot from "./loading-slot.vue"
     <tr>
       <th>插槽名</th>
       <th>说明</th>
-      <th>内容</th>
     </tr>
   </thead>
   <tbody>

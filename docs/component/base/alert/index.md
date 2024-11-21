@@ -153,3 +153,21 @@ import alertSlot from "./alert-slot.vue"
     </tr>
   </tbody>
 </table>
+
+
+## Events
+
+<table>
+  <thead>
+    <tr>
+      <th>事件名</th>
+      <th>说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>close</td>
+      <td>关闭事件。</td>
+    </tr>
+  </tbody>
+</table>

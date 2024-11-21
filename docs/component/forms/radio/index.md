@@ -1,138 +1,68 @@
+<script setup>
+import radioBase from "./radio-base.vue"
+import radioGroup from "./radio-group.vue"
+import radioDisabled from "./radio-disabled.vue"
+import radioBorder from "./radio-border.vue"
+import radioButton from "./radio-button.vue"
+</script>
+
+
 # Radio 单选
 
 在一组备选项中进行备选项
 
-<script setup>
-import { ref } from 'vue'
-const radio1 = ref('1');
-const radio2 = ref('1');
-const radio3 = ref('1');
-const radio4 = ref('1');
-</script>
-
-
 ## 基础用法
 
-你可以使用 ```label``` 或者 ```<slot/>``` 两种方式定义其中内容。
+可以使用 ```label``` 或者 ```<slot/>``` 两种方式定义其中内容。
 
-<demo-container class="demo-gov-form">
-	<gov-radio v-model="radio1" value="1" label="备选项"/>
-	<gov-radio v-model="radio1" value="2" label="备选项"/>
-	<gov-radio v-model="radio1" value="3">备选项</gov-radio>
-</demo-container>
+<radioBase/>
 
-```md
-<template>
-	<gov-radio v-model="radio1" value="1" label="备选项"/>
-	<gov-radio v-model="radio1" value="2" label="备选项"/>
-	<gov-radio v-model="radio1" value="3">备选项</gov-radio>
-</template>
+::: details 查看代码
+<<< ./radio-base.vue#snippet{vue:line-numbers}
+:::
 
-<script setup>
-import { ref } from 'vue'
-const radio1 = ref('1');
-</script>
-```
+## 单选按钮组
+
+使用 ```RadioGroup``` 可以统一设置 ```disabled``` 、```size```、```v-model``` 等
+
+<radioGroup/>
+
+::: details 查看代码
+<<< ./radio-group.vue#snippet{vue:line-numbers}
+:::
+
 
 ## 禁用状态
 
 备选项框不可用的状态。
 
-<demo-container class="demo-gov-form">
-	<gov-radio disabled v-model="radio2" value="1">备选项</gov-radio>
-	<gov-radio disabled v-model="radio2" value="2">备选项</gov-radio>
-</demo-container>
+<radioDisabled/>
 
-```md
-<template>
-	<gov-radio disabled v-model="radio2" value="1">禁用状态</gov-radio>
-	<gov-radio disabled v-model="radio2" value="2">禁用状态</gov-radio>
-</template>
+::: details 查看代码
+<<< ./radio-disabled.vue#snippet{vue:line-numbers}
+:::
 
-<script setup>
-import { ref } from 'vue'
-const radio2 = ref('1');
-</script>
-```
 
 ## 边框模式
 
 设置 ```border``` 后可设置 ```size``` 显示不同尺寸。
 
-<demo-container class="demo-gov-form">
-	<gov-radio v-model="radio3" value="1" border size="large">备选项</gov-radio>
-	<gov-radio v-model="radio3" value="2" border>备选项</gov-radio>
-	<gov-radio v-model="radio3" value="3" border size="small">备选项</gov-radio>
-</demo-container>
+<radioBorder/>
 
-```md
-<template>
-	<gov-radio v-model="radio3" value="1" border size="large">备选项</gov-radio>
-	<gov-radio v-model="radio3" value="2" border>备选项</gov-radio>
-	<gov-radio v-model="radio3" value="3" border size="small">备选项</gov-radio>
-</template>
-
-<script setup>
-import { ref } from 'vue'
-const radio3 = ref('1');
-</script>
-```
-
-
-
+::: details 查看代码
+<<< ./radio-border.vue#snippet{vue:line-numbers}
+:::
 
 
 ## 按钮样式
 
 按钮样式的单选组合。
 
-<demo-container class="demo-gov-form">
-	<gov-radio-group button v-model="radio4" size="large">
-		<gov-radio value="1">备选项</gov-radio>
-		<gov-radio value="2">备选项</gov-radio>
-		<gov-radio value="3">备选项</gov-radio>
-	</gov-radio-group>
-	<br/>
-	<br/>
-	<gov-radio-group button v-model="radio4">
-		<gov-radio value="1">备选项</gov-radio>
-		<gov-radio value="2" disabled>备选项</gov-radio>
-		<gov-radio value="3">备选项</gov-radio>
-	</gov-radio-group>
-	<br/>
-	<br/>
-	<gov-radio-group button v-model="radio4" size="small" disabled>
-		<gov-radio value="1">备选项</gov-radio>
-		<gov-radio value="2">备选项</gov-radio>
-		<gov-radio value="3">备选项</gov-radio>
-	</gov-radio-group>
-</demo-container>
+<radioButton />
 
-```md
-<template>
-	<gov-radio-group button v-model="radio4" size="large">
-		<gov-radio value="1">备选项</gov-radio>
-		<gov-radio value="2">备选项</gov-radio>
-		<gov-radio value="3">备选项</gov-radio>
-	</gov-radio-group>
-	<gov-radio-group button v-model="radio4">
-		<gov-radio value="1">备选项</gov-radio>
-		<gov-radio value="2" disabled>备选项</gov-radio>
-		<gov-radio value="3">备选项</gov-radio>
-	</gov-radio-group>
-	<gov-radio-group button v-model="radio4" size="small" disabled>
-		<gov-radio value="1">备选项</gov-radio>
-		<gov-radio value="2">备选项</gov-radio>
-		<gov-radio value="3">备选项</gov-radio>
-	</gov-radio-group>
-</template>
-
-<script setup>
-import { ref } from 'vue'
-const radio = ref('1');
-</script>
-```
-
+::: details 查看代码
+<<< ./radio-button.vue#snippet{vue:line-numbers}
+:::
 
 
 ## Radio Attributes

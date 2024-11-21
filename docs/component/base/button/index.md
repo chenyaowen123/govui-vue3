@@ -183,3 +183,21 @@ import buttonGroup from "./button-group.vue"
     </tr>
   </tbody>
 </table>
+
+
+## Events
+
+<table>
+  <thead>
+    <tr>
+      <th>事件名</th>
+      <th>说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>click</td>
+      <td>点击事件。</td>
+    </tr>
+  </tbody>
+</table>

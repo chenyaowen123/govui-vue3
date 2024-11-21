@@ -29,3 +29,21 @@ import tagIcon from "./tag-icon.vue"
 ## 设置图标
 
 <tagIcon />
+
+
+## Events
+
+<table>
+  <thead>
+    <tr>
+      <th>事件名</th>
+      <th>说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>close</td>
+      <td>关闭事件。</td>
+    </tr>
+  </tbody>
+</table>
