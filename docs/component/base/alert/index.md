@@ -59,3 +59,97 @@ import alertSlot from "./alert-slot.vue"
 <<< ./alert-slot.vue{vue:line-numbers}
 :::
 
+
+## Attributes
+
+<table>
+  <thead>
+    <tr>
+      <th>属性名</th>
+      <th>说明</th>
+      <th>类型</th>
+      <th>可选值</th>
+      <th>默认值</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>title</td>
+      <td>警告框的标题</td>
+      <td>String</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>description</td>
+      <td>警告框的详细描述</td>
+      <td>String</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>警告框的类型</td>
+      <td>String</td>
+      <td>info, success, warning, danger</td>
+      <td>info</td>
+    </tr>
+    <tr>
+      <td>plain</td>
+      <td>是否为朴素风格</td>
+      <td>Boolean</td>
+      <td>true, false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>closable</td>
+      <td>是否可关闭</td>
+      <td>Boolean</td>
+      <td>true, false</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>closeText</td>
+      <td>关闭按钮的文本</td>
+      <td>String</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>showIcon</td>
+      <td>是否显示图标</td>
+      <td>Boolean</td>
+      <td>true, false</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>center</td>
+      <td>内容是否居中</td>
+      <td>Boolean</td>
+      <td>true, false</td>
+      <td>false</td>
+    </tr>
+  </tbody>
+</table>
+
+
+## Slots
+
+<table>
+  <thead>
+    <tr>
+      <th>插槽名</th>
+      <th>说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>title</td>
+      <td>用于自定义警告框的标题内容。</td>
+    </tr>
+    <tr>
+      <td>default</td>
+      <td>当没有提供 <code>description</code> 属性时，可以放置默认的警告内容。</td>
+    </tr>
+  </tbody>
+</table>

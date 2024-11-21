@@ -20,7 +20,7 @@ import usercardCustom from "./usercard-custom.vue"
 
 ## Attributes
 
-<table style="width:100%; display:table;">
+<table>
   <thead>
     <tr>
      <th>参数</th>
@@ -90,7 +90,7 @@ import usercardCustom from "./usercard-custom.vue"
 
 ## Slots
 
-<table style="width:100%; display:table;">
+<table>
   <thead>
     <tr>
       <th>Slot Name</th>

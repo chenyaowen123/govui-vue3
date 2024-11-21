@@ -38,7 +38,7 @@ import badgeDot from "./badge-dot.vue"
 
 ## Attributes
 
-<table style="width:100%; display:table;">
+<table>
   <thead>
     <tr>
       <th>参数</th>

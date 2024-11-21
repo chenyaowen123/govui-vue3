@@ -35,7 +35,7 @@ import progressWidth from "./progress-width.vue"
 
 ## Attributes
 
-<table style="width:100%; display:table;">
+<table>
   <thead>
     <tr>
       <th>属性</th>
@@ -87,7 +87,7 @@ import progressWidth from "./progress-width.vue"
 
 ## Slots
 
-<table style="width:100%; display:table;">
+<table>
   <thead>
     <tr>
       <th width="120">Slot Name</th>

@@ -206,7 +206,7 @@ Row 组件 提供 ```gutter``` 属性来指定每一栏之间的间隔，默认�
 
 ## Row Attributes
 
-<table style="width:100%; display:table;">
+<table>
   <thead>
     <tr>
       <th>参数</th>
@@ -266,7 +266,7 @@ Row 组件 提供 ```gutter``` 属性来指定每一栏之间的间隔，默认�
 	<gov-row :gutter="[{ xs: 8, sm: 16 }, 24]"> </gov-row>
 </template>
 ```
-<table style="width:100%; display:table;">
+<table>
   <thead>
     <tr>
       <th>名称</th>

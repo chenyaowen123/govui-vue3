@@ -20,7 +20,7 @@ import resultCustom from "./result-custom.vue"
 
 ## Attributes
 
-<table style="width:100%; display:table;">
+<table>
   <thead>
     <tr>
       <th>属性</th>
@@ -53,7 +53,7 @@ import resultCustom from "./result-custom.vue"
 
 ## Slots
 
-<table style="width:100%; display:table;">
+<table>
   <thead>
     <tr>
       <th>Slot Name</th>

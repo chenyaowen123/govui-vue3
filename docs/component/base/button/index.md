@@ -165,3 +165,21 @@ import buttonGroup from "./button-group.vue"
     </tr>
   </tbody>
 </table>
+
+
+## Slots
+
+<table>
+  <thead>
+    <tr>
+      <th>插槽名</th>
+      <th>说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>default</td>
+      <td>用于放置按钮的label文本，可以放置任何自定义的内容，例如文本、图标或其他 HTML 结构。</td>
+    </tr>
+  </tbody>
+</table>

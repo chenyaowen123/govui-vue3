@@ -45,7 +45,7 @@ import backtopCustom from "./backtop-custom.vue"
 
 ## Attributes
 
-<table style="width:100%; display:table;">
+<table>
   <thead>
     <tr>
       <th>参数</th>
@@ -97,7 +97,7 @@ import backtopCustom from "./backtop-custom.vue"
 
 ## Events
 
-<table style="width:100%; display:table;">
+<table>
   <thead>
     <tr>
       <th>事件名</th>
@@ -115,7 +115,7 @@ import backtopCustom from "./backtop-custom.vue"
 
 ## Slots
 
-<table style="width:100%; display:table;">
+<table>
   <thead>
     <tr>
       <th>插槽</th>

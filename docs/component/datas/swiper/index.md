@@ -157,7 +157,7 @@ import swiperSpaceBetween from "./swiper-space-between.vue"
 
 更多配置参考 [Swiper Vue.js Components](https://swiperjs.com/vue#swiper-props){target="_blank"}
 
-<table style="width:100%; display:table;">
+<table>
     <thead>
         <tr>
             <th width="110">属性</th>
@@ -328,7 +328,7 @@ import swiperSpaceBetween from "./swiper-space-between.vue"
 
 ```
 
-<table style="width:100%; display:table;">
+<table>
   <thead>
     <tr>
       <th>插槽名称</th>
@@ -363,7 +363,7 @@ import swiperSpaceBetween from "./swiper-space-between.vue"
 
 更多配置参考 [Swiper Vue.js Components](https://swiperjs.com/vue#swiperslide-props){target="_blank"}
 
-<table style="width:100%; display:table;">
+<table>
   <thead>
     <tr>
       <th width="110">属性</th>
@@ -395,7 +395,7 @@ import swiperSpaceBetween from "./swiper-space-between.vue"
 </gov-swiper>
 ```
 
-<table style="width:100%; display:table;">
+<table>
   <thead>
     <tr>
       <th>Slot Prop</th>

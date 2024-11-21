@@ -137,7 +137,7 @@ const radio = ref('1');
 
 ## Radio Attributes
 
-<table style="width:100%; display:table;">
+<table>
   <thead>
     <tr>
       <th>属性</th>
@@ -202,7 +202,7 @@ const radio = ref('1');
 
 ## Radio Events
 
-<table style="width:100%; display:table;">
+<table>
   <thead>
     <tr>
       <th>事件名</th>
@@ -221,7 +221,7 @@ const radio = ref('1');
 
 ## Radio Slots
 
-<table style="width:100%; display:table;">
+<table>
   <thead>
     <tr>
       <th>插槽名</th>
@@ -240,7 +240,7 @@ const radio = ref('1');
 ## Radio-group Attributes
 
 
-<table style="width:100%; display:table;">
+<table>
   <thead>
     <tr>
       <th>属性</th>
@@ -284,7 +284,7 @@ const radio = ref('1');
 
 ## Radio-group Events
 
-<table style="width:100%; display:table;">
+<table>
   <thead>
     <tr>
       <th>事件名</th>
@@ -304,7 +304,7 @@ const radio = ref('1');
 
 ## Radio Attributes
 
-<table style="width:100%; display:table;">
+<table>
   <thead>
     <tr>
       <th>属性</th>

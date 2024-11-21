@@ -3,7 +3,7 @@
 
 以下四种布局组件提供名称为 ```default``` 的默认插槽，用于自定义内容。
 
-<table style="width:100%; display:table;">
+<table>
   <thead>
     <tr>
       <th width="130">组件</th>

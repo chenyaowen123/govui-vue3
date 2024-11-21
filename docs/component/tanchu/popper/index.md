@@ -100,7 +100,7 @@ const show2 = ref(false);
 
 基于 ```Vue3-popper```开发，但是稍有不同。
 
-<table style="width:100%; display:table;">
+<table>
   <thead>
     <tr>
       <th>参数</th>
@@ -214,7 +214,7 @@ const show2 = ref(false);
 
 
 ## Events
-<table style="width:100%; display:table;">
+<table>
   <thead>
     <tr>
       <th>事件名</th>
@@ -243,7 +243,7 @@ const show2 = ref(false);
 
 
 ## Slots
-<table style="width:100%; display:table;">
+<table>
   <thead>
     <tr>
       <th>插槽名</th>

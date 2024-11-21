@@ -28,7 +28,7 @@ const values = ref(["zujian", "form", "input-number"]);
 
 ## Attributes
 
-<table style="width:100%; display:table;">
+<table>
   <thead>
     <tr>
       <th width="90">属性名</th>
@@ -56,7 +56,7 @@ const values = ref(["zujian", "form", "input-number"]);
 
 ## Events
 
-<table style="width:100%; display:table;">
+<table>
   <thead>
     <tr>
       <th width="80">事件名</th>

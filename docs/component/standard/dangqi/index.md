@@ -34,7 +34,7 @@ const width = ref(200);
 
 ## Attributes
 
-<table style="width:100%; display:table;">
+<table>
   <thead>
     <tr>
       <th>参数</th>
