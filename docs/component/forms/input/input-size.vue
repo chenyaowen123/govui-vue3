@@ -1,9 +1,9 @@
 <template>
 	<demo-container class="gov-demo-input">
 		<gov-input v-model="value" size="large" />
-		&nbsp;&nbsp;
+		<br /><br />
 		<gov-input v-model="value" />
-		&nbsp;&nbsp;
+		<br /><br />
 		<gov-input v-model="value" size="small" />
 	</demo-container>
 </template>

@@ -57,10 +57,7 @@ defineOptions({
 });
 
 const props = defineProps({
-	modelValue: {
-		type: String,
-		default: undefined, // 绑定在输入框的值
-	},
+	modelValue: String, // 绑定在输入框的值
 	fetch: Function, // 获取数据的函数，返回一个数组，元素必须是字符串或者对象
 	valueKey: {
 		type: String,

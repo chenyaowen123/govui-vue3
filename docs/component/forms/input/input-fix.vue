@@ -1,7 +1,7 @@
 <template>
 	<demo-container class="gov-demo-input">
 		<gov-input v-model="value" prefix="￥" suffix="RMB" />
-		&nbsp;&nbsp;
+		<br /><br />
 		<gov-input v-model="value">
 			<template #prefix> $ </template>
 			<template #suffix> USD </template>

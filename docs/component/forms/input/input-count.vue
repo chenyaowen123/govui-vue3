@@ -1,9 +1,9 @@
 <template>
 	<demo-container class="gov-demo-input">
 		<gov-input v-model="value" count />
-		&nbsp;&nbsp;
+		<br /><br />
 		<gov-input v-model="value2" count :maxlength="5" />
-		&nbsp;&nbsp;
+		<br /><br />
 		<gov-input v-model="value3" :maxlength="5" />
 	</demo-container>
 </template>
