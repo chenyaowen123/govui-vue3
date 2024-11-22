@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import { GovNotification } from "../../../../packages/index.js";
+import { GovNotification } from "@/index.js";
 
 const handleClick = () => {
 	GovNotification({

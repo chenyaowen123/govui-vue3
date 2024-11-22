@@ -1,55 +1,69 @@
 <script setup>
-import messageBase from "./message-base.vue"
-import messageOption from "./message-option.vue"
-import messageType from "./message-type.vue"
-import messageCloseall from "./message-closeall.vue"
+import notificationBase from "./notification-base.vue"
+import notificationType from "./notification-type.vue"
+import notificationCustom from "./notification-custom.vue"
+import notificationPosition from "./notification-position.vue"
+import notificationCloseall from "./notification-closeall.vue"
+import notificationNoclose from "./notification-noclose.vue"
+
 </script>
 
-# Message 弹窗
+# Notification 弹窗
 
 常用于消息提示。
 
 ## 基础使用
 
-<messageBase />
+<notificationBase />
 
 ::: details 查看代码
-<<< ./message-base.vue{11 vue:line-numbers}
+<<< ./notification-base.vue{vue:line-numbers}
 :::
 
 
 ## 不同类型
 
-弹出不同风格的 `message`。
-
-<messageType />
+<notificationType />
 
 ::: details 查看代码
-<<< ./message-type.vue{25 vue:line-numbers}
+<<< ./notification-type.vue{vue:line-numbers}
 :::
 
 
 
-## 更多控制
+## 自定义内容
 
-支持 `html`，时长，是否有关闭按钮等。
-
-<messageOption />
+<notificationCustom />
 
 ::: details 查看代码
-<<< ./message-option.vue{11-23 vue:line-numbers}
+<<< ./notification-custom.vue{vue:line-numbers}
 :::
 
+
+## 不同位置
+
+<notificationPosition />
+
+::: details 查看代码
+<<< ./notification-position.vue{vue:line-numbers}
+:::
 
 
 ## 关闭所有
 
-在任意实例上关闭所有弹窗。
-
-<messageCloseall />
+<notificationCloseall />
 
 ::: details 查看代码
-<<< ./message-closeall.vue{16 vue:line-numbers}
+<<< ./notification-closeall.vue{vue:line-numbers}
+:::
+
+
+## 禁用自动关闭
+
+<notificationNoclose />
+
+::: details 查看代码
+<<< ./notification-noclose.vue{vue:line-numbers}
 :::
 
 
@@ -67,8 +81,15 @@ import messageCloseall from "./message-closeall.vue"
   </thead>
   <tbody>
     <tr>
-      <td>message</td>
-      <td>消息内容</td>
+      <td>title</td>
+      <td>通知标题</td>
+      <td>String</td>
+      <td>—</td>
+      <td>"提示"</td>
+    </tr>
+    <tr>
+      <td>content</td>
+      <td>通知内容</td>
       <td>String</td>
       <td>—</td>
       <td>—</td>
@@ -82,10 +103,17 @@ import messageCloseall from "./message-closeall.vue"
     </tr>
     <tr>
       <td>type</td>
-      <td>消息类型</td>
+      <td>通知类型</td>
       <td>String</td>
       <td>default, primary, success, info, warning, danger</td>
       <td>default</td>
+    </tr>
+    <tr>
+      <td>position</td>
+      <td>通知位置</td>
+      <td>String</td>
+      <td>top-right, top-left, bottom-right, bottom-left</td>
+      <td>top-right</td>
     </tr>
     <tr>
       <td>icon</td>
@@ -103,28 +131,28 @@ import messageCloseall from "./message-closeall.vue"
     </tr>
     <tr>
       <td>onBeforeOpen</td>
-      <td>打开前的回调函数</td>
+      <td>打开前回调函数</td>
       <td>Function</td>
       <td>—</td>
       <td>—</td>
     </tr>
     <tr>
       <td>onOpend</td>
-      <td>打开后的回调函数</td>
+      <td>打开后回调函数</td>
       <td>Function</td>
       <td>—</td>
       <td>—</td>
     </tr>
     <tr>
       <td>onBeforeClose</td>
-      <td>关闭前的回调函数</td>
+      <td>关闭前回调函数</td>
       <td>Function</td>
       <td>—</td>
       <td>—</td>
     </tr>
     <tr>
       <td>onClosed</td>
-      <td>关闭后的回调函数</td>
+      <td>关闭后回调函数</td>
       <td>Function</td>
       <td>—</td>
       <td>—</td>
@@ -134,7 +162,7 @@ import messageCloseall from "./message-closeall.vue"
       <td>是否显示关闭按钮</td>
       <td>Boolean</td>
       <td>true, false</td>
-      <td>false</td>
+      <td>true</td>
     </tr>
   </tbody>
 </table>
@@ -153,7 +181,7 @@ import messageCloseall from "./message-closeall.vue"
   <tbody>
     <tr>
       <td>closeAll</td>
-      <td>关闭所有 <code>message</code> 弹窗</td>
+      <td>关闭所有 <code>notification</code> 弹窗</td>
       <td>—</td>
       <td>无</td>
     </tr>
