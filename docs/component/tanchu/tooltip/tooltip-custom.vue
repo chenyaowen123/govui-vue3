@@ -1,5 +1,5 @@
 <template>
-	<demo-container class="gov-demo-tooltip">
+	<demo-container>
 		<gov-tooltip>
 			<gov-button> 鼠标经过查看内容 </gov-button>
 			<template #content>

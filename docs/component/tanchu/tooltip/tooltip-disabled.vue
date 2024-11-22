@@ -1,5 +1,5 @@
 <template>
-	<demo-container class="gov-demo-tooltip">
+	<demo-container>
 		<gov-tooltip content="点击关闭 Tooltip 提示" :disabled="disabled">
 			<gov-button @click="handleToggle">
 				点击{{ disabled ? "开启" : "关闭" }} Tooltip 提示
