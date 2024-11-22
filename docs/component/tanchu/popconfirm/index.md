@@ -1,107 +1,40 @@
----
-outline: deep
----
+<script setup>
+import popconfirmBase from "./popconfirm-base.vue"
+import popconfirmSlot from "./popconfirm-slot.vue"
+</script>
+
 
 # Popconfirm 气泡确认框
 
-点击元素，弹出气泡确认框。
-
-<script setup>
-import { ref } from 'vue';
-const handleCancel= () =>{
-	alert('点击了cancel');
-}
-
-const handleConfirm= () =>{
-	alert('点击了confirm');
-}
-</script>
+弹出气泡确认框。 `Popconfirm` 在 `Popover` 基础上做了常用封装。
 
 ## 基础用法
 
-Popconfirm 在 Popover 基础上做了常用封装，因此对于重复属性，请参考 Popover 的文档，在此文档中不做详尽解释。
+点击弹出 `Popconfirm`。
 
-<demo-container class="demo-gov-form">
-<gov-popconfirm
-	title="这是一段内容确定删除吗？"
-	icon="info"
-	iconColor="red"
-	placement="right"
->
-	<template #reference>
-		<gov-button icon="delete">点击删除</gov-button>
-	</template>
-</gov-popconfirm>
-</demo-container>
 
-```md
-<gov-popconfirm
-	title="这是一段内容确定删除吗？"
-	icon="delete"
-	iconColor="red"
-	placement="right"
->
-	<template #reference>
-		<gov-button icon="delete">点击删除</gov-button>
-	</template>
-</gov-popconfirm>
-```
+
+<popconfirmBase />
+
+::: details 查看代码
+<<< ./popconfirm-base.vue{vue:line-numbers}
+:::
 
 
 ## 自定义内容
 
 也可以不用```icon```、```title```属性，使用默认插槽。
 
-<demo-container class="demo-gov-form">
-<gov-popconfirm
-	placement="right"
-	confirmButtonText="是的，确定"
-	cancelButtonText="不是，点击关闭"
-	confirmButtonType="primary"
-	cancelButtonType="default"
-	@cancel="handleCancel"
-	@confirm="handleConfirm"
->
-	<div>下图是本站LOGO吗？</div>
-	<img src="/logo.png" width="200"/>
-	<template #reference>
-		<gov-button icon="mouse">点击触发</gov-button>
-	</template>
-</gov-popconfirm>
-</demo-container>
+<popconfirmSlot />
 
-
-```md
-<gov-popconfirm
-	placement="right"
-	confirmButtonText="是的，确定"
-	cancelButtonText="不是，点击关闭"
-	confirmButtonType="primary"
-	cancelButtonType="default"
-	@cancel="handleCancel"
-	@confirm="handleConfirm"
->
-	<p>下图是本站LOGO吗？</p>
-	<img src="/logo.png"/>
-	<template #reference>
-		<gov-button icon="mouse">点击触发</gov-button>
-	</template>
-</gov-popconfirm>
-
-<script setup>
-import { ref } from 'vue';
-const handleCancel= () =>{
-	alert('点击了cancel');
-}
-const handleConfirm= () =>{
-	alert('点击了confirm');
-}
-</script>
-
-```
+::: details 查看代码
+<<< ./popconfirm-slot.vue{vue:line-numbers}
+:::
 
 
 ## Attributes
+
+`Popconfirm` 在 `Popover` 基础上做了常用封装，重复属性请参考 [Popover](../popper/index.md) 文档，在此文档不再赘述。
 
 <table>
   <thead>
