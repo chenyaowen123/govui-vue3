@@ -1,5 +1,6 @@
 <template>
 	<demo-container>
+		<!-- 控制器 -->
 		<gov-form>
 			<gov-form-item label="Label宽度">
 				<gov-radio-group button v-model="labelWidth">
@@ -10,6 +11,7 @@
 			</gov-form-item>
 		</gov-form>
 		<hr />
+		<!-- 表单内容 -->
 		<gov-form :labelWidth="labelWidth">
 			<gov-form-item label="姓名">
 				<gov-input v-model="formData.name" />

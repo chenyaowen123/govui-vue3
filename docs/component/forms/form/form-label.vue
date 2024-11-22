@@ -1,5 +1,6 @@
 <template>
 	<demo-container>
+		<!-- 控制器 -->
 		<gov-form>
 			<gov-form-item label="对齐方式">
 				<gov-radio-group button v-model="labelPosition">
@@ -10,6 +11,7 @@
 			</gov-form-item>
 		</gov-form>
 		<hr />
+		<!-- 表单内容 -->
 		<gov-form :labelPosition="labelPosition">
 			<gov-form-item label="姓名">
 				<gov-input v-model="formData.name" />

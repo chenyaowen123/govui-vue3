@@ -1,5 +1,6 @@
 <template>
 	<demo-container>
+		<!-- 控制器 -->
 		<gov-form>
 			<gov-form-item label="显示几列">
 				<gov-radio-group button v-model="formItemSpan">
@@ -11,6 +12,7 @@
 			</gov-form-item>
 		</gov-form>
 		<hr />
+		<!-- 表单内容 -->
 		<gov-form labelWidth="50px">
 			<gov-form-item label="标题" :span="formItemSpan">
 				<gov-input v-model="formData.title" />
