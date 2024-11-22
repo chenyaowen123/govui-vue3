@@ -14,6 +14,8 @@ import notificationNoclose from "./notification-noclose.vue"
 
 ## 基础使用
 
+调用一个系统消息。
+
 <notificationBase />
 
 ::: details 查看代码
@@ -22,6 +24,8 @@ import notificationNoclose from "./notification-noclose.vue"
 
 
 ## 不同类型
+
+不同类型的系统提示消息。
 
 <notificationType />
 
@@ -33,6 +37,8 @@ import notificationNoclose from "./notification-noclose.vue"
 
 ## 自定义内容
 
+支持`html`。
+
 <notificationCustom />
 
 ::: details 查看代码
@@ -41,6 +47,8 @@ import notificationNoclose from "./notification-noclose.vue"
 
 
 ## 不同位置
+
+四种位置。
 
 <notificationPosition />
 
@@ -51,6 +59,8 @@ import notificationNoclose from "./notification-noclose.vue"
 
 ## 关闭所有
 
+你可以调用 `closeAll` 关闭所有 `notification`。
+
 <notificationCloseall />
 
 ::: details 查看代码
@@ -59,6 +69,8 @@ import notificationNoclose from "./notification-noclose.vue"
 
 
 ## 禁用自动关闭
+
+默认 `3000ms` 后自动关闭，你可以将 `duration` 设置为 `false` 即可控制 `notification` 不会自动关闭。
 
 <notificationNoclose />
 
@@ -96,8 +108,8 @@ import notificationNoclose from "./notification-noclose.vue"
     </tr>
     <tr>
       <td>duration</td>
-      <td>显示时长</td>
-      <td>Number</td>
+      <td>显示时长，设置false的时候不会自动关闭。</td>
+      <td>Number | boolean</td>
       <td>—</td>
       <td>3000</td>
     </tr>
