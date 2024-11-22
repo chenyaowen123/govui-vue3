@@ -1,11 +1,13 @@
+<script setup>
+import popperBase from "./popper-base.vue"
+import popperSlot from "./popper-slot.vue"
+import popperPlacement from "./popper-placement.vue"
+</script>
+
 # Popper 弹窗
 
 基于Vue3-popper开发的弹窗组件。
-<script setup>
-import { ref } from 'vue';
-const show = ref(false);
-const show2 = ref(false);
-</script>
+
 
 ## 基础用法
 
@@ -13,86 +15,34 @@ const show2 = ref(false);
 
 当弹出内容是简单的文本，也可以设置 ```content``` 参数。
 
-<demo-container class="demo-gov-form">
-<gov-popper
-	v-model="show"
-	title="标题"
-	content="存在即合理，一切事物的存在都有其独特的价值。"
-	placement="right"
->
-	<template #reference>
-		<gov-button @click="show = !show">click激活</gov-button>
-	</template>
-</gov-popper>
-</demo-container>
+<popperBase />
 
-```md
-<gov-popper
-	v-model="show"
-	title="标题"
-	content="存在即合理，一切事物的存在都有其独特的价值。"
-	placement="right"
->
-	<template #reference>
-		<gov-button @click="show = !show">click激活</gov-button>
-	</template>
-</gov-popper>
+::: details 查看代码
+<<< ./popper-base.vue{vue:line-numbers}
+:::
 
-<script setup>
-import { ref } from 'vue';
-const show = ref(false);
-</script>
 
-```
+## 弹出位置
+
+设置 `placement` 不同弹出位置。
+
+<popperPlacement />
+
+::: details 查看代码
+<<< ./popper-placement.vue{vue:line-numbers}
+:::
+
 
 
 ## 自定义弹出
 
 可以在默认插槽内自定义弹出内容。
 
-<demo-container class="demo-gov-form">
-<gov-popper
-	v-model="show2"
-	title="GovUI是专为政府定制的"
-	placement="right"
-	width="200px"
->
-	<template #reference>
-		<gov-button @click="show2 = !show2">点击弹出</gov-button>
-	</template>
-	<img src="/logo.png"/>
-	<br/>
-	<div style="text-align:center;">
-		<gov-button size="small" @click="show2 = false">关闭</gov-button>
-		<gov-button size="small" @click="show2 = false" type="primary">确定</gov-button>
-	</div>
-</gov-popper>
-</demo-container>
+<popperSlot />
 
-```md
-<gov-popper
-	v-model="show2"
-	title="GovUI是专为政府定制的"
-	placement="right"
-	width="200px"
->
-	<template #reference>
-		<gov-button @click="show2 = !show2">点击弹出</gov-button>
-	</template>
-	<img src="/logo.png"/>
-	<br/>
-	<div style="text-align:center;">
-		<gov-button size="small" @click="show2 = false">关闭</gov-button>
-		<gov-button size="small" @click="show2 = false" type="primary">确定</gov-button>
-	</div>
-</gov-popper>
-
-<script setup>
-import { ref } from 'vue';
-const show2 = ref(false);
-</script>
-
-```
+::: details 查看代码
+<<< ./popper-slot.vue{vue:line-numbers}
+:::
 
 
 
