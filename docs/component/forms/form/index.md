@@ -90,6 +90,248 @@ import formAll from "./formAll/index.vue"
 :::
 
 
+## Form Attributes
+
+<table>
+  <thead>
+    <tr>
+      <th>属性名</th>
+      <th>说明</th>
+      <th>类型</th>
+      <th>可选值</th>
+      <th>默认值</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>model</td>
+      <td>表单的数据对象</td>
+      <td>Object</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>rules</td>
+      <td>表单验证规则</td>
+      <td>Object</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>size</td>
+      <td>表单的尺寸</td>
+      <td>String</td>
+      <td>large, default, small</td>
+      <td>default</td>
+    </tr>
+    <tr>
+      <td>disabled</td>
+      <td>是否禁用整个表单</td>
+      <td>Boolean</td>
+      <td>true, false</td>
+      <td>false</td>
+    </tr>
+  </tbody>
+</table>
+
+## Form Methods
+
+<table>
+  <thead>
+    <tr>
+      <th>方法名</th>
+      <th>说明</th>
+      <th>参数</th>
+      <th>返回值</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>validate</td>
+      <td>触发表单验证</td>
+      <td>(callback): Function(validateState,invalidFields)</td>
+      <td>无</td>
+    </tr>
+    <tr>
+      <td>validateFields</td>
+      <td>触发表单某个字段的验证</td>
+      <td>(fields, callback): Array[String], Function</td>
+      <td>无</td>
+    </tr>
+    <tr>
+      <td>resetFields</td>
+      <td>重置表单字段的值</td>
+      <td>—</td>
+      <td>无</td>
+    </tr>
+    <tr>
+      <td>clearValidate</td>
+      <td>清除表单验证信息</td>
+      <td>—</td>
+      <td>无</td>
+    </tr>
+  </tbody>
+</table>
+
+## Form Slots
+
+<table>
+  <thead>
+    <tr>
+      <th>插槽名</th>
+      <th>说明</th>
+      <th>作用域插槽</th>
+      <th>内容</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>default</td>
+      <td>表单内容，用于放置表单控件</td>
+      <td>否</td>
+      <td>—</td>
+    </tr>
+  </tbody>
+</table>
+
+
+## FormItem Attributes
+
+<table>
+  <thead>
+    <tr>
+      <th>属性名</th>
+      <th>说明</th>
+      <th>类型</th>
+      <th>可选值</th>
+      <th>默认值</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>prop</td>
+      <td>表单域 model 字段</td>
+      <td>String</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>label</td>
+      <td>标签文本</td>
+      <td>String</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>rules</td>
+      <td>表单验证规则</td>
+      <td>Object</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>labelPosition</td>
+      <td>标签位置</td>
+      <td>String</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>labelWidth</td>
+      <td>标签宽度</td>
+      <td>String/Number</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>size</td>
+      <td>尺寸</td>
+      <td>String</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>disabled</td>
+      <td>是否禁用</td>
+      <td>Boolean</td>
+      <td>true, false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>span</td>
+      <td>栅格占位格数</td>
+      <td>Number</td>
+      <td>0-24</td>
+      <td>24</td>
+    </tr>
+  </tbody>
+</table>
+
+
+## FormItem Methods
+
+<table>
+  <thead>
+    <tr>
+      <th>方法名</th>
+      <th>说明</th>
+      <th>回调参数</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>validate</td>
+      <td>触发表单验证</td>
+      <td>(callback): Function(validateState,invalidFields)</td>
+    </tr>
+    <tr>
+      <td>clearValidate</td>
+      <td>清除表单验证</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>resetField</td>
+      <td>重置表单域的值</td>
+      <td>—</td>
+    </tr>
+  </tbody>
+</table>
+
+## FormItem Slots
+
+<table>
+  <thead>
+    <tr>
+      <th>插槽名</th>
+      <th>说明</th>
+      <th width="120">作用域插槽</th>
+      <th>内容</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>label</td>
+      <td>自定义标签内容</td>
+      <td>否</td>
+      <td>可以放置自定义的标签内容</td>
+    </tr>
+    <tr>
+      <td>validate</td>
+      <td>自定义验证错误信息</td>
+      <td>是</td>
+      <td>可以自定义验证错误信息的展示，提供了 validateMessage 作为插槽内容</td>
+    </tr>
+    <tr>
+      <td>default</td>
+      <td>表单控件内容</td>
+      <td>否</td>
+      <td>放置表单控件，如 input、select 等</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
 ## 如何自定义表单控件？
 
 预定义的表单项很可能并不满足项目的日常需求，例如：
