@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-import { GovMessage } from "../../../../packages/index.js";
+import { GovMessage } from "@/index.js";
 
 const handleClick = (type) => {
 	GovMessage({
