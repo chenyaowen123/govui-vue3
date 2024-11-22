@@ -1,5 +1,7 @@
 <script setup>
 import formBase from "./form-base.vue"
+import formLabel from "./form-label.vue"
+import formAll from "./form-all.vue"
 </script>
 
 # Form 表单
@@ -10,9 +12,24 @@ import formBase from "./form-base.vue"
 
 你可以控制 ```label``` 处于不同位置。
 
+<formBase />
+
+::: details 查看代码
+<<< ./form-base.vue{vue:line-numbers}
+:::
+
+
+
 ## 响应式布局
 
 这在布局搜索项时非常有用，```Form``` 和 ```FormItem``` 基于 ```Row``` 和 ```cal``` 组件，可参考[Grid 栅格化](/component/grid/)。
+
+<formLabel />
+
+::: details 查看代码
+<<< ./form-label.vue{vue:line-numbers}
+:::
+
 
 ## 表单校验
 
@@ -22,7 +39,7 @@ import formBase from "./form-base.vue"
 
 该表单包含了所有预定表单项、表单验证、尺寸、布局、是否可用等控制。
 
-<formBase />
+<formAll />
 
 ## 如何自定义表单控件？
 

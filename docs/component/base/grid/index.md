@@ -17,7 +17,7 @@ import gridFlex from "./grid-flex.vue"
 <gridBase/>
 
 ::: details 查看代码
-<<< ./grid-base.vue#snippet{vue:line-numbers}
+<<< ./grid-base.vue{vue:line-numbers}
 :::
 
 
@@ -28,7 +28,7 @@ Row 组件 提供 ```gutter``` 属性来指定每一栏之间的间隔，默认�
 <gridSpan/>
 
 ::: details 查看代码
-<<< ./grid-span.vue#snippet{vue:line-numbers}
+<<< ./grid-span.vue{vue:line-numbers}
 :::
 
 
@@ -37,7 +37,7 @@ Row 组件 提供 ```gutter``` 属性来指定每一栏之间的间隔，默认�
 <gridHunhe />
 
 ::: details 查看代码
-<<< ./grid-hunhe.vue#snippet{vue:line-numbers}
+<<< ./grid-hunhe.vue{vue:line-numbers}
 :::
 
 
@@ -48,7 +48,7 @@ Row 组件 提供 ```gutter``` 属性来指定每一栏之间的间隔，默认�
 <gridOffset />
 
 ::: details 查看代码
-<<< ./grid-offset.vue#snippet{vue:line-numbers}
+<<< ./grid-offset.vue{vue:line-numbers}
 :::
 
 
@@ -66,7 +66,7 @@ Row 组件 提供 ```gutter``` 属性来指定每一栏之间的间隔，默认�
 <gridFlex />
 
 ::: details 查看代码
-<<< ./grid-flex.vue#snippet{vue:line-numbers}
+<<< ./grid-flex.vue{vue:line-numbers}
 :::
 
 

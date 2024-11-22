@@ -15,7 +15,7 @@ import inputAutoSlot from "./inputauto-slot.vue"
 
 ::: details 查看代码
 ::: code-group
-<<< ./inputauto-base.vue#snippet{vue:line-numbers} [index.vue]
+<<< ./inputauto-base.vue{vue:line-numbers} [index.vue]
 <<< ./data.js#snippet{js:line-numbers} [data.js]
 :::
 
@@ -35,7 +35,7 @@ import inputAutoSlot from "./inputauto-slot.vue"
 
 ::: details 查看代码
 ::: code-group
-<<< ./inputauto-slot.vue#snippet{vue:line-numbers} [index.vue]
+<<< ./inputauto-slot.vue{vue:line-numbers} [index.vue]
 <<< ./data.js#snippet{js:line-numbers} [data.js]
 :::
 

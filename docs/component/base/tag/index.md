@@ -16,7 +16,7 @@ import tagIcon from "./tag-icon.vue"
 <tagBase />
 
 ::: details 查看代码
-<<< ./tag-base.vue#snippet{vue:line-numbers}
+<<< ./tag-base.vue{vue:line-numbers}
 :::
 
 
@@ -28,7 +28,7 @@ import tagIcon from "./tag-icon.vue"
 <tagClose />
 
 ::: details 查看代码
-<<< ./tag-close.vue#snippet{vue:line-numbers}
+<<< ./tag-close.vue{vue:line-numbers}
 :::
 
 
@@ -37,7 +37,7 @@ import tagIcon from "./tag-icon.vue"
 <tagSize />
 
 ::: details 查看代码
-<<< ./tag-size.vue#snippet{vue:line-numbers}
+<<< ./tag-size.vue{vue:line-numbers}
 :::
 
 
@@ -46,7 +46,7 @@ import tagIcon from "./tag-icon.vue"
 <tagIcon />
 
 ::: details 查看代码
-<<< ./tag-icon.vue#snippet{vue:line-numbers}
+<<< ./tag-icon.vue{vue:line-numbers}
 :::
 
 

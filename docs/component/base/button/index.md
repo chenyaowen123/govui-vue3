@@ -15,7 +15,7 @@ import buttonGroup from "./button-group.vue"
 <buttonBase />
 
 ::: details 查看代码
-<<< ./button-base.vue#snippet{vue:line-numbers}
+<<< ./button-base.vue{vue:line-numbers}
 :::
 
 
@@ -24,7 +24,7 @@ import buttonGroup from "./button-group.vue"
 <buttonSize />
 
 ::: details 查看代码
-<<< ./button-size.vue#snippet{vue:line-numbers}
+<<< ./button-size.vue{vue:line-numbers}
 :::
 
 
@@ -33,7 +33,7 @@ import buttonGroup from "./button-group.vue"
 <buttonDisabled />
 
 ::: details 查看代码
-<<< ./button-disabled.vue#snippet{vue:line-numbers}
+<<< ./button-disabled.vue{vue:line-numbers}
 :::
 
 
@@ -46,7 +46,7 @@ import buttonGroup from "./button-group.vue"
 <buttonLoading />
 
 ::: details 查看代码
-<<< ./button-loading.vue#snippet{vue:line-numbers}
+<<< ./button-loading.vue{vue:line-numbers}
 :::
 
 
@@ -57,7 +57,7 @@ import buttonGroup from "./button-group.vue"
 <buttonText />
 
 ::: details 查看代码
-<<< ./button-text.vue#snippet{vue:line-numbers}
+<<< ./button-text.vue{vue:line-numbers}
 :::
 
 
@@ -68,7 +68,7 @@ import buttonGroup from "./button-group.vue"
 <buttonGroup />
 
 ::: details 查看代码
-<<< ./button-group.vue#snippet{vue:line-numbers}
+<<< ./button-group.vue{vue:line-numbers}
 :::
 
 

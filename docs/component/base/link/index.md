@@ -14,7 +14,7 @@ import linkIcon from "./link-icon.vue"
 <linkBase />
 
 ::: details 查看代码
-<<< ./link-base.vue#snippet{vue:line-numbers}
+<<< ./link-base.vue{vue:line-numbers}
 :::
 
 ## 禁用状态
@@ -24,7 +24,7 @@ import linkIcon from "./link-icon.vue"
 <linkDisabled />
 
 ::: details 查看代码
-<<< ./link-disabled.vue#snippet{vue:line-numbers}
+<<< ./link-disabled.vue{vue:line-numbers}
 :::
 
 
@@ -35,7 +35,7 @@ import linkIcon from "./link-icon.vue"
 <linkUnderline />
 
 ::: details 查看代码
-<<< ./link-underline.vue#snippet{vue:line-numbers}
+<<< ./link-underline.vue{vue:line-numbers}
 :::
 
 
@@ -46,7 +46,7 @@ import linkIcon from "./link-icon.vue"
 <linkIcon />
 
 ::: details 查看代码
-<<< ./link-icon.vue#snippet{vue:line-numbers}
+<<< ./link-icon.vue{vue:line-numbers}
 :::
 
 ## Attributes

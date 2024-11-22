@@ -10,7 +10,7 @@ import { computed } from "vue";
 export function useRules(props, govForm) {
 	// 规则选取，优先级：formItem > form
 	const innerRules = computed(() => {
-		let fromFormRules = govForm?.rules[props.prop];
+		let fromFormRules = props?.prop ? govForm?.rules[props.prop] : null;
 		let propsRules = props.rules;
 		let rules = propsRules || fromFormRules || [];
 		rules = Array.isArray(rules) ? rules : [rules];

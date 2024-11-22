@@ -20,7 +20,7 @@ import inputCount from "./input-count.vue"
 <inputBase />
 
 ::: details 查看代码
-<<< ./input-base.vue#snippet{vue:line-numbers}
+<<< ./input-base.vue{vue:line-numbers}
 :::
 
 
@@ -31,7 +31,7 @@ import inputCount from "./input-count.vue"
 <inputSize />
 
 ::: details 查看代码
-<<< ./input-size.vue#snippet{vue:line-numbers}
+<<< ./input-size.vue{vue:line-numbers}
 :::
 
 
@@ -42,7 +42,7 @@ import inputCount from "./input-count.vue"
 <inputDisabled />
 
 ::: details 查看代码
-<<< ./input-disabled.vue#snippet{vue:line-numbers}
+<<< ./input-disabled.vue{vue:line-numbers}
 :::
 
 
@@ -54,7 +54,7 @@ import inputCount from "./input-count.vue"
 <inputFix />
 
 ::: details 查看代码
-<<< ./input-fix.vue#snippet{vue:line-numbers}
+<<< ./input-fix.vue{vue:line-numbers}
 :::
 
 
@@ -66,7 +66,7 @@ import inputCount from "./input-count.vue"
 <inputAddon />
 
 ::: details 查看代码
-<<< ./input-addon.vue#snippet{vue:line-numbers}
+<<< ./input-addon.vue{vue:line-numbers}
 :::
 
 
@@ -77,7 +77,7 @@ import inputCount from "./input-count.vue"
 <inputClear />
 
 ::: details 查看代码
-<<< ./input-clear.vue#snippet{vue:line-numbers}
+<<< ./input-clear.vue{vue:line-numbers}
 :::
 
 
@@ -88,7 +88,7 @@ import inputCount from "./input-count.vue"
 <inputPwd />
 
 ::: details 查看代码
-<<< ./input-pwd.vue#snippet{vue:line-numbers}
+<<< ./input-pwd.vue{vue:line-numbers}
 :::
 
 
@@ -100,7 +100,7 @@ import inputCount from "./input-count.vue"
 <inputCount />
 
 ::: details 查看代码
-<<< ./input-count.vue#snippet{vue:line-numbers}
+<<< ./input-count.vue{vue:line-numbers}
 :::
 
 

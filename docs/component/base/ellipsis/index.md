@@ -15,7 +15,7 @@ import ellipsisHidefoldup from "./ellipsis-hidefoldup.vue"
 <ellipsisBase />
 
 ::: details 查看代码
-<<< ./ellipsis-base.vue#snippet{vue:line-numbers}
+<<< ./ellipsis-base.vue{vue:line-numbers}
 :::
 
 
@@ -26,7 +26,7 @@ import ellipsisHidefoldup from "./ellipsis-hidefoldup.vue"
 <ellipsisFold />
 
 ::: details 查看代码
-<<< ./ellipsis-fold.vue#snippet{vue:line-numbers}
+<<< ./ellipsis-fold.vue{vue:line-numbers}
 :::
 
 
@@ -38,7 +38,7 @@ import ellipsisHidefoldup from "./ellipsis-hidefoldup.vue"
 <ellipsisHidefoldup />
 
 ::: details 查看代码
-<<< ./ellipsis-hidefoldup.vue#snippet{vue:line-numbers}
+<<< ./ellipsis-hidefoldup.vue{vue:line-numbers}
 :::
 
 

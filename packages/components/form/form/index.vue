@@ -3,8 +3,8 @@
 		v-bind="$attrs"
 		class="gov-form"
 		:class="[
-			`gov-form--size-${size}`,
-			`gov-form--label-${labelPosition}`,
+			size && `gov-form--size-${size}`,
+			labelPosition && `gov-form--label-${labelPosition}`,
 			{ 'is-disabled': disabled },
 		]"
 	>
@@ -26,13 +26,7 @@ const props = defineProps({
 	model: {},
 	rules: {},
 	size: String,
-	labelPosition: {
-		type: String,
-		default: "right",
-		validator: (value) => {
-			return ["left", "right", "top"].includes(value);
-		},
-	},
+	labelPosition: String,
 	labelWidth: {
 		type: [String, Number],
 		default: "100px",

@@ -15,7 +15,7 @@ import switchTrueValue from "./switch-true-value.vue"
 <switchBase />
 
 ::: details 查看代码
-<<< ./switch-base.vue#snippet{vue:line-numbers}
+<<< ./switch-base.vue{vue:line-numbers}
 :::
 
 
@@ -25,7 +25,7 @@ import switchTrueValue from "./switch-true-value.vue"
 <switchSize />
 
 ::: details 查看代码
-<<< ./switch-size.vue#snippet{vue:line-numbers}
+<<< ./switch-size.vue{vue:line-numbers}
 :::
 
 
@@ -35,7 +35,7 @@ import switchTrueValue from "./switch-true-value.vue"
 <switchDisabled />
 
 ::: details 查看代码
-<<< ./switch-disabled.vue#snippet{vue:line-numbers}
+<<< ./switch-disabled.vue{vue:line-numbers}
 :::
 
 
@@ -47,7 +47,7 @@ import switchTrueValue from "./switch-true-value.vue"
 <switchType />
 
 ::: details 查看代码
-<<< ./switch-type.vue#snippet{vue:line-numbers}
+<<< ./switch-type.vue{vue:line-numbers}
 :::
 
 
@@ -59,7 +59,7 @@ import switchTrueValue from "./switch-true-value.vue"
 <switchTrueValue />
 
 ::: details 查看代码
-<<< ./switch-true-value.vue#snippet{vue:line-numbers}
+<<< ./switch-true-value.vue{vue:line-numbers}
 :::
 
 

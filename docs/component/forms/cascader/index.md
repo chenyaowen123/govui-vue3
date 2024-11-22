@@ -12,7 +12,7 @@ import cascaderShowAllLevels from "./cascader-show-all-levels.vue"
 <cascaderBase />
 
 ::: details 查看代码
-<<< ./cascader-base.vue#snippet{vue:line-numbers}
+<<< ./cascader-base.vue{vue:line-numbers}
 :::
 
 
@@ -24,7 +24,7 @@ import cascaderShowAllLevels from "./cascader-show-all-levels.vue"
 <cascaderShowAllLevels />
 
 ::: details 查看代码
-<<< ./cascader-show-all-levels.vue#snippet{vue:line-numbers}
+<<< ./cascader-show-all-levels.vue{vue:line-numbers}
 :::
 
 

@@ -21,7 +21,7 @@ import checkboxButton from "./checkbox-button.vue"
 
 可以多个单选框绑定一个值，或者单个绑定。
 
-<<< ./checkbox-base.vue#snippet{vue:line-numbers}
+<<< ./checkbox-base.vue{vue:line-numbers}
 :::
 
 
@@ -32,7 +32,7 @@ import checkboxButton from "./checkbox-button.vue"
 <checkboxBorder/>
 
 ::: details 查看代码
-<<< ./checkbox-border.vue#snippet{vue:line-numbers}
+<<< ./checkbox-border.vue{vue:line-numbers}
 :::
 
 
@@ -43,7 +43,7 @@ import checkboxButton from "./checkbox-button.vue"
 <checkboxDisabled />
 
 ::: details 查看代码
-<<< ./checkbox-disabled.vue#snippet{vue:line-numbers}
+<<< ./checkbox-disabled.vue{vue:line-numbers}
 :::
 
 
@@ -54,7 +54,7 @@ import checkboxButton from "./checkbox-button.vue"
 <checkboxValue/>
 
 ::: details 查看代码
-<<< ./checkbox-value.vue#snippet{vue:line-numbers}
+<<< ./checkbox-value.vue{vue:line-numbers}
 :::
 
 
@@ -67,7 +67,7 @@ import checkboxButton from "./checkbox-button.vue"
 <checkboxGroup/>
 
 ::: details 查看代码
-<<< ./checkbox-group.vue#snippet{vue:line-numbers}
+<<< ./checkbox-group.vue{vue:line-numbers}
 :::
 
 
@@ -79,7 +79,7 @@ import checkboxButton from "./checkbox-button.vue"
 <checkboxButton />
 
 ::: details 查看代码
-<<< ./checkbox-button.vue#snippet{vue:line-numbers}
+<<< ./checkbox-button.vue{vue:line-numbers}
 :::
 
 

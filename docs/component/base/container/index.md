@@ -17,7 +17,7 @@ import container7 from "./container7.vue"
 <container1 />
 
 ::: details 查看代码
-<<< ./container1.vue#snippet{vue:line-numbers}
+<<< ./container1.vue{vue:line-numbers}
 :::
 
 
@@ -26,7 +26,7 @@ import container7 from "./container7.vue"
 <container2 />
 
 ::: details 查看代码
-<<< ./container2.vue#snippet{vue:line-numbers}
+<<< ./container2.vue{vue:line-numbers}
 :::
 
 
@@ -36,7 +36,7 @@ import container7 from "./container7.vue"
 <container3 />
 
 ::: details 查看代码
-<<< ./container3.vue#snippet{vue:line-numbers}
+<<< ./container3.vue{vue:line-numbers}
 :::
 
 
@@ -45,7 +45,7 @@ import container7 from "./container7.vue"
 <container4 />
 
 ::: details 查看代码
-<<< ./container4.vue#snippet{vue:line-numbers}
+<<< ./container4.vue{vue:line-numbers}
 :::
 
 
@@ -54,7 +54,7 @@ import container7 from "./container7.vue"
 <container5 />
 
 ::: details 查看代码
-<<< ./container5.vue#snippet{vue:line-numbers}
+<<< ./container5.vue{vue:line-numbers}
 :::
 
 
@@ -63,7 +63,7 @@ import container7 from "./container7.vue"
 <container6 />
 
 ::: details 查看代码
-<<< ./container6.vue#snippet{vue:line-numbers}
+<<< ./container6.vue{vue:line-numbers}
 :::
 
 
@@ -72,7 +72,7 @@ import container7 from "./container7.vue"
 <container7 />
 
 ::: details 查看代码
-<<< ./container7.vue#snippet{vue:line-numbers}
+<<< ./container7.vue{vue:line-numbers}
 :::
 
 

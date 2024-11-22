@@ -14,7 +14,7 @@ import rateCustom from "./rate-custom.vue"
 <rateBase />
 
 ::: details 查看代码
-<<< ./rate-base.vue#snippet{vue:line-numbers}
+<<< ./rate-base.vue{vue:line-numbers}
 :::
 
 
@@ -26,7 +26,7 @@ import rateCustom from "./rate-custom.vue"
 <rateMax />
 
 ::: details 查看代码
-<<< ./rate-max.vue#snippet{vue:line-numbers}
+<<< ./rate-max.vue{vue:line-numbers}
 :::
 
 
@@ -38,7 +38,7 @@ import rateCustom from "./rate-custom.vue"
 <rateDisabled />
 
 ::: details 查看代码
-<<< ./rate-disabled.vue#snippet{vue:line-numbers}
+<<< ./rate-disabled.vue{vue:line-numbers}
 :::
 
 
@@ -49,7 +49,7 @@ import rateCustom from "./rate-custom.vue"
 <rateCustom />
 
 ::: details 查看代码
-<<< ./rate-custom.vue#snippet{vue:line-numbers}
+<<< ./rate-custom.vue{vue:line-numbers}
 :::
 
 

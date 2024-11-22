@@ -20,7 +20,7 @@ import uploadAppend from "./upload-append.vue"
 示例采用模拟 ```simulateUpload.js```，实际项目可参考 ```axiosUpload.js```。
 
 ::: code-group
-<<< ./upload-base.vue#snippet{27-31 vue:line-numbers} [index.vue]
+<<< ./upload-base.vue{27-31 vue:line-numbers} [index.vue]
 <<< ./js/simulateUpload.js#snippet{js:line-numbers} [simulateUpload.js]
 <<< ./js/axiosUpload.js#snippet{js:line-numbers} [axiosUpload.js]
 :::
@@ -37,7 +37,7 @@ import uploadAppend from "./upload-append.vue"
 示例采用模拟 ```simulateUpload.js```，实际项目可参考 ```axiosUpload.js```。
 
 ::: code-group
-<<< ./upload-multiple.vue#snippet{22-26 vue:line-numbers} [index.vue]
+<<< ./upload-multiple.vue{22-26 vue:line-numbers} [index.vue]
 <<< ./js/simulateUpload.js#snippet{js:line-numbers} [simulateUpload.js]
 <<< ./js/axiosUpload.js#snippet{js:line-numbers} [axiosUpload.js]
 :::
@@ -54,7 +54,7 @@ import uploadAppend from "./upload-append.vue"
 示例采用模拟 ```simulateUpload.js```，实际项目可参考 ```axiosUpload.js```。
 
 ::: code-group
-<<< ./upload-button.vue#snippet{56-60 vue:line-numbers} [index.vue]
+<<< ./upload-button.vue{56-60 vue:line-numbers} [index.vue]
 <<< ./js/simulateUpload.js#snippet{js:line-numbers} [simulateUpload.js]
 <<< ./js/axiosUpload.js#snippet{js:line-numbers} [axiosUpload.js]
 :::
@@ -68,7 +68,7 @@ import uploadAppend from "./upload-append.vue"
 <uploadDisabled />
 
 ::: details 查看代码
-<<< ./upload-disabled.vue#snippet{vue:line-numbers} [index.vue]
+<<< ./upload-disabled.vue{vue:line-numbers} [index.vue]
 :::
 
 
@@ -82,7 +82,7 @@ import uploadAppend from "./upload-append.vue"
 示例采用模拟 ```simulateUpload.js```，实际项目可参考 ```axiosUpload.js```。
 
 ::: code-group
-<<< ./upload-append.vue#snippet{38-42 vue:line-numbers} [index.vue]
+<<< ./upload-append.vue{38-42 vue:line-numbers} [index.vue]
 <<< ./js/simulateUpload.js#snippet{js:line-numbers} [simulateUpload.js]
 <<< ./js/axiosUpload.js#snippet{js:line-numbers} [axiosUpload.js]
 :::

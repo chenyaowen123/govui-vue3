@@ -12,7 +12,7 @@
 .gov-form-item {
 	display: flex;
 	flex-direction: row;
-	align-items: top;
+	align-items:flex-start;
 
 	// 不同尺寸
 	&--size-large &__label {
@@ -38,6 +38,9 @@
 		color: var(--gov-text-color);
 		padding: 0 12px 0 0;
 		box-sizing: border-box;
+		&.is-empty{
+			height: 0;
+		}
 	}
 	&--label-left &__label {
 		text-align: left;
@@ -58,6 +61,7 @@
 	// 内容
 	&__content {
 		flex: 1;
+		width: 100%;
 	}
 	&__validate {
 		min-height: 12px;

@@ -15,7 +15,7 @@ import iconList from "./icon-list.vue"
 <iconBase/>
 
 ::: details 查看代码
-<<< ./icon-base.vue#snippet{vue:line-numbers}
+<<< ./icon-base.vue{vue:line-numbers}
 :::
 
 
@@ -24,7 +24,7 @@ import iconList from "./icon-list.vue"
 <iconList/>
 
 ::: details 查看代码
-<<< ./icon-list.vue#snippet{vue:line-numbers}
+<<< ./icon-list.vue{vue:line-numbers}
 :::
 
 

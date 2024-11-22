@@ -15,7 +15,7 @@ import textareaResize from "./textarea-resize.vue"
 <textareaBase />
 
 ::: details 查看代码
-<<< ./textarea-base.vue#snippet{vue:line-numbers}
+<<< ./textarea-base.vue{vue:line-numbers}
 :::
 
 
@@ -26,7 +26,7 @@ import textareaResize from "./textarea-resize.vue"
 <textareaRows />
 
 ::: details 查看代码
-<<< ./textarea-Rows.vue#snippet{vue:line-numbers}
+<<< ./textarea-Rows.vue{vue:line-numbers}
 :::
 
 
@@ -38,7 +38,7 @@ import textareaResize from "./textarea-resize.vue"
 <textareaMax />
 
 ::: details 查看代码
-<<< ./textarea-max.vue#snippet{vue:line-numbers}
+<<< ./textarea-max.vue{vue:line-numbers}
 :::
 
 
@@ -49,7 +49,7 @@ import textareaResize from "./textarea-resize.vue"
 <textareaClear />
 
 ::: details 查看代码
-<<< ./textarea-clear.vue#snippet{vue:line-numbers}
+<<< ./textarea-clear.vue{vue:line-numbers}
 :::
 
 
@@ -60,7 +60,7 @@ import textareaResize from "./textarea-resize.vue"
 <textareaResize />
 
 ::: details 查看代码
-<<< ./textarea-resize.vue#snippet{vue:line-numbers}
+<<< ./textarea-resize.vue{vue:line-numbers}
 :::
 
 

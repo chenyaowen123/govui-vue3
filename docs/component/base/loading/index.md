@@ -15,7 +15,7 @@ import loadingSlot from "./loading-slot.vue"
 <loadingBase />
 
 ::: details 查看代码
-<<< ./loading-base.vue#snippet{vue:line-numbers}
+<<< ./loading-base.vue{vue:line-numbers}
 :::
 
 
@@ -26,7 +26,7 @@ import loadingSlot from "./loading-slot.vue"
 <loadingStyle />
 
 ::: details 查看代码
-<<< ./loading-style.vue#snippet{vue:line-numbers}
+<<< ./loading-style.vue{vue:line-numbers}
 :::
 
 
@@ -36,7 +36,7 @@ import loadingSlot from "./loading-slot.vue"
 <loadingSlot />
 
 ::: details 查看代码
-<<< ./loading-slot.vue#snippet{vue:line-numbers}
+<<< ./loading-slot.vue{vue:line-numbers}
 :::
 
 

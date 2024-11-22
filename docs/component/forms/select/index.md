@@ -16,7 +16,7 @@ import selectSize from "./select-size.vue"
 <selectBase />
 
 ::: details 查看代码
-<<< ./select-base.vue#snippet{vue:line-numbers}
+<<< ./select-base.vue{vue:line-numbers}
 :::
 
 
@@ -28,7 +28,7 @@ import selectSize from "./select-size.vue"
 <selectDisabled />
 
 ::: details 查看代码
-<<< ./select-disabled.vue#snippet{vue:line-numbers}
+<<< ./select-disabled.vue{vue:line-numbers}
 :::
 
 
@@ -40,7 +40,7 @@ import selectSize from "./select-size.vue"
 <selectClear />
 
 ::: details 查看代码
-<<< ./select-clear.vue#snippet{vue:line-numbers}
+<<< ./select-clear.vue{vue:line-numbers}
 :::
 
 
@@ -51,7 +51,7 @@ import selectSize from "./select-size.vue"
 <selectSize />
 
 ::: details 查看代码
-<<< ./select-size.vue#snippet{vue:line-numbers}
+<<< ./select-size.vue{vue:line-numbers}
 :::
 
 

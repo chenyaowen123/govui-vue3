@@ -17,7 +17,7 @@ import radioButton from "./radio-button.vue"
 <radioBase/>
 
 ::: details 查看代码
-<<< ./radio-base.vue#snippet{vue:line-numbers}
+<<< ./radio-base.vue{vue:line-numbers}
 :::
 
 ## 单选按钮组
@@ -27,7 +27,7 @@ import radioButton from "./radio-button.vue"
 <radioGroup/>
 
 ::: details 查看代码
-<<< ./radio-group.vue#snippet{vue:line-numbers}
+<<< ./radio-group.vue{vue:line-numbers}
 :::
 
 
@@ -38,7 +38,7 @@ import radioButton from "./radio-button.vue"
 <radioDisabled/>
 
 ::: details 查看代码
-<<< ./radio-disabled.vue#snippet{vue:line-numbers}
+<<< ./radio-disabled.vue{vue:line-numbers}
 :::
 
 
@@ -49,7 +49,7 @@ import radioButton from "./radio-button.vue"
 <radioBorder/>
 
 ::: details 查看代码
-<<< ./radio-border.vue#snippet{vue:line-numbers}
+<<< ./radio-border.vue{vue:line-numbers}
 :::
 
 
@@ -60,7 +60,7 @@ import radioButton from "./radio-button.vue"
 <radioButton />
 
 ::: details 查看代码
-<<< ./radio-button.vue#snippet{vue:line-numbers}
+<<< ./radio-button.vue{vue:line-numbers}
 :::
 
 

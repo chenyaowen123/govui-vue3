@@ -4,14 +4,17 @@
 		:span="span"
 		class="gov-form-item"
 		:class="[
-			`gov-form-item--size-${innerSize}`,
-			`gov-form-item--label-${innerLabelPosition}`,
+			innerSize && `gov-form-item--size-${innerSize}`,
+			innerLabelPosition && `gov-form-item--label-${innerLabelPosition}`,
 			`is-${validateState}`,
 			{ 'is-disabled': innerDisabled },
 		]"
 		:style="{ width: innerLabelWidth }"
 	>
-		<div class="gov-form-item__label">
+		<div
+			class="gov-form-item__label"
+			:class="{ 'is-empty': !label && !$slots.label }"
+		>
 			<span class="gov-form-item__label-required" v-if="isRequired">
 				*
 			</span>
@@ -57,13 +60,7 @@ const props = defineProps({
 	prop: String, // 表单域 model 字段
 	label: String,
 	rules: Object, // 表单验证规则，可以是 Object，也可以是 Array
-	labelPosition: {
-		type: String,
-		default: "right",
-		validator: (value) => {
-			return ["left", "right", "top"].includes(value);
-		},
-	},
+	labelPosition: String,
 	labelWidth: {
 		type: [String, Number],
 		default: "100px",
