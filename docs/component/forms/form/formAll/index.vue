@@ -138,15 +138,15 @@ const formData = reactive({
 	files: [],
 });
 
-// 表单验证
+// 表单验证规则
 const formRules = reactive(rules);
 
-// 自动补全
+// 自动补全 fetch
 const querySearch = (str = "") => {
 	return fruits.filter((el) => el.toLowerCase().includes(str.toLowerCase()));
 };
 
-// 模拟上传请求
+// 上传请求
 function simulateUpload(file, fileId, onProgress) {
 	return uploadFile({ myfile: file }, onProgress).then((response) => {
 		// 返回 url 预览图片；返回 response 后端数据。
