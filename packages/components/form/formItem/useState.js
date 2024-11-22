@@ -26,7 +26,7 @@ export function useState(props, govForm) {
 	// label宽度
 	const innerLabelWidth = computed(() => {
 		let width = props?.labelWidth || govForm?.labelWidth;
-		return typeof width === "string" ? width : width + "px";
+		return !width ? null : typeof width === "string" ? width : width + "px";
 	});
 	return { innerSize, innerDisabled, innerLabelPosition, innerLabelWidth };
 }

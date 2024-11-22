@@ -27,10 +27,7 @@ const props = defineProps({
 	rules: {},
 	size: String,
 	labelPosition: String,
-	labelWidth: {
-		type: [String, Number],
-		default: "100px",
-	},
+	labelWidth: [String, Number],
 	disabled: Boolean,
 });
 

@@ -1,5 +1,6 @@
 import { ref, computed } from "vue";
 import { useRules } from "./useRules";
+import { getPropByPath } from "./utils.js";
 import AsyncValidator from "async-validator";
 
 /**
@@ -19,7 +20,9 @@ export function useValidation(props, govForm, listenerManager) {
 	const fieldValue = computed(() => {
 		let model = govForm?.model;
 		if (model && props.prop) {
-			return model[props.prop];
+			let path = props.prop;
+			let value = getPropByPath(model, path, true).value;
+			return value;
 		} else {
 			return undefined;
 		}

@@ -9,40 +9,34 @@
 					<gov-radio :value="6">四列</gov-radio>
 				</gov-radio-group>
 			</gov-form-item>
-			<gov-form-item label="对齐方式">
-				<gov-radio-group button v-model="labelPosition">
-					<gov-radio value="left">左对齐</gov-radio>
-					<gov-radio value="right">右对齐</gov-radio>
-					<gov-radio value="top">顶部对齐</gov-radio>
-				</gov-radio-group>
-			</gov-form-item>
 		</gov-form>
 		<hr />
-		<gov-form :labelPosition="labelPosition">
-			<gov-form-item label="姓名" :span="formItemSpan">
-				<gov-input v-model="formData.name" />
+		<gov-form labelWidth="50px">
+			<gov-form-item label="标题" :span="formItemSpan">
+				<gov-input v-model="formData.title" />
 			</gov-form-item>
-			<gov-form-item label="详细地址" :span="formItemSpan">
-				<gov-textarea
-					v-model="formData.addressInfo"
-					placeholder="请输入"
-				/>
+			<gov-form-item label="地址" :span="formItemSpan">
+				<gov-input v-model="formData.address" />
 			</gov-form-item>
-			<gov-form-item>
-				<gov-button type="primary"> 提交 </gov-button>
+			<gov-form-item label="产品" :span="formItemSpan">
+				<gov-input v-model="formData.product" />
+			</gov-form-item>
+			<gov-form-item label="其它" :span="formItemSpan">
+				<gov-input v-model="formData.other" />
 			</gov-form-item>
 		</gov-form>
+		<template>formItemSpan:{{ formItemSpan }}</template>
 	</demo-container>
 </template>
 
 <script setup>
 import { ref, reactive } from "vue";
 
-const formItemSpan = ref(24);
-const labelPosition = ref("right");
-
+const formItemSpan = ref(12);
 const formData = reactive({
-	name: null,
-	addressInfo: null,
+	title: null,
+	address: null,
+	product: null,
+	other: null,
 });
 </script>

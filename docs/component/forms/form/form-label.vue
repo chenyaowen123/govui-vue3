@@ -15,10 +15,7 @@
 				<gov-input v-model="formData.name" />
 			</gov-form-item>
 			<gov-form-item label="详细地址">
-				<gov-textarea
-					v-model="formData.addressInfo"
-					placeholder="请输入"
-				/>
+				<gov-textarea v-model="formData.address" placeholder="请输入" />
 			</gov-form-item>
 			<gov-form-item>
 				<gov-button type="primary"> 提交 </gov-button>
@@ -34,6 +31,6 @@ import { ref, reactive } from "vue";
 const labelPosition = ref("right");
 const formData = reactive({
 	name: null,
-	addressInfo: null,
+	address: null,
 });
 </script>

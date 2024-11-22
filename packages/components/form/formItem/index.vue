@@ -9,11 +9,11 @@
 			`is-${validateState}`,
 			{ 'is-disabled': innerDisabled },
 		]"
-		:style="{ width: innerLabelWidth }"
 	>
 		<div
 			class="gov-form-item__label"
 			:class="{ 'is-empty': !label && !$slots.label }"
+			:style="{ width: innerLabelWidth }"
 		>
 			<span class="gov-form-item__label-required" v-if="isRequired">
 				*
@@ -61,10 +61,7 @@ const props = defineProps({
 	label: String,
 	rules: Object, // 表单验证规则，可以是 Object，也可以是 Array
 	labelPosition: String,
-	labelWidth: {
-		type: [String, Number],
-		default: "100px",
-	},
+	labelWidth: [String, Number],
 	size: String,
 	disabled: Boolean,
 	// 提供给col的 span，默认是24

@@ -18,6 +18,7 @@ defineProps({
 
 <style lang="scss" scoped>
 .demo-container {
+	font-size: 14px;
 	&.is-transparent {
 		background: url("./transparent.jpg");
 		background-repeat: repeat;
