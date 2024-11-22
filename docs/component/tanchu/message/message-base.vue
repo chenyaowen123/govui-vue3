@@ -1,5 +1,5 @@
 <template>
-	<demo-container class="gov-demo-rate">
+	<demo-container>
 		<gov-button @click="handleClick">点击弹出Message</gov-button>
 	</demo-container>
 </template>

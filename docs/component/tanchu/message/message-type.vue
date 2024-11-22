@@ -1,5 +1,5 @@
 <template>
-	<demo-container class="gov-demo-rate">
+	<demo-container>
 		<gov-button @click="handleClick('default')">默认</gov-button>
 		<gov-button @click="handleClick('primary')" type="primary">
 			主要

@@ -1,8 +1,8 @@
 <script setup>
-import GovMessageBase from "./message-base.vue"
-import GovMessageOption from "./message-option.vue"
-import GovMessageType from "./message-type.vue"
-import GovMessageCloseall from "./message-closeall.vue"
+import messageBase from "./message-base.vue"
+import messageOption from "./message-option.vue"
+import messageType from "./message-type.vue"
+import messageCloseall from "./message-closeall.vue"
 </script>
 
 # Message 弹窗
@@ -11,7 +11,7 @@ import GovMessageCloseall from "./message-closeall.vue"
 
 ## 基础使用
 
-<GovMessageBase />
+<messageBase />
 
 ::: details 查看代码
 <<< ./message-base.vue{11 vue:line-numbers}
@@ -22,7 +22,7 @@ import GovMessageCloseall from "./message-closeall.vue"
 
 弹出不同风格的 `message`。
 
-<GovMessageType />
+<messageType />
 
 ::: details 查看代码
 <<< ./message-type.vue{25 vue:line-numbers}
@@ -34,7 +34,7 @@ import GovMessageCloseall from "./message-closeall.vue"
 
 支持 `html`，时长，是否有关闭按钮等。
 
-<GovMessageOption />
+<messageOption />
 
 ::: details 查看代码
 <<< ./message-option.vue{11-23 vue:line-numbers}
@@ -46,7 +46,7 @@ import GovMessageCloseall from "./message-closeall.vue"
 
 在任意实例上关闭所有弹窗。
 
-<GovMessageCloseall />
+<messageCloseall />
 
 ::: details 查看代码
 <<< ./message-closeall.vue{16 vue:line-numbers}
