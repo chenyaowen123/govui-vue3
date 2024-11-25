@@ -100,6 +100,6 @@ const changePage = (page) => {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 @use "./pagination.scss";
 </style>

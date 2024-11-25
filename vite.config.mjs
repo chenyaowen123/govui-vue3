@@ -1,9 +1,16 @@
 import { defineConfig } from "vite";
+import { visualizer } from "rollup-plugin-visualizer";
 import vue from "@vitejs/plugin-vue";
 import { resolve } from "path";
 
 export default defineConfig({
-	plugins: [vue()], // 使用 Vite 的 Vue 插件
+	plugins: [
+		vue(), // 使用 Vite 的 Vue 插件
+		// 分析打包
+		visualizer({
+			open: true,
+		}),
+	],
 	resolve: {
 		alias: {
 			"@": resolve(__dirname, "packages"),
@@ -24,6 +31,7 @@ export default defineConfig({
 				globals: {
 					vue: "Vue", // 在 UMD 构建中，为 Vue 提供一个全局变量名（通常是 'Vue'）
 				},
+				exports: "named",
 			},
 		},
 	},

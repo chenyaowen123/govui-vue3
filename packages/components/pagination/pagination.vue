@@ -149,6 +149,6 @@ const next = () => {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 @use "./pagination.scss";
 </style>

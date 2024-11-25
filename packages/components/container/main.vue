@@ -10,7 +10,7 @@ defineOptions({
 });
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .gov-main {
 	flex: 1;
 	flex-basis: auto;

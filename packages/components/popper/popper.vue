@@ -114,8 +114,6 @@ const styleObject = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-
-
 .gov-popper {
 	--popper-theme-background-color: #ffffff;
 	--popper-theme-background-color-hover: #ffffff;

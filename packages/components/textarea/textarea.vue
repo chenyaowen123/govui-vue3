@@ -147,8 +147,6 @@ const clearText = () => {
 };
 </script>
 
-<style scoped></style>
-
 <style lang="scss">
 @use "./textarea.scss";
 </style>

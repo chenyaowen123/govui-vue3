@@ -273,6 +273,6 @@ const tableEl = ref(null);
 useStickyTable(tableEl);
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @use "./table.scss";
 </style>

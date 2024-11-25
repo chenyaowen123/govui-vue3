@@ -54,7 +54,7 @@ defineProps({
 });
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .gov-page-container {
 	display: flex;
 	flex-direction: column;
