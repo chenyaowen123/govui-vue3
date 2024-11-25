@@ -1,5 +1,5 @@
 <template>
-	<gov-popper
+	<GovPopper
 		v-model="show"
 		:height="popperHeight"
 		padding="0"
@@ -43,7 +43,7 @@
 				<slot :item="item">{{ item }}</slot>
 			</div>
 		</div>
-	</gov-popper>
+	</GovPopper>
 </template>
 
 <script setup>

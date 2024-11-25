@@ -1,8 +1,8 @@
 <template>
-	<gov-popper
+	<GovPopper
 		v-model="innerValue"
 		:disabled="disabled"
-		:padding="0"
+		padding="0"
 		v-bind="$attrs"
 		class="gov-dropdown"
 		:class="[{ 'is-disabled': disabled }]"
@@ -13,11 +13,13 @@
 		<div class="gov-dropdown__box">
 			<slot name="dropdown" />
 		</div>
-	</gov-popper>
+	</GovPopper>
 </template>
 
 <script setup>
 import { computed, watch, provide, reactive, toRefs } from "vue";
+import GovPopper from "../popper/popper.vue";
+
 defineOptions({
 	name: "GovDropdown",
 });

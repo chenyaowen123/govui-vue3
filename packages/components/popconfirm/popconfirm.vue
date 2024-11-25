@@ -1,5 +1,5 @@
 <template>
-	<gov-popper
+	<GovPopper
 		:modelValue="show"
 		v-bind="$attrs"
 		class="gov-popconfirm"
@@ -35,7 +35,7 @@
 				{{ confirmButtonText }}
 			</gov-button>
 		</div>
-	</gov-popper>
+	</GovPopper>
 </template>
 
 <script setup>

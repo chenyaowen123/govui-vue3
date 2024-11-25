@@ -1,2 +1,3 @@
 import { SwiperSlide } from "swiper/vue";
-export const GovSwiperSlide = SwiperSlide;
+const GovSwiperSlide = SwiperSlide;
+export default GovSwiperSlide;

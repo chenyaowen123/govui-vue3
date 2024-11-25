@@ -1,5 +1,5 @@
 <template>
-	<gov-popper
+	<GovPopper
 		v-model="show"
 		:height="popperHeight"
 		padding="0"
@@ -35,7 +35,7 @@
 		<div class="gov-select__box">
 			<slot />
 		</div>
-	</gov-popper>
+	</GovPopper>
 </template>
 
 <script setup>
