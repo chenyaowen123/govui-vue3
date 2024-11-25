@@ -9,5 +9,3 @@
 		</gov-result>
 	</demo-container>
 </template>
-
-<script setup></script>

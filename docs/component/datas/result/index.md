@@ -12,11 +12,22 @@ import resultCustom from "./result-custom.vue"
 
 <resultBase />
 
+::: details 查看代码
+<<< ./result-base.vue{vue:line-numbers}
+:::
+
+
 ## 定义插槽内容
 
 默认插槽里可以追加一些按钮等操作。
 
 <resultCustom />
+
+::: details 查看代码
+<<< ./result-custom.vue{vue:line-numbers}
+:::
+
+
 
 ## Attributes
 
