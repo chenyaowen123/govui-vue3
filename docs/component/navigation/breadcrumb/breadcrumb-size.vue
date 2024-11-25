@@ -19,5 +19,3 @@
 		</gov-breadcrumb>
 	</demo-container>
 </template>
-
-<script setup></script>
