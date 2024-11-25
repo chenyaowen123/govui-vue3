@@ -82,7 +82,7 @@ const internalStatus = computed(() => {
 </script>
 
 <style lang="scss">
-@use "@/styles/theme.scss" as *;
+
 .gov-step {
 	flex: 1;
 	color: var(--gov-text-color);

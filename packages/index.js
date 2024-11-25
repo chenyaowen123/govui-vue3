@@ -1,3 +1,6 @@
+// 主题色
+import "./styles/theme.scss";
+
 // 规范化
 import GovGuoqi from "./components/guoqi/guoqi.vue";
 import GovGuohui from "./components/guohui/guohui.vue";

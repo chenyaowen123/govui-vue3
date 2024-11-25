@@ -1,4 +1,4 @@
-@use "@/styles/theme.scss" as *;
+
 
 .gov-link {
 	display: inline-flex;
@@ -39,7 +39,12 @@
 	// 默认
 	&.gov-link--default {
 		color: var(--gov-text-color);
-		&:hover, &.is-disabled {
+		&:hover{
+			color: var(--gov-text-dark);
+			border-color: var(--gov-text-dark);
+		}
+
+		&.is-disabled {
 			color: var(--gov-text-color-5);
 			border-color: var(--gov-text-color-5);
 		}
@@ -49,10 +54,14 @@
 	}
 
 	// 不同主题
-	@each $type, $color in $theme-colors {
+	@each $type in ('primary','success','warning','danger','info') {
 		&.gov-link--#{$type} {
 			color: var(--gov-#{$type});
-			&:hover, &.is-disabled {
+			&:hover{
+				color: var(--gov-#{$type}-dark);
+				border-color: var(--gov-#{$type}-dark);
+			}
+			&.is-disabled {
 				color: var(--gov-#{$type}-5);
 				border-color: var(--gov-#{$type}-5);
 			}

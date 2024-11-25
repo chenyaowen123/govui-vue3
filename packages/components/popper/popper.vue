@@ -114,7 +114,7 @@ const styleObject = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-@use "@/styles/theme.scss" as *;
+
 
 .gov-popper {
 	--popper-theme-background-color: #ffffff;

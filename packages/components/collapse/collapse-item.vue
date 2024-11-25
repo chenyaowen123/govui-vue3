@@ -93,7 +93,7 @@ const handleClick = () => {
 </script>
 
 <style lang="scss">
-@use "@/styles/theme.scss" as *;
+
 .gov-collapse-item {
 	color: var(--gov-text-color);
 	border-top: 1px solid var(--gov-border-color-5);

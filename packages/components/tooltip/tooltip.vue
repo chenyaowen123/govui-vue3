@@ -71,7 +71,7 @@ const handleClose = () => {
 </script>
 
 <style lang="scss">
-@use "@/styles/theme.scss" as *;
+
 
 .gov-tooltip {
 	--popper-theme-background-color: #000;

@@ -60,7 +60,7 @@ function hadleClick() {
 </script>
 
 <style lang="scss">
-@use "@/styles/theme.scss" as *;
+
 
 .gov-dropdown-divided {
 	border-top: 1px solid var(--gov-border-color-5);

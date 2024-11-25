@@ -80,7 +80,7 @@ provide(
 </script>
 
 <style lang="scss">
-@use "@/styles/theme.scss" as *;
+
 .gov-tabs {
 	background: #fff;
 	border: 1px solid var(--gov-border-color);
