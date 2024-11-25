@@ -144,6 +144,6 @@ const backTopStyle = computed(() => ({
 }));
 </script>
 
-<style scoped>
+<style lang="scss">
 @use "./backtop.scss";
 </style>
