@@ -2,46 +2,51 @@
 @use "sass:map";
 @use "sass:color";
 
-// 主题颜色
+// 定义主题颜色
 $theme-colors: (
-	"primary": #e74c3c,
-	"success": #27ae60,
-	"warning": #f39c12,
-	"danger": #8e44ad,
-	"info": #909399,
+	"primary": #e74c3c, // 主要颜色，常用于主要操作
+	"success": #27ae60, // 成功颜色，用于表示成功状态
+	"warning": #f39c12, // 警告颜色，用于警告提示
+	"danger": #8e44ad,  // 危险颜色，用于表示错误或危险状态
+	"info": #909399    // 信息颜色，用于一般信息提示
 ) !default;
 
-// 常用其它颜色
+// 定义常用其他颜色
 $special-colors: (
-	"text-color": #303133,
-	"border-color": #cdd0d6,
-	"fill-color": #e6e8eb,
+	"text-color": #303133, // 主文本颜色
+	"border-color": #cdd0d6, // 边框颜色
+	"fill-color": #e6e8eb   // 填充颜色
 ) !default;
 
-// 合并两个映射
+// 定义 colors
 $colors: map.merge($theme-colors, $special-colors) !default;
 
 :root {
-	// 生成不同等级颜色
+	// 遍历 colors，为每个颜色生成不同等级的颜色变量
 	@each $color-name, $color-value in $colors {
+		// 生成暗色版本的颜色
 		--gov-#{$color-name}-dark: #{color.mix(#000, $color-value, 25%)};
+		// 原始颜色
 		--gov-#{$color-name}: #{$color-value};
+		// 生成从1到9的渐变色
 		@for $i from 1 through 9 {
-			$color-tint: color.mix(white, $color-value, $i * 10%); // 10% - 90%
+			$color-tint: color.mix(white, $color-value, $i * 10%); // 从10%到90%的白色混合
 			--gov-#{$color-name}-#{$i}: #{$color-tint};
 		}
 	}
 
-	// 常见圆角大小
+	// 定义常见的圆角大小，例如容器，元素，使 UI 更加平滑
 	--gov-border-radius-base: 5px;
 
-	// 表单控件不同尺寸的常规高度，例如input select Button ...
-	--gov-large-height: 40px;
-	--gov-default-height: 36px;
-	--gov-small-height: 32px;
+	// 定义表单控件的不同尺寸的常规高度
+	// 这些尺寸用于input、select、Button等基础表单元素，利于控制其在 FormItem 当中的 UI表现
+	--gov-large-height: 40px; // 大尺寸高度
+	--gov-default-height: 36px; // 默认尺寸高度
+	--gov-small-height: 32px; // 小尺寸高度
 
-	// 表单控件不同尺寸字体大小
-	--gov-large-font-size: 14px;
-	--gov-default-font-size: 14px;
-	--gov-small-font-size: 12px;
+	// 定义表单控件不同尺寸的字体大小
+	// 这些字体大小与上述高度相对应
+	--gov-large-font-size: 14px; // 大尺寸字体大小
+	--gov-default-font-size: 14px; // 默认尺寸字体大小
+	--gov-small-font-size: 12px; // 小尺寸字体大小
 }

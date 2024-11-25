@@ -53,48 +53,28 @@ GovUI 默认的主题色是政府机构指定的红色。
 <colorCard name="填充色 fill" blackText :color="colorPalette.fillColor"/>
 
 ## SCSS控制
-GovUI使用Scss编写而成，内部的颜色控制非常简洁，如果你熟悉Scss来控制你的样式，那么你将非常容易上手。
+GovUI使用Scss编写而成，内部的颜色控制非常简洁，如果你熟悉Scss来控制你的样式，你将非常容易上手。
 
 ### 内部实现
 
-```sass
-// 颜色控制
-@use "sass:math";
+::: details 查看代码
+<<< ../../packages/styles/theme.scss{scss:line-numbers}
+:::
 
-$colors: (
-	"primary": #e74c3c,
-	"success": #27ae60,
-	"warning": #f39c12,
-	"danger": #8e44ad,
-	"info": #909399,
-	"text-color": #303133,
-	"border-color": #cdd0d6,
-	"fill-color": #e6e8eb
-) !default;
-
-:root {
-	@each $color-name, $color-value in $colors {
-		--gov-#{$color-name}-dark: #{mix(#000, $color-value, 25%)};
-		--gov-#{$color-name}: #{$color-value};
-		@for $i from 1 through 9 {
-			$color-tint: mix(white, $color-value, $i * 10%); // 10% - 90%
-			--gov-#{$color-name}-#{$i}: #{$color-tint};
-		}
-	}
-}
-
-```
 ### 如何覆盖？
 如果您的项目也使用了 Scss，可以直接修改 GovUI 的样式变量。
 
 新建Scss文件```./custom/index.scss```，内容如下：
 
 ```Scss
-/* 只需要重写部分变量即可 */
-@forward 'GovUI/styles/variables.scss' with (
-  $colors: (
-    "primary": #e74c3c,
+// 仅覆盖您需要更改的变量
+@forward 'path/to/your/variables.scss' with (
+  $theme-colors: (
+    "primary": green, // 将主题颜色更改为绿色
   ),
+  $special-colors: (
+    "text-color": #333, // 将主文本颜色更改为更深的灰色
+  )
 );
 ```
 
@@ -110,10 +90,12 @@ const app = createApp(App)
 app.use(GovUI)
 ```
 
+
 ## CSS控制
 
 ### CSS全局变量
-CSS全局变量，也称为CSS自定义属性（Custom Properties），允许你在CSS中定义可复用的值。这些变量可以在不同的选择器中使用，提高样式的一致性和可维护性。
+
+你也可以使用CSS全局变量，也称为CSS自定义属性（Custom Properties），允许你在CSS中定义可复用的值。这些变量可以在不同的选择器中使用，提高样式的一致性和可维护性。
 
 GovUI使用了这一点，Scss只是生成了这些CSS全局变量的初始值，以```primary```举例，如下：
 
