@@ -15,11 +15,24 @@ import progressWidth from "./progress-width.vue"
 
 <progressBase />
 
+::: details 查看代码
+<<< ./progress-base.vue{vue:line-numbers}
+:::
+
+
+
+
 ## 自定义颜色
 
 可以设置 ```color```, ```backgroundColor```, ```completeColor``` 来控制控件的主色、背景色、完成等颜色。
 
 <progressColor />
+
+::: details 查看代码
+<<< ./progress-color.vue{vue:line-numbers}
+:::
+
+
 
 ## 自定义展示
 
@@ -27,11 +40,22 @@ import progressWidth from "./progress-width.vue"
 
 <progressCustom/>
 
+::: details 查看代码
+<<< ./progress-custom.vue{vue:line-numbers}
+:::
+
+
+
 ## 定义线条宽度
 
 可以自定义线条的宽度，范围 2px - 50px。
 
 <progressWidth />
+
+::: details 查看代码
+<<< ./progress-width.vue{vue:line-numbers}
+:::
+
 
 ## Attributes
 
