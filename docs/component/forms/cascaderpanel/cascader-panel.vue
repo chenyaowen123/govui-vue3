@@ -15,5 +15,5 @@
 import { ref } from "vue";
 import options from "./data.js";
 
-const values = ref(["zujian", "form", "input-number"]);
+const values = ref(["community", "administration", "community_manager"]);
 </script>

@@ -11,5 +11,5 @@
 import { ref } from "vue";
 import options from "./data.js";
 
-const values = ref(["zujian", "form", "input-number"]);
+const values = ref(["residents", "building_a"]);
 </script>
