@@ -15,12 +15,20 @@ import badgeDot from "./badge-dot.vue"
 
 <badgeBase />
 
+::: details 查看代码
+<<< ./badge-base.vue{vue:line-numbers}
+:::
+
 
 ## 超出最大值
 
 当 ```value``` 绑定数值，且设置了 ```max``` ，超出最大值会显示 ```+``` 号。
 
 <badgeMax />
+
+::: details 查看代码
+<<< ./badge-max.vue{vue:line-numbers}
+:::
 
 
 ## 显示文本
@@ -29,12 +37,21 @@ import badgeDot from "./badge-dot.vue"
 
 <badgeCustom />
 
+::: details 查看代码
+<<< ./badge-custom.vue{vue:line-numbers}
+:::
+
 
 ## 显示未小圆点
 
 以原点的形式标记需要关注的内容。
 
 <badgeDot />
+
+::: details 查看代码
+<<< ./badge-dot.vue{vue:line-numbers}
+:::
+
 
 ## Attributes
 
@@ -83,6 +100,24 @@ import badgeDot from "./badge-dot.vue"
       <td>String</td>
       <td>"primary"</td>
       <td>Badge的类型，可选值有'default', 'primary', 'success', 'info', 'warning', 'danger'。</td>
+    </tr>
+  </tbody>
+</table>
+
+
+## Slots
+
+<table>
+  <thead>
+    <tr>
+      <th>插槽名</th>
+      <th>说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>default</td>
+      <td>默认插槽，被标记包裹的结构。</td>
     </tr>
   </tbody>
 </table>
