@@ -5,5 +5,3 @@
 		<gov-avatar src="/avatar.jpg" />
 	</demo-container>
 </template>
-
-<script setup></script>

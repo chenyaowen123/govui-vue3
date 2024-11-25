@@ -15,5 +15,3 @@
 		<gov-avatar icon="user" dark circle size="small" />
 	</demo-container>
 </template>
-
-<script setup></script>

@@ -5,5 +5,3 @@
 		<gov-avatar icon="user" color="#87d068" />
 	</demo-container>
 </template>
-
-<script setup></script>
