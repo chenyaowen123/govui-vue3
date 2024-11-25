@@ -16,5 +16,3 @@
 		</gov-collapse>
 	</demo-container>
 </template>
-
-<script setup></script>
