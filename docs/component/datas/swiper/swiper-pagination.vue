@@ -10,11 +10,6 @@
 	</demo-container>
 </template>
 
-<script setup>
-defineOptions({
-	name: "swiperPagination",
-});
-</script>
 <style lang="scss">
 @use "./style.scss";
 </style>

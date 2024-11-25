@@ -10,11 +10,6 @@
 	</demo-container>
 </template>
 
-<script setup>
-defineOptions({
-	name: "swiperVertical",
-});
-</script>
 <style lang="scss">
 @use "./style.scss";
 </style>

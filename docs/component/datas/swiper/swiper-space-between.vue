@@ -11,11 +11,6 @@
 	</demo-container>
 </template>
 
-<script setup>
-defineOptions({
-	name: "swiperSpaceBetween",
-});
-</script>
 <style lang="scss">
 @use "./style.scss";
 </style>

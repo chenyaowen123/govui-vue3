@@ -20,15 +20,10 @@ import swiperSpaceBetween from "./swiper-space-between.vue"
 
 <swiperBase />
 
-```md
-<gov-swiper>
-	<gov-swiper-slide>Slide 1</gov-swiper-slide>
-	<gov-swiper-slide>Slide 2</gov-swiper-slide>
-	<gov-swiper-slide>Slide 3</gov-swiper-slide>
-	<gov-swiper-slide>Slide 4</gov-swiper-slide>
-	<gov-swiper-slide>Slide 5</gov-swiper-slide>
-</gov-swiper>
-```
+::: details 查看代码
+<<< ./swiper-base.vue{vue:line-numbers}
+:::
+
 
 
 ## 左右切换 navigation
@@ -37,15 +32,10 @@ import swiperSpaceBetween from "./swiper-space-between.vue"
 
 <swiperNavigation />
 
-```md
-<gov-swiper navigation>
-	<gov-swiper-slide>Slide 1</gov-swiper-slide>
-	<gov-swiper-slide>Slide 2</gov-swiper-slide>
-	<gov-swiper-slide>Slide 3</gov-swiper-slide>
-	<gov-swiper-slide>Slide 4</gov-swiper-slide>
-	<gov-swiper-slide>Slide 5</gov-swiper-slide>
-</gov-swiper>
-```
+::: details 查看代码
+<<< ./swiper-navigation.vue{vue:line-numbers}
+:::
+
 
 
 ## 导航分栏 pagination
@@ -54,15 +44,11 @@ import swiperSpaceBetween from "./swiper-space-between.vue"
 
 <swiperPagination />
 
-```md
-<gov-swiper pagination>
-	<gov-swiper-slide>Slide 1</gov-swiper-slide>
-	<gov-swiper-slide>Slide 2</gov-swiper-slide>
-	<gov-swiper-slide>Slide 3</gov-swiper-slide>
-	<gov-swiper-slide>Slide 4</gov-swiper-slide>
-	<gov-swiper-slide>Slide 5</gov-swiper-slide>
-</gov-swiper>
-```
+::: details 查看代码
+<<< ./swiper-pagination.vue{vue:line-numbers}
+:::
+
+
 
 
 ## 自动播放 autoplay
@@ -71,15 +57,10 @@ import swiperSpaceBetween from "./swiper-space-between.vue"
 
 <swiperAutoplay />
 
-```md
-<gov-swiper pagination autoplay>
-	<gov-swiper-slide>Slide 1</gov-swiper-slide>
-	<gov-swiper-slide>Slide 2</gov-swiper-slide>
-	<gov-swiper-slide>Slide 3</gov-swiper-slide>
-	<gov-swiper-slide>Slide 4</gov-swiper-slide>
-	<gov-swiper-slide>Slide 5</gov-swiper-slide>
-</gov-swiper>
-```
+::: details 查看代码
+<<< ./swiper-autoplay.vue{vue:line-numbers}
+:::
+
 
 
 ## 是否循环 loop
@@ -88,16 +69,9 @@ import swiperSpaceBetween from "./swiper-space-between.vue"
 
 <swiperLoop />
 
-```md
-<gov-swiper navigation autoplay loop>
-	<gov-swiper-slide>Slide 1</gov-swiper-slide>
-	<gov-swiper-slide>Slide 2</gov-swiper-slide>
-	<gov-swiper-slide>Slide 3</gov-swiper-slide>
-	<gov-swiper-slide>Slide 4</gov-swiper-slide>
-	<gov-swiper-slide>Slide 5</gov-swiper-slide>
-</gov-swiper>
-```
-
+::: details 查看代码
+<<< ./swiper-loop.vue{vue:line-numbers}
+:::
 
 
 ## 垂直方向 direction
@@ -106,15 +80,11 @@ import swiperSpaceBetween from "./swiper-space-between.vue"
 
 <swiperVertical />
 
-```md
-<gov-swiper direction="vertical" pagination autoplay loop>
-	<gov-swiper-slide>Slide 1</gov-swiper-slide>
-	<gov-swiper-slide>Slide 2</gov-swiper-slide>
-	<gov-swiper-slide>Slide 3</gov-swiper-slide>
-	<gov-swiper-slide>Slide 4</gov-swiper-slide>
-	<gov-swiper-slide>Slide 5</gov-swiper-slide>
-</gov-swiper>
-```
+::: details 查看代码
+<<< ./swiper-vertical.vue{vue:line-numbers}
+:::
+
+
 
 ## 多列 slides-per-view
 
@@ -122,16 +92,9 @@ import swiperSpaceBetween from "./swiper-space-between.vue"
 
 <swiperSlidesPerView />
 
-```md
-<gov-swiper navigation :slides-per-view="2">
-	<gov-swiper-slide>Slide 1</gov-swiper-slide>
-	<gov-swiper-slide>Slide 2</gov-swiper-slide>
-	<gov-swiper-slide>Slide 3</gov-swiper-slide>
-	<gov-swiper-slide>Slide 4</gov-swiper-slide>
-	<gov-swiper-slide>Slide 5</gov-swiper-slide>
-	<gov-swiper-slide>Slide 6</gov-swiper-slide>
-</gov-swiper>
-```
+::: details 查看代码
+<<< ./swiper-slides-per-view.vue{vue:line-numbers}
+:::
 
 
 
@@ -141,16 +104,9 @@ import swiperSpaceBetween from "./swiper-space-between.vue"
 
 <swiperSpaceBetween />
 
-```md
-<gov-swiper navigation :slides-per-view="2" :space-between="50">
-	<gov-swiper-slide>Slide 1</gov-swiper-slide>
-	<gov-swiper-slide>Slide 2</gov-swiper-slide>
-	<gov-swiper-slide>Slide 3</gov-swiper-slide>
-	<gov-swiper-slide>Slide 4</gov-swiper-slide>
-	<gov-swiper-slide>Slide 5</gov-swiper-slide>
-	<gov-swiper-slide>Slide 6</gov-swiper-slide>
-</gov-swiper>
-```
+::: details 查看代码
+<<< ./swiper-space-between.vue{vue:line-numbers}
+:::
 
 
 ## Swiper Attributes
