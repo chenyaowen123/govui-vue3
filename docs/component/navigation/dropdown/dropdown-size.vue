@@ -1,5 +1,6 @@
 <template>
 	<demo-container class="gov-demo-dropdown">
+		<!-- 控制器 -->
 		<div>
 			<gov-radio-group button v-model="size">
 				<gov-radio value="large">大菜单</gov-radio>
@@ -14,6 +15,7 @@
 			<gov-checkbox v-model="center">居中布局</gov-checkbox>
 		</div>
 		<hr />
+		<!-- 组件 -->
 		<gov-dropdown
 			v-model="visible"
 			:size="size"
@@ -32,6 +34,7 @@
 				</gov-dropdown-item>
 			</template>
 		</gov-dropdown>
+		<!-- 状态 -->
 		<template #console>
 			visible: {{ visible }} <br />
 			size: {{ size }} <br />
