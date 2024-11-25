@@ -9,13 +9,23 @@ import usercardCustom from "./usercard-custom.vue"
 
 ## 基础使用
 
-该组件结合了 Avatar、Qrcode 组件。```qrcode``` 为可扫码的卡片二维码信息，```avatar``` 为头像地址。
+该组件结合了 `Avatar`、`Qrcode` 组件。`qrcode` 为可扫码的卡片二维码信息，`avatar` 为头像地址。
 
 <usercardBase />
+
+::: details 查看代码
+<<< ./usercard-base.vue{vue:line-numbers}
+:::
+
+
 
 ## 自定义头部
 
 <usercardCustom />
+
+::: details 查看代码
+<<< ./usercard-custom.vue{vue:line-numbers}
+:::
 
 
 ## Attributes
