@@ -17,12 +17,3 @@
 		</gov-page-container>
 	</demo-container>
 </template>
-
-<script setup></script>
-<style lang="scss">
-.gov-demo-page-container {
-	background: url(./transparent.jpg);
-	background-repeat: repeat;
-	background-attachment: fixed;
-}
-</style>

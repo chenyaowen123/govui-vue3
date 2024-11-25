@@ -5,5 +5,3 @@
 		</gov-page-container>
 	</demo-container>
 </template>
-
-<script setup></script>
