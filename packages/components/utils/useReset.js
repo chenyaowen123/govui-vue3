@@ -1,7 +1,7 @@
 import { onMounted, ref } from "vue";
 
 /**
- * 重置功能
+ * 表单控件，监听 FormItem 的重置事件，用于记录初始值，reset的时候重新赋值给控件。
  * 1、初始化记录 initialValue
  * 2、监听 reset 事件把 initialValue 返回给回调函数
  */

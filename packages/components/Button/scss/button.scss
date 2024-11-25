@@ -44,6 +44,21 @@
 	}
 
 	// 形状
+	--gov-button-large-padding-v: 12px;
+	--gov-button-large-padding-h: 20px;
+	--gov-button-large-padding: var(--gov-button-large-padding-v)
+		var(--gov-button-large-padding-h);
+
+	--gov-button-default-padding-v: 10px;
+	--gov-button-default-padding-h: 20px;
+	--gov-button-default-padding: var(--gov-button-default-padding-v)
+		var(--gov-button-default-padding-h);
+
+	--gov-button-small-padding-v: 9px;
+	--gov-button-small-padding-h: 15px;
+	--gov-button-small-padding: var(--gov-button-small-padding-v)
+		var(--gov-button-small-padding-h);
+
 	@include button-size(default);
 	&--size-large {
 		@include button-size(large);

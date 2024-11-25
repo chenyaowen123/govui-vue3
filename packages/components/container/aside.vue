@@ -32,6 +32,6 @@ const style = computed(() => {
 	overflow: auto;
 	box-sizing: border-box;
 	flex-shrink: 0;
-	width: var(--gov-aside-width);
+	width: 200px;
 }
 </style>

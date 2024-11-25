@@ -31,6 +31,6 @@ const style = computed(() => {
 	padding: 0 20px;
 	box-sizing: border-box;
 	flex-shrink: 0;
-	height: var(--gov-footer-height);
+	height: 60px;
 }
 </style>

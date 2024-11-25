@@ -1,7 +1,7 @@
 @use "@/styles/theme.scss" as *;
 
 .gov-checkbox {
-	margin-right: var(--gov-checkbox-radio-gutter);
+	margin-right: 30px;
 	font-size: var(--gov-default-font-size);
 	cursor: pointer;
 	display: inline-flex;

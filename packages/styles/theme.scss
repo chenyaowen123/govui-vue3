@@ -1,56 +1,47 @@
-// 主题主文件，导出变量，这样其他文件可以引用它们。@forward 是Sass的一个指令，它允许你导入另一个文件的变量和混合（mixins）。
-@forward "variables";
+@use "sass:math";
+@use "sass:map";
+@use "sass:color";
+
+// 主题颜色
+$theme-colors: (
+	"primary": #e74c3c,
+	"success": #27ae60,
+	"warning": #f39c12,
+	"danger": #8e44ad,
+	"info": #909399,
+) !default;
+
+// 常用其它颜色
+$special-colors: (
+	"text-color": #303133,
+	"border-color": #cdd0d6,
+	"fill-color": #e6e8eb,
+) !default;
+
+// 合并两个映射
+$colors: map.merge($theme-colors, $special-colors) !default;
 
 :root {
-	// 常用圆角、隐影
+	// 生成不同等级颜色
+	@each $color-name, $color-value in $colors {
+		--gov-#{$color-name}-dark: #{color.mix(#000, $color-value, 25%)};
+		--gov-#{$color-name}: #{$color-value};
+		@for $i from 1 through 9 {
+			$color-tint: color.mix(white, $color-value, $i * 10%); // 10% - 90%
+			--gov-#{$color-name}-#{$i}: #{$color-tint};
+		}
+	}
+
+	// 常见圆角大小
 	--gov-border-radius-base: 5px;
 
-	// 不同尺寸字体大小
-	--gov-large-font-size: 14px;
-	--gov-default-font-size: 14px;
-	--gov-small-font-size: 12px;
-
-	// 不同尺寸的常规高度，例如input select Button ...
+	// 表单控件不同尺寸的常规高度，例如input select Button ...
 	--gov-large-height: 40px;
 	--gov-default-height: 36px;
 	--gov-small-height: 32px;
 
-	// container
-	--gov-aside-width: 200px;
-	--gov-footer-height: 60px;
-	--gov-header-height: 60px;
-
-	// Alert
-	--gov-alert-padding: 8px 16px;
-
-	// button
-	--gov-button-large-padding-v: 12px;
-	--gov-button-large-padding-h: 20px;
-	--gov-button-large-padding: var(--gov-button-large-padding-v)
-		var(--gov-button-large-padding-h);
-	--gov-button-default-padding-v: 10px;
-	--gov-button-default-padding-h: 20px;
-	--gov-button-default-padding: var(--gov-button-default-padding-v)
-		var(--gov-button-default-padding-h);
-	--gov-button-small-padding-v: 9px;
-	--gov-button-small-padding-h: 15px;
-	--gov-button-small-padding: var(--gov-button-small-padding-v)
-		var(--gov-button-small-padding-h);
-
-	// radio checkbox
-	--gov-checkbox-radio-gutter: 30px;
-
-	// popper插件
-	--popper-theme-background-color: #ffffff;
-	--popper-theme-background-color-hover: #ffffff;
-	--popper-theme-text-color: inherit;
-	--popper-theme-border-width: 1px;
-	--popper-theme-border-style: solid;
-	--popper-theme-border-color: #eeeeee;
-	--popper-theme-border-radius: 6px;
-	--popper-theme-padding: 10px 0;
-	--popper-theme-box-shadow: 0 6px 30px -6px rgba(0, 0, 0, 0.25);
-
-	// dialog
-	--gov-dialog-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+	// 表单控件不同尺寸字体大小
+	--gov-large-font-size: 14px;
+	--gov-default-font-size: 14px;
+	--gov-small-font-size: 12px;
 }
