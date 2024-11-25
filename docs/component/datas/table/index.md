@@ -1,8 +1,8 @@
 <script setup>
 import tableBase from "./table-base.vue"
-import tableLineStyle from "./table-line-style.vue"
-import tableIndexed from "./table-indexed.vue"
 import tableSelection from "./table-selection.vue"
+import tableIndexed from "./table-indexed.vue"
+import tableLineStyle from "./table-line-style.vue"
 import tableFixed from "./table-fixed.vue"
 </script>
 
@@ -20,115 +20,13 @@ import tableFixed from "./table-fixed.vue"
 
 <tableBase />
 
+
+::: details 查看代码
 ::: code-group
-```md [index.vue]
-<gov-table :columns="tableColumns" :data="tableData" @sortChange="handleSort"/>
-
-<script setup>
-import { ref } from 'vue'
-import columns from "./columns.js"
-import data from "./data.js"
-
-const tableColumns = ref(columns);
-const tableData = ref(data);
-
-// 排序
-const handleSort = (state) => {
-	if (state) {
-		let { column, sort } = state; // { column:'age', sort:'desc/asc' }
-		data.value = data.value.slice().sort((a, b) => {
-			if (sort === "desc") {
-				return b[column] - a[column]; // 降序排序
-			} else {
-				return a[column] - b[column]; // 升序排序
-			}
-		});
-	} else {
-		data.value = JSON.parse(JSON.stringify(row)); // 无排序时，应该恢复原有数据顺序
-	}
-};
-</script>
-
-```
-
-```js [columns.js]
-export default [
-	{
-		title: "名字",
-		width: 100,
-		dataIndex: "name",
-	},
-	{
-		title: "年龄",
-		width: 80,
-		dataIndex: "age",
-		sort: "none", // 排序状态，none/asc/desc
-		format: (age) => age + "岁", // 利用format增加单位
-	},
-	{
-		title: "职业",
-		width: 150,
-		dataIndex: "job",
-	},
-	{
-		title: "性别",
-		width: 80,
-		dataIndex: "sex",
-		align: "center", // 对齐方式
-		format: (sex) => (sex === 1 ? "男" : "女"), // 利用format修改展示数据
-	},
-	{
-		title: "地址",
-		dataIndex: "address",
-	},
-];
-```
-
-```js [data.js]
-export default [
-	{
-		id: 1,
-		name: "张三",
-		age: 30,
-		job: "UP主",
-		sex: 1,
-		address: "河北省、石家庄市",
-	},
-	{
-		id: 2,
-		name: "李四",
-		age: 36,
-		job: "海外贸易",
-		sex: 2,
-		address: "广东省、珠海市",
-	},
-	{
-		id: 3,
-		name: "王二",
-		age: 29,
-		job: "设计师",
-		sex: 2,
-		address: "北京市海淀区、石景山",
-	},
-	{
-		id: 4,
-		name: "麻子",
-		age: 32,
-		job: "放牧",
-		sex: 1,
-		address: "内蒙古、锡林格勒",
-	},
-];
-```
+<<< ./table-base.vue{vue:line-numbers} [index.vue]
+<<< ./column.js{js:line-numbers}
+<<< ./row.js{js:line-numbers}
 :::
-
-
-
-
-
-
-
-
 
 
 ## 复选框
@@ -139,36 +37,12 @@ export default [
 
 <tableSelection />
 
-
-
-```md
-<gov-table
-	:columns="columns"
-	:data="data"
-	selection
-	rowKey="id"
-	@selectionChange="handleSelection"
-/>
-<p>选中id: {{ slecteIds }}</p>
-
-<script setup>
-import { ref } from 'vue'
-import columns from "./columns.js"
-import data from "./data.js"
-
-const tableColumns = ref(columns);
-const tableData = ref(data);
-
-const slecteIds = ref([]);
-const handleSelection = (slected) => {
-	slecteIds.value = slected;
-};
-</script>
-
-```
-
-
-
+::: details 查看代码
+::: code-group
+<<< ./table-selection.vue{6,8,27-29 vue:line-numbers} [index.vue]
+<<< ./column.js{js:line-numbers}
+<<< ./row.js{js:line-numbers}
+:::
 
 
 
@@ -181,22 +55,13 @@ const handleSelection = (slected) => {
 
 <tableIndexed />
 
-```md
-<gov-table :columns="columns" :data="data" indexed />
+::: details 查看代码
+::: code-group
+<<< ./table-indexed.vue{vue:line-numbers} [index.vue]
+<<< ./column.js{js:line-numbers}
+<<< ./row.js{js:line-numbers}
+:::
 
-<script setup>
-import { ref } from 'vue'
-import columns from "./columns.js"
-import data from "./data.js"
-
-const tableColumns = ref(columns);
-const tableData = ref(data);
-
-// 自定义索引为数据的 id
-// const customIndex = (row, index) => row.id;
-</script>
-
-```
 
 
 ## 设置行样式
@@ -208,32 +73,14 @@ const tableData = ref(data);
 
 <tableLineStyle />
 
+::: details 查看代码
+::: code-group
+<<< ./table-line-style.vue{19-21 vue:line-numbers} [index.vue]
+<<< ./column.js{js:line-numbers}
+<<< ./row.js{js:line-numbers}
+:::
 
-```md
-<gov-table stripe :columns="tableColumns" :data="tableData" :rowClassName="fun"/>
 
-<script setup>
-import { ref } from 'vue'
-import columns from "./columns.js"
-import data from "./data.js"
-
-const tableColumns = ref(columns);
-const tableData = ref(data);
-
-// 计算每行的className
-const fun = (row, index) => {
-	return `examples-table-row__${index}`;
-};
-</script>
-<style lang="scss">
-/* 设置第三行样式 */
-.examples-table-row__2 {
-	font-weight: bold;
-	color:red;
-}
-</style>
-
-```
 
 ## 固定表头和列
 
@@ -244,57 +91,132 @@ const fun = (row, index) => {
 
 <tableFixed />
 
-
-
-::: code-group
-```md [index.vue]
-<gov-table
-	:columns="tableColumns"
-	:data="tableData"
-	height="300px"
-	indexed
-	selection
-	rowKey="id"
-/>
-
-<script setup>
-import { ref } from 'vue'
-import columns from "./columns.js"
-import data from "./data.js"
-
-const tableColumns = ref(columns);
-const tableData = ref(data);
-</script>
-
-```
-
-```js [columns.js]
-const length = 15;
-
-let column = Array.from({ length }, (_, index) => ({
-	title: `列${index + 1}`,
-	width: 140,
-	dataIndex: `field${index + 1}`,
-}));
-
-column[0].fixed = "left"; // 设置第一列 fixed:right
-column[length - 1].fixed = "right"; // 设置最后一列 fixed:right
-
-export default column;
-```
-
-```js [data.js]
-const length = 15;
-
-const data = Array.from({ length }, (_, index) => {
-	return {
-		id: index + 1,
-		...Array.from({ length }, (_, subIndex) => ({
-			[`field${subIndex + 1}`]: `值${index + 1}-${subIndex + 1}`,
-		})).reduce((acc, cur) => ({ ...acc, ...cur }), {}), // 将数组转换为对象
-	};
-});
-
-export default data;
-```
+::: details 查看代码
+<<< ./table-fixed.vue{29-30 vue:line-numbers} [index.vue]
 :::
+
+
+## Attributes
+
+<table>
+  <thead>
+    <tr>
+      <th>属性名</th>
+      <th>说明</th>
+      <th>类型</th>
+      <th>可选值</th>
+      <th>默认值</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>height</td>
+      <td>表格高度，设置后表头固定在顶部</td>
+      <td>String</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>rowClassName</td>
+      <td>行的类名计算函数</td>
+      <td>Function(row, index)</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>loading</td>
+      <td>表格是否处于加载状态</td>
+      <td>Boolean</td>
+      <td>true, false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>stripe</td>
+      <td>是否显示斑马线风格的条纹</td>
+      <td>Boolean</td>
+      <td>true, false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>selection</td>
+      <td>是否显示多选列</td>
+      <td>Boolean</td>
+      <td>true, false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>rowKey</td>
+      <td>自定义行的唯一键，用于 selection 计算</td>
+      <td>Function/String</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>indexed</td>
+      <td>是否显示索引列</td>
+      <td>Function/Boolean</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>data</td>
+      <td>表格数据</td>
+      <td>Array</td>
+      <td>—</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <td>columns</td>
+      <td>列配置数组</td>
+      <td>Array</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+  </tbody>
+</table>
+
+
+## Events
+
+<table>
+  <thead>
+    <tr>
+      <th>事件名</th>
+      <th>说明</th>
+      <th>回调参数</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>sortChange</td>
+      <td>排序状态改变时触发</td>
+      <td>排序状态对象：{ column[dataIndex], sort }；</td>
+    </tr>
+    <tr>
+      <td>selectionChange</td>
+      <td>选中项改变时触发</td>
+      <td>选中项数组</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+## Slots
+
+<table>
+  <thead>
+    <tr>
+      <th>插槽名</th>
+      <th width="120">作用域插槽</th>
+      <th>说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>每个 column[dataIndex]，也就是列的 key 值。</td>
+      <td>是</td>
+      <td>定义每列的展示，会根据column[dataIndex]创建对应的数据查抄，可自由控制展示内容，提供 row 属性为定义每一行的数据。</td>
+    </tr>
+  </tbody>
+</table>

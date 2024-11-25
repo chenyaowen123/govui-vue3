@@ -7,7 +7,7 @@
 			rowKey="id"
 			@selectionChange="handleSelection"
 		/>
-		<p style="padding-left: 10px">选中id: {{ slecteIds }}</p>
+		<template #console> slecteIds:{{ slecteIds }} </template>
 	</demo-container>
 </template>
 

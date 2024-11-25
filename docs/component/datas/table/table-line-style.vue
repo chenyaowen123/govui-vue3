@@ -20,6 +20,7 @@ const fun = (row, index) => {
 	return `examples-table-row__${index}`;
 };
 </script>
+
 <style lang="scss">
 // 设置第三行加粗
 .examples-table-row__2 {
