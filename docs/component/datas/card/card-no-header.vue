@@ -8,5 +8,3 @@
 		</gov-card>
 	</demo-container>
 </template>
-
-<script setup></script>

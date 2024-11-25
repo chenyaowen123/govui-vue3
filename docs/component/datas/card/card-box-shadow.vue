@@ -5,5 +5,3 @@
 		<gov-card shadow="never"> 从不显示 </gov-card>
 	</demo-container>
 </template>
-
-<script setup></script>
