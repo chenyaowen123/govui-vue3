@@ -45,12 +45,12 @@ import GovRate from "./components/rate/rate.vue";
 // 弹窗
 import GovDrawer from "./components/drawer/drawer.vue";
 import GovDialog from "./components/dialog/dialog.vue";
-import GovMessage from "./components/message/message.js";
-import GovMessageBox from "./components/messagebox/message-box.js";
+import GovMessage from "./components/message/message.js"; // js
+import GovMessageBox from "./components/messagebox/message-box.js"; // js
 import GovPopper from "./components/popper/popper.vue";
 import GovPopconfirm from "./components/popconfirm/popconfirm.vue";
 import GovTooltip from "./components/tooltip/tooltip.vue";
-import GovNotification from "./components/notification/notification.js";
+import GovNotification from "./components/notification/notification.js"; // js
 
 // 数据
 import GovAvatar from "./components/avatar/avatar.vue";

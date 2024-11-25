@@ -5,6 +5,7 @@ import path from "path";
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
 	srcDir: "docs",
+	appearance: false,
 	title: "GovUI",
 	description: "政府系统专用UI",
 	rewrites: {
