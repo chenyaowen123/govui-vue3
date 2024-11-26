@@ -84,24 +84,3 @@ const handleConfirm = () => {
 	emit("confirm");
 };
 </script>
-
-<style lang="scss">
-
-.gov-popconfirm {
-	&__reference {
-		display: inline-block;
-	}
-	&__text {
-		color: var(--gov-text-color);
-		font-size: 14px;
-		text-align: center;
-	}
-	&__icon {
-		padding-right: 5px;
-	}
-	&__buttons {
-		text-align: right;
-		padding-top: 10px;
-	}
-}
-</style>

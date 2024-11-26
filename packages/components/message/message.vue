@@ -138,7 +138,3 @@ defineExpose({
 	close,
 });
 </script>
-
-<style lang="scss">
-@use "./message.scss";
-</style>

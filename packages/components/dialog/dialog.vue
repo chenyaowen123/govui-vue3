@@ -156,7 +156,3 @@ const handleClose = () => {
 	}
 };
 </script>
-
-<style lang="scss">
-@use "./scss/dialog.scss";
-</style>

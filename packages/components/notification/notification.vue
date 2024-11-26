@@ -172,7 +172,3 @@ defineExpose({
 	close,
 });
 </script>
-
-<style lang="scss">
-@use "./notification.scss";
-</style>
