@@ -8,7 +8,7 @@
 		class="gov-input-auto"
 	>
 		<template #reference>
-			<gov-input
+			<GovInput
 				v-model="innerValue"
 				v-bind="$attrs"
 				@focus="handleFocus"
@@ -31,7 +31,7 @@
 				<template v-if="$slots.suffix" #suffix>
 					<slot name="suffix" />
 				</template>
-			</gov-input>
+			</GovInput>
 		</template>
 		<div class="gov-input-auto__list">
 			<div

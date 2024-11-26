@@ -1,4 +1,6 @@
-
+@use "./icon.scss";
+@use "./input.scss";
+@use "./popper.scss";
 
 
 .gov-select {
@@ -36,6 +38,34 @@
 			.gov-input-field {
 				cursor: not-allowed;
 			}
+		}
+	}
+}
+
+
+
+.gov-select-option {
+	user-select:none;
+	background: #fff;
+	padding: 5px 20px;
+	margin: 2px 0;
+	cursor: pointer;
+	transition: all 0.2s;
+	color: var(--gov-text-color);
+	font-size: 14px;
+	&:hover {
+		color: var(--gov-primary);
+		background: var(--gov-fill-color-5);
+	}
+	&.is-selected {
+		color: var(--gov-primary);
+		background: var(--gov-fill-color-5);
+	}
+	&.is-disabled {
+		color: var(--gov-text-color-5);
+		cursor: not-allowed;
+		&.is-selected {
+			color: var(--gov-primary-5);
 		}
 	}
 }

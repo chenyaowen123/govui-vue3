@@ -7,25 +7,25 @@
 			<slot name="total" :total="total">共{{ total }} 条记录</slot>
 		</div>
 		<div class="gov-pagination__sizes" v-if="!plain">
-			<gov-select
+			<GovSelect
 				v-model="innerPageSize"
 				:disabled="disabled"
 				:clearable="false"
 				size="small"
 				style="width: 100px"
 			>
-				<gov-select-option
+				<GovSelect-option
 					v-for="size in pageSizes"
 					:key="size"
 					:label="size"
 					:value="size"
 				/>
-			</gov-select>
+			</GovSelect>
 		</div>
 		<div class="gov-pagination__prev" @click="prev">
 			<slot name="prev">«</slot>
 		</div>
-		<gov-pager
+		<GovPager
 			:pages="pages"
 			v-model="innerCurrentPage"
 			:disabled="disabled"
@@ -36,7 +36,7 @@
 			<slot name="next">»</slot>
 		</div>
 		<div class="gov-pagination__jumper" v-if="!plain">
-			跳至：<gov-input-number
+			跳至：<GovInputNumber
 				v-model="innerCurrentPage"
 				:step="1"
 				:min="1"

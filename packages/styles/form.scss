@@ -1,3 +1,7 @@
+@use "./row.scss";
+@use "./col.scss";
+
+
 // 验证动画
 .gov-form-validate-fade-enter-active,
 .gov-form-validate-fade-leave-active {

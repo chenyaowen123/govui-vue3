@@ -46,7 +46,7 @@
 						class="gov-tree__children"
 						:style="{ paddingLeft: paddingLeft }"
 					>
-						<gov-tree
+						<GovTree
 							:data="node.children"
 							:foldIcon="foldIcon"
 							:unfoldIcon="unfoldIcon"
@@ -60,7 +60,7 @@
 							>
 								<slot :node="node" :isExpanded="isExpanded" />
 							</template>
-						</gov-tree>
+						</GovTree>
 					</div>
 				</govCollapseTransition>
 			</div>
@@ -70,6 +70,7 @@
 
 <script setup>
 import GovIcon from "../icon/icon.vue";
+import GovTree from "./tree.vue";
 import govCollapseTransition from "../collapse/collapse-transition.vue";
 
 defineOptions({

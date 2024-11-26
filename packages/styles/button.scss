@@ -1,3 +1,4 @@
+@use "./icon.scss";
 
 // 设置默认按钮的样式，因为特殊所以单独定义，例如设置为 primary 或者其他风格
 @mixin button-default($type) {

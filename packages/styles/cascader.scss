@@ -1,5 +1,6 @@
-
-
+@use "./icon.scss";
+@use "./popper.scss";
+@use "./input.scss";
 
 .gov-cascader {
 	user-select:none;

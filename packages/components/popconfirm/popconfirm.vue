@@ -20,20 +20,20 @@
 			<slot />
 		</div>
 		<div class="gov-popconfirm__buttons">
-			<gov-button
+			<GovButton
 				size="small"
 				@click="handleCancel"
 				:type="cancelButtonType"
 			>
 				{{ cancelButtonText }}
-			</gov-button>
-			<gov-button
+			</GovButton>
+			<GovButton
 				size="small"
 				@click="handleConfirm"
 				:type="confirmButtonType"
 			>
 				{{ confirmButtonText }}
-			</gov-button>
+			</GovButton>
 		</div>
 	</GovPopper>
 </template>

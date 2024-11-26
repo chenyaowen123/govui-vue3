@@ -1,5 +1,5 @@
 <template>
-	<gov-popper
+	<GovPopper
 		v-model="show"
 		padding="0"
 		v-bind="$attrs"
@@ -8,7 +8,7 @@
 		:class="[{ 'is-disabled': innerDisabled }]"
 	>
 		<template #reference>
-			<gov-input
+			<GovInput
 				class="gov-cascader__input"
 				:modelValue="inputText"
 				:size="innerSize"
@@ -22,22 +22,22 @@
 				:triggerForm="false"
 			>
 				<template #suffix>
-					<gov-icon
+					<GovIcon
 						name="arrow-down"
 						class="gov-cascader__icon"
 						:class="[{ 'is-open': show }]"
 					/>
 				</template>
-			</gov-input>
+			</GovInput>
 		</template>
 		<div class="gov-cascader__box">
-			<gov-cascader-panel
+			<GovCascaderPanel
 				v-model="innerValue"
 				:options="options"
 				@select="show = false"
 			/>
 		</div>
-	</gov-popper>
+	</GovPopper>
 </template>
 
 <script setup>

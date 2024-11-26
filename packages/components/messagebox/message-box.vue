@@ -1,5 +1,5 @@
 <template>
-	<gov-dialog
+	<GovDialog
 		v-model="dialogVisible"
 		:title="title"
 		:width="width"
@@ -11,24 +11,24 @@
 		<div class="gov-messagebox__content" v-html="content"></div>
 		<template #footer>
 			<div class="gov-messagebox__footer">
-				<gov-button
+				<GovButton
 					v-if="showCancelButton"
 					size="small"
 					@click="handleCancel"
 				>
 					{{ cancelButtonText }}
-				</gov-button>
-				<gov-button
+				</GovButton>
+				<GovButton
 					v-if="showConfirmButton"
 					size="small"
 					type="primary"
 					@click="handleConfirm"
 				>
 					{{ confirmButtonText }}
-				</gov-button>
+				</GovButton>
 			</div>
 		</template>
-	</gov-dialog>
+	</GovDialog>
 </template>
 
 <script setup>

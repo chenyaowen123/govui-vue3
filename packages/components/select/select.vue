@@ -9,7 +9,7 @@
 		:class="[{ 'is-disabled': innerDisabled }]"
 	>
 		<template #reference>
-			<gov-input
+			<GovInput
 				class="gov-select__input"
 				:modelValue="inputValue"
 				:size="innerSize"
@@ -24,13 +24,13 @@
 				:triggerForm="false"
 			>
 				<template #suffix>
-					<gov-icon
+					<GovIcon
 						name="arrow-down"
 						class="gov-select__icon"
 						:class="[{ 'is-open': show }]"
 					/>
 				</template>
-			</gov-input>
+			</GovInput>
 		</template>
 		<div class="gov-select__box">
 			<slot />

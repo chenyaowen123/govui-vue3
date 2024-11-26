@@ -5,13 +5,13 @@
 				<div class="gov-usercard__header-title">{{ title }}</div>
 			</slot>
 		</div>
-		<gov-avatar
+		<GovAvatar
 			class="gov-usercard__avatar"
 			:src="avatar"
 			icon="user"
 			:size="100"
 		/>
-		<gov-qrcode
+		<GovQrcode
 			:value="qrcode"
 			class="gov-usercard__qrcode"
 			:border="false"
@@ -31,6 +31,8 @@
 
 <script setup>
 import { computed } from "vue";
+import GovQrcode from "../qrcode/qrcode.vue";
+import GovAvatar from "../avatar/avatar.vue";
 
 defineOptions({
 	name: "GovUsercard",

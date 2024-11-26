@@ -1,4 +1,4 @@
-
+@use "./icon.scss";
 
 @mixin tag-type($type) {
 	background-color: var(--gov-#{$type}-9);
