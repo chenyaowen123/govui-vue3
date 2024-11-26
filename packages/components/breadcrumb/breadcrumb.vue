@@ -23,7 +23,3 @@ provide(
 	}),
 );
 </script>
-
-<style lang="scss">
-@use "./breadcrumb.scss";
-</style>

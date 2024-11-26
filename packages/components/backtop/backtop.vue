@@ -143,7 +143,3 @@ const backTopStyle = computed(() => ({
 	zIndex: props.zIndex,
 }));
 </script>
-
-<style lang="scss">
-@use "./backtop.scss";
-</style>

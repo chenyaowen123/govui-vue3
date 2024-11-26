@@ -28,5 +28,3 @@ const visible = computed(() => {
 	return props.name == govTabs?.active;
 });
 </script>
-
-<style lang="scss"></style>

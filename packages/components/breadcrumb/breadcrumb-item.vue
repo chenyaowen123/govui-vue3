@@ -17,7 +17,3 @@ const iconName = computed(() => {
 	return govBreadcrumb?.icon || "arrow-right";
 });
 </script>
-
-<style lang="scss">
-@use "./breadcrumb.scss";
-</style>

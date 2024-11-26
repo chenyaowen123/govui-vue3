@@ -62,20 +62,3 @@ const qrcode = computed(() => {
 	});
 });
 </script>
-
-<style lang="scss">
-.gov-qrcode {
-	display: inline-block;
-	overflow: hidden;
-
-	&__image {
-		width: 100%;
-		height: 100%;
-	}
-
-	&--border {
-		border-radius: 4px;
-		border: 1px solid var(--gov-border-color-5);
-	}
-}
-</style>

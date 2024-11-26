@@ -32,9 +32,3 @@ provide(
 	}),
 );
 </script>
-
-<style lang="scss">
-.gov-steps {
-	display: flex;
-}
-</style>
