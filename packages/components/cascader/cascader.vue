@@ -197,7 +197,3 @@ const handleClear = () => {
 	}
 };
 </script>
-
-<style lang="scss">
-@use "./scss/cascader.scss";
-</style>

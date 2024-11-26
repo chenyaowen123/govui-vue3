@@ -95,7 +95,3 @@ provide(
 	}),
 );
 </script>
-
-<style lang="scss">
-@use "./scss/cascader-panel.scss";
-</style>

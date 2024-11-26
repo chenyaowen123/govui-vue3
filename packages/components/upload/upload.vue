@@ -303,7 +303,3 @@ function handleBlur() {
 	}
 }
 </script>
-
-<style lang="scss">
-@use "./upload.scss";
-</style>

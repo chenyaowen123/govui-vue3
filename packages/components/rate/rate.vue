@@ -112,28 +112,3 @@ function handleBlur() {
 	}
 }
 </script>
-
-<style lang="scss">
-.gov-rate {
-	display: flex;
-	align-items: center;
-	user-select: none;
-
-	&__item {
-		padding-left: 4px;
-		cursor: pointer;
-	}
-
-	&__icon {
-		font-size: 24px;
-	}
-
-	.is-active {
-		color: var(--gov-warning);
-	}
-
-	&.is-disabled &__item {
-		cursor: not-allowed;
-	}
-}
-</style>

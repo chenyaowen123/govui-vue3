@@ -68,9 +68,3 @@ provide(
 	}),
 );
 </script>
-
-<style lang="scss">
-.gov-checkbox-group.is-disabled {
-	cursor: not-allowed;
-}
-</style>

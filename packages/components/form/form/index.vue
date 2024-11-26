@@ -50,5 +50,3 @@ provide(
 	}),
 );
 </script>
-
-<style lang="scss"></style>

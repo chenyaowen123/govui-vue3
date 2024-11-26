@@ -174,7 +174,3 @@ provide(
 	}),
 );
 </script>
-
-<style lang="scss">
-@use "./scss/select.scss";
-</style>

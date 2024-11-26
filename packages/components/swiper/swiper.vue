@@ -1,5 +1,10 @@
 <template>
-	<Swiper v-bind="$attrs" :modules="modules" class="gov-swiper">
+	<Swiper
+		v-bind="$attrs"
+		:modules="modules"
+		class="gov-swiper"
+		style="--swiper-theme-color: #fff"
+	>
 		<slot />
 		<template #container-start>
 			<slot name="container-start" />
@@ -24,7 +29,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css/autoplay";
-import "./swiper.scss";
 defineOptions({
 	name: "GovSwiper",
 });

@@ -55,7 +55,3 @@ const handleClick = () => {
 	}
 };
 </script>
-
-<style lang="scss">
-@use "./scss/select-option.scss";
-</style>

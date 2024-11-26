@@ -230,7 +230,3 @@ function handleFocus(e) {
 	}
 }
 </script>
-
-<style lang="scss">
-@use "./input.scss";
-</style>

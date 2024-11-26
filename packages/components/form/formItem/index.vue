@@ -140,7 +140,3 @@ provide(
 	}),
 );
 </script>
-
-<style lang="scss">
-@use "./formItem.scss";
-</style>

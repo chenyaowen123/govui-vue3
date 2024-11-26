@@ -124,7 +124,3 @@ function handleBlur(e) {
 	}
 }
 </script>
-
-<style lang="scss">
-@use "./scss/checkbox.scss";
-</style>

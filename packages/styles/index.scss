@@ -17,3 +17,21 @@
 @use "./tag.scss";
 @use "./ellipsis.scss";
 @use "./loading.scss";
+
+// 表单
+@use "./radio-group.scss";
+@use "./radio.scss";
+@use "./checkbox-group.scss";
+@use "./checkbox.scss";
+@use "./input.scss";
+@use "./input-auto.scss";
+@use "./input-number.scss";
+@use "./textarea.scss";
+@use "./select.scss";
+@use "./select-option.scss";
+@use "./cascader.scss";
+@use "./cascader-panel.scss";
+@use "./datepicker.scss";
+@use "./upload.scss";
+@use "./rate.scss";
+@use "./form.scss";

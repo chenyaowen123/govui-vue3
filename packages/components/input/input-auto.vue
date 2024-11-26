@@ -167,33 +167,3 @@ const handleClick = (item) => {
 	}
 };
 </script>
-
-<style lang="scss">
-.gov-input-auto {
-	position: relative;
-	width: 100%;
-	.popper {
-		width: 100%;
-		#arrow {
-			// 当popper设置了100%，popper的 placement 不能准确计算
-			transform: translate(50px, 0) !important;
-		}
-	}
-	&__list {
-		background: #fff;
-		box-sizing: border-box;
-		max-height: 300px;
-		width: 100%;
-	}
-	&__li {
-		background: #fff;
-		padding: 5px 20px;
-		margin: 2px 0;
-		cursor: pointer;
-		transition: background-color 0.2s;
-		&:hover {
-			background: var(--gov-fill-color-5);
-		}
-	}
-}
-</style>
