@@ -2141,6 +2141,11 @@ vfile@^6.0.0:
     "@types/unist" "^3.0.0"
     vfile-message "^4.0.0"
 
+vite-plugin-sass@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.npmmirror.com/vite-plugin-sass/-/vite-plugin-sass-0.1.0.tgz#f572d09ee0338e088135ae76a755fc0c58fbe393"
+  integrity sha512-gLwvs3ozfDAOZCqs+PepkTd4078m8tfq50IlmTW/OphlWsW95uP7lQ5A3NezfUfTZDTCOA4nFlYnOWRpsKYOqw==
+
 vite@^5.4.10, vite@^5.4.8:
   version "5.4.11"
   resolved "https://registry.npmmirror.com/vite/-/vite-5.4.11.tgz#3b415cd4aed781a356c1de5a9ebafb837715f6e5"

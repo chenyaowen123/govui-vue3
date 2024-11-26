@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const i=require("vue");function l(e,u,n){const t=i.ref();i.onMounted(()=>{t.value=u.modelValue}),e==null||e.$on("reset",()=>{u.triggerForm&&n(t.value)})}exports.useReset=l;

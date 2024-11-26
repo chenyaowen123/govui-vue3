@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const o=require("vue");function r(e,n,t){o.onMounted(()=>e.addEventListener(n,t)),o.onUnmounted(()=>e.removeEventListener(n,t))}exports.useEventListener=r;

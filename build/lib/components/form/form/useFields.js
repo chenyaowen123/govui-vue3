@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const d=require("vue");function i(){const e=d.ref([]);return{fields:e,addField:l=>{e.value.push(l)},removeField:l=>{e.value=e.value.filter(r=>r.prop!==l.prop)}}}exports.useFields=i;

@@ -1,0 +1,1 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("vue"),o={class:"gov-button-group"},u=Object.assign({name:"GovButtonGroup"},{__name:"button-group",setup(r){return(t,n)=>(e.openBlock(),e.createElementBlock("div",o,[e.renderSlot(t.$slots,"default")]))}});exports.default=u;
