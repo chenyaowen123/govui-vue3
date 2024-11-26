@@ -1,13 +1,18 @@
 <template>
-	<div class="demo-container" :class="[{ 'is-transparent': transparent }]">
-		<div class="vp-raw">
-			<slot />
+	<ClientOnly>
+		<div
+			class="demo-container"
+			:class="[{ 'is-transparent': transparent }]"
+		>
+			<div class="vp-raw">
+				<slot />
+			</div>
+			<div class="language-js" v-if="$slots.console">
+				<div class="right">控制台</div>
+				<pre><code><slot name="console" /></code></pre>
+			</div>
 		</div>
-		<div class="language-js" v-if="$slots.console">
-			<div class="right">控制台</div>
-			<pre><code><slot name="console" /></code></pre>
-		</div>
-	</div>
+	</ClientOnly>
 </template>
 
 <script setup>

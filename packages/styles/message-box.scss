@@ -1,2 +1,8 @@
 @use "./dialog.scss";
 @use "./button.scss";
+
+.gov-messagebox {
+	&__footer {
+		text-align: right;
+	}
+}

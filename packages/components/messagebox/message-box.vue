@@ -112,11 +112,3 @@ const handleClosed = () => {
 	props.closedCallback();
 };
 </script>
-
-<style lang="scss">
-.gov-messagebox {
-	&__footer {
-		text-align: right;
-	}
-}
-</style>

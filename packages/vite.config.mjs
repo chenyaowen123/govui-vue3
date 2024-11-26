@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
-import { visualizer } from "rollup-plugin-visualizer";
+import { visualizer } from "rollup-plugin-visualizer"; // 预览打包后的报告
 import vue from "@vitejs/plugin-vue";
 import { resolve } from "path";
 

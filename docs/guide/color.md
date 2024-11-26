@@ -58,7 +58,7 @@ GovUI使用Scss编写而成，内部的颜色控制非常简洁，如果你熟�
 ### 内部实现
 
 ::: details 查看代码
-<<< ../../packages/styles/theme.scss{scss:line-numbers}
+<<< ../../packages/styles/base.scss{scss:line-numbers}
 :::
 
 ### 如何覆盖？

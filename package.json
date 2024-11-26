@@ -14,7 +14,7 @@
     "vue3-popper": "^1.5.0"
   },
   "scripts": {
-    "build": "vite build",
+    "build": "vite build --config packages/vite.config.mjs",
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview"

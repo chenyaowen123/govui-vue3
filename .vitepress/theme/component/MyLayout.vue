@@ -7,7 +7,7 @@ const { Layout } = DefaultTheme;
 <template>
 	<Layout>
 		<template #home-hero-image>
-			<img src="logo.png" style="position: absolute; z-index: 999" />
+			<img src="/logo.png" style="position: absolute; z-index: 999" />
 		</template>
 	</Layout>
 </template>

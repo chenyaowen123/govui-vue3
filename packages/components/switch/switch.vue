@@ -101,7 +101,3 @@ function handleBlur() {
 	}
 }
 </script>
-
-<style lang="scss">
-@use "./switch.scss";
-</style>
