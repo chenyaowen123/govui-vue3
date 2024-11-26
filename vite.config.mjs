@@ -34,5 +34,6 @@ export default defineConfig({
 				exports: "named",
 			},
 		},
+		cssCodeSplit: true,
 	},
 });

@@ -1,5 +1,5 @@
 <template>
-	<div class="gov-danghui">
+	<div class="gov-danghui" :style="boxStyle">
 		<img src="./danghui-red.png" :style="imgStyle" v-if="type === 'red'" />
 		<img src="./danghui-yellow.png" :style="imgStyle" v-else />
 	</div>
@@ -27,22 +27,18 @@ const props = defineProps({
 });
 
 // 计算图片样式
+const boxStyle = computed(() => {
+	return {
+		display: " inline-block",
+		fontSize: 0,
+	};
+});
+
 const imgStyle = computed(() => {
 	return {
 		width: Number(props.width) + "px",
 		height: "auto",
+		display: "block",
 	};
 });
 </script>
-
-<style scoped lang="scss">
-.gov-danghui {
-	display: inline-block;
-	font-size: 0;
-	img {
-		width: 100%;
-		height: auto;
-		display: block;
-	}
-}
-</style>

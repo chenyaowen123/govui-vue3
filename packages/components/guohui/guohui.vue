@@ -1,5 +1,5 @@
 <template>
-	<div class="gov-guohui">
+	<div class="gov-guohui" :style="boxStyle">
 		<img src="./guohui.png" :style="imgStyle" />
 	</div>
 </template>
@@ -19,22 +19,18 @@ const props = defineProps({
 });
 
 // 计算图片样式
+const boxStyle = computed(() => {
+	return {
+		display: " inline-block",
+		fontSize: 0,
+	};
+});
+
 const imgStyle = computed(() => {
 	return {
 		width: Number(props.width) + "px",
 		height: "auto",
+		display: "block",
 	};
 });
 </script>
-
-<style scoped lang="scss">
-.gov-guohui {
-	display: inline-block;
-	font-size: 0;
-	img {
-		width: 100%;
-		height: auto;
-		display: block;
-	}
-}
-</style>

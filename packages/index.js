@@ -1,5 +1,5 @@
 // 主题色
-import "./styles/theme.scss";
+import "./styles/base.scss";
 
 // 规范化
 import GovGuoqi from "./components/guoqi/guoqi.vue";
