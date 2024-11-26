@@ -2,7 +2,6 @@
 node_modules
 .vitepress/cache
 .vitepress/dist
-/dist
 /build
 
 # local env files
