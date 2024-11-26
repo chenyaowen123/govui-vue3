@@ -23,7 +23,6 @@
 <script setup>
 import { computed } from "vue";
 import GovIcon from "../icon/icon.vue";
-import "@/styles/theme.scss";
 
 defineOptions({
 	name: "GovAvatar",

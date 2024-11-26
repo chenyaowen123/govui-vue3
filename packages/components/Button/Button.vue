@@ -75,7 +75,3 @@ const handleClick = (evt) => {
 	emit("click", evt);
 };
 </script>
-
-<style lang="scss">
-@use "./scss/button.scss";
-</style>

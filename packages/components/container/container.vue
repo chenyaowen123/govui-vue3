@@ -28,20 +28,3 @@ const classes = computed(() => {
 	return [`gov-container--${isVertical.value ? "vertical" : "horizontal"}`];
 });
 </script>
-
-<style lang="scss">
-.gov-container {
-	display: flex;
-	flex-direction: row;
-	flex: 1;
-	flex-basis: auto;
-	box-sizing: border-box;
-	min-width: 0;
-	&--vertical {
-		flex-direction: column;
-	}
-	&--horizontal {
-		flex-direction: row;
-	}
-}
-</style>

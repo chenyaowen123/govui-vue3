@@ -86,7 +86,3 @@ const handleClose = () => {
 	emit("close");
 };
 </script>
-
-<style lang="scss">
-@use "./alert.scss";
-</style>

@@ -1,6 +1,85 @@
 
-@use "./type.scss" as *;
+// 设置默认按钮的样式，因为特殊所以单独定义，例如设置为 primary 或者其他风格
+@mixin button-default($type) {
+	&:hover,
+	&:focus {
+		color: var(--gov-text-color);
+		background: var(--gov-#{$type}-9);
+		border: 1px solid var(--gov-#{$type}-5);
+	}
+	&:active {
+		background: var(--gov-#{$type}-8);
+		border: 1px solid var(--gov-#{$type}-4);
+		outline: none;
+	}
+	&.is-disabled {
+		&,
+		&:hover,
+		&:focus,
+		&:active {
+			color: var(--gov-text-color-5);
+			background: #fff;
+			border: 1px solid var(--gov-border-color-5);
+			cursor: not-allowed;
+		}
+	}
+}
 
+// 根据按钮类型生成样式
+@mixin button-type($type) {
+	color: #fff;
+	background: var(--gov-#{$type});
+	border: 1px solid var(--gov-#{$type});
+
+	&:hover,
+	&:focus {
+		background: var(--gov-#{$type}-2);
+		border: 1px solid var(--gov-#{$type}-2);
+	}
+
+	&:active {
+		background: var(--gov-#{$type}-dark);
+		border: 1px solid var(--gov-#{$type}-dark);
+		outline: none;
+	}
+
+	&.is-disabled {
+		&,
+		&:hover,
+		&:focus,
+		&:active {
+			color: #fff;
+			background: var(--gov-#{$type}-5);
+			border: 1px solid var(--gov-#{$type}-5);
+			cursor: not-allowed;
+			&.is-plain{
+				color: var(--gov-#{$type}-5);
+				background: var(--gov-#{$type}-9);
+				border: 1px solid var(--gov-#{$type}-8);
+			}
+		}
+	}
+
+	&.is-plain {
+		color: var(--gov-#{$type});
+		background: var(--gov-#{$type}-9);
+		border: 1px solid var(--gov-#{$type}-5);
+
+		&:hover,
+		&:focus {
+			color: #fff;
+			background: var(--gov-#{$type});
+			border: 1px solid var(--gov-#{$type});
+		}
+
+		&:active {
+			background: var(--gov-#{$type}-dark);
+			border: 1px solid var(--gov-#{$type}-dark);
+		}
+	}
+}
+
+// 按钮尺寸
 @mixin button-size($size) {
 	padding: var(--gov-button-#{$size}-padding);
 	font-size: var(--gov-#{$size}-font-size);

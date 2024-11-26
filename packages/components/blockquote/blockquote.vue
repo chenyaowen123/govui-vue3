@@ -39,7 +39,3 @@ defineProps({
 	reverse: Boolean, // 是否翻转
 });
 </script>
-
-<style lang="scss">
-@use "./blockquote.scss";
-</style>

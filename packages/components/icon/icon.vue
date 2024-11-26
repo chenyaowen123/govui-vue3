@@ -16,7 +16,3 @@ defineProps({
 	size: String,
 });
 </script>
-
-<style lang="scss">
-@use "./icon";
-</style>

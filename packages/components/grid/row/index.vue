@@ -52,16 +52,3 @@ const props = defineProps({
 // 计算Gap
 const style = useStyle(props);
 </script>
-
-<style lang="scss">
-.gov-grid-row {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: var(--justify);
-	align-items: var(--align);
-	min-width: 0;
-	font-size: 14px;
-	color: rgba(0, 0, 0, 0.88);
-	transition: all 0.3s;
-}
-</style>

@@ -81,7 +81,3 @@ const toggleExpand = () => {
 	emits("toggle", isExpanded.value);
 };
 </script>
-
-<style lang="scss">
-@use "./ellipsis.scss";
-</style>

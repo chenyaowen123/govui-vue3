@@ -25,13 +25,3 @@ const style = computed(() => {
 	};
 });
 </script>
-
-<style lang="scss">
-
-.gov-aside {
-	overflow: auto;
-	box-sizing: border-box;
-	flex-shrink: 0;
-	width: 200px;
-}
-</style>

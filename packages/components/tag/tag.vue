@@ -57,7 +57,3 @@ const handleClose = () => {
 	emits("close");
 };
 </script>
-
-<style lang="scss">
-@use "./tag.scss";
-</style>

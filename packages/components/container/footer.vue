@@ -24,13 +24,3 @@ const style = computed(() => {
 	};
 });
 </script>
-
-<style lang="scss">
-@use "../../styles/theme" as *;
-.gov-footer {
-	padding: 0 20px;
-	box-sizing: border-box;
-	flex-shrink: 0;
-	height: 60px;
-}
-</style>

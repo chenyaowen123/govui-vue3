@@ -8,7 +8,3 @@ defineOptions({
 	name: "GovButtonGroup",
 });
 </script>
-
-<style lang="scss">
-@use "./scss/button-group.scss";
-</style>

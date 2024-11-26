@@ -79,7 +79,3 @@ const flexValue = computed(() => {
 // 计算span 和 offset
 const responsive = useResponsive(props);
 </script>
-
-<style lang="scss">
-@use "./col.scss";
-</style>
