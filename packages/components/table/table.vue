@@ -272,7 +272,3 @@ const handleSort = (column, sort) => {
 const tableEl = ref(null);
 useStickyTable(tableEl);
 </script>
-
-<style lang="scss">
-@use "./table.scss";
-</style>

@@ -129,7 +129,3 @@ const lineStyle = computed(() => {
 	};
 });
 </script>
-
-<style lang="scss">
-@use "./progress.scss";
-</style>

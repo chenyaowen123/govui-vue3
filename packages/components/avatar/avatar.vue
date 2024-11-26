@@ -81,7 +81,3 @@ function handleClick(e) {
 	emit("click", e);
 }
 </script>
-
-<style lang="scss">
-@use "./avatar.scss";
-</style>

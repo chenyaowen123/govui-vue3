@@ -40,7 +40,3 @@ defineProps({
 	},
 });
 </script>
-
-<style lang="scss">
-@use "./result.scss";
-</style>

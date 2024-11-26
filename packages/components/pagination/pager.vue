@@ -99,7 +99,3 @@ const changePage = (page) => {
 	}
 };
 </script>
-
-<style lang="scss">
-@use "./pagination.scss";
-</style>

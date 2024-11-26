@@ -54,7 +54,3 @@ const content = computed(() => {
 	return value;
 });
 </script>
-
-<style lang="scss">
-@use "./badge.scss";
-</style>

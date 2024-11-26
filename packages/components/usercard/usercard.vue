@@ -54,7 +54,3 @@ const style = computed(() => {
 	};
 });
 </script>
-
-<style lang="scss">
-@use "./usercard.scss";
-</style>

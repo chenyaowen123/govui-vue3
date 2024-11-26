@@ -1,0 +1,52 @@
+
+.gov-collapse-item {
+	color: var(--gov-text-color);
+	border-top: 1px solid var(--gov-border-color-5);
+	&:last-child {
+		border-bottom: 1px solid var(--gov-border-color-5);
+	}
+
+	&__title {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 12px 0;
+		cursor: pointer;
+		font-size: 14px;
+		font-weight: bold;
+
+		&-text {
+			flex-grow: 1;
+		}
+
+		&-iconbox {
+			display: flex;
+			align-items: center;
+		}
+
+		&-icon {
+			transition: transform 0.3s ease;
+		}
+	}
+
+	&__content {
+		&-wrap {
+			padding: 0 0 16px;
+			font-size: 14px;
+			line-height: 1.5;
+		}
+	}
+
+	&.is-open {
+		.gov-collapse-item__title-icon {
+			transform: rotate(90deg);
+		}
+	}
+
+	&.is-disabled {
+		color: var(--gov-text-color-5);
+		.gov-collapse-item__title {
+			cursor: not-allowed;
+		}
+	}
+}

@@ -32,7 +32,3 @@ defineProps({
 	},
 });
 </script>
-
-<style lang="scss">
-@use "./card.scss";
-</style>

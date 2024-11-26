@@ -59,7 +59,3 @@ const textStyle = computed(() => {
 	return { fontSize };
 });
 </script>
-
-<style lang="scss">
-@use "./empty.scss";
-</style>

@@ -81,7 +81,3 @@ defineProps({
 	hollow: Boolean, // 是否空心
 });
 </script>
-
-<style lang="scss">
-@use "./timeline-item.scss";
-</style>

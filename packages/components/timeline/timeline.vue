@@ -9,5 +9,3 @@ defineOptions({
 	name: "GovTimeline",
 });
 </script>
-
-<style lang="scss"></style>
