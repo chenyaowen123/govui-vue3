@@ -29,6 +29,10 @@ export default defineConfig({
 		socialLinks: [
 			{ icon: "github", link: "https://github.com/vuejs/vitepress" },
 		],
+		footer: {
+			message: 'Released under the MIT License.',
+			// copyright: 'Copyright © 2023-present The Muse Catcher'
+		},
 	},
 	// vitepress默认有配置，所以这里的别名应该和主项目的 vite.config.mjs 保持一直
 	vite: {

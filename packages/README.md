@@ -7,13 +7,13 @@
 ## Install 安装
 
 ```bash
-npm install vue-amazing-ui
+npm install gov-ui
 # or
-pnpm add vue-amazing-ui
+pnpm add gov-ui
 # or
-yarn add vue-amazing-ui
+yarn add gov-ui
 # or
-bun add vue-amazing-ui
+bun add gov-ui
 ```
 
 ## 如何使用
@@ -34,7 +34,7 @@ app.use(GovUI)
 
 ```vue
 <script setup>
-import { Button } from 'vue-amazing-ui'
+import { Button } from 'gov-ui'
 import 'gov-ui/styles/index.css'
 </script>
 ```

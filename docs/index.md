@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "GovUI"
-  text: "专业的政府机构UI"
+  text: "政府机构风格，由 Vite 和 Vue3 驱动的组件库"
   tagline: "优雅的搭建私有化定制系统，只需几分钟"
   actions:
     - theme: brand
@@ -18,11 +18,17 @@ hero:
       link: /component/index
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - icon: 🆕
+    title: 最新技术
+    details: 采用 Vue^3.0.0 + Vite^5.4.8 + Sass^1.79.4 开发
+  - icon: 🎉
+    title: 丰富的UI
+    details: 提供 60+ 基础UI，支持按需引入，打包体积小，功能全面。
+  - icon: 📄
+    title: 清晰的文档
+    details: 清晰的文档，拥有 300+ 组件示例在线查看。
+  - icon: 🛠️
+    title: 易拓展
+    details: 清晰的表单封装，对自定义组件之间的交互友好。
 ---
 
