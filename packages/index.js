@@ -184,11 +184,6 @@ const install = (Vue) => {
 	});
 };
 
-// 引入安装
-if (typeof window !== "undefined" && window.Vue) {
-	install(window.Vue);
-}
-
 export default {
 	install,
 };

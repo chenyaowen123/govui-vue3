@@ -3,6 +3,7 @@ node_modules
 .vitepress/cache
 .vitepress/dist
 build
+dist
 stats.html
 
 # local env files

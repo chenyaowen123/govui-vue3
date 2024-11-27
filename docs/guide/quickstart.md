@@ -7,11 +7,13 @@ outline: deep
 假设你已经安装了 `vuecli` 脚手架。
 
 ## 完整引入
-推荐使用完整导入，在开发项目过程中会更方便。
+
+使用完整导入，在开发项目过程中会更方便。
 
 ```js
 import { createApp } from 'vue'
-import GovUI from 'gov-ui';
+import GovUI from 'GovUI';
+import 'GovUI/dist/index.css';
 import App from './App.vue'
 
 const app = createApp(App)
@@ -20,32 +22,13 @@ app.use(GovUI)
 app.mount('#app')
 ```
 
-## 按需引入
-### Composition API
+## 手动导入
 
-```md
-<template>
-  <GovButton>Click me</GovButton>
-</template>
-
+```vue
 <script setup>
-import { GovButton } from 'gov-ui';
+import { GovButton } from 'GovUI/es';
 </script>
 ```
 
-### Options API
 
-```md
-<template>
-  <gov-button>Click me</gov-button>
-</template>
-
-<script>
-import { GovButton } from 'gov-ui';
-export default {
-  components: {
-    GovButton,
-  },
-};
-</script>
-```
+## 自动导入
