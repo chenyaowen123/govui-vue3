@@ -15,7 +15,7 @@ hero:
       link: /guide/index
     - theme: alt
       text: 组件
-      link: /components/index
+      link: /component/index
 
 features:
   - title: Feature A
