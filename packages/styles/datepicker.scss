@@ -1,4 +1,6 @@
 
+@use"@vuepic/vue-datepicker/dist/main.css";
+
 .gov-datepicker {
 	display: inline-block;
 	width: 100%;
@@ -69,3 +71,5 @@
 	--dp-danger-color: var(--gov-danger);
 	--dp-highlight-color: var(--gov-primary);
 }
+
+

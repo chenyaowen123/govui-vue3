@@ -33,7 +33,6 @@
 <script setup>
 import { computed, inject } from "vue";
 import VueDatePicker from "@vuepic/vue-datepicker";
-import "@vuepic/vue-datepicker/dist/main.css";
 import { useReset } from "../utils/useReset";
 
 defineOptions({

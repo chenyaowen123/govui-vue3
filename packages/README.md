@@ -1,18 +1,8 @@
 ## GovUI 是什么？
 
-欢迎使用 GovUI，一款开箱即用的Vue3 UI。
+欢迎使用 GovUI，一款开箱即用的Vue3 UI，项目由 vue3 + vite + vitepress 搭建。
 
 [GovUI UI 在线文档](https://govui.cc/)
-
-## 文档运行
-
-项目采用 vitepress 搭建文档系统，你可以本地执行
-
-```bash
-yarn
-
-yarn docs:dev
-```
 
 ## Install 安装
 
