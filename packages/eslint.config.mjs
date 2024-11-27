@@ -6,7 +6,6 @@ import prettierConfig from "@vue/eslint-config-prettier";
 export default [
 	{
 		files: ["**/*.{js,mjs,cjs,vue}"] ,
-		excludeFiles: ["**/build/", "**/node_modules/", ".vitepress/", "docs/"],
 	},
 	{ languageOptions: { globals: globals.browser } },
 	pluginJs.configs.recommended,

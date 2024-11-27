@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import { GovMessageBox, GovMessage } from "@/index.js";
+import { GovMessageBox, GovMessage } from "@/dist/index.js";
 
 const handleConfirm = () => {
 	GovMessageBox.confirm({

@@ -12,11 +12,6 @@ export default defineConfig({
 			open: true,
 		}),
 	],
-	resolve: {
-		alias: {
-			"@": resolve(__dirname, "packages"),
-		},
-	},
 	build: {
 		// 参考：https://cn.vitejs.dev/guide/build#library-mode
 		cssCodeSplit: true,
@@ -35,14 +30,14 @@ export default defineConfig({
 					entryFileNames: "[name].js",
 					exports: "named",
 					preserveModules: true,
-					preserveModulesRoot: "packages",
+					preserveModulesRoot: "./",
 					dir: "./dist",
 				},
 			],
 		},
 		lib: {
 			entry: resolve(__dirname, "index.js"),
-			name: "GovUI", // 构建后的库的全局变量名（UMD模块名）
+			name: "gov-ui", // 构建后的库的全局变量名（UMD模块名）
 		},
 	},
 });

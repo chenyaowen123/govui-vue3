@@ -6,7 +6,7 @@
 </template>
 
 <script setup>
-import { GovMessageBox } from "@/index.js";
+import { GovMessageBox } from "@/dist/index.js";
 const handleQuickAlert = () => {
 	GovMessageBox.alert("更加简洁的Alert！");
 };

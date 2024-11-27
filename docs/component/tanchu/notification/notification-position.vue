@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import { GovNotification } from "@/index.js";
+import { GovNotification } from "@/dist/index.js";
 
 const handleClick = (position) => {
 	GovNotification({

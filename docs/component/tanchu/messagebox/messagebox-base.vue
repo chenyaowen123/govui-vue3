@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import { GovMessageBox, GovMessage } from "@/index.js";
+import { GovMessageBox, GovMessage } from "@/dist/index.js";
 const handleAlert = () => {
 	GovMessageBox.alert({
 		title: "友情提醒",
