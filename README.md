@@ -6,15 +6,25 @@
 
 ## 文档运行
 
-项目采用 vitepress 搭建文档系统，你可以本地执行
+项目采用 vitepress 搭建文档系统，组件库存放在 packages 目录下，你可以根目录、packages目录分别执行安装：。
 
 ```bash
 yarn
+```
 
+在 packages 目录下执行组件库打包：
+
+```bash
+yarn build
+```
+
+在根目录下运行文档：
+
+```bash
 yarn docs:dev
 ```
 
-## Install 安装
+## 组件库安装使用（Install）
 
 ```bash
 npm install vue-amazing-ui
@@ -26,9 +36,11 @@ yarn add vue-amazing-ui
 bun add vue-amazing-ui
 ```
 
-## 如何使用
+## 如何在项目中使用
 
-**全局引入**
+两种方式可供选择：
+
+**1、全局引入**
 
 ```js
 import { createApp } from 'vue'
@@ -40,7 +52,7 @@ const app = createApp(App)
 app.use(GovUI)
 ```
 
-**按需引入**
+**2、按需引入**
 
 ```vue
 <script setup>
