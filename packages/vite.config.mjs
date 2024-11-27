@@ -9,7 +9,7 @@ export default defineConfig({
 		vue(), // 使用 Vite 的 Vue 插件
 		// 分析打包
 		visualizer({
-			open: true,
+			// open: true,
 		}),
 	],
 	resolve: {
@@ -32,7 +32,7 @@ export default defineConfig({
 					format: "es",
 					entryFileNames: "[name].js",
 					exports: "named",
-					name: "BqDesign",
+					name: "GovUI",
 					dir: "./build/dist",
 				},
 				// ES 模块格式（保留模块结构）用于组件库主动引入
@@ -47,6 +47,15 @@ export default defineConfig({
 					dir: "./build/es",
 				},
 				// CommonJS 格式（保留模块结构）
+				{
+					format: "cjs",
+					entryFileNames: "[name].js",
+					exports: "named",
+					preserveModules: true,
+					preserveModulesRoot: "packages",
+					dir: "./build/lib",
+				},
+				// 样式文件
 				{
 					format: "cjs",
 					entryFileNames: "[name].js",

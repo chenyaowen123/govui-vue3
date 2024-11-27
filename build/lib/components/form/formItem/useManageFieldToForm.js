@@ -1,1 +1,0 @@
-"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const n=require("vue");function u(i,e,p={}){n.watch(()=>i.prop,(t,d)=>{d&&(e==null||e.removeField({prop:d})),t&&(e==null||e.addField({...p,prop:t}))},{immediate:!0}),n.onBeforeUnmount(()=>{e==null||e.removeField({prop:i.prop})})}exports.useManageFieldToForm=u;

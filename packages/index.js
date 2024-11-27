@@ -1,5 +1,5 @@
 // 样式入口文件
-import "./styles/index.js";
+import "./styles/index.scss";
 
 // 规范化
 import GovGuoqi from "./components/guoqi/guoqi.vue";

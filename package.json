@@ -34,15 +34,5 @@
     "rollup-plugin-visualizer": "^5.12.0",
     "sass": "^1.79.4",
     "vitepress": "^1.4.0"
-  },
-  "exports": {
-    ".": {
-      "import": "./dist/my-lib.js",
-      "require": "./dist/my-lib.cjs"
-    },
-    "./secondary": {
-      "import": "./dist/secondary.js",
-      "require": "./dist/secondary.cjs"
-    }
   }
 }

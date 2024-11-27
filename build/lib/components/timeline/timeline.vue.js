@@ -1,1 +1,0 @@
-"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("vue"),n={class:"gov-timeline"},o=Object.assign({name:"GovTimeline"},{__name:"timeline",setup(s){return(t,l)=>(e.openBlock(),e.createElementBlock("div",n,[e.renderSlot(t.$slots,"default")]))}});exports.default=o;
