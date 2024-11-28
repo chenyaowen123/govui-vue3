@@ -32,19 +32,19 @@
 ::: code-group
 
 ```sh [yarn]
-$ yarn add gov-ui
+$ yarn add govui-vue3
 ```
 
 ```sh [npm]
-$ npm install gov-ui
+$ npm install govui-vue3
 ```
 
 ```sh [pnpm]
-$ pnpm add gov-ui
+$ pnpm add govui-vue3
 ```
 
 ```sh [bun]
-$ bun add gov-ui
+$ bun add govui-vue3
 ```
 :::
 
