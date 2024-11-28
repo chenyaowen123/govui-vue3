@@ -26,7 +26,7 @@ import textareaResize from "./textarea-resize.vue"
 <textareaRows />
 
 ::: details 查看代码
-<<< ./textarea-Rows.vue{vue:line-numbers}
+<<< ./textarea-rows.vue{vue:line-numbers}
 :::
 
 

@@ -27,7 +27,7 @@ export default defineConfig({
 		],
 		sidebar,
 		socialLinks: [
-			{ icon: "github", link: "https://github.com/vuejs/vitepress" },
+			{ icon: "github", link: "https://github.com/chenyaowen123/govui-vue3" },
 		],
 		footer: {
 			message: 'Released under the MIT License.',
