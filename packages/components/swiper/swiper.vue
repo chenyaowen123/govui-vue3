@@ -24,11 +24,6 @@
 <script setup>
 import { Swiper } from "swiper/vue";
 import { Navigation, Pagination, Scrollbar, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
-import "swiper/css/autoplay";
 defineOptions({
 	name: "GovSwiper",
 });

@@ -254,10 +254,10 @@ const componentSidebar = [
 						text: "Dropdown 下拉菜单",
 						link: "/component/dropdown/",
 					},
-					{
-						text: "Menu 菜单",
-						link: "/component/link/",
-					},
+					// {
+					// 	text: "Menu 菜单",
+					// 	link: "/component/link/",
+					// },
 					{
 						text: "PageContainer 页面容器",
 						link: "/component/pagecontainer/",
