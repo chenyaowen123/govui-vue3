@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "由 Vite 和 Vue3 驱动的组件库，采用 Vue^3.0.0 + Vite^5.4.8 + Sass^1.79.4 开发",
   "keywords":["vue3","ui","vue3ui","govui","govui-vue3","GovUI","vite","design","admin"],
+  "type": "module",
   "author": {
     "name": "Chenyaowen",
     "email": "2863189840@qq.com",
