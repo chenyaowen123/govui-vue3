@@ -11,27 +11,27 @@
 			</div>
 			<div class="gov-collapse-item__title-iconbox">
 				<slot name="icon" :opend="opend">
-					<govIcon
+					<GovIcon
 						name="arrow-right"
 						class="gov-collapse-item__title-icon"
 					/>
 				</slot>
 			</div>
 		</div>
-		<govCollapseTransition>
+		<GovCollapseTransition>
 			<div class="gov-collapse-item__content" v-show="opend">
 				<div class="gov-collapse-item__content-wrap">
 					<slot />
 				</div>
 			</div>
-		</govCollapseTransition>
+		</GovCollapseTransition>
 	</div>
 </template>
 
 <script setup>
 import { computed, inject, ref, watchEffect } from "vue";
-import govIcon from "../icon/icon.vue";
-import govCollapseTransition from "./collapse-transition.vue";
+import GovIcon from "../icon/icon.vue";
+import GovCollapseTransition from "./collapse-transition.vue";
 
 defineOptions({
 	name: "GovCollapseItem",

@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "GovUI"
-  text: "政府机构风格，由 Vite 和 Vue3 驱动的组件库"
+  text: "基于 Vite 和 Vue3 的政府系统专用UI组件库"
   tagline: "优雅的搭建私有化定制系统，只需几分钟"
   actions:
     - theme: brand

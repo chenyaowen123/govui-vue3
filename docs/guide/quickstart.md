@@ -13,8 +13,8 @@ outline: deep
 ```js
 // main.js
 import { createApp } from 'vue'
-import GovUI from 'GovUI';
-import 'GovUI/dist/index.css';
+import GovUI from 'govui-vue3';
+import 'govui-vue3/dist/styles/index.css';
 import App from './App.vue'
 
 const app = createApp(App)
@@ -29,7 +29,7 @@ app.mount('#app')
 
 ```vue
 <script setup>
-import { GovButton } from 'GovUI';
+import { GovButton } from 'govui-vue3'
 </script>
 ```
 
@@ -41,5 +41,5 @@ import { GovButton } from 'GovUI';
 
 ``` js
 // main.js
-import 'GovUI/dist/index.css';
+import 'govui-vue3/dist/styles/index.css';
 ```

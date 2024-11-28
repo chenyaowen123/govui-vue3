@@ -82,21 +82,3 @@ const on = {
 	},
 };
 </script>
-
-<style scoped>
-.gov-collapse-transition-enter-active,
-.gov-collapse-transition-leave-active {
-	transition: max-height 0.3s ease-in-out;
-	overflow: hidden;
-}
-
-.gov-collapse-transition-enter-from,
-.gov-collapse-transition-leave-to {
-	max-height: 0;
-}
-
-.gov-collapse-transition-enter-to,
-.gov-collapse-transition-leave-from {
-	max-height: 2000px;
-}
-</style>

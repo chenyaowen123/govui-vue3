@@ -27,13 +27,13 @@ yarn docs:dev
 ## 组件库安装使用（Install）
 
 ```bash
-npm install vue-amazing-ui
+npm install govui-vue3
 # or
-pnpm add vue-amazing-ui
+pnpm add govui-vue3
 # or
-yarn add vue-amazing-ui
+yarn add govui-vue3
 # or
-bun add vue-amazing-ui
+bun add govui-vue3
 ```
 
 ## 如何在项目中使用

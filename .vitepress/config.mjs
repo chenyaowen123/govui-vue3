@@ -7,7 +7,7 @@ export default defineConfig({
 	srcDir: "docs",
 	appearance: false,
 	title: "GovUI",
-	description: "政府系统专用UI",
+	description: "基于 Vite 和 Vue3 的政府系统专用UI组件库",
 	rewrites: {
 		"component/base/:page/(.*)": "component/:page/(.*)", // 基础
 		"component/datas/:page/(.*)": "component/:page/(.*)", // 数据类
@@ -19,18 +19,34 @@ export default defineConfig({
 	},
 	themeConfig: {
 		logo: "/logo.png",
+		outline: {
+			label: "页面导航",
+		},
+		docFooter: {
+			prev: "上一篇",
+			next: "下一篇",
+		},
 		// https://vitepress.dev/reference/default-theme-config
 		nav: [
 			{ text: "首页", link: "/" },
 			{ text: "指南", link: "/guide/" },
-			{ text: "组件", link: "/component/button/" },
+			{ text: "🔥 组件", link: "/component/button/" },
 		],
 		sidebar,
 		socialLinks: [
-			{ icon: "github", link: "https://github.com/chenyaowen123/govui-vue3" },
+			{
+				icon: "github",
+				link: "https://github.com/chenyaowen123/govui-vue3",
+			},
+			{
+				icon: {
+					svg: '<svg t="1732784770568" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3242" width="200" height="200"><path d="M0 0v1024h1024V0H0z m832 832h-128V320H512v512H192V192h640v640z" p-id="3243"></path></svg>',
+				},
+				link: "https://www.npmjs.com/package/govui-vue3",
+			},
 		],
 		footer: {
-			message: 'Released under the MIT License.',
+			message: "Released under the MIT License.",
 			// copyright: 'Copyright © 2023-present The Muse Catcher'
 		},
 	},
