@@ -9,7 +9,7 @@ export default defineConfig({
 		vue(), // 使用 Vite 的 Vue 插件
 		// 分析打包
 		visualizer({
-			open: true,
+			// open: true,
 		}),
 	],
 	build: {
