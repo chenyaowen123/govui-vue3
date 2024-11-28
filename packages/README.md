@@ -7,13 +7,13 @@
 ## Install 安装
 
 ```bash
-npm install gov-ui
+npm install govui
 # or
-pnpm add gov-ui
+pnpm add govui
 # or
-yarn add gov-ui
+yarn add govui
 # or
-bun add gov-ui
+bun add govui
 ```
 
 ## 如何使用
@@ -23,8 +23,8 @@ bun add gov-ui
 ```js
 import { createApp } from 'vue'
 import App from './App.vue'
-import GovUI from 'gov-ui'
-import 'gov-ui/styles/index.css'
+import GovUI from 'govui'
+import 'govui/styles/index.css'
 
 const app = createApp(App)
 app.use(GovUI)
@@ -34,8 +34,8 @@ app.use(GovUI)
 
 ```vue
 <script setup>
-import { Button } from 'gov-ui'
-import 'gov-ui/styles/index.css'
+import { Button } from 'govui'
+import 'govui/styles/index.css'
 </script>
 ```
 

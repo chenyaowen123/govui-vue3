@@ -37,7 +37,7 @@ export default defineConfig({
 		},
 		lib: {
 			entry: resolve(__dirname, "index.js"),
-			name: "gov-ui", // 构建后的库的全局变量名（UMD模块名）
+			name: "govui", // 构建后的库的全局变量名（UMD模块名）
 		},
 	},
 });

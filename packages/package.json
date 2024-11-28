@@ -1,5 +1,5 @@
 {
-  "name": "gov-ui",
+  "name": "govui",
   "version": "0.0.1",
   "description": "由 Vite 和 Vue3 驱动的组件库，采用 Vue^3.0.0 + Vite^5.4.8 + Sass^1.79.4 开发",
   "keywords":["vue3","ui","vue3ui","govui","gov-ui","GovUI","vite","design","admin"],
