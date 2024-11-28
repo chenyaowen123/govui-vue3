@@ -34,7 +34,7 @@ app.use(GovUI)
 
 ```vue
 <script setup>
-import { Button } from 'govui-vue3'
+import { GovButton } from 'govui-vue3'
 import 'govui-vue3/styles/index.css'
 </script>
 ```

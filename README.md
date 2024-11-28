@@ -46,7 +46,7 @@ bun add vue-amazing-ui
 import { createApp } from 'vue'
 import App from './App.vue'
 import GovUI from 'govui-vue3'
-import 'govui-vue3/styles/index.css'
+import 'govui-vue3/dist/styles/index.css'
 
 const app = createApp(App)
 app.use(GovUI)
@@ -56,8 +56,8 @@ app.use(GovUI)
 
 ```vue
 <script setup>
-import { Button } from 'govui-vue3'
-import 'govui-vue3/styles/index.css'
+import { GovButton } from 'govui-vue3'
+import 'govui-vue3/dist/styles/index.css'
 </script>
 ```
 
