@@ -1,8 +1,21 @@
 {
   "name": "gov-ui",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "0.0.1",
+  "description": "由 Vite 和 Vue3 驱动的组件库，采用 Vue^3.0.0 + Vite^5.4.8 + Sass^1.79.4 开发",
+  "keywords":["vue3","ui","vue3ui","govui","gov-ui","GovUI","vite","design","admin"],
+  "author": {
+    "name": "Chenyaowen",
+    "email": "2863189840@qq.com",
+    "url": "https://govui.cc"
+  },
   "license": "MIT",
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "package.json",
+    "README.md",
+	"LICENSE"
+  ],
   "dependencies": {
     "@vuepic/vue-datepicker": "^9.0.3",
     "@vueuse/integrations": "^11.3.0",
@@ -15,7 +28,8 @@
     "vue3-popper": "^1.5.0"
   },
   "scripts": {
-    "build": "vite build"
+    "build": "vite build",
+	"prepublishOnly": "npm run build"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
