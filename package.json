@@ -13,7 +13,7 @@
   "dependencies": {},
   "scripts": {
     "docs:dev": "vitepress dev",
-	"predocs:build": "cd packages && yarn build",
+	"predocs:build": "cd packages && yarn && yarn build",
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview"
   },
