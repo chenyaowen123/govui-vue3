@@ -2,7 +2,17 @@
   "name": "com",
   "version": "0.0.1",
   "description": "由 Vite 和 Vue3 驱动的组件库，采用 Vue^3.0.0 + Vite^5.4.8 + Sass^1.79.4 开发",
-  "keywords":["vue3","ui","vue3ui","govui","govui-vue3","GovUI","vite","design","admin"],
+  "keywords": [
+    "vue3",
+    "ui",
+    "vue3ui",
+    "govui",
+    "govui-vue3",
+    "GovUI",
+    "vite",
+    "design",
+    "admin"
+  ],
   "author": {
     "name": "Chenyaowen",
     "email": "2863189840@qq.com",
@@ -10,15 +20,17 @@
   },
   "main": "index.js",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "@vueup/vue-quill": "^1.2.0"
+  },
   "scripts": {
     "docs:dev": "vitepress dev",
-	"predocs:build": "cd packages && yarn && yarn build",
+    "predocs:build": "cd packages && yarn && yarn build",
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview"
   },
   "devDependencies": {
-	"sass": "^1.79.4",
+    "sass": "^1.79.4",
     "vitepress": "^1.4.0"
   }
 }

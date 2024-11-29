@@ -135,7 +135,7 @@ const componentSidebar = [
 					},
 					{
 						text: "Editor 富文本",
-						link: "/component/link/", // 自定义表单控件和表单组件配合
+						link: "/component/editor/", // 自定义表单控件和表单组件配合
 					},
 					{
 						text: "Form 表单",
