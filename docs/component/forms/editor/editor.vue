@@ -9,7 +9,9 @@
 			},
 		]"
 	>
-		<QuillEditor
+		<!-- 动态导入 QuillEditor 组件 -->
+		<component
+			:is="quillEditorComponent"
 			theme="snow"
 			v-model:content="innerValue"
 			contentType="html"
@@ -23,8 +25,7 @@
 </template>
 
 <script setup>
-import { ref, computed, inject, onMounted, watchEffect } from "vue";
-import { QuillEditor } from "@vueup/vue-quill";
+import { shallowRef, ref, computed, inject, onMounted, watchEffect } from "vue";
 import "@vueup/vue-quill/dist/vue-quill.snow.css";
 
 defineOptions({
@@ -36,6 +37,15 @@ const props = defineProps({
 	size: String,
 	disabled: Boolean,
 });
+
+// 动态导入 QuillEditor 组件
+let quillEditorComponent = shallowRef(null);
+const loadQuillEditor = async () => {
+  const module = await import("@vueup/vue-quill");
+  quillEditorComponent.value = module.QuillEditor;
+};
+onMounted(loadQuillEditor);
+
 
 const editorRef = ref();
 const govFormItem = inject("govFormItem", null);
@@ -93,7 +103,7 @@ const isError = computed(() => {
 
 // 设置禁用，quill 文档：https://quilljs.com/docs/api/#disable
 watchEffect(() => {
-	const quill = editorRef.value?.getQuill();
+	const quill = editorRef.value?.getQuill?.();
 	quill?.enable(!innerDisabled.value);
 });
 </script>

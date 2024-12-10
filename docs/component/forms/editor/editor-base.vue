@@ -35,7 +35,7 @@ const invalidFields = ref(null);
 
 // 表单数据
 const formData = reactive({
-	htnl: "",
+	html: "",
 });
 
 // 表单验证
